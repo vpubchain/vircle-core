@@ -1,5 +1,5 @@
 ---
-name: "vpub-win-0.19.0.1"
+name: "vircle-win-0.19.0.1"
 enable_cache: true
 sudo: true
 suites:
@@ -128,14 +128,14 @@ script: |
   ./autogen.sh
   CONFIG_SITE=${BASEPREFIX}/`echo "${HOSTS}" | awk '{print $1;}'`/share/config.site ./configure --prefix=/
   make dist
-  SOURCEDIST=`echo vpub-*.tar.gz`
+  SOURCEDIST=`echo vircle-*.tar.gz`
   DISTNAME=`echo ${SOURCEDIST} | sed 's/.tar.*//'`
 
   # Correct tar file order
   mkdir -p temp
   pushd temp
   tar xf ../$SOURCEDIST
-  find vpub-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
+  find vircle-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
   mkdir -p $OUTDIR/src
   cp ../$SOURCEDIST $OUTDIR/src
   popd
@@ -165,7 +165,7 @@ script: |
     make install DESTDIR=${INSTALLPATH}
 
     rename 's/-setup\.exe$/-setup-unsigned.exe/' *-setup.exe
-    cp -f vpub-*setup*.exe $OUTDIR/
+    cp -f vircle-*setup*.exe $OUTDIR/
 
     cd installed
     mv ${DISTNAME}/bin/*.dll ${DISTNAME}/lib/
@@ -182,7 +182,7 @@ script: |
   cp -rf contrib/windeploy $BUILD_DIR
   cd $BUILD_DIR/windeploy
   mkdir unsigned
-  cp $OUTDIR/vpub-*setup-unsigned.exe unsigned/
+  cp $OUTDIR/vircle-*setup-unsigned.exe unsigned/
   find . | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ${OUTDIR}/${DISTNAME}-win-unsigned.tar.gz
   mv ${OUTDIR}/${DISTNAME}-x86_64-*-debug.zip ${OUTDIR}/${DISTNAME}-win64-debug.zip
   mv ${OUTDIR}/${DISTNAME}-i686-*-debug.zip ${OUTDIR}/${DISTNAME}-win32-debug.zip
