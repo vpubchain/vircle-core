@@ -72,8 +72,8 @@ class FilterTransactionsTest(VircleTestFramework):
 
         # several outputs
         nodes[0].sendtypeto(
-            'vp',               # type in
-            'vp',               # type out
+            'vcl',               # type in
+            'vcl',               # type out
             [                     # outputs
                 {
                     'address':    selfAddress,
