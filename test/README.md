@@ -6,10 +6,10 @@ etc.
 This directory contains the following sets of tests:
 
 - [functional](/test/functional) which test the functionality of
-vpubd and vpub-qt by interacting with them through the RPC and P2P
+vpubd and vircle-qt by interacting with them through the RPC and P2P
 interfaces.
-- [util](/test/util) which tests the vpub utilities, currently only
-vpub-tx.
+- [util](/test/util) which tests the vircle utilities, currently only
+vircle-tx.
 - [lint](/test/lint/) which perform various static analysis checks.
 
 The util tests are run as part of `make check` target. The functional

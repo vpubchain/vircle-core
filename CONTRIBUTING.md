@@ -17,7 +17,7 @@ release cycle, overall merging, moderation and appointment of maintainers.
 Communication Channels
 ----------------------
 
-Most communication about Vircle development happens on [#vpub-dev:matrix.org](https://riot.im/app/#/room/#vpub-dev:matrix.org), in the Vircle Open Development channel on Riot. The easiest way to participate on Riot is
+Most communication about Vircle development happens on [#vircle-dev:matrix.org](https://riot.im/app/#/room/#vircle-dev:matrix.org), in the Vircle Open Development channel on Riot. The easiest way to participate on Riot is
 with the web client, [riot.im](https://riot.im/app/). Desktop downloads also available.
 
 Discussion about code base improvements happens in GitHub issues and on pull

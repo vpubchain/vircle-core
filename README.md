@@ -1,9 +1,9 @@
 Vircle Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/vpub/vircle-core.svg?branch=master)](https://travis-ci.org/vpub/vircle-core)
+[![Build Status](https://travis-ci.org/vircle/vircle-core.svg?branch=master)](https://travis-ci.org/vircle/vircle-core)
 
-https://vpub.io
+https://vircle.io
 
 What is Vircle?
 ----------------
@@ -12,7 +12,7 @@ An open source, decentralized privacy platform
 built for global person to person eCommerce.
 
 For more information, as well as an immediately useable, binary version of
-the Vircle Core software, see https://vpub.io.
+the Vircle Core software, see https://vircle.io.
 
 
 Getting Started
@@ -29,7 +29,7 @@ Loading the new mnemonic with the extkeyimportmaster command will setup the
 master HD key and first account.
 
 To create an initial new HD master key and account from random data, start
-vpubd or vpub-qt with the parameter: -createdefaultmasterkey.
+vpubd or vircle-qt with the parameter: -createdefaultmasterkey.
 
 Remember to backup your passphrase and/or wallet.dat file!
 

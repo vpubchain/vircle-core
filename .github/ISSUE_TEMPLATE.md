@@ -1,6 +1,6 @@
 <!-- This issue tracker is only for technical issues related to Vircle Core.
 
-General questions and/or support requests are best directed to our [Slack](http://slack.vpub.io/) or RIOT channels.
+General questions and/or support requests are best directed to our [Slack](http://slack.vircle.io/) or RIOT channels.
 
 If the node is "stuck" during sync or giving "block checksum mismatch" errors, please ensure your hardware is stable by running memtest and observe CPU temperature with a load-test tool such as linpack before creating an issue! -->
 

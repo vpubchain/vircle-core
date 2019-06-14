@@ -9,7 +9,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over `/Applications/Vircle-Qt` (on Mac)
-or `vpubd`/`vpub-qt` (on Linux).
+or `vpubd`/`vircle-qt` (on Linux).
 
 Downgrading warning
 -------------------
@@ -73,7 +73,7 @@ use the `replaceable` argument for individual transactions.
 
 Vircle Core now has more flexibility in where the wallets directory can be
 located. Previously wallet database files were stored at the top level of the
-vpub data directory. The behavior is now:
+vircle data directory. The behavior is now:
 
 - For new installations (where the data directory doesn't already exist),
   wallets will now be stored in a new `wallets/` subdirectory inside the data
@@ -158,8 +158,8 @@ used to create `rpcauth` credentials for a JSON-RPC user.
 Other changed command-line options
 ----------------------------------
 - `-debuglogfile=<file>` can be used to specify an alternative debug logging file.
-- vpub-cli now has an `-stdinrpcpass` option to allow the RPC password to be read from standard input.
-- vpub-cli now supports a new `-getinfo` flag which returns an output like that of the now-removed `getinfo` RPC.
+- vircle-cli now has an `-stdinrpcpass` option to allow the RPC password to be read from standard input.
+- vircle-cli now supports a new `-getinfo` flag which returns an output like that of the now-removed `getinfo` RPC.
 
 
 0.16.0 change log
@@ -230,7 +230,7 @@ Other changed command-line options
 - #11923 `81c89e9` Remove unused fNoncriticalErrors variable from CWalletDB::FindWalletTx (PierreRochard)
 - #11726 `604e08c` Cleanups + nit fixes for walletdir PR (MeshCollider)
 - #11403 `d889c03` Segwit wallet support (sipa)
-- #11970 `b7450cd` Add test coverage for vpub-cli multiwallet calls (ryanofsky)
+- #11970 `b7450cd` Add test coverage for vircle-cli multiwallet calls (ryanofsky)
 - #11904 `66e3af7` Add a lock to the wallet directory (MeshCollider)
 - #12101 `c7978be` Clamp walletpassphrase timeout to 2^30 seconds and check its bounds (achow101)
 - #12210 `17180fa` Deprecate addwitnessaddress (laanwj)
@@ -243,7 +243,7 @@ Other changed command-line options
 ### RPC and other APIs
 - #11008 `3841aaf` Enable disablesafemode by default (gmaxwell)
 - #11050 `7ed57d3` Avoid treating null RPC arguments different from missing arguments (ryanofsky)
-- #10997 `affe927` Add option -stdinrpcpass to vpub-cli to allow RPC password to be read from standard input (jharvell)
+- #10997 `affe927` Add option -stdinrpcpass to vircle-cli to allow RPC password to be read from standard input (jharvell)
 - #11179 `e0e3cbb` Push down safe mode checks (laanwj)
 - #11203 `d745b4c` add wtxid to mempool entry output (sdaftuar)
 - #11099 `bc561b4` Add savemempool RPC (greenaddress)
@@ -351,7 +351,7 @@ Other changed command-line options
 - #11260 `52f8877` travis: Assert default datadir isn't created, Run scripted diff only once (MarcoFalke)
 - #11271 `638e6c5` travis: filter out pyenv (theuni)
 - #11285 `3255d63` Add -usehd to excluded args in check-doc.py (MeshCollider)
-- #11297 `16e4184` Make sure ~/.vpub doesn't exist before build (MeshCollider)
+- #11297 `16e4184` Make sure ~/.vircle doesn't exist before build (MeshCollider)
 - #11311 `cce94c5` travis: Revert default datadir check (MarcoFalke)
 - #11300 `f4ed44a` Add a lint check for trailing whitespace (MeshCollider)
 - #11323 `4ce2f3d` mininode: add an optimistic write and disable nagle (theuni)
@@ -497,7 +497,7 @@ Other changed command-line options
 - #10781 `60dd9cc` Python cleanups (practicalswift)
 - #10701 `50fae68` Remove the virtual specifier for functions with the override specifier (practicalswift)
 - #11164 `38a54a5` Fix boost headers included as user instead of system headers (danra)
-- #11143 `3aa60b7` Fix include path for vpub-config.h (danra)
+- #11143 `3aa60b7` Fix include path for vircle-config.h (danra)
 - #8330 `59e1789` Structure Packing Optimizations in C{,Mutable}Transaction (JeremyRubin)
 - #10845 `39ae413` Remove unreachable code (practicalswift)
 - #11238 `6acdb1f` Add assertions before potential null deferences (MeshCollider)
@@ -540,7 +540,7 @@ Other changed command-line options
 
 ### Miscellaneous
 - #11246 `777519b` github-merge: Coalesce git fetches (laanwj)
-- #10871 `c9a4aa8` Handle getinfo in vpub-cli w/ -getinfo (revival of #8843) (achow101)
+- #10871 `c9a4aa8` Handle getinfo in vircle-cli w/ -getinfo (revival of #8843) (achow101)
 - #11419 `093074b` Utils: Fix launchctl not being able to stop vpubd (OmeGak)
 - #11394 `6e4e98e` Perform a weaker subtree check in Travis (sipa)
 - #11702 `4122112` [build] Add a script for installing db4 (jamesob)
