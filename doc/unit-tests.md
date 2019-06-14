@@ -6,9 +6,9 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the vpubd tests manually, launch `src/test/test_vpub`.
+To run the vircled tests manually, launch `src/test/test_vpub`.
 
-To add more vpubd tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
+To add more vircled tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that
 implement new BOOST_AUTO_TEST_SUITE sections.
 

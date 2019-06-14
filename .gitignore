@@ -2,7 +2,7 @@
 
 *.exe
 src/vircle
-src/vpubd
+src/vircled
 src/vircle-cli
 src/vircle-tx
 src/vircle-wallet

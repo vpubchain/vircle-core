@@ -9,7 +9,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over `/Applications/Vircle-Qt` (on Mac)
-or `vpubd`/`vircle-qt` (on Linux).
+or `vircled`/`vircle-qt` (on Linux).
 
 Downgrading warning
 -------------------
@@ -541,7 +541,7 @@ Other changed command-line options
 ### Miscellaneous
 - #11246 `777519b` github-merge: Coalesce git fetches (laanwj)
 - #10871 `c9a4aa8` Handle getinfo in vircle-cli w/ -getinfo (revival of #8843) (achow101)
-- #11419 `093074b` Utils: Fix launchctl not being able to stop vpubd (OmeGak)
+- #11419 `093074b` Utils: Fix launchctl not being able to stop vircled (OmeGak)
 - #11394 `6e4e98e` Perform a weaker subtree check in Travis (sipa)
 - #11702 `4122112` [build] Add a script for installing db4 (jamesob)
 - #11794 `dd49862` Prefix leveldb debug logging (laanwj)
@@ -558,7 +558,7 @@ Other changed command-line options
 - #11951 `1fb34e0` Remove dead feeest-file read code for old versions (TheBlueMatt)
 - #11421 `9ccafb1` Merge current secp256k1 subtree (MarcoFalke)
 - #11573 `2631d55` [Util] Update tinyformat.h (fanquake)
-- #10529 `331352f` Improve vpubd systemd service file (Flowdalic)
+- #10529 `331352f` Improve vircled systemd service file (Flowdalic)
 - #11620 `70fec9e` [build] .gitignore: add background.tiff (Sjors)
 - #11558 `68e021e` Minimal code changes to allow msvc compilation (sipsorcery)
 - #11284 `10bee0d` Fix invalid memory access in CScript::operator+= (guidovranken, ajtowns)

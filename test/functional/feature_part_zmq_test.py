@@ -36,7 +36,7 @@ class ZMQTest(VpubTestFramework):
         config.read_file(open(self.options.configfile))
 
         if not config["components"].getboolean("ENABLE_ZMQ"):
-            raise SkipTest("vpubd has not been built with zmq enabled.")
+            raise SkipTest("vircled has not been built with zmq enabled.")
 
         self.zmq = zmq
         self.zmqContext = zmq.Context()

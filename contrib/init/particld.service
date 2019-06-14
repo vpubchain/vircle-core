@@ -7,8 +7,8 @@ User=vircle
 Group=vircle
 
 Type=forking
-PIDFile=/home/vircle/.vircle/vpubd.pid
-ExecStart=/home/vircle/Vircle/vpubd -daemon -pid=/home/vircle/.vircle/vpubd.pid \
+PIDFile=/home/vircle/.vircle/vircled.pid
+ExecStart=/home/vircle/Vircle/vircled -daemon -pid=/home/vircle/.vircle/vircled.pid \
 -conf=/home/vircle/.vircle/vircle.conf -datadir=/home/vircle/.vircle
 
 ExecStop=/home/vircle/Vircle/vircle-cli -conf=/home/vircle/.vircle/vircle.conf stop

@@ -16,7 +16,7 @@ AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=vpubd
+BITCOIN_DAEMON_NAME=vircled
 BITCOIN_GUI_NAME=vircle-qt
 BITCOIN_CLI_NAME=vircle-cli
 BITCOIN_TX_NAME=vircle-tx

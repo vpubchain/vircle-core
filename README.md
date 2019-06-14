@@ -29,7 +29,7 @@ Loading the new mnemonic with the extkeyimportmaster command will setup the
 master HD key and first account.
 
 To create an initial new HD master key and account from random data, start
-vpubd or vircle-qt with the parameter: -createdefaultmasterkey.
+vircled or vircle-qt with the parameter: -createdefaultmasterkey.
 
 Remember to backup your passphrase and/or wallet.dat file!
 

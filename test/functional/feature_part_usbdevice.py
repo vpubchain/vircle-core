@@ -44,7 +44,7 @@ class USBDeviceTest(VpubTestFramework):
         config.read_file(open(self.options.configfile))
 
         if not config["components"].getboolean("ENABLE_USBDEVICE"):
-            raise SkipTest("vpubd has not been built with usb device enabled.")
+            raise SkipTest("vircled has not been built with usb device enabled.")
 
         nodes = self.nodes
 
