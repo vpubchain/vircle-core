@@ -10,17 +10,17 @@ define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2019)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
 define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Vircle Core]])
-AC_INIT([Vircle Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION._CLIENT_VERSION_VPUB],[https://github.com/vpubchain/vircle-core/issues],[vpub],[https://vpub.io/])
+AC_INIT([Vircle Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION._CLIENT_VERSION_VPUB],[https://github.com/vpubchain/vircle-core/issues],[vircle],[https://vircle.io/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
 BITCOIN_DAEMON_NAME=vpubd
-BITCOIN_GUI_NAME=vpub-qt
-BITCOIN_CLI_NAME=vpub-cli
-BITCOIN_TX_NAME=vpub-tx
-BITCOIN_WALLET_TOOL_NAME=vpub-wallet
+BITCOIN_GUI_NAME=vircle-qt
+BITCOIN_CLI_NAME=vircle-cli
+BITCOIN_TX_NAME=vircle-tx
+BITCOIN_WALLET_TOOL_NAME=vircle-wallet
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])

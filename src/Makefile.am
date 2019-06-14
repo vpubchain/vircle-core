@@ -92,14 +92,14 @@ if BUILD_BITCOIND
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += vpub-cli
+  bin_PROGRAMS += vircle-cli
 endif
 if BUILD_BITCOIN_TX
-  bin_PROGRAMS += vpub-tx
+  bin_PROGRAMS += vircle-tx
 endif
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  bin_PROGRAMS += vpub-wallet
+  bin_PROGRAMS += vircle-wallet
 endif
 endif
 

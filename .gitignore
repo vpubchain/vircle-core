@@ -1,11 +1,11 @@
 *.tar.gz
 
 *.exe
-src/vpub
+src/vircle
 src/vpubd
-src/vpub-cli
-src/vpub-tx
-src/vpub-wallet
+src/vircle-cli
+src/vircle-tx
+src/vircle-wallet
 src/test/test_vpub
 src/test/test_vpub_fuzzy
 src/qt/test/test_vpub-qt
@@ -52,11 +52,11 @@ src/qt/bitcoin-qt.creator.user
 src/qt/bitcoin-qt.files
 src/qt/bitcoin-qt.includes
 
-src/qt/vpub-qt.config
-src/qt/vpub-qt.creator
-src/qt/vpub-qt.creator.user
-src/qt/vpub-qt.files
-src/qt/vpub-qt.includes
+src/qt/vircle-qt.config
+src/qt/vircle-qt.creator
+src/qt/vircle-qt.creator.user
+src/qt/vircle-qt.files
+src/qt/vircle-qt.includes
 
 .deps
 .dirstamp
@@ -88,13 +88,13 @@ src/qt/vpub-qt.includes
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-vpub-qt
+vircle-qt
 Vircle-Qt.app
 background.tiff*
 
 # Unit-tests
 Makefile.test
-vpub-qt_test
+vircle-qt_test
 
 # Resources cpp
 qrc_*.cpp

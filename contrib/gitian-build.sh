@@ -33,7 +33,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the vpub, gitian-builder, gitian.sigs, and bitcoin-detached-sigs.
+Run this script from the directory containing the vircle, gitian-builder, gitian.sigs, and bitcoin-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -252,7 +252,7 @@ if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
     git clone https://github.com/vpubchain/gitian.sigs
-    git clone https://github.com/vpubchain/vpub-detached-sigs
+    git clone https://github.com/vpubchain/vircle-detached-sigs
     git clone https://github.com/devrandom/gitian-builder.git
     pushd ./gitian-builder
     if [[ -n "$USE_LXC" ]]
@@ -279,7 +279,7 @@ popd
 if [[ $build = true ]]
 then
     # Make output folder
-    mkdir -p ./vpub-binaries/${VERSION}
+    mkdir -p ./vircle-binaries/${VERSION}
 
     # Build Dependencies
     echo ""
@@ -299,7 +299,7 @@ then
         echo ""
         ./bin/gbuild --allow-sudo -j ${proc} -m ${mem} --commit vircle-core=${COMMIT} --url vircle-core=${url} ../vircle-core/contrib/gitian-descriptors/gitian-linux.yml
         ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs/ ../vircle-core/contrib/gitian-descriptors/gitian-linux.yml
-        mv build/out/vpub-*.tar.gz build/out/src/vpub-*.tar.gz ../vpub-binaries/${VERSION}
+        mv build/out/vircle-*.tar.gz build/out/src/vircle-*.tar.gz ../vircle-binaries/${VERSION}
     fi
     # Windows
     if [[ $windows = true ]]
@@ -309,8 +309,8 @@ then
         echo ""
         ./bin/gbuild -j ${proc} -m ${mem} --commit vircle-core=${COMMIT} --url vircle-core=${url} ../vircle-core/contrib/gitian-descriptors/gitian-win.yml
         ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../vircle-core/contrib/gitian-descriptors/gitian-win.yml
-        mv build/out/vpub-*-win-unsigned.tar.gz inputs/vpub-win-unsigned.tar.gz
-        mv build/out/vpub-*.zip build/out/vpub-*.exe ../vpub-binaries/${VERSION}
+        mv build/out/vircle-*-win-unsigned.tar.gz inputs/vircle-win-unsigned.tar.gz
+        mv build/out/vircle-*.zip build/out/vircle-*.exe ../vircle-binaries/${VERSION}
     fi
     # Mac OSX
     if [[ $osx = true ]]
@@ -320,8 +320,8 @@ then
         echo ""
         ./bin/gbuild -j ${proc} -m ${mem} --commit vircle-core=${COMMIT} --url vircle-core=${url} ../vircle-core/contrib/gitian-descriptors/gitian-osx.yml
         ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../vircle-core/contrib/gitian-descriptors/gitian-osx.yml
-        mv build/out/vpub-*-osx-unsigned.tar.gz inputs/vpub-osx-unsigned.tar.gz
-        mv build/out/vpub-*.tar.gz build/out/vpub-*.dmg ../vpub-binaries/${VERSION}
+        mv build/out/vircle-*-osx-unsigned.tar.gz inputs/vircle-osx-unsigned.tar.gz
+        mv build/out/vircle-*.tar.gz build/out/vircle-*.dmg ../vircle-binaries/${VERSION}
     fi
     popd
 
@@ -384,8 +384,8 @@ then
         echo ""
         ./bin/gbuild -i --commit signature=${COMMIT} ../vircle-core/contrib/gitian-descriptors/gitian-win-signer.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../vircle-core/contrib/gitian-descriptors/gitian-win-signer.yml
-        mv build/out/vpub-*win64-setup.exe ../vpub-binaries/${VERSION}
-        mv build/out/vpub-*win32-setup.exe ../vpub-binaries/${VERSION}
+        mv build/out/vircle-*win64-setup.exe ../vircle-binaries/${VERSION}
+        mv build/out/vircle-*win32-setup.exe ../vircle-binaries/${VERSION}
     fi
     # Sign Mac OSX
     if [[ $osx = true ]]
@@ -395,7 +395,7 @@ then
         echo ""
         ./bin/gbuild -i --commit signature=${COMMIT} ../vircle-core/contrib/gitian-descriptors/gitian-osx-signer.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../vircle-core/contrib/gitian-descriptors/gitian-osx-signer.yml
-        mv build/out/vpub-osx-signed.dmg ../vpub-binaries/${VERSION}/vpub-${VERSION}-osx.dmg
+        mv build/out/vircle-osx-signed.dmg ../vircle-binaries/${VERSION}/vircle-${VERSION}-osx.dmg
     fi
     popd
 

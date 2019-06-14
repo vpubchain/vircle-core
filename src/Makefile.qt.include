@@ -2,7 +2,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/vpub-qt
+bin_PROGRAMS += qt/vircle-qt
 EXTRA_LIBRARIES += qt/libvpubqt.a
 
 # bitcoin qt core #
@@ -262,8 +262,8 @@ RES_ICONS = \
   qt/res/icons/about.png \
   qt/res/icons/about_qt.png \
   qt/res/icons/vpub_testnet.ico \
-  qt/res/icons/vpub.ico \
-  qt/res/icons/vpub.png \
+  qt/res/icons/vircle.ico \
+  qt/res/icons/vircle.png \
   qt/res/icons/chevron.png \
   qt/res/icons/clock1.png \
   qt/res/icons/clock2.png \
@@ -486,9 +486,9 @@ CLEAN_QT = $(nodist_qt_libvpubqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/
 CLEANFILES += $(CLEAN_QT)
 
 vpub_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libvpubqt_a_OBJECTS) $(qt_vpub_qt_OBJECTS) qt/vpub-qt$(EXEEXT) $(LIBVPUBQT)
+	rm -f $(CLEAN_QT) $(qt_libvpubqt_a_OBJECTS) $(qt_vpub_qt_OBJECTS) qt/vircle-qt$(EXEEXT) $(LIBVPUBQT)
 
-vpub_qt : qt/vpub-qt$(EXEEXT)
+vpub_qt : qt/vircle-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

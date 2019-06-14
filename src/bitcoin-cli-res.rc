@@ -17,13 +17,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "Vircle"
-            VALUE "FileDescription",    "vpub-cli (JSON-RPC client for " PACKAGE_NAME ")"
+            VALUE "FileDescription",    "vircle-cli (JSON-RPC client for " PACKAGE_NAME ")"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "vpub-cli"
+            VALUE "InternalName",       "vircle-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "vpub-cli.exe"
-            VALUE "ProductName",        "vpub-cli"
+            VALUE "OriginalFilename",   "vircle-cli.exe"
+            VALUE "ProductName",        "vircle-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END
