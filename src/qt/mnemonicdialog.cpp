@@ -139,7 +139,7 @@ void MnemonicDialog::on_btnImportFromHwd_clicked()
 
     m_thread = new RPCThread(sCommand, walletModel->getWalletName(), &m_rv);
     connect(m_thread, &RPCThread::complete, this, &MnemonicDialog::hwImportComplete);
-    m_thread->setObjectName("vpub-hwImport");
+    m_thread->setObjectName("vircle-hwImport");
     m_thread->start();
 
     return;
@@ -164,7 +164,7 @@ void MnemonicDialog::hwImportComplete(bool passed)
         ui->tbxHwdOut->appendPlainText(sError);
         if (sError == "No device found."
             || sError.indexOf("6982") > -1) {
-            ui->tbxHwdOut->appendPlainText("Open vpub app on device before importing.");
+            ui->tbxHwdOut->appendPlainText("Open vircle app on device before importing.");
         }
     } else {
         UniValue rv;

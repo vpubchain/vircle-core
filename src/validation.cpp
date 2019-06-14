@@ -2100,7 +2100,7 @@ static bool WriteUndoDataForBlock(const CBlockUndo& blockundo, CValidationState&
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("vpub-scriptch");
+    RenameThread("vircle-scriptch");
     scriptcheckqueue.Thread();
 }
 

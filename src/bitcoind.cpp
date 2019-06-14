@@ -32,7 +32,7 @@ const std::function<std::string(const char*)> G_TRANSLATION_FUN = nullptr;
  *
  * \section intro_sec Introduction
  *
- * This is the developer documentation of the reference client for an experimental new digital currency called Vircle (https://www.vpub.io/),
+ * This is the developer documentation of the reference client for an experimental new digital currency called Vircle (https://www.vircle.io/),
  * which enables instant payments to anyone, anywhere in the world. Vircle uses peer-to-peer technology to operate
  * with no central authority: managing transactions and issuing money are carried out collectively by the network.
  *

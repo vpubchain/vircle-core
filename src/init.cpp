@@ -269,7 +269,7 @@ void Shutdown(InitInterfaces& interfaces)
     /// for example if the data directory was found to be locked.
     /// Be sure that anything that writes files or flushes caches only does this if the respective
     /// module was initialized.
-    RenameThread("vpub-shutoff");
+    RenameThread("vircle-shutoff");
     mempool.AddTransactionsUpdated(1);
 
     StopHTTPRPC();
@@ -674,7 +674,7 @@ void SetupServerArgs()
 std::string LicenseInfo()
 {
     const std::string URL_SOURCE_CODE = "<https://github.com/vpubchain/vircle-core>";
-    const std::string URL_WEBSITE = "<https://vpub.io/>";
+    const std::string URL_WEBSITE = "<https://vircle.io/>";
 
     return CopyrightHolders(_("Copyright (C)")) + "\n" +
            "\n" +
@@ -779,7 +779,7 @@ static void CleanupBlockRevFiles()
 static void ThreadImport(std::vector<fs::path> vImportFiles)
 {
     const CChainParams& chainparams = Params();
-    RenameThread("vpub-loadblk");
+    RenameThread("vircle-loadblk");
     ScheduleBatchPriority();
 
     fBusyImporting = true;

@@ -104,9 +104,9 @@ static int AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || HelpRequested(gArgs)) {
         // First part of help message is specific to this utility
-        std::string strUsage = PACKAGE_NAME " vpub-tx utility version " + FormatFullVersion() + "\n\n" +
-            "Usage:  vpub-tx [options] <hex-tx> [commands]  Update hex-encoded bitcoin transaction\n" +
-            "or:     vpub-tx [options] -create [commands]   Create hex-encoded bitcoin transaction\n" +
+        std::string strUsage = PACKAGE_NAME " vircle-tx utility version " + FormatFullVersion() + "\n\n" +
+            "Usage:  vircle-tx [options] <hex-tx> [commands]  Update hex-encoded bitcoin transaction\n" +
+            "or:     vircle-tx [options] -create [commands]   Create hex-encoded bitcoin transaction\n" +
             "\n";
         strUsage += gArgs.GetHelpMessage();
 
@@ -782,7 +782,7 @@ static void MutateTxSign(CMutableTransaction& tx, const std::string& flagStr)
 static void MutateTxAddOutBlind(CMutableTransaction& tx, const std::string& strInput)
 {
     if (!tx.IsVpubVersion())
-        throw std::runtime_error("tx not vpub version.");
+        throw std::runtime_error("tx not vircle version.");
     // separate COMMITMENT:SCRIPT:RANGEPROOF[:DATA]
     std::vector<std::string> vStrInputParts;
     boost::split(vStrInputParts, strInput, boost::is_any_of(":"));
@@ -828,7 +828,7 @@ static void MutateTxAddOutBlind(CMutableTransaction& tx, const std::string& strI
 static void MutateTxAddOutDataType(CMutableTransaction& tx, const std::string& strInput)
 {
     if (!tx.IsVpubVersion())
-        throw std::runtime_error("tx not vpub version.");
+        throw std::runtime_error("tx not vircle version.");
     if (!IsHex(strInput))
         throw std::runtime_error("invalid TX output data");
 

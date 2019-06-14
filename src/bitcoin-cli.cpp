@@ -108,10 +108,10 @@ static int AppInitRPC(int argc, char* argv[])
         std::string strUsage = PACKAGE_NAME " RPC client version " + FormatFullVersion() + "\n";
         if (!gArgs.IsArgSet("-version")) {
             strUsage += "\n"
-                "Usage:  vpub-cli [options] <command> [params]  Send command to " PACKAGE_NAME "\n"
-                "or:     vpub-cli [options] -named <command> [name=value]...  Send command to " PACKAGE_NAME " (with named arguments)\n"
-                "or:     vpub-cli [options] help                List commands\n"
-                "or:     vpub-cli [options] help <command>      Get help for a command\n";
+                "Usage:  vircle-cli [options] <command> [params]  Send command to " PACKAGE_NAME "\n"
+                "or:     vircle-cli [options] -named <command> [name=value]...  Send command to " PACKAGE_NAME " (with named arguments)\n"
+                "or:     vircle-cli [options] help                List commands\n"
+                "or:     vircle-cli [options] help <command>      Get help for a command\n";
             strUsage += "\n" + gArgs.GetHelpMessage();
         }
 
@@ -494,7 +494,7 @@ static int CommandLineRPC(int argc, char *argv[])
                             strPrint += "error message:\n"+errMsg.get_str();
 
                         if (errCode.isNum() && errCode.get_int() == RPC_WALLET_NOT_SPECIFIED) {
-                            strPrint += "\nTry adding \"-rpcwallet=<filename>\" option to vpub-cli command line.";
+                            strPrint += "\nTry adding \"-rpcwallet=<filename>\" option to vircle-cli command line.";
                         }
                     }
                 } else {

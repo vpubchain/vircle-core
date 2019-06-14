@@ -537,9 +537,9 @@ public:
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        //vSeeds.emplace_back("mainnet-seed.vpub.io");
-        //vSeeds.emplace_back("dnsseed-mainnet.vpub.io");
-        //vSeeds.emplace_back("mainnet.vpub.io");
+        //vSeeds.emplace_back("mainnet-seed.vircle.io");
+        //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
+        //vSeeds.emplace_back("mainnet.vircle.io");
         vSeeds.emplace_back("47.105.68.82");
         vSeeds.emplace_back("47.105.157.227");
 
@@ -750,8 +750,8 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        //vSeeds.emplace_back("testnet-seed.vpub.io");
-        //vSeeds.emplace_back("dnsseed-testnet.vpub.io");
+        //vSeeds.emplace_back("testnet-seed.vircle.io");
+        //vSeeds.emplace_back("dnsseed-testnet.vircle.io");
         vSeeds.emplace_back("47.105.68.82");
         vSeeds.emplace_back("47.105.157.227");
 

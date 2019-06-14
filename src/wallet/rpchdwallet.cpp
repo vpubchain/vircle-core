@@ -983,7 +983,7 @@ static UniValue extkey(const JSONRPCRequest &request)
             if (!eKey58.IsValid(CChainParams::EXT_SECRET_KEY)
                 && !eKey58.IsValid(CChainParams::EXT_PUBLIC_KEY_BTC)
                 && !eKey58.IsValid(CChainParams::EXT_PUBLIC_KEY)) {
-                throw JSONRPCError(RPC_INVALID_PARAMETER, "Import failed - Key must begin with a vpub prefix.");
+                throw JSONRPCError(RPC_INVALID_PARAMETER, "Import failed - Key must begin with a vircle prefix.");
             }
         }
 
@@ -1699,7 +1699,7 @@ static UniValue getnewextaddress(const JSONRPCRequest &request)
                     {"hardened", RPCArg::Type::BOOL, /* default */ "false", "Derive a hardened key."},
                 },
                 RPCResult{
-            "\"address\"              (string) The new vpub extended address\n"
+            "\"address\"              (string) The new vircle extended address\n"
                 },
                 RPCExamples{
             HelpExampleCli("getnewextaddress", "") +
@@ -1771,7 +1771,7 @@ static UniValue getnewstealthaddress(const JSONRPCRequest &request)
                     {"makeV2", RPCArg::Type::BOOL, /* default */ "false", "Generate an address from the same scheme used for hardware wallets."},
                 },
                 RPCResult{
-            "\"address\"              (string) The new vpub stealth address\n"
+            "\"address\"              (string) The new vircle stealth address\n"
                 },
                 RPCExamples{
             HelpExampleCli("getnewstealthaddress", "\"lblTestSxAddrPrefix\" 3 \"0b101\"") +
@@ -1854,7 +1854,7 @@ static UniValue importstealthaddress(const JSONRPCRequest &request)
                     {"bech32", RPCArg::Type::BOOL, /* default */ "false", "Use Bech32 encoding."},
                 },
                 RPCResult{
-            "\"address\"              (string) The new vpub stealth address\n"
+            "\"address\"              (string) The new vircle stealth address\n"
                 },
                 RPCExamples{
             HelpExampleCli("importstealthaddress", "scan_secret spend_secret \"label\" 3 \"0b101\"") +
@@ -2088,7 +2088,7 @@ static UniValue liststealthaddresses(const JSONRPCRequest &request)
             "    ]\n"
             "  }...\n"
             "]\n"
-            "\"address\"              (string) The new vpub stealth address\n"
+            "\"address\"              (string) The new vircle stealth address\n"
                 },
                 RPCExamples{
             HelpExampleCli("liststealthaddresses", "") +
@@ -3754,8 +3754,8 @@ static UniValue getstakinginfo(const JSONRPCRequest &request)
             "  \"staking\": true|false,         (boolean) if this wallet is staking or not\n"
             "  \"errors\": \"...\"              (string) any error messages\n"
             "  \"percentyearreward\": xxxxxxx,  (numeric) current stake reward percentage\n"
-            "  \"moneysupply\": xxxxxxx,        (numeric) the total amount of vpub in the network\n"
-            "  \"reserve\": xxxxxxx,            (numeric) the total amount of vpub in the network\n"
+            "  \"moneysupply\": xxxxxxx,        (numeric) the total amount of vircle in the network\n"
+            "  \"reserve\": xxxxxxx,            (numeric) the total amount of vircle in the network\n"
             "  \"walletfoundationdonationpercent\": xxxxxxx,\n    (numeric) user set percentage of the block reward ceded to the foundation\n"
             "  \"foundationdonationpercent\": xxxxxxx,\n    (numeric) network enforced percentage of the block reward ceded to the foundation\n"
             "  \"foundationdonationpercent\": xxxxxxx,\n    (numeric) network enforced percentage of the block reward ceded to the foundation\n"
@@ -4008,9 +4008,9 @@ static UniValue listunspentanon(const JSONRPCRequest &request)
                 {
                     {"minconf", RPCArg::Type::NUM, /* default */ "1", "The minimum confirmations to filter"},
                     {"maxconf", RPCArg::Type::NUM, /* default */ "9999999", "The maximum confirmations to filter"},
-                    {"addresses", RPCArg::Type::ARR, /* default */ "", "A json array of vpub addresses to filter",
+                    {"addresses", RPCArg::Type::ARR, /* default */ "", "A json array of vircle addresses to filter",
                         {
-                            {"address", RPCArg::Type::STR, /* default */ "", "vpub address"},
+                            {"address", RPCArg::Type::STR, /* default */ "", "vircle address"},
                         },
                     },
                     {"include_unsafe", RPCArg::Type::BOOL, /* default */ "true", "Include outputs that are not safe to spend\n"
@@ -4031,7 +4031,7 @@ static UniValue listunspentanon(const JSONRPCRequest &request)
             "  {\n"
             "    \"txid\" : \"txid\",          (string) the transaction id \n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"address\" : \"address\",    (string) the vpub address\n"
+            "    \"address\" : \"address\",    (string) the vircle address\n"
             "    \"label\" : \"label\",        (string) The associated label, or \"\" for the default label\n"
             //"    \"scriptPubKey\" : \"key\",   (string) the script key\n"
             "    \"amount\" : x.xxx,         (numeric) the transaction output amount in " + CURRENCY_UNIT + "\n"
@@ -4219,9 +4219,9 @@ static UniValue listunspentblind(const JSONRPCRequest &request)
                 {
                     {"minconf", RPCArg::Type::NUM, /* default */ "1", "The minimum confirmations to filter"},
                     {"maxconf", RPCArg::Type::NUM, /* default */ "9999999", "The maximum confirmations to filter"},
-                    {"addresses", RPCArg::Type::ARR, /* default */ "", "A json array of vpub addresses to filter",
+                    {"addresses", RPCArg::Type::ARR, /* default */ "", "A json array of vircle addresses to filter",
                         {
-                            {"address", RPCArg::Type::STR, /* default */ "", "vpub address"},
+                            {"address", RPCArg::Type::STR, /* default */ "", "vircle address"},
                         },
                     },
                     {"include_unsafe", RPCArg::Type::BOOL, /* default */ "true", "Include outputs that are not safe to spend\n"
@@ -4241,7 +4241,7 @@ static UniValue listunspentblind(const JSONRPCRequest &request)
             "  {\n"
             "    \"txid\" : \"txid\",          (string) the transaction id \n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"address\" : \"address\",    (string) the vpub address\n"
+            "    \"address\" : \"address\",    (string) the vircle address\n"
             "    \"label\" : \"label\",        (string) The associated label, or \"\" for the default label\n"
             "    \"scriptPubKey\" : \"key\",   (string) the script key\n"
             "    \"amount\" : x.xxx,         (numeric) the transaction output amount in " + CURRENCY_UNIT + "\n"
@@ -4911,7 +4911,7 @@ static std::string SendHelp(CHDWallet *pwallet, OutputTypes typeIn, OutputTypes 
     rv += HelpRequiringPassphrase(pwallet);
 
     rv +=   "\nArguments:\n"
-            "1. \"address\"     (string, required) The vpub address to send to.\n"
+            "1. \"address\"     (string, required) The vircle address to send to.\n"
             "2. \"amount\"      (numeric or string, required) The amount in " + CURRENCY_UNIT + " to send. eg 0.1\n"
             "3. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
             "                            This is not vp of the transaction, just kept in your wallet.\n"
@@ -5053,7 +5053,7 @@ UniValue sendtypeto(const JSONRPCRequest &request)
                         {
                             {"", RPCArg::Type::OBJ, RPCArg::Optional::NO, "",
                                 {
-                                    {"address", RPCArg::Type::STR, /* default */ "", "The vpub address to send to."},
+                                    {"address", RPCArg::Type::STR, /* default */ "", "The vircle address to send to."},
                                     {"amount", RPCArg::Type::AMOUNT, /* default */ "", "The amount in " + CURRENCY_UNIT + " to send. eg 0.1."},
                                     {"narr", RPCArg::Type::STR, /* default */ "", "Up to 24 character narration sent with the transaction."},
                                     {"blindingfactor", RPCArg::Type::STR_HEX, /* default */ "", "The blinding factor, 32 bytes and hex encoded."},
@@ -5073,7 +5073,7 @@ UniValue sendtypeto(const JSONRPCRequest &request)
                     {"test_fee", RPCArg::Type::BOOL, /* default */ "false", "Only return the fee it would cost to send, txn is discarded."},
                     {"coin_control", RPCArg::Type::OBJ, /* default */ "", "",
                         {
-                            {"changeaddress", RPCArg::Type::STR, /* default */ "", "The vpub address to receive the change"},
+                            {"changeaddress", RPCArg::Type::STR, /* default */ "", "The vircle address to receive the change"},
                             {"inputs", RPCArg::Type::ARR, /* default */ "", "A json array of json objects",
                                 {
                                     {"", RPCArg::Type::OBJ, /* default */ "", "",
@@ -6619,7 +6619,7 @@ static UniValue createrawparttransaction(const JSONRPCRequest& request)
                         {
                             {"", RPCArg::Type::OBJ, /* default */ "", "",
                                 {
-                                    {"address", RPCArg::Type::STR, /* default */ "", "The vpub address."},
+                                    {"address", RPCArg::Type::STR, /* default */ "", "The vircle address."},
                                     {"amount", RPCArg::Type::AMOUNT, /* default */ "", "The numeric value (can be string) in " + CURRENCY_UNIT + " of the output."},
                                     {"data", RPCArg::Type::STR_HEX, /* default */ "", "The key is \"data\", the value is hex encoded data."},
                                     {"data_ct_fee", RPCArg::Type::AMOUNT, /* default */ "", "If type is \"data\" and output is at index 0, then it will be treated as a CT fee output."},
@@ -6988,7 +6988,7 @@ static UniValue fundrawtransactionfrom(const JSONRPCRequest& request)
                     },
                     {"options", RPCArg::Type::OBJ, /* default */ "", "",
                         {
-                            {"changeAddress", RPCArg::Type::STR, /* default */ "", "The vpub address to receive the change."},
+                            {"changeAddress", RPCArg::Type::STR, /* default */ "", "The vircle address to receive the change."},
                             {"changePosition", RPCArg::Type::NUM, /* default */ "random", "The index of the change output."},
                             //{"change_type", RPCArg::Type::STR, /* default */ "", "The output type to use. Only valid if changeAddress is not specified. Options are \"legacy\", \"p2sh-segwit\", and \"bech32\". Default is set by -changetype."},
                             {"includeWatching", RPCArg::Type::BOOL, /* default */ "false", "Also select inputs which are watch only."},
@@ -6997,7 +6997,7 @@ static UniValue fundrawtransactionfrom(const JSONRPCRequest& request)
                             {"subtractFeeFromOutputs", RPCArg::Type::ARR, /* default */ "", "A json array of integers.\n"
                             "                              The fee will be equally deducted from the amount of each specified output.\n"
                             "                              The outputs are specified by their zero-based index, before any change output is added.\n"
-                            "                              Those recipients will receive less vpub than you enter in their corresponding amount field.\n"
+                            "                              Those recipients will receive less vircle than you enter in their corresponding amount field.\n"
                             "                              If no outputs are specified here, the sender pays the fee.",
                                 {
                                     {"vout_index", RPCArg::Type::NUM, /* default */ "", ""},
@@ -7080,7 +7080,7 @@ static UniValue fundrawtransactionfrom(const JSONRPCRequest& request)
             CTxDestination dest = DecodeDestination(options["changeAddress"].get_str());
 
             if (!IsValidDestination(dest)) {
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "changeAddress must be a valid vpub address");
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "changeAddress must be a valid vircle address");
             }
 
             coinControl.destChange = dest;

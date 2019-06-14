@@ -433,7 +433,7 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, CValidationState& state, c
     state.fHasAnonOutput = false;
     state.fHasAnonInput = false;
 
-    // early out for vpub txns
+    // early out for vircle txns
     if (tx.IsVpubVersion() && tx.vin.size() < 1) {
         return state.DoS(100, false, REJECT_INVALID, "bad-txn-no-inputs", false,
                          strprintf("%s: no inputs", __func__));

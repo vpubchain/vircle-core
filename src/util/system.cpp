@@ -74,7 +74,7 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "vpub.conf";
+const char * const BITCOIN_CONF_FILENAME = "vircle.conf";
 const char * const BITCOIN_PID_FILENAME = "vpubd.pid";
 
 bool fVpubMode = true;
@@ -881,7 +881,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "vpub";
+    const char* pszModule = "vircle";
 #endif
     if (pex)
         return strprintf(
@@ -903,7 +903,7 @@ fs::path GetDefaultDataDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\Vircle
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\Vircle
     // Mac: ~/Library/Application Support/Vircle
-    // Unix: ~/.vpub
+    // Unix: ~/.vircle
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "Vircle";
@@ -919,7 +919,7 @@ fs::path GetDefaultDataDir()
     return pathRet / "Library/Application Support/Vircle";
 #else
     // Unix
-    return pathRet / ".vpub";
+    return pathRet / ".vircle";
 #endif
 #endif
 }
