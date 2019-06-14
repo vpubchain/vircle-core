@@ -49,7 +49,7 @@ class WalletVpubTest(VpubTestFramework):
         self.start_nodes()
 
     def vpub_wallet_process(self, *args):
-        binary = self.config["environment"]["BUILDDIR"] + '/src/vpub-wallet' + self.config["environment"]["EXEEXT"]
+        binary = self.config["environment"]["BUILDDIR"] + '/src/.viecle-wallet' + self.config["environment"]["EXEEXT"]
         args = ['-datadir={}'.format(self.nodes[0].datadir), '-regtest'] + list(args)
         return subprocess.Popen([binary] + args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
 
@@ -690,7 +690,7 @@ class WalletVpubTest(VpubTestFramework):
         w_rpc = nodes[0].get_wallet_rpc('new_wallet_with_privkeys')
         ek_list = w_rpc.extkey('list', True)
 
-        self.log.info('Test vpub-wallet')
+        self.log.info('Test .viecle-wallet')
         out = textwrap.dedent('''\
             Wallet info
             ===========

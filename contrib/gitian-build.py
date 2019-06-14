@@ -24,8 +24,8 @@ def setup():
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/gitian.sigs.git'])
-    if not os.path.isdir('vpub-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/vpub-detached-sigs.git'])
+    if not os.path.isdir('.viecle-detached-sigs'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/.viecle-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
     if not os.path.isdir('vircle-core'):
@@ -46,7 +46,7 @@ def setup():
 def build():
     global args, workdir
 
-    os.makedirs('vpub-binaries/' + args.version, exist_ok=True)
+    os.makedirs('.viecle-binaries/' + args.version, exist_ok=True)
     print('\nBuilding Dependencies\n')
     os.chdir('gitian-builder')
     os.makedirs('inputs', exist_ok=True)
@@ -61,21 +61,21 @@ def build():
         print('\nCompiling ' + args.version + ' Linux')
         subprocess.check_call(['bin/gbuild', '--allow-sudo', '-j', args.jobs, '-m', args.memory, '--commit', 'vircle-core='+args.commit, '--url', 'vircle-core='+args.url, '../vircle-core/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../vircle-core/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call('mv build/out/vpub-*.tar.gz build/out/src/vpub-*.tar.gz ../vpub-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/.viecle-*.tar.gz build/out/src/.viecle-*.tar.gz ../.viecle-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'vircle-core='+args.commit, '--url', 'vircle-core='+args.url, '../vircle-core/contrib/gitian-descriptors/gitian-win.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../vircle-core/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call('mv build/out/vpub-*-win-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/vpub-*.zip build/out/vpub-*.exe ../vpub-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/.viecle-*-win-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/.viecle-*.zip build/out/.viecle-*.exe ../.viecle-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'vircle-core='+args.commit, '--url', 'vircle-core='+args.url, '../vircle-core/contrib/gitian-descriptors/gitian-osx.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../vircle-core/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call('mv build/out/vpub-*-osx-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/vpub-*.tar.gz build/out/vpub-*.dmg ../vpub-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/.viecle-*-osx-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/.viecle-*.tar.gz build/out/.viecle-*.dmg ../.viecle-binaries/'+args.version, shell=True)
 
     os.chdir(workdir)
 
@@ -94,18 +94,18 @@ def sign():
 
     if args.windows:
         print('\nSigning ' + args.version + ' Windows')
-        subprocess.check_call('cp inputs/vpub-' + args.version + '-win-unsigned.tar.gz inputs/vpub-win-unsigned.tar.gz', shell=True)
+        subprocess.check_call('cp inputs/.viecle-' + args.version + '-win-unsigned.tar.gz inputs/.viecle-win-unsigned.tar.gz', shell=True)
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../vircle-core/contrib/gitian-descriptors/gitian-win-signer.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../vircle-core/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call('mv build/out/vpub-*win64-setup.exe ../vpub-binaries/'+args.version, shell=True)
-        subprocess.check_call('mv build/out/vpub-*win32-setup.exe ../vpub-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/.viecle-*win64-setup.exe ../.viecle-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/.viecle-*win32-setup.exe ../.viecle-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nSigning ' + args.version + ' MacOS')
-        subprocess.check_call('cp inputs/vpub-' + args.version + '-osx-unsigned.tar.gz inputs/vpub-osx-unsigned.tar.gz', shell=True)
+        subprocess.check_call('cp inputs/.viecle-' + args.version + '-osx-unsigned.tar.gz inputs/.viecle-osx-unsigned.tar.gz', shell=True)
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../vircle-core/contrib/gitian-descriptors/gitian-osx-signer.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../vircle-core/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call('mv build/out/vpub-osx-signed.dmg ../vpub-binaries/'+args.version+'/vpub-'+args.version+'-osx.dmg', shell=True)
+        subprocess.check_call('mv build/out/.viecle-osx-signed.dmg ../.viecle-binaries/'+args.version+'/.viecle-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 

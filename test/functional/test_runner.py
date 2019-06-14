@@ -262,7 +262,7 @@ def main():
     parser.add_argument('--exclude', '-x', help='specify a comma-separated-list of scripts to exclude.')
     parser.add_argument('--extended', action='store_true', help='run the extended test suite in addition to the basic tests')
     parser.add_argument('--bitcoin', action='store_true', help='run Bitcoin specific tests')
-    parser.add_argument('--vpub', action='store_true', help='run Vircle specific tests')
+    parser.add_argument('--.viecle', action='store_true', help='run Vircle specific tests')
     parser.add_argument('--insight', action='store_true', help='run Insight specific tests')
     parser.add_argument('--withstdout', action='store_true', help='print stdout when test passed also')
     parser.add_argument('--help', '-h', '-?', action='store_true', help='print help text and exit')
@@ -323,7 +323,7 @@ def main():
         test_list = []
         if args.extended:
             test_list += EXTENDED_SCRIPTS
-        if args.vpub:
+        if args..viecle:
             test_list += VPUB_SCRIPTS
         if args.insight:
             test_list += INSIGHT_SCRIPTS
@@ -369,7 +369,7 @@ def main():
         combined_logs_len=args.combinedlogslen,
         failfast=args.failfast,
         runs_ci=args.ci,
-        create_cache=(True if args.bitcoin or (not args.vpub and not args.insight) else False)
+        create_cache=(True if args.bitcoin or (not args..viecle and not args.insight) else False)
     )
 
 def run_tests(test_list, src_dir, build_dir, tmpdir, jobs=1, enable_coverage=False, args=[], combined_logs_len=0, failfast=False, runs_ci=False, create_cache=True):
