@@ -75,7 +75,7 @@
 const int64_t nStartupTime = GetTime();
 
 const char * const BITCOIN_CONF_FILENAME = "vircle.conf";
-const char * const BITCOIN_PID_FILENAME = "vpubd.pid";
+const char * const BITCOIN_PID_FILENAME = "vircled.pid";
 
 bool fVpubMode = true;
 bool fVpubWallet = false;

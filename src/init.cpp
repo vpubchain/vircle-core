@@ -128,7 +128,7 @@ LRESULT APIENTRY MainWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
 int CreateMessageWindow()
 {
-    // Create a message-only window to intercept WM_CLOSE events from vpubd
+    // Create a message-only window to intercept WM_CLOSE events from vircled
 
     WNDCLASSEX WindowClassEx;
     ZeroMemory(&WindowClassEx, sizeof(WNDCLASSEX));
@@ -202,7 +202,7 @@ int CloseMessageWindow()
 bool ShutdownRequestedMainThread()
 {
 #ifdef WIN32
-    // Only vpubd will create a hidden window to receive messages
+    // Only vircled will create a hidden window to receive messages
     while (winHwnd && PeekMessage(&winMsg, 0, 0, 0, PM_REMOVE)) {
         TranslateMessage(&winMsg);
         DispatchMessage(&winMsg);
