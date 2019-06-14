@@ -163,11 +163,11 @@
     </message>
     <message>
         <source>&amp;Sending addresses...</source>
-        <translation>&amp;ที่เก็บเงิน ที่จะส่ง vpub</translation>
+        <translation>&amp;ที่เก็บเงิน ที่จะส่ง vircle</translation>
     </message>
     <message>
         <source>&amp;Receiving addresses...</source>
-        <translation>&amp;ที่เก็บเงิน ที่จะรับ vpub</translation>
+        <translation>&amp;ที่เก็บเงิน ที่จะรับ vircle</translation>
     </message>
     <message>
         <source>Open &amp;URI...</source>
@@ -231,7 +231,7 @@
     </message>
     <message>
         <source>Sign messages with your Vircle addresses to prove you own them</source>
-        <translation>เซ็นชื่อด้วยข้อความ ที่เก็บ Vircle เพื่อแสดงว่าท่านเป็นเจ้าของ vpub นี้จริง</translation>
+        <translation>เซ็นชื่อด้วยข้อความ ที่เก็บ Vircle เพื่อแสดงว่าท่านเป็นเจ้าของ vircle นี้จริง</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Vircle addresses</source>
@@ -254,20 +254,20 @@
         <translation>แถบเครื่องมือ</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and vpub: URIs)</source>
-        <translation>เรียกเก็บ การชำระเงิน (สร้าง QR codes และ vpub: URIs)</translation>
+        <source>Request payments (generates QR codes and vircle: URIs)</source>
+        <translation>เรียกเก็บ การชำระเงิน (สร้าง QR codes และ vircle: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
-        <translation>แสดงรายการ ที่เก็บเงินที่จะส่ง vpub ออก และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
+        <translation>แสดงรายการ ที่เก็บเงินที่จะส่ง vircle ออก และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
-        <translation>แสดงรายการ ที่เก็บเงินที่จะรับ vpub เข้า และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
+        <translation>แสดงรายการ ที่เก็บเงินที่จะรับ vircle เข้า และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
     </message>
     <message>
-        <source>Open a vpub: URI or payment request</source>
-        <translation>เปิด vpub: URI หรือ การเรียกเก็บเงิน (การเรียกให้ชำระเงิน)</translation>
+        <source>Open a vircle: URI or payment request</source>
+        <translation>เปิด vircle: URI หรือ การเรียกเก็บเงิน (การเรียกให้ชำระเงิน)</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

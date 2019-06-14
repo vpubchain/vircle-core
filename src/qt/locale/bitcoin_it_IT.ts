@@ -184,8 +184,8 @@
         <translation>Portafoglio criptato</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
-        <translation>%1 ora si chiuderà per concludere il processo di criptaggio. Ricorda che criptare il tuo portafoglio non può definitivamente proteggere i tuoi vpub da furti tramite malware che infetta il tuo computer.</translation>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vircle from being stolen by malware infecting your computer.</source>
+        <translation>%1 ora si chiuderà per concludere il processo di criptaggio. Ricorda che criptare il tuo portafoglio non può definitivamente proteggere i tuoi vircle da furti tramite malware che infetta il tuo computer.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -426,8 +426,8 @@
         <translation>Barra degli strumenti</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and vpub: URIs)</source>
-        <translation>Richiedi pagamenti (genera codici QR e vpub: URI)</translation>
+        <source>Request payments (generates QR codes and vircle: URIs)</source>
+        <translation>Richiedi pagamenti (genera codici QR e vircle: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -438,8 +438,8 @@
         <translation>Mostra la lista degli indirizzi di ricezione usati e le relative etichette</translation>
     </message>
     <message>
-        <source>Open a vpub: URI or payment request</source>
-        <translation>Apri un vpub: URI o una richiesta di pagamento</translation>
+        <source>Open a vircle: URI or payment request</source>
+        <translation>Apri un vircle: URI o una richiesta di pagamento</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -770,12 +770,12 @@
 <context>
     <name>ModalOverlay</name>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vpub network, as detailed below.</source>
-        <translation>Le transazioni recenti potrebbero non essere ancora visibili, e quindi il saldo del wallet potrebbe essere incorretto. Questa informazione verra' corretta non appena il tuo wallet ha finito di sincronizzarsi con la rete vpub, come specificato di seguito.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vircle network, as detailed below.</source>
+        <translation>Le transazioni recenti potrebbero non essere ancora visibili, e quindi il saldo del wallet potrebbe essere incorretto. Questa informazione verra' corretta non appena il tuo wallet ha finito di sincronizzarsi con la rete vircle, come specificato di seguito.</translation>
     </message>
     <message>
-        <source>Attempting to spend vpub that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Tentare di spendere vpub che sono affetti da transazioni non ancora mostrate, non verra' accettato dal network.</translation>
+        <source>Attempting to spend vircle that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Tentare di spendere vircle che sono affetti da transazioni non ancora mostrate, non verra' accettato dal network.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>

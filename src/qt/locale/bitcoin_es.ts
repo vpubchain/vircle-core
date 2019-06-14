@@ -67,7 +67,7 @@
     </message>
     <message>
         <source>These are your Vircle addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son sus direcciones Vircle para enviar pagos. Verifique siempre la cantidad y la dirección de recepción antes de enviar vpub.</translation>
+        <translation>Estas son sus direcciones Vircle para enviar pagos. Verifique siempre la cantidad y la dirección de recepción antes de enviar vircle.</translation>
     </message>
     <message>
         <source>These are your Vircle addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
@@ -188,7 +188,7 @@
         <translation>Monedero cifrado</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vircle from being stolen by malware infecting your computer.</source>
         <translation>%1 se cerrará ahora para terminar el proceso de cifrado. Recuerde que cifrar su monedero no puede proteger completamente su monedero de ser robado por malware que infecte su ordenador.</translation>
     </message>
     <message>
@@ -359,7 +359,7 @@
     </message>
     <message>
         <source>Send coins to a Vircle address</source>
-        <translation>Enviar vpub a una dirección Vircle.</translation>
+        <translation>Enviar vircle a una dirección Vircle.</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -434,8 +434,8 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and vpub: URIs)</source>
-        <translation>Solicitar pagos (generando códigos QR e identificadores URI "vpub:")</translation>
+        <source>Request payments (generates QR codes and vircle: URIs)</source>
+        <translation>Solicitar pagos (generando códigos QR e identificadores URI "vircle:")</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -446,8 +446,8 @@
         <translation>Muestra la lista de direcciones de recepción y etiquetas</translation>
     </message>
     <message>
-        <source>Open a vpub: URI or payment request</source>
-        <translation>Abrir un identificador URI "vpub:" o una petición de pago</translation>
+        <source>Open a vircle: URI or payment request</source>
+        <translation>Abrir un identificador URI "vircle:" o una petición de pago</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -903,12 +903,12 @@
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vpub network, as detailed below.</source>
-        <translation>Las transacciones recientes aún no pueden ser visibles, y por lo tanto el saldo de su monedero podría ser incorrecto. Esta información será correcta cuando su monedero haya terminado de sincronizarse con la red de vpub, como se detalla abajo.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vircle network, as detailed below.</source>
+        <translation>Las transacciones recientes aún no pueden ser visibles, y por lo tanto el saldo de su monedero podría ser incorrecto. Esta información será correcta cuando su monedero haya terminado de sincronizarse con la red de vircle, como se detalla abajo.</translation>
     </message>
     <message>
-        <source>Attempting to spend vpub that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>La red no aceptará el intentar gastar vpub que están afectados por transacciones aún no mostradas.</translation>
+        <source>Attempting to spend vircle that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>La red no aceptará el intentar gastar vircle que están afectados por transacciones aún no mostradas.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1182,7 +1182,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Elegir la subdivisión predeterminada para mostrar cantidades en la interfaz y cuando se envían vpub.</translation>
+        <translation>Elegir la subdivisión predeterminada para mostrar cantidades en la interfaz y cuando se envían vircle.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1327,16 +1327,16 @@
         <translation>Fallo en la solicitud de pago</translation>
     </message>
     <message>
-        <source>Cannot start vpub: click-to-pay handler</source>
-        <translation>No se puede iniciar vpub: encargado click-para-pagar</translation>
+        <source>Cannot start vircle: click-to-pay handler</source>
+        <translation>No se puede iniciar vircle: encargado click-para-pagar</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation>Manejo de URI</translation>
     </message>
     <message>
-        <source>'vpub://' is not a valid URI. Use 'vpub:' instead.</source>
-        <translation>'vpub: //' no es un URI válido. Use 'vpub:' en su lugar.</translation>
+        <source>'vircle://' is not a valid URI. Use 'vircle:' instead.</source>
+        <translation>'vircle: //' no es un URI válido. Use 'vircle:' en su lugar.</translation>
     </message>
     <message>
         <source>Payment request fetch URL is invalid: %1</source>
@@ -2063,7 +2063,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Enviar vpub</translation>
+        <translation>Enviar vircle</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2150,7 +2150,7 @@ Nota: Dado que la comisión se calcula por byte, una comisión de "100 satoshis 
         <translation>Ocultar</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for vpub transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for vircle transactions than the network can process.</source>
         <translation>Pagar solamente la comisión mínima es correcto, siempre y cuando haya menos volumen de transacciones que el espacio en los bloques. Pero tenga en cuenta que esto puede terminar en una transacción nunca confirmada, una vez que haya más demanda para transacciones Vircle que la red pueda procesar.</translation>
     </message>
     <message>
@@ -2393,8 +2393,8 @@ Nota: Dado que la comisión se calcula por byte, una comisión de "100 satoshis 
         <translation>Eliminar esta transacción</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less vpub than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>La comisión será deducida de la cantidad que sea mandada. El destinatario recibirá menos vpub de la cantidad introducida en el campo Cantidad. Si hay varios destinatarios, la comisión será distribuida a partes iguales.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less vircle than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>La comisión será deducida de la cantidad que sea mandada. El destinatario recibirá menos vircle de la cantidad introducida en el campo Cantidad. Si hay varios destinatarios, la comisión será distribuida a partes iguales.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2421,8 +2421,8 @@ Nota: Dado que la comisión se calcula por byte, una comisión de "100 satoshis 
         <translation>Introduce una etiqueta para esta dirección para añadirla a la lista de direcciones utilizadas</translation>
     </message>
     <message>
-        <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vircle network.</source>
-        <translation>Un mensaje que se adjuntó a la vpub: URL que será almacenada con la transacción para su referencia. Nota: Este mensaje no se envía a través de la red Vircle.</translation>
+        <source>A message that was attached to the vircle: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vircle network.</source>
+        <translation>Un mensaje que se adjuntó a la vircle: URL que será almacenada con la transacción para su referencia. Nota: Este mensaje no se envía a través de la red Vircle.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2466,7 +2466,7 @@ Nota: Dado que la comisión se calcula por byte, una comisión de "100 satoshis 
         <translation>&amp;Firmar mensaje</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive vpub sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive vircle sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Puede firmar los mensajes con sus direcciones para demostrar que las posee. Tenga cuidado de no firmar cualquier cosa de manera vaga o aleatoria, pues los ataques de phishing pueden tratar de engañarle firmando su identidad a través de ellos. Sólo firme declaraciones totalmente detalladas con las que usted esté de acuerdo.</translation>
     </message>
     <message>
@@ -2748,7 +2748,7 @@ Nota: Dado que la comisión se calcula por byte, una comisión de "100 satoshis 
     </message>
     <message>
         <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Los vpub generados deben madurar %1 bloques antes de que puedan gastarse. Cuando generó este bloque, se transmitió a la red para que se añadiera a la cadena de bloques. Si no consigue entrar en la cadena, su estado cambiará a "no aceptado" y ya no se podrá gastar. Esto puede ocurrir ocasionalmente si otro nodo genera un bloque a pocos segundos del suyo.</translation>
+        <translation>Los vircle generados deben madurar %1 bloques antes de que puedan gastarse. Cuando generó este bloque, se transmitió a la red para que se añadiera a la cadena de bloques. Si no consigue entrar en la cadena, su estado cambiará a "no aceptado" y ya no se podrá gastar. Esto puede ocurrir ocasionalmente si otro nodo genera un bloque a pocos segundos del suyo.</translation>
     </message>
     <message>
         <source>Debug information</source>

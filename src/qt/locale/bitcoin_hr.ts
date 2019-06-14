@@ -188,7 +188,7 @@
         <translation>Novčanik šifriran</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vircle from being stolen by malware infecting your computer.</source>
         <translation>%1 će se sada zatvoriti kako bi dovršio postupak šifriranja. Zapamtite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše vpube od krađe preko zloćudnog softvera koji bi bio na vašem računalu.</translation>
     </message>
     <message>
@@ -434,8 +434,8 @@
         <translation>Traka kartica</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and vpub: URIs)</source>
-        <translation>Zatražite uplatu (stvara QR kod i vpub: URI adresu)</translation>
+        <source>Request payments (generates QR codes and vircle: URIs)</source>
+        <translation>Zatražite uplatu (stvara QR kod i vircle: URI adresu)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -446,8 +446,8 @@
         <translation>Prikažite popis korištenih adresa i oznaka za primanje novca</translation>
     </message>
     <message>
-        <source>Open a vpub: URI or payment request</source>
-        <translation>Otvorite vpub: URI adresu ili zahtjev za uplatu</translation>
+        <source>Open a vircle: URI or payment request</source>
+        <translation>Otvorite vircle: URI adresu ili zahtjev za uplatu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -899,11 +899,11 @@
         <translation>Oblik</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vpub network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vircle network, as detailed below.</source>
         <translation>Nedavne transakcije možda još nisu vidljive pa vam stanje novčanika može biti netočno. Ove informacije bit će točne nakon što vaš novčanik dovrši sinkronizaciju s Vircle.vom mrežom, kako je opisano dolje.</translation>
     </message>
     <message>
-        <source>Attempting to spend vpub that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend vircle that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Mreža neće prihvatiti pokušaje trošenja vpuba koji su utjecani sa strane transakcija koje još nisu vidljive.</translation>
     </message>
     <message>
@@ -1323,7 +1323,7 @@
         <translation>Greška kod zahtjeva za plaćanje</translation>
     </message>
     <message>
-        <source>Cannot start vpub: click-to-pay handler</source>
+        <source>Cannot start vircle: click-to-pay handler</source>
         <translation>Ne može se pokrenuti klijent: rukovatelj "kliknite da platite"</translation>
     </message>
     <message>
@@ -1331,8 +1331,8 @@
         <translation>URI upravljanje</translation>
     </message>
     <message>
-        <source>'vpub://' is not a valid URI. Use 'vpub:' instead.</source>
-        <translation>'vpub://' nije ispravan URI. Koristite 'vpub:' umjesto toga.</translation>
+        <source>'vircle://' is not a valid URI. Use 'vircle:' instead.</source>
+        <translation>'vircle://' nije ispravan URI. Koristite 'vircle:' umjesto toga.</translation>
     </message>
     <message>
         <source>Payment request fetch URL is invalid: %1</source>
@@ -2142,7 +2142,7 @@ Napomena: Budući da se naknada računa po bajtu, naknada od "100 satošija po k
         <translation>Sakrijte</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for vpub transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for vircle transactions than the network can process.</source>
         <translation>Plaćanje minimalnu naknadu je dovoljno ukoliko je volumen transakcija manja od prostora u blokovima. Budite svjesni da ovo može završiti tako da se transakcija nikad ne potvrdi ako je potražnja za Vircle transakcijama veća nego što mreža može procesirati.</translation>
     </message>
     <message>
@@ -2385,7 +2385,7 @@ Napomena: Budući da se naknada računa po bajtu, naknada od "100 satošija po k
         <translation>Obrišite ovaj zapis</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less vpub than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less vircle than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>Naknada će biti oduzeta od poslanog iznosa. Primatelj će primiti manji iznos od onoga koji unesete u polje iznosa. Ako je odabrano više primatelja, onda će naknada biti podjednako raspodijeljena.</translation>
     </message>
     <message>
@@ -2413,7 +2413,7 @@ Napomena: Budući da se naknada računa po bajtu, naknada od "100 satošija po k
         <translation>Unesite oznaku za ovu adresu kako bi ju dodali u vaš adresar</translation>
     </message>
     <message>
-        <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vircle network.</source>
+        <source>A message that was attached to the vircle: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vircle network.</source>
         <translation>Poruka koja je dodana uplati: URI koji će biti spremljen s transakcijom za referencu. Napomena: Ova poruka neće biti poslana preko Vircle mreže.</translation>
     </message>
     <message>
@@ -2458,7 +2458,7 @@ Napomena: Budući da se naknada računa po bajtu, naknada od "100 satošija po k
         <translation>&amp;Potpišite poruku</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive vpub sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive vircle sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Možete potpisati poruke/dogovore svojim adresama kako biste dokazali da možete pristupiti vpubima poslanim na te adrese. Budite oprezni da ne potpisujte ništa nejasno ili nasumično, jer napadi phishingom vas mogu prevariti da prepišite svoj identitet njima. Potpisujte samo detaljno objašnjene izjave s kojima se slažete.</translation>
     </message>
     <message>

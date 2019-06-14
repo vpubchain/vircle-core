@@ -184,7 +184,7 @@
         <translation>Кошелек зашифрован</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vircle from being stolen by malware infecting your computer.</source>
         <translation>%1 закроется сейчас для завершения процесса шифрования. Запомните что шифрование вашего кошелька не сможет полностью защитить ваши биткойны от кражи при помощи вредоносного ПО, заразившего ваш компьютер.</translation>
     </message>
     <message>
@@ -430,7 +430,7 @@
         <translation>Панель вкладок</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and vpub: URIs)</source>
+        <source>Request payments (generates QR codes and vircle: URIs)</source>
         <translation>Запросить платеж</translation>
     </message>
     <message>
@@ -442,7 +442,7 @@
         <translation>Показать список использованных адресов и меток получателей</translation>
     </message>
     <message>
-        <source>Open a vpub: URI or payment request</source>
+        <source>Open a vircle: URI or payment request</source>
         <translation>Открыть биткойн: URI или запрос платежа</translation>
     </message>
     <message>
@@ -828,11 +828,11 @@
         <translation>Форма</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vpub network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vircle network, as detailed below.</source>
         <translation>Последние транзакции пока могут быть не видны, поэтому вы можете видеть некорректный баланс ваших кошельков. Отображаемая информация будет верна после завершения синхронизации. Прогресс синхронизации вы можете видеть ниже.</translation>
     </message>
     <message>
-        <source>Attempting to spend vpub that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend vircle that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Попытка потратить средства, использованные в транзакциях, которые ещё не синхронизированы, будет отклонена сетью.</translation>
     </message>
     <message>
@@ -1148,8 +1148,8 @@
         <translation>Ошибка запроса платежа</translation>
     </message>
     <message>
-        <source>'vpub://' is not a valid URI. Use 'vpub:' instead.</source>
-        <translation>'vpub://' не верный URI. Используйте 'vpub:' вместо этого.</translation>
+        <source>'vircle://' is not a valid URI. Use 'vircle:' instead.</source>
+        <translation>'vircle://' не верный URI. Используйте 'vircle:' вместо этого.</translation>
     </message>
     <message>
         <source>Invalid payment address %1</source>

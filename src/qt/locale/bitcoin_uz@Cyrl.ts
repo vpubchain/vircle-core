@@ -226,8 +226,8 @@
         <translation>Ички ойналар асбоблар панели</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and vpub: URIs)</source>
-        <translation>Тўловлар (QR кодлари ва vpub ёрдамида яратишлар: URI’лар) сўраш</translation>
+        <source>Request payments (generates QR codes and vircle: URIs)</source>
+        <translation>Тўловлар (QR кодлари ва vircle ёрдамида яратишлар: URI’лар) сўраш</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -238,7 +238,7 @@
         <translation>Фойдаланилган қабул қилинган манзиллар ва ёрлиқлар рўйхатини кўрсатиш</translation>
     </message>
     <message>
-        <source>Open a vpub: URI or payment request</source>
+        <source>Open a vircle: URI or payment request</source>
         <translation>Vircle.ни очиш: URI ёки тўлов сўрови</translation>
     </message>
     <message>

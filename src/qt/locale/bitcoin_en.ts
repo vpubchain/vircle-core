@@ -244,7 +244,7 @@
     </message>
     <message>
         <location line="-57"/>
-        <source>Your wallet is now encrypted. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
+        <source>Your wallet is now encrypted. Remember that encrypting your wallet cannot fully protect your vircle from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -533,7 +533,7 @@
     </message>
     <message>
         <location line="-221"/>
-        <source>Request payments (generates QR codes and vpub: URIs)</source>
+        <source>Request payments (generates QR codes and vircle: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -548,7 +548,7 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Open a vpub: URI or payment request</source>
+        <source>Open a vircle: URI or payment request</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1415,7 +1415,7 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Open vpub app before importing, confirm on device if prompted and wait for chain rescan to complete.</source>
+        <source>Open vircle app before importing, confirm on device if prompted and wait for chain rescan to complete.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1448,7 +1448,7 @@
     </message>
     <message>
         <location line="+119"/>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vpub network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vircle network, as detailed below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2053,7 +2053,7 @@
     </message>
     <message>
         <location line="-521"/>
-        <source>Cannot start vpub: click-to-pay handler</source>
+        <source>Cannot start vircle: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2068,7 +2068,7 @@
     </message>
     <message>
         <location line="-49"/>
-        <source>&apos;vpub://&apos; is not a valid URI. Use &apos;vpub:&apos; instead.</source>
+        <source>&apos;vircle://&apos; is not a valid URI. Use &apos;vircle:&apos; instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3214,7 +3214,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+83"/>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for vpub transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for vircle transactions than the network can process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3563,7 +3563,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     <message>
         <location line="-1293"/>
         <location line="+83"/>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less vpub than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less vircle than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3640,7 +3640,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+64"/>
-        <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vircle network.</source>
+        <source>A message that was attached to the vircle: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vircle network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3697,7 +3697,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+6"/>
-        <source>You can sign messages/agreements with your addresses to prove you can receive vpub sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive vircle sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

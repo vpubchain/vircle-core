@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Izvēlies adresi uz kuru sūtīt vpub</translation>
+        <translation>Izvēlies adresi uz kuru sūtīt vircle</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Izvēlies adresi ar kuru saņemt vpub</translation>
+        <translation>Izvēlies adresi ar kuru saņemt vircle</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -290,12 +290,12 @@
         <translation>Ciļņu rīkjosla</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and vpub: URIs)</source>
-        <translation>Pieprasīt maksājumus (izveido QR kodu un vpub: URIs)</translation>
+        <source>Request payments (generates QR codes and vircle: URIs)</source>
+        <translation>Pieprasīt maksājumus (izveido QR kodu un vircle: URIs)</translation>
     </message>
     <message>
-        <source>Open a vpub: URI or payment request</source>
-        <translation>Atvērt vpub URI vai maksājuma pieprasījumu</translation>
+        <source>Open a vircle: URI or payment request</source>
+        <translation>Atvērt vircle URI vai maksājuma pieprasījumu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -563,7 +563,7 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>Ieslēgt vpub &amp;kontroles funkcijas</translation>
+        <translation>Ieslēgt vircle &amp;kontroles funkcijas</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>

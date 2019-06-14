@@ -410,8 +410,8 @@
         <translation>Orebalk</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and vpub: URIs)</source>
-        <translation>Versoek betalings (genereer QR-kodes en vpub: URI's)</translation>
+        <source>Request payments (generates QR codes and vircle: URIs)</source>
+        <translation>Versoek betalings (genereer QR-kodes en vircle: URI's)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -422,8 +422,8 @@
         <translation>Vertoon die lys van gebruikte ontvangers-adresse en etikette</translation>
     </message>
     <message>
-        <source>Open a vpub: URI or payment request</source>
-        <translation>Skep 'n vpub: URI of betalingsversoek</translation>
+        <source>Open a vircle: URI or payment request</source>
+        <translation>Skep 'n vircle: URI of betalingsversoek</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1567,10 +1567,10 @@ etlike ure of dae (of nooit) sal neem om te bevestig. Oorweeg om
         <translation>Versteek</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for vpub transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for vircle transactions than the network can process.</source>
         <translation>Om die minimumfooi te betaal is in die haak, mits daar minder transaksievolume
 as ruimte in die blok is. Wees bewus dat de gevolg kan wees dat 'n transaksie nooit
-bevestig nie indien daar meer aanvraag vir vpub transaksies is as wat die netwerk kan
+bevestig nie indien daar meer aanvraag vir vircle transaksies is as wat die netwerk kan
 verwerk.</translation>
     </message>
     <message>
@@ -1781,7 +1781,7 @@ Is u seker?</translation>
         <translation>Verwyder hierdie inskrywing</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less vpub than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less vircle than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>De fooi word afgetrek van die gestuurde bedrag.
 Die ontvanger sal minder ontvang as wat u in die
 bedrag opgee. As daar meer as een ontvanger is,
