@@ -28,8 +28,8 @@ packages:
 - "python-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/vpubchain/vpub-core.git"
-  "dir": "vpub-core"
+- "url": "https://github.com/vpubchain/vircle-core.git"
+  "dir": "vircle-core"
 files:
 - "MacOSX10.11.sdk.tar.gz"
 script: |
@@ -84,7 +84,7 @@ script: |
   create_per-host_faketime_wrappers "2000-01-01 12:00:00"
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd vpub-core
+  cd vircle-core
   BASEPREFIX=`pwd`/depends
 
   mkdir -p ${BASEPREFIX}/SDKs

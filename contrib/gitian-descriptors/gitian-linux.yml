@@ -34,8 +34,8 @@ packages:
 - "python"
 - "libudev-dev"
 remotes:
-- "url": "https://github.com/vpubchain/vpub-core.git"
-  "dir": "vpub-core"
+- "url": "https://github.com/vpubchain/vircle-core.git"
+  "dir": "vircle-core"
 files: []
 script: |
   # prepare
@@ -132,7 +132,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd vpub-core
+  cd vircle-core
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do

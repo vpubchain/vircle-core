@@ -24,8 +24,8 @@ packages:
 - "python"
 - "rename"
 remotes:
-- "url": "https://github.com/vpubchain/vpub-core.git"
-  "dir": "vpub-core"
+- "url": "https://github.com/vpubchain/vircle-core.git"
+  "dir": "vircle-core"
 files: []
 script: |
   WRAP_DIR=$HOME/wrapped
@@ -107,7 +107,7 @@ script: |
   #create_per-host_linker_wrapper "2000-01-01 12:00:00"
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd vpub-core
+  cd vircle-core
   BASEPREFIX=`pwd`/depends
 
   create_per-host_linker_wrapper "2000-01-01 12:00:00"
