@@ -47,7 +47,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Vircle"
-#define QAPP_ORG_DOMAIN "vpub.io"
+#define QAPP_ORG_DOMAIN "vircle.io"
 #define QAPP_APP_NAME_DEFAULT "Vircle-Qt"
 #define QAPP_APP_NAME_TESTNET "Vircle-Qt-testnet"
 #define QAPP_APP_NAME_REGTEST "Vircle-Qt-regtest"
