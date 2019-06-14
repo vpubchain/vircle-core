@@ -64,9 +64,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Vpubs");
-    case mBTC: return QString("Milli-Vpubs (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Micro-Vpubs (vps) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case BTC: return QString("Vircles");
+    case mBTC: return QString("Milli-Vircles (1 / 1" THIN_SP_UTF8 "000)");
+    case uBTC: return QString("Micro-Vircles (vps) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     case SAT: return QString("Satoshi (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
