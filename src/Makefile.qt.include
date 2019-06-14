@@ -3,7 +3,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 bin_PROGRAMS += qt/vircle-qt
-EXTRA_LIBRARIES += qt/libvpubqt.a
+EXTRA_LIBRARIES += qt/libvircleqt.a
 
 # bitcoin qt core #
 QT_TS = \
@@ -261,7 +261,7 @@ RES_ICONS = \
   qt/res/icons/address-book.png \
   qt/res/icons/about.png \
   qt/res/icons/about_qt.png \
-  qt/res/icons/vpub_testnet.ico \
+  qt/res/icons/vircle_testnet.ico \
   qt/res/icons/vircle.ico \
   qt/res/icons/vircle.png \
   qt/res/icons/chevron.png \
@@ -393,18 +393,18 @@ BITCOIN_RC = qt/res/bitcoin-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -DQT_NO_KEYWORDS
 
-qt_libvpubqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+qt_libvircleqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_libvpubqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-qt_libvpubqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
+qt_libvircleqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libvircleqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_libvpubqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+qt_libvircleqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES)
 if TARGET_DARWIN
-  qt_libvpubqt_a_SOURCES += $(BITCOIN_MM)
+  qt_libvircleqt_a_SOURCES += $(BITCOIN_MM)
 endif
 
-nodist_qt_libvpubqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+nodist_qt_libvircleqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
   $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
 
 # forms/foo.h -> forms/ui_foo.h
@@ -413,7 +413,7 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libvpubqt_a_OBJECTS) $(qt_vpub_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libvircleqt_a_OBJECTS) $(qt_vircle_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
@@ -421,47 +421,47 @@ $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
 # bitcoin-qt binary #
-qt_vpub_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+qt_vircle_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_vpub_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_vircle_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_vpub_qt_SOURCES = qt/bitcoin.cpp
-qt_vpub_qt_SOURCES = qt/main.cpp
+qt_vircle_qt_SOURCES = qt/bitcoin.cpp
+qt_vircle_qt_SOURCES = qt/main.cpp
 if TARGET_WINDOWS
-  qt_vpub_qt_SOURCES += $(BITCOIN_RC)
+  qt_vircle_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_vpub_qt_LDADD = qt/libvpubqt.a $(LIBVPUB_SERVER)
+qt_vircle_qt_LDADD = qt/libvircleqt.a $(LIBVPUB_SERVER)
 if ENABLE_WALLET
-qt_vpub_qt_LDADD += $(LIBVPUB_UTIL) $(LIBVPUB_WALLET)
+qt_vircle_qt_LDADD += $(LIBVPUB_UTIL) $(LIBVPUB_WALLET)
 endif
 if ENABLE_ZMQ
-qt_vpub_qt_LDADD += $(LIBVPUB_ZMQ) $(ZMQ_LIBS)
+qt_vircle_qt_LDADD += $(LIBVPUB_ZMQ) $(ZMQ_LIBS)
 endif
 if ENABLE_USBDEVICE
-qt_vpub_qt_LDADD += $(LIBVPUB_USBDEVICE) $(USB_LIBS) $(HIDAPI_LIBS)
+qt_vircle_qt_LDADD += $(LIBVPUB_USBDEVICE) $(USB_LIBS) $(HIDAPI_LIBS)
 endif
 
-qt_vpub_qt_LDADD += $(LIBVPUB_CLI) $(LIBVPUB_COMMON) $(LIBVPUB_UTIL) $(LIBVPUB_CONSENSUS) $(LIBVPUB_CRYPTO) $(LIBVPUB_SMSG) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_vircle_qt_LDADD += $(LIBVPUB_CLI) $(LIBVPUB_COMMON) $(LIBVPUB_UTIL) $(LIBVPUB_CONSENSUS) $(LIBVPUB_CRYPTO) $(LIBVPUB_SMSG) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 if ENABLE_BIP70
-qt_vpub_qt_LDADD += $(SSL_LIBS)
+qt_vircle_qt_LDADD += $(SSL_LIBS)
 else
 if TARGET_WINDOWS
-qt_vpub_qt_LDADD += $(SSL_LIBS)
+qt_vircle_qt_LDADD += $(SSL_LIBS)
 endif
 endif
 
-qt_vpub_qt_LDADD += $(CRYPTO_LIBS)
-qt_vpub_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_vpub_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+qt_vircle_qt_LDADD += $(CRYPTO_LIBS)
+qt_vircle_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_vircle_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/bitcoinstrings.cpp: $(libvpub_server_a_SOURCES) $(libvpub_wallet_a_SOURCES) $(libvpub_common_a_SOURCES) $(libvpub_zmq_a_SOURCES) $(libvpub_consensus_a_SOURCES) $(libvpub_util_a_SOURCES)
+$(srcdir)/qt/bitcoinstrings.cpp: $(libvircle_server_a_SOURCES) $(libvircle_wallet_a_SOURCES) $(libvircle_common_a_SOURCES) $(libvircle_zmq_a_SOURCES) $(libvircle_consensus_a_SOURCES) $(libvircle_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" COPYRIGHT_HOLDERS="$(COPYRIGHT_HOLDERS)" COPYRIGHT_HOLDERS_SUBSTITUTION="$(COPYRIGHT_HOLDERS_SUBSTITUTION)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
@@ -481,14 +481,14 @@ $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) 
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name bitcoin $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libvpubqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_bitcoin_locale.qrc
+CLEAN_QT = $(nodist_qt_libvircleqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_bitcoin_locale.qrc
 
 CLEANFILES += $(CLEAN_QT)
 
-vpub_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libvpubqt_a_OBJECTS) $(qt_vpub_qt_OBJECTS) qt/vircle-qt$(EXEEXT) $(LIBVPUBQT)
+vircle_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libvircleqt_a_OBJECTS) $(qt_vircle_qt_OBJECTS) qt/vircle-qt$(EXEEXT) $(LIBVPUBQT)
 
-vpub_qt : qt/vircle-qt$(EXEEXT)
+vircle_qt : qt/vircle-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

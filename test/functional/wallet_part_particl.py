@@ -8,7 +8,7 @@ import json
 import subprocess
 import textwrap
 
-from test_framework.test_vpub import VpubTestFramework
+from test_framework.test_vircle import VpubTestFramework
 from test_framework.authproxy import JSONRPCException
 from test_framework.util import assert_raises_rpc_error, assert_equal
 
@@ -48,13 +48,13 @@ class WalletVpubTest(VpubTestFramework):
         self.add_nodes(self.num_nodes, extra_args=self.extra_args)
         self.start_nodes()
 
-    def vpub_wallet_process(self, *args):
+    def vircle_wallet_process(self, *args):
         binary = self.config["environment"]["BUILDDIR"] + '/src/.viecle-wallet' + self.config["environment"]["EXEEXT"]
         args = ['-datadir={}'.format(self.nodes[0].datadir), '-regtest'] + list(args)
         return subprocess.Popen([binary] + args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
 
     def assert_tool_output(self, output, *args):
-        p = self.vpub_wallet_process(*args)
+        p = self.vircle_wallet_process(*args)
         stdout, stderr = p.communicate()
         assert_equal(p.poll(), 0)
         assert_equal(stderr, '')

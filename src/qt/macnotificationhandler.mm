@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.vpubfoundation.Vircle-Qt";
+        return @"io.virclefoundation.Vircle-Qt";
     } else {
         return [self __bundleIdentifier];
     }

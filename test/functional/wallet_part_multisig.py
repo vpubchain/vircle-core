@@ -5,7 +5,7 @@
 
 from decimal import Decimal
 
-from test_framework.test_vpub import VpubTestFramework, isclose
+from test_framework.test_vircle import VpubTestFramework, isclose
 from test_framework.util import connect_nodes_bi, satoshi_round
 from test_framework.authproxy import JSONRPCException
 

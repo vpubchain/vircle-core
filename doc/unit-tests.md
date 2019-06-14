@@ -6,7 +6,7 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the vircled tests manually, launch `src/test/test_vpub`.
+To run the vircled tests manually, launch `src/test/test_vircle`.
 
 To add more vircled tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that

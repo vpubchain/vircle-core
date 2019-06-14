@@ -7,7 +7,7 @@ import time
 import json
 import binascii
 
-from test_framework.test_vpub import (
+from test_framework.test_vircle import (
     VpubTestFramework,
     isclose,
     getIndexAtProperty,

@@ -6,9 +6,9 @@ src/vircled
 src/vircle-cli
 src/vircle-tx
 src/vircle-wallet
-src/test/test_vpub
-src/test/test_vpub_fuzzy
-src/qt/test/test_vpub-qt
+src/test/test_vircle
+src/test/test_vircle_fuzzy
+src/qt/test/test_vircle-qt
 
 # autoreconf
 src/Makefile.in
@@ -107,7 +107,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_vpub.coverage/
+test_vircle.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -122,7 +122,7 @@ test/cache/*
 
 /doc/doxygen/
 
-libvpubconsensus.pc
+libvircleconsensus.pc
 contrib/devtools/split-debug.sh
 
 # Output from running db4 installation

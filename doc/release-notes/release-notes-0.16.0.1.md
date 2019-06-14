@@ -328,7 +328,7 @@ Other changed command-line options
 - #11541 `bb9ab0f` Build: Fix Automake warnings when running autogen.sh (fanquake)
 - #11611 `0e70791` [build] Don't fail when passed --disable-lcov and lcov isn't available (fanquake)
 - #11651 `3c098a8` refactor: Make all #includes relative to project root (laanwj, MeshCollider, ryanofsky)
-- #11621 `1f7695b` [build] Add temp_vpub_locale_qrc to CLEAN_QT to fix make distcheck (fanquake)
+- #11621 `1f7695b` [build] Add temp_vircle_locale_qrc to CLEAN_QT to fix make distcheck (fanquake)
 - #11755 `84fa645` [Docs] Bump minimum required version of GCC to 4.8 (fanquake)
 - #9254 `6d3dc52` [depends] ZeroMQ 4.2.2 (fanquake)
 - #11842 `3c8f0a3` [build] Add missing stuff to clean-local (kallewoof)
@@ -338,7 +338,7 @@ Other changed command-line options
 - #11903 `8f68fd2` [trivial] Add required package dependencies for depends cross compilation (jonasschnelli)
 - #12168 `45cf8a0`  #include sys/fcntl.h to just fcntl.h (without sys/) (jsarenik)
 - #12095 `3fa1ab4` Use BDB_LIBS/CFLAGS and pass --disable-replication (fanquake)
-- #11711 `6378e5c` vpub_qt.m4: Minor fixes and clean-ups (fanquake)
+- #11711 `6378e5c` vircle_qt.m4: Minor fixes and clean-ups (fanquake)
 - #11989 `90d4104` .gitignore: add QT Creator artifacts (Sjors)
 - #11577 `c0ae864` Fix warnings (-Wsign-compare) when building with DEBUG_ADDRMAN (practicalswift)
 

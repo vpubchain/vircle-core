@@ -5,7 +5,7 @@
 
 from decimal import Decimal
 
-from test_framework.test_vpub import VpubTestFramework
+from test_framework.test_vircle import VpubTestFramework
 from test_framework.util import connect_nodes_bi
 from test_framework.address import keyhash_to_p2pkh, hex_str_to_bytes
 from test_framework.authproxy import JSONRPCException

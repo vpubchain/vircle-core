@@ -7,7 +7,7 @@
 # Test addressindex generation and fetching
 #
 
-from test_framework.test_vpub import VpubTestFramework
+from test_framework.test_vircle import VpubTestFramework
 from test_framework.util import connect_nodes, assert_equal
 
 

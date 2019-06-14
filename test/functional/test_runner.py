@@ -212,7 +212,7 @@ VPUB_SCRIPTS = [
     'feature_part_stealth.py',
     'feature_part_blind.py',
     'feature_part_anon.py',
-    'wallet_part_vpub.py',
+    'wallet_part_vircle.py',
     'rpc_part_mnemonic.py',
     'feature_part_smsg.py',
     'feature_part_smsgpaid.py',
@@ -290,7 +290,7 @@ def main():
     logging.basicConfig(format='%(message)s', level=logging_level)
 
     # Create base test directory
-    tmpdir = "%s/vpub_test_runner_₿_🏃_%s" % (args.tmpdirprefix, datetime.datetime.now().strftime("%Y%m%d_%H%M%S"))
+    tmpdir = "%s/vircle_test_runner_₿_🏃_%s" % (args.tmpdirprefix, datetime.datetime.now().strftime("%Y%m%d_%H%M%S"))
 
     os.makedirs(tmpdir)
 

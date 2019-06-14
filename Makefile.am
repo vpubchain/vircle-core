@@ -13,8 +13,8 @@ export PYTHONPATH
 
 if BUILD_BITCOIN_LIBS
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libvpubconsensus.pc
-pkgconfig_DATA = libvpubconsensus.pc
+pkgconfig_DATA = libvircleconsensus.pc
+pkgconfig_DATA = libvircleconsensus.pc
 endif
 
 BITCOIND_BIN=$(top_builddir)/src/$(BITCOIN_DAEMON_NAME)$(EXEEXT)
@@ -287,27 +287,27 @@ EXTRA_DIST += \
     test/util/rpcauth-test.py
 
 EXTRA_DIST += \
-    test/util/data_vpub/vircle-util-test.json \
-    test/util/data_vpub/blanktxv1.hex \
-    test/util/data_vpub/blanktxv1.json \
-    test/util/data_vpub/blanktxva0.hex \
-    test/util/data_vpub/blanktxva0.json \
-    test/util/data_vpub/tx14ae341f.hex \
-    test/util/data_vpub/tt-delin1-out.hex \
-    test/util/data_vpub/tt-delin1-out.json \
-    test/util/data_vpub/tt-delout1-out.hex \
-    test/util/data_vpub/tt-delout1-out.json \
-    test/util/data_vpub/tt-locktime317000-out.hex \
-    test/util/data_vpub/tt-locktime317000-out.json \
-    test/util/data_vpub/txcreate1.hex \
-    test/util/data_vpub/txcreate1.json \
-    test/util/data_vpub/txcreate2.hex \
-    test/util/data_vpub/txcreate2.json \
-    test/util/data_vpub/txcreatesignva0.hex \
-    test/util/data_vpub/txaddwitness0.hex \
-    test/util/data_vpub/txdelwitness0.hex \
-    test/util/data_vpub/txblindout0.hex \
-    test/util/data_vpub/txoutdatatype0.hex
+    test/util/data_vircle/vircle-util-test.json \
+    test/util/data_vircle/blanktxv1.hex \
+    test/util/data_vircle/blanktxv1.json \
+    test/util/data_vircle/blanktxva0.hex \
+    test/util/data_vircle/blanktxva0.json \
+    test/util/data_vircle/tx14ae341f.hex \
+    test/util/data_vircle/tt-delin1-out.hex \
+    test/util/data_vircle/tt-delin1-out.json \
+    test/util/data_vircle/tt-delout1-out.hex \
+    test/util/data_vircle/tt-delout1-out.json \
+    test/util/data_vircle/tt-locktime317000-out.hex \
+    test/util/data_vircle/tt-locktime317000-out.json \
+    test/util/data_vircle/txcreate1.hex \
+    test/util/data_vircle/txcreate1.json \
+    test/util/data_vircle/txcreate2.hex \
+    test/util/data_vircle/txcreate2.json \
+    test/util/data_vircle/txcreatesignva0.hex \
+    test/util/data_vircle/txaddwitness0.hex \
+    test/util/data_vircle/txdelwitness0.hex \
+    test/util/data_vircle/txblindout0.hex \
+    test/util/data_vircle/txoutdatatype0.hex
 
 
 CLEANFILES = $(OSX_DMG) $(BITCOIN_WIN_INSTALLER)

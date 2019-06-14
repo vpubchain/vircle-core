@@ -5,7 +5,7 @@
 
 import json
 
-from test_framework.test_vpub import VpubTestFramework
+from test_framework.test_vircle import VpubTestFramework
 from test_framework.util import assert_raises_rpc_error, connect_nodes_bi
 
 

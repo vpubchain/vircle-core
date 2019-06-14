@@ -292,8 +292,8 @@ private:
 public:
     SignatureExtractorChecker(SignatureData& sigdata, BaseSignatureChecker& checker) : sigdata(sigdata), checker(checker) {}
     bool CheckSig(const std::vector<unsigned char>& scriptSig, const std::vector<unsigned char>& vchPubKey, const CScript& scriptCode, SigVersion sigversion) const override;
-    bool is_vpub_tx = false;
-    bool IsVpubVersion() const override { return is_vpub_tx; }
+    bool is_vircle_tx = false;
+    bool IsVpubVersion() const override { return is_vircle_tx; }
 };
 
 bool SignatureExtractorChecker::CheckSig(const std::vector<unsigned char>& scriptSig, const std::vector<unsigned char>& vchPubKey, const CScript& scriptCode, SigVersion sigversion) const
@@ -339,7 +339,7 @@ SignatureData DataFromTransaction(const CMutableTransaction& tx, unsigned int nI
     // Get signatures
     MutableTransactionSignatureChecker tx_checker(&tx, nIn, amount);
     SignatureExtractorChecker extractor_checker(data, tx_checker);
-    extractor_checker.is_vpub_tx = tx.IsVpubVersion();
+    extractor_checker.is_vircle_tx = tx.IsVpubVersion();
     if (VerifyScript(data.scriptSig, scriptPubKey, &data.scriptWitness, STANDARD_SCRIPT_VERIFY_FLAGS, extractor_checker)) {
         data.complete = true;
         return data;

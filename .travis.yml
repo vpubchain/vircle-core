@@ -45,8 +45,8 @@ after_success:
   - echo "Uploading"
   - DOCKER_EXEC make install
   - COMMIT=$(echo $TRAVIS_COMMIT | head -c 7)
-  - DOCKER_EXEC tar -cjf $OUTDIR/vpub_$COMMIT.tar.bz2 -C $OUTDIR/bin/ .
-  - (travis_retry DOCKER_EXEC curl -s --max-time 60 --upload $OUTDIR/vpub_$COMMIT.tar.bz2 https://transfer.sh/vpub_$COMMIT.tar.bz2 && echo) || true
+  - DOCKER_EXEC tar -cjf $OUTDIR/vircle_$COMMIT.tar.bz2 -C $OUTDIR/bin/ .
+  - (travis_retry DOCKER_EXEC curl -s --max-time 60 --upload $OUTDIR/vircle_$COMMIT.tar.bz2 https://transfer.sh/vircle_$COMMIT.tar.bz2 && echo) || true
 jobs:
   include:
 

@@ -19,7 +19,7 @@
 
 #include <boost/test/unit_test.hpp>
 
-BOOST_FIXTURE_TEST_SUITE(vpubchain_tests, VpubBasicTestingSetup)
+BOOST_FIXTURE_TEST_SUITE(virclechain_tests, VpubBasicTestingSetup)
 
 
 BOOST_AUTO_TEST_CASE(oldversion_test)
@@ -80,7 +80,7 @@ BOOST_AUTO_TEST_CASE(signature_test)
     BOOST_CHECK(serror == SCRIPT_ERR_OK);
 }
 
-BOOST_AUTO_TEST_CASE(vpubchain_test)
+BOOST_AUTO_TEST_CASE(virclechain_test)
 {
     SeedInsecureRand();
     CBasicKeyStore keystore;

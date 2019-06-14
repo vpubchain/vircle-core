@@ -7,7 +7,7 @@ import os
 import json
 import configparser
 
-from test_framework.test_vpub import (
+from test_framework.test_vircle import (
     VpubTestFramework,
     isclose,
     getIndexAtProperty,

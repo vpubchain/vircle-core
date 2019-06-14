@@ -7,7 +7,7 @@
 #include <key/extkey.h>
 #include <key/stealth.h>
 #if defined(HAVE_CONSENSUS_LIB)
-#include <script/vpubconsensus.h>
+#include <script/vircleconsensus.h>
 #endif
 #include <script/script.h>
 #include <script/sign.h>

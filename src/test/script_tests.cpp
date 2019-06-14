@@ -18,7 +18,7 @@
 #include <rpc/server.h>
 
 #if defined(HAVE_CONSENSUS_LIB)
-#include <script/vpubconsensus.h>
+#include <script/vircleconsensus.h>
 #endif
 
 #include <fstream>
