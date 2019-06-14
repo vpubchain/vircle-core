@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_USBDEVICE_USBWRAPPER_H
-#define VPUB_USBDEVICE_USBWRAPPER_H
+#ifndef VIRCLE_USBDEVICE_USBWRAPPER_H
+#define VIRCLE_USBDEVICE_USBWRAPPER_H
 
 #include <libusb-1.0/libusb.h>
 
@@ -83,4 +83,4 @@ int webusb_read_timeout(webusb_device *dev, unsigned char *data, size_t length, 
 
 } // usb_device
 
-#endif // VPUB_USBDEVICE_USBWRAPPER_H
+#endif // VIRCLE_USBDEVICE_USBWRAPPER_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_SMSG_KEYSTORE_H
-#define VPUB_SMSG_KEYSTORE_H
+#ifndef VIRCLE_SMSG_KEYSTORE_H
+#define VIRCLE_SMSG_KEYSTORE_H
 
 #include <key.h>
 #include <pubkey.h>
@@ -60,4 +60,4 @@ public:
 
 } // namespace smsg
 
-#endif //VPUB_SMSG_KEYSTORE_H
+#endif //VIRCLE_SMSG_KEYSTORE_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_POS_MINER_H
-#define VPUB_POS_MINER_H
+#ifndef VIRCLE_POS_MINER_H
+#define VIRCLE_POS_MINER_H
 
 #include <primitives/block.h>
 #include <thread>
@@ -45,5 +45,5 @@ bool ThreadStakeMinerStopped(); // replace interruption_point
 
 void ThreadStakeMiner(size_t nThreadID, std::vector<std::shared_ptr<CWallet>> &vpwallets, size_t nStart, size_t nEnd);
 
-#endif // VPUB_POS_MINER_H
+#endif // VIRCLE_POS_MINER_H
 

@@ -152,7 +152,7 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     // Create coinbase transaction.
     CMutableTransaction coinbaseTx;
     if (!fTestBlockValidity) {
-        pblock->nVersion = VPUB_BLOCK_VERSION;
+        pblock->nVersion = VIRCLE_BLOCK_VERSION;
         pblock->vtx[0] = MakeTransactionRef(std::move(coinbaseTx));
     } else {
         coinbaseTx.vin.resize(1);

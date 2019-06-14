@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_RCTINDEX_H
-#define VPUB_RCTINDEX_H
+#ifndef VIRCLE_RCTINDEX_H
+#define VIRCLE_RCTINDEX_H
 
 #include <primitives/transaction.h>
 
@@ -38,5 +38,5 @@ public:
 };
 
 
-#endif // VPUB_RCTINDEX_H
+#endif // VIRCLE_RCTINDEX_H
 

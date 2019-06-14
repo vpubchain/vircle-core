@@ -258,7 +258,7 @@ static CBlock CreateGenesisBlockRegTest(uint32_t nTime, uint32_t nNonce, uint32_
     const char *pszTimestamp = "The Times 16:00:02 17/04/2019 created by jiuling vpubchain";
 
     CMutableTransaction txNew;
-    txNew.nVersion = VPUB_TXN_VERSION;
+    txNew.nVersion = VIRCLE_TXN_VERSION;
     txNew.SetType(TXN_COINBASE);
     txNew.vin.resize(1);
     uint32_t nHeight = 0;  // bip34
@@ -276,7 +276,7 @@ static CBlock CreateGenesisBlockRegTest(uint32_t nTime, uint32_t nNonce, uint32_
     genesis.nTime    = nTime;
     genesis.nBits    = nBits;
     genesis.nNonce   = nNonce;
-    genesis.nVersion = VPUB_BLOCK_VERSION;
+    genesis.nVersion = VIRCLE_BLOCK_VERSION;
     genesis.vtx.push_back(MakeTransactionRef(std::move(txNew)));
 
     genesis.hashPrevBlock.SetNull();
@@ -291,7 +291,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
     const char *pszTimestamp = "The Times 14:00:00 14/05/2019 created by jiuling vpubchain";
 
     CMutableTransaction txNew;
-    txNew.nVersion = VPUB_TXN_VERSION;
+    txNew.nVersion = VIRCLE_TXN_VERSION;
     txNew.SetType(TXN_COINBASE);
     txNew.vin.resize(1);
     uint32_t nHeight = 0;  // bip34
@@ -338,7 +338,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
     genesis.nTime    = nTime;
     genesis.nBits    = nBits;
     genesis.nNonce   = nNonce;
-    genesis.nVersion = VPUB_BLOCK_VERSION;
+    genesis.nVersion = VIRCLE_BLOCK_VERSION;
     genesis.vtx.push_back(MakeTransactionRef(std::move(txNew)));
 
     genesis.hashPrevBlock.SetNull();
@@ -353,7 +353,7 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     const char *pszTimestamp = "The Times 11:00:00 13/05/2019 created by jiuling vpubchain";
 
     CMutableTransaction txNew;
-    txNew.nVersion = VPUB_TXN_VERSION;
+    txNew.nVersion = VIRCLE_TXN_VERSION;
     txNew.SetType(TXN_COINBASE);
 
     txNew.vin.resize(1);
@@ -401,7 +401,7 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     genesis.nTime    = nTime;
     genesis.nBits    = nBits;
     genesis.nNonce   = nNonce;
-    genesis.nVersion = VPUB_BLOCK_VERSION;
+    genesis.nVersion = VIRCLE_BLOCK_VERSION;
     genesis.vtx.push_back(MakeTransactionRef(std::move(txNew)));
 
     genesis.hashPrevBlock.SetNull();

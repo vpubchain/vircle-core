@@ -511,12 +511,12 @@ public:
     DummySignatureCheckerVpub() : DummySignatureChecker() {}
     bool IsVpubVersion() const override { return true; }
 };
-const DummySignatureCheckerVpub DUMMY_CHECKER_VPUB;
+const DummySignatureCheckerVpub DUMMY_CHECKER_VIRCLE;
 
 class DummySignatureCreatorVpub : public DummySignatureCreator {
 public:
     DummySignatureCreatorVpub() : DummySignatureCreator(33, 32) {}
-    const BaseSignatureChecker& Checker() const override { return DUMMY_CHECKER_VPUB; }
+    const BaseSignatureChecker& Checker() const override { return DUMMY_CHECKER_VIRCLE; }
     bool IsVpubVersion() const override { return true; }
 };
 
@@ -535,7 +535,7 @@ bool LookupHelper(const M& map, const K& key, V& value)
 
 const BaseSignatureCreator& DUMMY_SIGNATURE_CREATOR = DummySignatureCreator(32, 32);
 const BaseSignatureCreator& DUMMY_MAXIMUM_SIGNATURE_CREATOR = DummySignatureCreator(33, 32);
-const BaseSignatureCreator& DUMMY_SIGNATURE_CREATOR_VPUB = DummySignatureCreatorVpub();
+const BaseSignatureCreator& DUMMY_SIGNATURE_CREATOR_VIRCLE = DummySignatureCreatorVpub();
 const SigningProvider& DUMMY_SIGNING_PROVIDER = SigningProvider();
 
 bool IsSolvable(const SigningProvider& provider, const CScript& script)

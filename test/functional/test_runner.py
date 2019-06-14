@@ -205,7 +205,7 @@ EXTENDED_SCRIPTS = [
     'feature_part_smsgpaidfee_ext.py',
 ]
 
-VPUB_SCRIPTS = [
+VIRCLE_SCRIPTS = [
     'p2p_part_fork.py',
     'feature_part_pos.py',
     'feature_part_extkey.py',
@@ -237,7 +237,7 @@ INSIGHT_SCRIPTS = [
 ]
 
 # Place EXTENDED_SCRIPTS first since it has the 3 longest running tests
-ALL_SCRIPTS = EXTENDED_SCRIPTS + BASE_SCRIPTS + VPUB_SCRIPTS + INSIGHT_SCRIPTS
+ALL_SCRIPTS = EXTENDED_SCRIPTS + BASE_SCRIPTS + VIRCLE_SCRIPTS + INSIGHT_SCRIPTS
 
 NON_SCRIPTS = [
     # These are python files that live in the functional tests directory, but are not test scripts.
@@ -324,7 +324,7 @@ def main():
         if args.extended:
             test_list += EXTENDED_SCRIPTS
         if args..viecle:
-            test_list += VPUB_SCRIPTS
+            test_list += VIRCLE_SCRIPTS
         if args.insight:
             test_list += INSIGHT_SCRIPTS
         if args.bitcoin:

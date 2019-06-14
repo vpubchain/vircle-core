@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_SCRIPT_VPUBCONSENSUS_H
-#define VPUB_SCRIPT_VPUBCONSENSUS_H
+#ifndef VIRCLE_SCRIPT_VIRCLECONSENSUS_H
+#define VIRCLE_SCRIPT_VIRCLECONSENSUS_H
 
 #include <stdint.h>
 
@@ -21,7 +21,7 @@
   #elif defined(HAVE_FUNC_ATTRIBUTE_VISIBILITY)
     #define EXPORT_SYMBOL __attribute__ ((visibility ("default")))
   #endif
-#elif defined(MSC_VER) && !defined(STATIC_LIBVPUBCONSENSUS)
+#elif defined(MSC_VER) && !defined(STATIC_LIBVIRCLECONSENSUS)
   #define EXPORT_SYMBOL __declspec(dllimport)
 #endif
 
@@ -80,4 +80,4 @@ EXPORT_SYMBOL unsigned int bitcoinconsensus_version();
 
 #undef EXPORT_SYMBOL
 
-#endif // VPUB_SCRIPT_VPUBCONSENSUS_H
+#endif // VIRCLE_SCRIPT_VIRCLECONSENSUS_H

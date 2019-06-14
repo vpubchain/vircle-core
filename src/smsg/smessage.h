@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_SMSG_SMESSAGE_H
-#define VPUB_SMSG_SMESSAGE_H
+#ifndef VIRCLE_SMSG_SMESSAGE_H
+#define VIRCLE_SMSG_SMESSAGE_H
 
 #include <key_io.h>
 #include <net.h>
@@ -471,5 +471,5 @@ public:
 
 extern smsg::CSMSG smsgModule;
 
-#endif // VPUB_SMSG_SMESSAGE_H
+#endif // VIRCLE_SMSG_SMESSAGE_H
 

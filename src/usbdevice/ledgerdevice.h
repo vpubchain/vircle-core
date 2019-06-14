@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_USBDEVICE_LEDGERDEVICE_H
-#define VPUB_USBDEVICE_LEDGERDEVICE_H
+#ifndef VIRCLE_USBDEVICE_LEDGERDEVICE_H
+#define VIRCLE_USBDEVICE_LEDGERDEVICE_H
 
 #include <usbdevice/usbdevice.h>
 
@@ -41,4 +41,4 @@ protected:
 
 } // usb_device
 
-#endif // VPUB_USBDEVICE_LEDGERDEVICE_H
+#endif // VIRCLE_USBDEVICE_LEDGERDEVICE_H

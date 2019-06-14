@@ -24,42 +24,42 @@ BITCOIN_INCLUDES=-I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFL
 BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
 BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBVPUB_SERVER=libvircle_server.a
-LIBVPUB_COMMON=libvircle_common.a
-LIBVPUB_CONSENSUS=libvircle_consensus.a
-LIBVPUB_CLI=libvircle_cli.a
-LIBVPUB_UTIL=libvircle_util.a
-LIBVPUB_CRYPTO_BASE=crypto/libvircle_crypto_base.a
-LIBVPUBQT=qt/libvircleqt.a
+LIBVIRCLE_SERVER=libvircle_server.a
+LIBVIRCLE_COMMON=libvircle_common.a
+LIBVIRCLE_CONSENSUS=libvircle_consensus.a
+LIBVIRCLE_CLI=libvircle_cli.a
+LIBVIRCLE_UTIL=libvircle_util.a
+LIBVIRCLE_CRYPTO_BASE=crypto/libvircle_crypto_base.a
+LIBVIRCLEQT=qt/libvircleqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
-LIBVPUB_SMSG=libvircle_smsg.a
+LIBVIRCLE_SMSG=libvircle_smsg.a
 
 if ENABLE_ZMQ
-LIBVPUB_ZMQ=libvircle_zmq.a
+LIBVIRCLE_ZMQ=libvircle_zmq.a
 endif
 if BUILD_BITCOIN_LIBS
-LIBVPUBCONSENSUS=libvircleconsensus.la
+LIBVIRCLECONSENSUS=libvircleconsensus.la
 endif
 if ENABLE_WALLET
-LIBVPUB_WALLET=libvircle_wallet.a
-LIBVPUB_WALLET_TOOL=libvircle_wallet_tool.a
+LIBVIRCLE_WALLET=libvircle_wallet.a
+LIBVIRCLE_WALLET_TOOL=libvircle_wallet_tool.a
 endif
 if ENABLE_USBDEVICE
-LIBVPUB_USBDEVICE=libvircle_usbdevice.a
+LIBVIRCLE_USBDEVICE=libvircle_usbdevice.a
 endif
 
-LIBVPUB_CRYPTO= $(LIBVPUB_CRYPTO_BASE)
+LIBVIRCLE_CRYPTO= $(LIBVIRCLE_CRYPTO_BASE)
 if ENABLE_SSE41
-LIBVPUB_CRYPTO_SSE41 = crypto/libvircle_crypto_sse41.a
-LIBVPUB_CRYPTO += $(LIBVPUB_CRYPTO_SSE41)
+LIBVIRCLE_CRYPTO_SSE41 = crypto/libvircle_crypto_sse41.a
+LIBVIRCLE_CRYPTO += $(LIBVIRCLE_CRYPTO_SSE41)
 endif
 if ENABLE_AVX2
-LIBVPUB_CRYPTO_AVX2 = crypto/libvircle_crypto_avx2.a
-LIBVPUB_CRYPTO += $(LIBVPUB_CRYPTO_AVX2)
+LIBVIRCLE_CRYPTO_AVX2 = crypto/libvircle_crypto_avx2.a
+LIBVIRCLE_CRYPTO += $(LIBVIRCLE_CRYPTO_AVX2)
 endif
 if ENABLE_SHANI
-LIBVPUB_CRYPTO_SHANI = crypto/libvircle_crypto_shani.a
-LIBVPUB_CRYPTO += $(LIBVPUB_CRYPTO_SHANI)
+LIBVIRCLE_CRYPTO_SHANI = crypto/libvircle_crypto_shani.a
+LIBVIRCLE_CRYPTO += $(LIBVIRCLE_CRYPTO_SHANI)
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(wildcard secp256k1/include/*)
@@ -68,19 +68,19 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(w
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  $(LIBVPUB_CRYPTO) \
-  $(LIBVPUB_UTIL) \
-  $(LIBVPUB_COMMON) \
-  $(LIBVPUB_CONSENSUS) \
-  $(LIBVPUB_SERVER) \
-  $(LIBVPUB_CLI) \
-  $(LIBVPUB_WALLET) \
-  $(LIBVPUB_WALLET_TOOL) \
-  $(LIBVPUB_USBDEVICE) \
-  $(LIBVPUB_SMSG) \
-  $(LIBVPUB_ZMQ)
+  $(LIBVIRCLE_CRYPTO) \
+  $(LIBVIRCLE_UTIL) \
+  $(LIBVIRCLE_COMMON) \
+  $(LIBVIRCLE_CONSENSUS) \
+  $(LIBVIRCLE_SERVER) \
+  $(LIBVIRCLE_CLI) \
+  $(LIBVIRCLE_WALLET) \
+  $(LIBVIRCLE_WALLET_TOOL) \
+  $(LIBVIRCLE_USBDEVICE) \
+  $(LIBVIRCLE_SMSG) \
+  $(LIBVIRCLE_ZMQ)
 
-lib_LTLIBRARIES = $(LIBVPUBCONSENSUS)
+lib_LTLIBRARIES = $(LIBVIRCLECONSENSUS)
 
 bin_PROGRAMS =
 noinst_PROGRAMS =
@@ -612,20 +612,20 @@ vircled_SOURCES += bitcoind-res.rc
 endif
 
 vircled_LDADD = \
-  $(LIBVPUB_SERVER) \
-  $(LIBVPUB_WALLET) \
-  $(LIBVPUB_COMMON) \
+  $(LIBVIRCLE_SERVER) \
+  $(LIBVIRCLE_WALLET) \
+  $(LIBVIRCLE_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBVPUB_UTIL) \
-  $(LIBVPUB_ZMQ) \
-  $(LIBVPUB_CONSENSUS) \
-  $(LIBVPUB_CRYPTO) \
+  $(LIBVIRCLE_UTIL) \
+  $(LIBVIRCLE_ZMQ) \
+  $(LIBVIRCLE_CONSENSUS) \
+  $(LIBVIRCLE_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
   $(LIBSECP256K1) \
-  $(LIBVPUB_SMSG) \
-  $(LIBVPUB_USBDEVICE)
+  $(LIBVIRCLE_SMSG) \
+  $(LIBVIRCLE_USBDEVICE)
 
 vircled_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 if ENABLE_USBDEVICE
@@ -644,10 +644,10 @@ vircle_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
 vircle_cli_LDADD = \
-  $(LIBVPUB_CLI) \
+  $(LIBVIRCLE_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBVPUB_UTIL) \
-  $(LIBVPUB_CRYPTO)
+  $(LIBVIRCLE_UTIL) \
+  $(LIBVIRCLE_CRYPTO)
 
 vircle_cli_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
@@ -664,10 +664,10 @@ endif
 
 vircle_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBVPUB_COMMON) \
-  $(LIBVPUB_UTIL) \
-  $(LIBVPUB_CONSENSUS) \
-  $(LIBVPUB_CRYPTO) \
+  $(LIBVIRCLE_COMMON) \
+  $(LIBVIRCLE_UTIL) \
+  $(LIBVIRCLE_CONSENSUS) \
+  $(LIBVIRCLE_CRYPTO) \
   $(LIBSECP256K1)
 
 vircle_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
@@ -684,16 +684,16 @@ vircle_wallet_SOURCES += bitcoin-wallet-res.rc
 endif
 
 vircle_wallet_LDADD = \
-  $(LIBVPUB_WALLET_TOOL) \
-  $(LIBVPUB_SERVER) \
-  $(LIBVPUB_WALLET) \
-  $(LIBVPUB_COMMON) \
-  $(LIBVPUB_CONSENSUS) \
-  $(LIBVPUB_UTIL) \
-  $(LIBVPUB_CRYPTO) \
-  $(LIBVPUB_SMSG) \
-  $(LIBVPUB_USBDEVICE) \
-  $(LIBVPUB_ZMQ) \
+  $(LIBVIRCLE_WALLET_TOOL) \
+  $(LIBVIRCLE_SERVER) \
+  $(LIBVIRCLE_WALLET) \
+  $(LIBVIRCLE_COMMON) \
+  $(LIBVIRCLE_CONSENSUS) \
+  $(LIBVIRCLE_UTIL) \
+  $(LIBVIRCLE_CRYPTO) \
+  $(LIBVIRCLE_SMSG) \
+  $(LIBVIRCLE_USBDEVICE) \
+  $(LIBVIRCLE_ZMQ) \
   $(LIBUNIVALUE) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \

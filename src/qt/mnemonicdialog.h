@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_QT_MNEMONICDIALOG_H
-#define VPUB_QT_MNEMONICDIALOG_H
+#ifndef VIRCLE_QT_MNEMONICDIALOG_H
+#define VIRCLE_QT_MNEMONICDIALOG_H
 
 #include <QDialog>
 #include <QThread>
@@ -59,4 +59,4 @@ private:
     Ui::MnemonicDialog *ui;
 };
 
-#endif // VPUB_QT_MNEMONICDIALOG_H
+#endif // VIRCLE_QT_MNEMONICDIALOG_H

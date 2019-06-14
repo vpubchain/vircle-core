@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_INSIGHT_CSINDEX_H
-#define VPUB_INSIGHT_CSINDEX_H
+#ifndef VIRCLE_INSIGHT_CSINDEX_H
+#define VIRCLE_INSIGHT_CSINDEX_H
 
 #include <script/standard.h>
 
@@ -98,4 +98,4 @@ public:
     }
 };
 
-#endif // VPUB_INSIGHT_CSINDEX_H
+#endif // VIRCLE_INSIGHT_CSINDEX_H

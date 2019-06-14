@@ -274,7 +274,7 @@ std::string CTransaction::ToString() const
         GetHash().ToString().substr(0,10),
         nVersion,
         vin.size(),
-        (nVersion & 0xFF) < VPUB_TXN_VERSION ? vout.size() : vpout.size(),
+        (nVersion & 0xFF) < VIRCLE_TXN_VERSION ? vout.size() : vpout.size(),
         nLockTime);
     for (const auto& tx_in : vin)
         str += "    " + tx_in.ToString() + "\n";

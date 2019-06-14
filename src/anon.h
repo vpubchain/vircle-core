@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_ANON_H
-#define VPUB_ANON_H
+#ifndef VIRCLE_ANON_H
+#define VIRCLE_ANON_H
 
 #include <inttypes.h>
 
@@ -35,4 +35,4 @@ bool RollBackRCTIndex(int64_t nLastValidRCTOutput, int64_t nExpectErase, std::se
 
 bool RewindToCheckpoint(int nCheckPointHeight, int &nBlocks, std::string &sError);
 
-#endif  // VPUB_ANON_H
+#endif  // VIRCLE_ANON_H

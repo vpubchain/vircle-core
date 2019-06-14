@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_WALLET_HDWALLET_H
-#define VPUB_WALLET_HDWALLET_H
+#ifndef VIRCLE_WALLET_HDWALLET_H
+#define VIRCLE_WALLET_HDWALLET_H
 
 #include <wallet/wallet.h>
 #include <wallet/hdwalletdb.h>
@@ -846,5 +846,5 @@ CHDWallet *GetVpubWallet(CKeyStore *win);
 const CHDWallet *GetVpubWallet(const CKeyStore *win);
 
 
-#endif // VPUB_WALLET_HDWALLET_H
+#endif // VIRCLE_WALLET_HDWALLET_H
 

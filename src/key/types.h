@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_KEY_TYPES_H
-#define VPUB_KEY_TYPES_H
+#ifndef VIRCLE_KEY_TYPES_H
+#define VIRCLE_KEY_TYPES_H
 
 typedef std::vector<uint8_t> ec_point;
 
@@ -14,4 +14,4 @@ const size_t EC_UNCOMPRESSED_SIZE = 65;
 
 //typedef struct ec_secret { uint8_t e[EC_SECRET_SIZE]; } ec_secret;
 
-#endif  // VPUB_KEY_TYPES_H
+#endif  // VIRCLE_KEY_TYPES_H

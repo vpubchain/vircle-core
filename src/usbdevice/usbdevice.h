@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_USBDEVICE_USBDEVICE_H
-#define VPUB_USBDEVICE_USBDEVICE_H
+#ifndef VIRCLE_USBDEVICE_USBDEVICE_H
+#define VIRCLE_USBDEVICE_USBDEVICE_H
 
 #include <string.h>
 #include <assert.h>
@@ -167,5 +167,5 @@ public:
 
 } // usb_device
 
-#endif // VPUB_USBDEVICE_USBDEVICE_H
+#endif // VIRCLE_USBDEVICE_USBDEVICE_H
 

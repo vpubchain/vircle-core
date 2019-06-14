@@ -356,7 +356,7 @@ BOOST_AUTO_TEST_CASE(test_TxOutRingCT)
     BOOST_MESSAGE("---------------- Serialize Transaction with No Segwit ---------------------\n");
     CMutableTransaction tx;
     tx.vpout.emplace_back(txout);
-    tx.nVersion = 2|VPUB_TXN_VERSION;
+    tx.nVersion = 2|VIRCLE_TXN_VERSION;
     BOOST_CHECK_MESSAGE(tx.IsVpubVersion(), "failed IsVpubVersion");
 
     //The peer that sends the block sets the version that the data stream will use!

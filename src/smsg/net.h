@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_SMSG_NET_H
-#define VPUB_SMSG_NET_H
+#ifndef VIRCLE_SMSG_NET_H
+#define VIRCLE_SMSG_NET_H
 
 #include <sync.h>
 
@@ -18,4 +18,4 @@ public:
     bool fEnabled= false;
 };
 
-#endif // VPUB_SMSG_NET_H
+#endif // VIRCLE_SMSG_NET_H

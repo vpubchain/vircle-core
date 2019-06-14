@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_BLIND_H
-#define VPUB_BLIND_H
+#ifndef VIRCLE_BLIND_H
+#define VIRCLE_BLIND_H
 
 #include <secp256k1.h>
 #include <secp256k1_bulletproofs.h>
@@ -23,4 +23,4 @@ int GetRangeProofInfo(const std::vector<uint8_t> &vRangeproof, int &rexp, int &r
 void ECC_Start_Blinding();
 void ECC_Stop_Blinding();
 
-#endif  // VPUB_BLIND_H
+#endif  // VIRCLE_BLIND_H

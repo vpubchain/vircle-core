@@ -3737,7 +3737,7 @@ int CSMSG::FundMsg(SecureMessage &smsg, std::string &sError, bool fTestFee, CAmo
         return errorN(SMSG_GENERAL_ERROR, sError, __func__, "Message hash failed.");
     }
 
-    txFund.nVersion = VPUB_TXN_VERSION;
+    txFund.nVersion = VIRCLE_TXN_VERSION;
 
     size_t nMsgBytes = SMSG_HDR_LEN + smsg.nPayload;
 

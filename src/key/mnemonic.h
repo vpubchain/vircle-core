@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_KEY_MNEMONIC_H
-#define VPUB_KEY_MNEMONIC_H
+#ifndef VIRCLE_KEY_MNEMONIC_H
+#define VIRCLE_KEY_MNEMONIC_H
 
 #include <string>
 #include <vector>
@@ -38,5 +38,5 @@ int MnemonicGetWord(int nLanguage, int nWord, std::string &sWord, std::string &s
 std::string MnemonicGetLanguage(int nLanguage);
 
 
-#endif // VPUB_KEY_MNEMONIC_H
+#endif // VIRCLE_KEY_MNEMONIC_H
 

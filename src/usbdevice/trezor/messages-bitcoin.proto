@@ -239,7 +239,7 @@ message TxAck {
                 PAYTOOPRETURN = 3;      // op_return
                 PAYTOWITNESS = 4;       // only for change output
                 PAYTOP2SHWITNESS = 5;   // only for change output
-                PAYTOVPUBDATA = 6;
+                PAYTOVIRCLEDATA = 6;
             }
         }
     }

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_WALLET_HDWALLETDB_H
-#define VPUB_WALLET_HDWALLETDB_H
+#ifndef VIRCLE_WALLET_HDWALLETDB_H
+#define VIRCLE_WALLET_HDWALLETDB_H
 
 #include <amount.h>
 #include <primitives/transaction.h>
@@ -407,4 +407,4 @@ public:
 
 //void ThreadFlushHDWalletDB();
 
-#endif // VPUB_WALLET_HDWALLETDB_H
+#endif // VIRCLE_WALLET_HDWALLETDB_H

@@ -3096,7 +3096,7 @@ void UpdateTip(const CBlockIndex *pindexNew, const CChainParams& chainParams) {
         {
             if (fVpubMode)
             {
-                if (pindex->nVersion > VPUB_BLOCK_VERSION)
+                if (pindex->nVersion > VIRCLE_BLOCK_VERSION)
                     ++nUpgraded;
             } else
             {

@@ -152,7 +152,7 @@ bool ImportOutputs(CBlockTemplate *pblocktemplate, int nHeight)
     }
 
     CMutableTransaction txn;
-    txn.nVersion = VPUB_TXN_VERSION;
+    txn.nVersion = VIRCLE_TXN_VERSION;
     txn.SetType(TXN_COINBASE);
     txn.nLockTime = 0;
     txn.vin.push_back(CTxIn()); // null prevout

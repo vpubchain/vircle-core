@@ -430,18 +430,18 @@ qt_vircle_qt_SOURCES = qt/main.cpp
 if TARGET_WINDOWS
   qt_vircle_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_vircle_qt_LDADD = qt/libvircleqt.a $(LIBVPUB_SERVER)
+qt_vircle_qt_LDADD = qt/libvircleqt.a $(LIBVIRCLE_SERVER)
 if ENABLE_WALLET
-qt_vircle_qt_LDADD += $(LIBVPUB_UTIL) $(LIBVPUB_WALLET)
+qt_vircle_qt_LDADD += $(LIBVIRCLE_UTIL) $(LIBVIRCLE_WALLET)
 endif
 if ENABLE_ZMQ
-qt_vircle_qt_LDADD += $(LIBVPUB_ZMQ) $(ZMQ_LIBS)
+qt_vircle_qt_LDADD += $(LIBVIRCLE_ZMQ) $(ZMQ_LIBS)
 endif
 if ENABLE_USBDEVICE
-qt_vircle_qt_LDADD += $(LIBVPUB_USBDEVICE) $(USB_LIBS) $(HIDAPI_LIBS)
+qt_vircle_qt_LDADD += $(LIBVIRCLE_USBDEVICE) $(USB_LIBS) $(HIDAPI_LIBS)
 endif
 
-qt_vircle_qt_LDADD += $(LIBVPUB_CLI) $(LIBVPUB_COMMON) $(LIBVPUB_UTIL) $(LIBVPUB_CONSENSUS) $(LIBVPUB_CRYPTO) $(LIBVPUB_SMSG) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_vircle_qt_LDADD += $(LIBVIRCLE_CLI) $(LIBVIRCLE_COMMON) $(LIBVIRCLE_UTIL) $(LIBVIRCLE_CONSENSUS) $(LIBVIRCLE_CRYPTO) $(LIBVIRCLE_SMSG) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 if ENABLE_BIP70
@@ -486,7 +486,7 @@ CLEAN_QT = $(nodist_qt_libvircleqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda q
 CLEANFILES += $(CLEAN_QT)
 
 vircle_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libvircleqt_a_OBJECTS) $(qt_vircle_qt_OBJECTS) qt/vircle-qt$(EXEEXT) $(LIBVPUBQT)
+	rm -f $(CLEAN_QT) $(qt_libvircleqt_a_OBJECTS) $(qt_vircle_qt_OBJECTS) qt/vircle-qt$(EXEEXT) $(LIBVIRCLEQT)
 
 vircle_qt : qt/vircle-qt$(EXEEXT)
 

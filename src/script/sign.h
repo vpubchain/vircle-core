@@ -122,7 +122,7 @@ public:
 extern const BaseSignatureCreator& DUMMY_SIGNATURE_CREATOR;
 /** A signature creator that just produces 72-byte empty signatures. */
 extern const BaseSignatureCreator& DUMMY_MAXIMUM_SIGNATURE_CREATOR;
-extern const BaseSignatureCreator& DUMMY_SIGNATURE_CREATOR_VPUB;
+extern const BaseSignatureCreator& DUMMY_SIGNATURE_CREATOR_VIRCLE;
 
 typedef std::pair<CPubKey, std::vector<unsigned char>> SigPair;
 

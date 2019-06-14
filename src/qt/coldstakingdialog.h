@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef VPUB_QT_COLDSTAKINGDIALOG_H
-#define VPUB_QT_COLDSTAKINGDIALOG_H
+#ifndef VIRCLE_QT_COLDSTAKINGDIALOG_H
+#define VIRCLE_QT_COLDSTAKINGDIALOG_H
 
 #include <QDialog>
 
@@ -34,4 +34,4 @@ private:
     Ui::ColdStakingDialog *ui;
 };
 
-#endif // VPUB_QT_COLDSTAKINGDIALOG_H
+#endif // VIRCLE_QT_COLDSTAKINGDIALOG_H

@@ -513,7 +513,7 @@ CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniVal
     UniValue outputs = outputs_is_obj ? outputs_in.get_obj() : outputs_in.get_array();
 
     CMutableTransaction rawTx;
-    rawTx.nVersion = fVpubMode ? VPUB_TXN_VERSION : BTC_TXN_VERSION;
+    rawTx.nVersion = fVpubMode ? VIRCLE_TXN_VERSION : BTC_TXN_VERSION;
 
 
     if (!locktime.isNull()) {
