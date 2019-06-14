@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The Vpub Core developers
+// Copyright (c) 2018 The Vircle Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -933,7 +933,7 @@ static UniValue devicegetnewstealthaddress(const JSONRPCRequest &request)
     if (request.fHelp || request.params.size() > 4)
         throw std::runtime_error(
             RPCHelpMan{"devicegetnewstealthaddress",
-                "\nReturns a new Vpub stealth address for receiving payments." +
+                "\nReturns a new Vircle stealth address for receiving payments." +
                     HelpRequiringPassphrase(pwallet) + "\n",
                 {
                     {"label", RPCArg::Type::STR, /* default */ "", "If \"label\" is specified the new address will be added to the address book."},

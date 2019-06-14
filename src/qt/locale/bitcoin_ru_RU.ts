@@ -66,12 +66,12 @@
         <translation>Адреса получения</translation>
     </message>
     <message>
-        <source>These are your Vpub addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Это ваши Vpub адреса для отправки платежа. Всегда проверяйте сумму и адрес получателя перед отправкой платежа.</translation>
+        <source>These are your Vircle addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Это ваши Vircle адреса для отправки платежа. Всегда проверяйте сумму и адрес получателя перед отправкой платежа.</translation>
     </message>
     <message>
-        <source>These are your Vpub addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Это ваши Vpub адреса для получения платежей. Настоятельно рекомендуем использовать новые адреса для получения каждой транзакции.</translation>
+        <source>These are your Vircle addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Это ваши Vircle адреса для получения платежей. Настоятельно рекомендуем использовать новые адреса для получения каждой транзакции.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -354,7 +354,7 @@
         <translation>Прокси &lt;b&gt;включен&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Vpub address</source>
+        <source>Send coins to a Vircle address</source>
         <translation>Послать средства на биткойн адрес</translation>
     </message>
     <message>
@@ -378,8 +378,8 @@
         <translation>&amp;Проверить сообщение...</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub Core</translation>
+        <source>Vircle.</source>
+        <translation>Vircle Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -406,12 +406,12 @@
         <translation>Зашифровать приватные ключи, принадлежащие вашему кошельку</translation>
     </message>
     <message>
-        <source>Sign messages with your Vpub addresses to prove you own them</source>
-        <translation>Подписывайте сообщения Vpub адресами чтобы подтвердить что это написали именно Вы</translation>
+        <source>Sign messages with your Vircle addresses to prove you own them</source>
+        <translation>Подписывайте сообщения Vircle адресами чтобы подтвердить что это написали именно Вы</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
-        <translation>Проверяйте сообщения чтобы убедиться что они подписаны конкретными Vpub адресами</translation>
+        <source>Verify messages to ensure they were signed with specified Vircle addresses</source>
+        <translation>Проверяйте сообщения чтобы убедиться что они подписаны конкретными Vircle адресами</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -450,8 +450,8 @@
         <translation>Опции командной строки</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Vpub network</source>
-        <translation><numerusform>%n активное подключение к сети Vpub.</numerusform><numerusform>%n активных подключения к сети Vpub.</numerusform><numerusform>%n активных подключений к сети Vpub.</numerusform><numerusform>%n активных подключений к сети Vpub.</numerusform></translation>
+        <source>%n active connection(s) to Vircle network</source>
+        <translation><numerusform>%n активное подключение к сети Vircle.</numerusform><numerusform>%n активных подключения к сети Vircle.</numerusform><numerusform>%n активных подключений к сети Vircle.</numerusform><numerusform>%n активных подключений к сети Vircle.</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -554,8 +554,8 @@
         <translation>Кошелек &lt;b&gt;зашифрован&lt;/b&gt; и сейчас &lt;b&gt;заблокирован&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Vpub can no longer continue safely and will quit.</source>
-        <translation>Произошла критическая ошибка. Vpub больше не может продолжать безопасную работу и будет закрыт.</translation>
+        <source>A fatal error occurred. Vircle can no longer continue safely and will quit.</source>
+        <translation>Произошла критическая ошибка. Vircle больше не может продолжать безопасную работу и будет закрыт.</translation>
     </message>
 </context>
 <context>
@@ -797,8 +797,8 @@
         <translation>Использовать пользовательскую директорию данных</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub Core</translation>
+        <source>Vircle.</source>
+        <translation>Vircle Core</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -982,8 +982,8 @@
         <translation>Разрешить входящие соединения</translation>
     </message>
     <message>
-        <source>Connect to the Vpub network through a SOCKS5 proxy.</source>
-        <translation>Подключится к сети Vpub через SOCKS5 прокси.</translation>
+        <source>Connect to the Vircle network through a SOCKS5 proxy.</source>
+        <translation>Подключится к сети Vircle через SOCKS5 прокси.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1018,7 +1018,7 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Vpub network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the Vircle network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation>Соединяться к Биткоин-сети через отдельные SOCKS5 прокси через Tor hidden services:</translation>
     </message>
     <message>
@@ -1214,7 +1214,7 @@
         <translation>Количество</translation>
     </message>
     <message>
-        <source>Enter a Vpub address (e.g. %1)</source>
+        <source>Enter a Vircle address (e.g. %1)</source>
         <translation>Введите биткоин-адрес (напр. %1)</translation>
     </message>
     <message>
@@ -1815,8 +1815,8 @@
         <translation>Истекло время ожидания запроса платежа</translation>
     </message>
     <message>
-        <source>Warning: Invalid Vpub address</source>
-        <translation>Предупреждение: Неверный Vpub адрес</translation>
+        <source>Warning: Invalid Vircle address</source>
+        <translation>Предупреждение: Неверный Vircle адрес</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2268,8 +2268,8 @@
         <translation>Невозможно запустить HTTP-сервер. Для получения более детальной информации необходимо обратиться к журналу отладки.</translation>
     </message>
     <message>
-        <source>Vpub Core</source>
-        <translation>Vpub Core</translation>
+        <source>Vircle Core</source>
+        <translation>Vircle Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

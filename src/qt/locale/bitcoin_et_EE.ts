@@ -130,8 +130,8 @@
         <translation>Kõvakettal olevate plokkide reindekseerimine...</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -265,8 +265,8 @@
         <translation>Tere tulemast</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -760,8 +760,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Vpub Core</source>
-        <translation>Vpub Core</translation>
+        <source>Vircle Core</source>
+        <translation>Vircle Core</translation>
     </message>
     <message>
         <source>Information</source>

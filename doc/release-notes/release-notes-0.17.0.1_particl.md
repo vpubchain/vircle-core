@@ -1,4 +1,4 @@
-Vpub Core version 0.17.0.1 is now available:
+Vircle Core version 0.17.0.1 is now available:
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
@@ -8,7 +8,7 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over `/Applications/Vpub-Qt` (on Mac)
+installer (on Windows) or just copy over `/Applications/Vircle-Qt` (on Mac)
 or `vpubd`/`vpub-qt` (on Linux).
 
 If your node has a txindex, the txindex db will be migrated the first time you run 0.17.0 or newer, which may take up to a few hours. Your node will not be functional until this migration completes.
@@ -31,10 +31,10 @@ processing the entire blockchain.
 Compatibility
 ==============
 
-Vpub Core is extensively tested on multiple operating systems using
+Vircle Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.10+, and Windows 7 and newer (Windows XP is not supported).
 
-Vpub Core should also work on most other Unix-like systems but is not
+Vircle Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 From 0.17.0 onwards macOS <10.10 is no longer supported. 0.17.0 is built using Qt 5.9.x, which doesn't
@@ -167,10 +167,10 @@ Here are the changes to RPC methods:
 | `listtransactions`     | The `account` named parameter has been renamed to `dummy`. If provided, the `dummy` parameter must be set to the string `*`, unless running with the `-deprecatedrpc=accounts` argument (in which case functionality is unchanged). |
 | `getbalance`           | `account`, `minconf` and `include_watchonly` parameters are deprecated, and can only be used if running with '-deprecatedrpc=accounts' |
 
-BIP 174 Partially Signed Vpub Transactions support
+BIP 174 Partially Signed Vircle Transactions support
 -----------------------------------------------------
 
-[BIP 174 PSBT](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki) is an interchange format for Vpub transactions that are not fully signed
+[BIP 174 PSBT](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki) is an interchange format for Vircle transactions that are not fully signed
 yet, together with relevant metadata to help entities work towards signing it.
 It is intended to simplify workflows where multiple parties need to cooperate to
 produce a transaction. Examples include hardware wallets, multisig setups, and
@@ -178,7 +178,7 @@ produce a transaction. Examples include hardware wallets, multisig setups, and
 
 ### Overall workflow
 
-Overall, the construction of a fully signed Vpub transaction goes through the
+Overall, the construction of a fully signed Vircle transaction goes through the
 following steps:
 
 - A **Creator** proposes a particular transaction to be created. He constructs
@@ -193,7 +193,7 @@ following steps:
   partial signature for the inputs for which they have relevant key(s).
 - A **Finalizer** is run for each input to convert the partial signatures and
   possibly script information into a final `scriptSig` and/or `scriptWitness`.
-- An **Extractor** produces a valid Vpub transaction (in network format)
+- An **Extractor** produces a valid Vircle transaction (in network format)
   from a PSBT for which all inputs are finalized.
 
 Generally, each of the above (excluding Creator and Extractor) will simply
@@ -935,4 +935,4 @@ Cold Staking Features in QT
 Credits
 =======
 
-Thanks to the Core Developers at Vpub and Bitcoin (https://github.com/bitcoin/bitcoin).
+Thanks to the Core Developers at Vircle and Bitcoin (https://github.com/bitcoin/bitcoin).

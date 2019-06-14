@@ -57,7 +57,7 @@
 #include <boost/thread.hpp>
 
 #if defined(NDEBUG)
-# error "Vpub cannot be compiled without assertions."
+# error "Vircle cannot be compiled without assertions."
 #endif
 
 #define MICRO 0.000001
@@ -2283,7 +2283,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     bool fIsGenesisBlock = blockHash == chainparams.GetConsensus().hashGenesisBlock;
     // Special case for the genesis block, skipping connection of its transactions
     // (its coinbase is unspendable)
-    if (!fVpubMode  // genesis coinbase is spendable when in Vpub mode
+    if (!fVpubMode  // genesis coinbase is spendable when in Vircle mode
         && fIsGenesisBlock) {
         if (!fJustCheck)
             view.SetBestBlock(pindex->GetBlockHash(), pindex->nHeight);
@@ -2772,7 +2772,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
         }
     } else {
         CAmount blockReward = nFees + GetBlockSubsidy(pindex->nHeight, chainparams.GetConsensus());
-        if (block.vtx[0]->GetValueOut() > blockReward) // Vpub coins are imported as coinbase txns
+        if (block.vtx[0]->GetValueOut() > blockReward) // Vircle coins are imported as coinbase txns
             return state.DoS(100,
                              error("ConnectBlock(): coinbase pays too much (actual=%d vs limit=%d)",
                                    block.vtx[0]->GetValueOut(), blockReward),

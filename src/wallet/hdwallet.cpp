@@ -1,4 +1,4 @@
-// Copyright (C) 2019 The Vpub Core developers
+// Copyright (C) 2019 The Vircle Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

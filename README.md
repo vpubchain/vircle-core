@@ -1,24 +1,24 @@
-Vpub Core integration/staging tree
+Vircle Core integration/staging tree
 =====================================
 
 [![Build Status](https://travis-ci.org/vpub/vpub-core.svg?branch=master)](https://travis-ci.org/vpub/vpub-core)
 
 https://vpub.io
 
-What is Vpub?
+What is Vircle?
 ----------------
 
 An open source, decentralized privacy platform
 built for global person to person eCommerce.
 
 For more information, as well as an immediately useable, binary version of
-the Vpub Core software, see https://vpub.io.
+the Vircle Core software, see https://vpub.io.
 
 
 Getting Started
 ---------------
 
-A new Vpub wallet will need an HD master key loaded and an initial account
+A new Vircle wallet will need an HD master key loaded and an initial account
 derived before it will be functional.
 
 The GUI programs will guide you through the initial setup.
@@ -36,7 +36,7 @@ Remember to backup your passphrase and/or wallet.dat file!
 License
 -------
 
-Vpub Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Vircle Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
@@ -44,7 +44,7 @@ Development Process
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/vpubchain/vpub-core/tags) are created
-regularly to indicate new official, stable release versions of Vpub Core.
+regularly to indicate new official, stable release versions of Vircle Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
 and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).

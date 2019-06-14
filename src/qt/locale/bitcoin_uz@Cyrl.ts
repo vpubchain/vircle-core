@@ -150,8 +150,8 @@
         <translation>Дискдаги блоклар қайта индексланмоқда...</translation>
     </message>
     <message>
-        <source>Send coins to a Vpub address</source>
-        <translation>Тангаларни Vpub манзилига жўнатиш</translation>
+        <source>Send coins to a Vircle address</source>
+        <translation>Тангаларни Vircle манзилига жўнатиш</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -174,8 +174,8 @@
         <translation>Хабарни &amp;тасдиқлаш...</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -202,12 +202,12 @@
         <translation>Ҳамёнингизга тегишли махфий калитларни кодлаш</translation>
     </message>
     <message>
-        <source>Sign messages with your Vpub addresses to prove you own them</source>
-        <translation>Vpub манзилидан унинг эгаси эканлигингизни исботлаш учун хабарлар ёзинг</translation>
+        <source>Sign messages with your Vircle addresses to prove you own them</source>
+        <translation>Vircle манзилидан унинг эгаси эканлигингизни исботлаш учун хабарлар ёзинг</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
-        <translation>Хабарларни махсус Vpub манзилларингиз билан ёзилганлигига ишонч ҳосил қилиш учун уларни тасдиқланг</translation>
+        <source>Verify messages to ensure they were signed with specified Vircle addresses</source>
+        <translation>Хабарларни махсус Vircle манзилларингиз билан ёзилганлигига ишонч ҳосил қилиш учун уларни тасдиқланг</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -239,15 +239,15 @@
     </message>
     <message>
         <source>Open a vpub: URI or payment request</source>
-        <translation>Vpub.ни очиш: URI ёки тўлов сўрови</translation>
+        <translation>Vircle.ни очиш: URI ёки тўлов сўрови</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Буйруқлар сатри мосламалари</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Vpub network</source>
-        <translation><numerusform>%n та Vpub тармоғига фаол уланиш мавжуд</numerusform></translation>
+        <source>%n active connection(s) to Vircle network</source>
+        <translation><numerusform>%n та Vircle тармоғига фаол уланиш мавжуд</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -433,8 +433,8 @@
         <translation>Бошқа маълумотлар директориясида фойдаланинг:</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -593,8 +593,8 @@
         <translation>Шакл</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</source>
-        <translation>Кўрсатилган маълумот эскирган бўлиши мумкин. Ҳамёнингиз алоқа ўрнатилгандан сўнг Vpub тармоқ билан автоматик тарзда синхронланади, аммо жараён ҳалигача тугалланмади.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vircle network after a connection is established, but this process has not completed yet.</source>
+        <translation>Кўрсатилган маълумот эскирган бўлиши мумкин. Ҳамёнингиз алоқа ўрнатилгандан сўнг Vircle тармоқ билан автоматик тарзда синхронланади, аммо жараён ҳалигача тугалланмади.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -674,8 +674,8 @@
         <translation>Миқдори</translation>
     </message>
     <message>
-        <source>Enter a Vpub address (e.g. %1)</source>
-        <translation>Vpub манзилини киритинг (масалан.  %1)</translation>
+        <source>Enter a Vircle address (e.g. %1)</source>
+        <translation>Vircle манзилини киритинг (масалан.  %1)</translation>
     </message>
     <message>
         <source>%1 m</source>
@@ -1172,8 +1172,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Vpub Core</source>
-        <translation>Vpub Core</translation>
+        <source>Vircle Core</source>
+        <translation>Vircle Core</translation>
     </message>
     <message>
         <source>Information</source>

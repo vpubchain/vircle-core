@@ -62,12 +62,12 @@
         <translation>Direcciones de recepción</translation>
     </message>
     <message>
-        <source>These are your Vpub addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son sus direcciones Vpub para enviar pagos. Compruebe siempre la cantidad y la dirección de recibo antes de transferir monedas.</translation>
+        <source>These are your Vircle addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son sus direcciones Vircle para enviar pagos. Compruebe siempre la cantidad y la dirección de recibo antes de transferir monedas.</translation>
     </message>
     <message>
-        <source>These are your Vpub addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas son sus direcciones de Vpub para recibir pagos. Se recomienda utilizar una nueva dirección de recepción para cada transacción.</translation>
+        <source>These are your Vircle addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estas son sus direcciones de Vircle para recibir pagos. Se recomienda utilizar una nueva dirección de recepción para cada transacción.</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -165,7 +165,7 @@
     </message>
     <message>
         <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your vpub from being stolen by malware infecting your computer.</source>
-        <translation>%1 se cerrará ahora para finalizar el proceso de cifrado. Recuerde que el cifrado de su monedero no puede proteger de manera completa su Vpub de robo por malware que esté infectando su sistema.</translation>
+        <translation>%1 se cerrará ahora para finalizar el proceso de cifrado. Recuerde que el cifrado de su monedero no puede proteger de manera completa su Vircle de robo por malware que esté infectando su sistema.</translation>
     </message>
     </context>
 <context>
@@ -250,8 +250,8 @@
         <translation>Reindexando bloques en disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Vpub address</source>
-        <translation>Enviar monedas a una dirección Vpub.</translation>
+        <source>Send coins to a Vircle address</source>
+        <translation>Enviar monedas a una dirección Vircle.</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -274,8 +274,8 @@
         <translation>&amp;Verificar mensaje...</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -302,12 +302,12 @@
         <translation>Cifrar las claves privadas de su monedero</translation>
     </message>
     <message>
-        <source>Sign messages with your Vpub addresses to prove you own them</source>
-        <translation>Firmar mensajes con sus direcciones Vpub para demostrar la propiedad</translation>
+        <source>Sign messages with your Vircle addresses to prove you own them</source>
+        <translation>Firmar mensajes con sus direcciones Vircle para demostrar la propiedad</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
-        <translation>Verificar mensajes comprobando que están firmados con direcciones Vpub concretas</translation>
+        <source>Verify messages to ensure they were signed with specified Vircle addresses</source>
+        <translation>Verificar mensajes comprobando que están firmados con direcciones Vircle concretas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -327,7 +327,7 @@
     </message>
     <message>
         <source>Request payments (generates QR codes and vpub: URIs)</source>
-        <translation>Solicitar pagos (genera codigo QR y URL's de Vpub )</translation>
+        <translation>Solicitar pagos (genera codigo QR y URL's de Vircle )</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -521,8 +521,8 @@
         <translation>Utilice un directorio de datos personalizado:</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -598,8 +598,8 @@
         <translation>Experto</translation>
     </message>
     <message>
-        <source>Automatically open the Vpub client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto del cliente Vpub en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
+        <source>Automatically open the Vircle client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto del cliente Vircle en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -697,8 +697,8 @@
         <translation>Desde</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Vpub después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vircle network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Vircle después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
@@ -1131,8 +1131,8 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Vpub address</source>
-        <translation>Firmar el mensaje para demostrar que se posee esta dirección Vpub.</translation>
+        <source>Sign the message to prove you own this Vircle address</source>
+        <translation>Firmar el mensaje para demostrar que se posee esta dirección Vircle.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1151,8 +1151,8 @@
         <translation>&amp;Verificar mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Vpub address</source>
-        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección Vpub indicada</translation>
+        <source>Verify the message to ensure it was signed with the specified Vircle address</source>
+        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección Vircle indicada</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1228,8 +1228,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Vpub Core</source>
-        <translation>Núcleo de Vpub </translation>
+        <source>Vircle Core</source>
+        <translation>Núcleo de Vircle </translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

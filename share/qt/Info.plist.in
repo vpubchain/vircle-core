@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Vpub-Qt</string>
+  <string>Vircle-Qt</string>
 
   <key>CFBundleName</key>
-  <string>Vpub-Qt</string>
+  <string>Vircle-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>io.vpubfoundation.Vpub-Qt</string>
+  <string>io.vpubfoundation.Vircle-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -60,7 +60,7 @@
       <key>UTTypeIdentifier</key>
       <string>org.vpub.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Vpub payment request</string>
+      <string>Vircle payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>

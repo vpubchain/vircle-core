@@ -66,11 +66,11 @@
         <translation>Recibiendo direcciones</translation>
     </message>
     <message>
-        <source>These are your Vpub addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son tus direcciones de Vpub para recibir pagos. Siempre revise el monto y la dirección de envío antes de enviar criptomonedas.</translation>
+        <source>These are your Vircle addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son tus direcciones de Vircle para recibir pagos. Siempre revise el monto y la dirección de envío antes de enviar criptomonedas.</translation>
     </message>
     <message>
-        <source>These are your Vpub addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Vircle addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Estas son tus direcciones para recibir pagos. Es recomendable utilizar una nueva dirección para cada transacción.</translation>
     </message>
     <message>
@@ -346,7 +346,7 @@
         <translation>Cargando el index de bloques...</translation>
     </message>
     <message>
-        <source>Send coins to a Vpub address</source>
+        <source>Send coins to a Vircle address</source>
         <translation>Enviar monedas a una dirección vpub</translation>
     </message>
     <message>
@@ -370,8 +370,8 @@
         <translation>Verificar mensaje....</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -398,12 +398,12 @@
         <translation>Cifrar las claves privadas de su monedero</translation>
     </message>
     <message>
-        <source>Sign messages with your Vpub addresses to prove you own them</source>
+        <source>Sign messages with your Vircle addresses to prove you own them</source>
         <translation>Firmar un mensaje para provar que usted es dueño de esta dirección</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
-        <translation>Verificar mensajes comprobando que están firmados con direcciones Vpub concretas</translation>
+        <source>Verify messages to ensure they were signed with specified Vircle addresses</source>
+        <translation>Verificar mensajes comprobando que están firmados con direcciones Vircle concretas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -442,8 +442,8 @@
         <translation>&amp;Opciones de linea de comando</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Vpub network</source>
-        <translation><numerusform>%n conexión activa hacia la red Vpub.</numerusform><numerusform>%n conexiones activas hacia la red Vpub.</numerusform></translation>
+        <source>%n active connection(s) to Vircle network</source>
+        <translation><numerusform>%n conexión activa hacia la red Vircle.</numerusform><numerusform>%n conexiones activas hacia la red Vircle.</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -486,8 +486,8 @@
         <translation>Actualizado</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Vpub command-line options</source>
-        <translation>Mostrar el mensaje de ayuda %1 para obtener una lista de los posibles comandos de Vpub </translation>
+        <source>Show the %1 help message to get a list with possible Vircle command-line options</source>
+        <translation>Mostrar el mensaje de ayuda %1 para obtener una lista de los posibles comandos de Vircle </translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -556,8 +556,8 @@
         <translation>La billetera esta &lt;b&gt;codificada&lt;/b&gt; y actualmente &lt;b&gt;bloqueda&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Vpub can no longer continue safely and will quit.</source>
-        <translation>Ha ocurrido un error fatal. Vpub no puede seguir seguro y se cerrará.</translation>
+        <source>A fatal error occurred. Vircle can no longer continue safely and will quit.</source>
+        <translation>Ha ocurrido un error fatal. Vircle no puede seguir seguro y se cerrará.</translation>
     </message>
 </context>
 <context>
@@ -747,8 +747,8 @@
         <translation>Editar dirección de envio</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Vpub address.</source>
-        <translation>La dirección introducida "%1" no es una dirección Vpub valida.</translation>
+        <source>The entered address "%1" is not a valid Vircle address.</source>
+        <translation>La dirección introducida "%1" no es una dirección Vircle valida.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -832,8 +832,8 @@
         <translation>usar un directorio de datos personalizado:</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -844,8 +844,8 @@
         <translation>Aproximadamente %1 GB de información será almacenado en este directorio.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Vpub block chain.</source>
-        <translation>%1 descargará y almacenará una copia del blockchain de Vpub .</translation>
+        <source>%1 will download and store a copy of the Vircle block chain.</source>
+        <translation>%1 descargará y almacenará una copia del blockchain de Vircle .</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1029,8 +1029,8 @@
         <translation>Gastar cambio sin confirmar</translation>
     </message>
     <message>
-        <source>Automatically open the Vpub client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abre automáticamente el puerto del cliente Vpub en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
+        <source>Automatically open the Vircle client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abre automáticamente el puerto del cliente Vircle en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1041,8 +1041,8 @@
         <translation>Aceptar conexiones externas.</translation>
     </message>
     <message>
-        <source>Connect to the Vpub network through a SOCKS5 proxy.</source>
-        <translation>Conectar a la red de Vpub a través de un proxy SOCKS5</translation>
+        <source>Connect to the Vircle network through a SOCKS5 proxy.</source>
+        <translation>Conectar a la red de Vircle a través de un proxy SOCKS5</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1073,8 +1073,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Vpub network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Conectar a la red de Vpub a través de un proxy SOCKS5 diferente para los servicios anónimos de Tor.</translation>
+        <source>Connect to the Vircle network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Conectar a la red de Vircle a través de un proxy SOCKS5 diferente para los servicios anónimos de Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1173,8 +1173,8 @@
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información entregada puede estar desactualizada. Tu billetera se sincroniza automáticamente con la red de Vpub después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vircle network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información entregada puede estar desactualizada. Tu billetera se sincroniza automáticamente con la red de Vircle después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1330,8 +1330,8 @@
         <translation>Cantidad</translation>
     </message>
     <message>
-        <source>Enter a Vpub address (e.g. %1)</source>
-        <translation>Ingresa una dirección de Vpub (Ejemplo: %1)</translation>
+        <source>Enter a Vircle address (e.g. %1)</source>
+        <translation>Ingresa una dirección de Vircle (Ejemplo: %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1711,8 +1711,8 @@
         <translation>&amp;mensaje</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Vpub network.</source>
-        <translation>Mensaje opcional adjunto a la solicitud de pago, que será mostrado cuando la solicitud sea abierta. Nota: Este mensaje no será enviado con el pago a través de la red Vpub.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Vircle network.</source>
+        <translation>Mensaje opcional adjunto a la solicitud de pago, que será mostrado cuando la solicitud sea abierta. Nota: Este mensaje no será enviado con el pago a través de la red Vircle.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -2065,8 +2065,8 @@
         <translation>Pagar únicamente la comisión requerida de %1</translation>
     </message>
     <message>
-        <source>Warning: Invalid Vpub address</source>
-        <translation>Peligro: Dirección de Vpub inválida</translation>
+        <source>Warning: Invalid Vircle address</source>
+        <translation>Peligro: Dirección de Vircle inválida</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2108,8 +2108,8 @@
         <translation>Este es un pago normal</translation>
     </message>
     <message>
-        <source>The Vpub address to send the payment to</source>
-        <translation>Dirección Vpub a enviar el pago</translation>
+        <source>The Vircle address to send the payment to</source>
+        <translation>Dirección Vircle a enviar el pago</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2189,8 +2189,8 @@
         <translation>&amp;Firmar Mensaje</translation>
     </message>
     <message>
-        <source>The Vpub address to sign the message with</source>
-        <translation>Dirección Vpub con la que firmar el mensaje</translation>
+        <source>The Vircle address to sign the message with</source>
+        <translation>Dirección Vircle con la que firmar el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2221,7 +2221,7 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Vpub address</source>
+        <source>Sign the message to prove you own this Vircle address</source>
         <translation>Firmar un mensjage para probar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -2241,12 +2241,12 @@
         <translation>&amp;Firmar Mensaje</translation>
     </message>
     <message>
-        <source>The Vpub address the message was signed with</source>
-        <translation>La dirección Vpub con la que se firmó el mensaje</translation>
+        <source>The Vircle address the message was signed with</source>
+        <translation>La dirección Vircle con la que se firmó el mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Vpub address</source>
-        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección de Vpub especificada.</translation>
+        <source>Verify the message to ensure it was signed with the specified Vircle address</source>
+        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección de Vircle especificada.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2850,7 +2850,7 @@
         <translation>No se ha podido iniciar el servidor HTTP. Ver debug log para detalles.</translation>
     </message>
     <message>
-        <source>Vpub Core</source>
+        <source>Vircle Core</source>
         <translation>vpub core</translation>
     </message>
     <message>

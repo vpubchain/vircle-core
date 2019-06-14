@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Vpub"
-            VALUE "FileDescription",    "vpub-tx (CLI Vpub transaction editor utility)"
+            VALUE "CompanyName",        "Vircle"
+            VALUE "FileDescription",    "vpub-tx (CLI Vircle transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "vpub-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

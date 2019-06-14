@@ -126,8 +126,8 @@
         <translation>Address king pamag-Tanggap</translation>
     </message>
     <message>
-        <source>Send coins to a Vpub address</source>
-        <translation>Magpadalang barya king Vpub address</translation>
+        <source>Send coins to a Vircle address</source>
+        <translation>Magpadalang barya king Vircle address</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -150,8 +150,8 @@
         <translation>&amp;Beripikan ing message...</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -285,8 +285,8 @@
         <translation>Malaus ka</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -322,8 +322,8 @@
         <translation>&amp;Network</translation>
     </message>
     <message>
-        <source>Automatically open the Vpub client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Ibuklat yang antimanu ing Vpub client port king router. Gagana yamu ini istung ing router mu susuporta yang UPnP at magsilbi ya.</translation>
+        <source>Automatically open the Vircle client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Ibuklat yang antimanu ing Vircle client port king router. Gagana yamu ini istung ing router mu susuporta yang UPnP at magsilbi ya.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -401,8 +401,8 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</source>
-        <translation>Ing makaltong impormasion mapalyaring luma ne. Ing kekang wallet otomatiku yang mag-synchronize keng Vpub network istung mekakonekta ne king network, oneng ing prosesung ini ali ya pa kumpletu.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vircle network after a connection is established, but this process has not completed yet.</source>
+        <translation>Ing makaltong impormasion mapalyaring luma ne. Ing kekang wallet otomatiku yang mag-synchronize keng Vircle network istung mekakonekta ne king network, oneng ing prosesung ini ali ya pa kumpletu.</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
@@ -663,8 +663,8 @@
         <translation>Kopyan ing kasalungsungan pirma king system clipboard</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Vpub address</source>
-        <translation>Pirman ing mensayi ban patune na keka ya ining Vpub address</translation>
+        <source>Sign the message to prove you own this Vircle address</source>
+        <translation>Pirman ing mensayi ban patune na keka ya ining Vircle address</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -683,8 +683,8 @@
         <translation>&amp;Beripikan ing Mensayi</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Vpub address</source>
-        <translation>Beripikan ing mensayi ban asiguradu a me pirma ya ini gamit ing mepiling Vpub address</translation>
+        <source>Verify the message to ensure it was signed with the specified Vircle address</source>
+        <translation>Beripikan ing mensayi ban asiguradu a me pirma ya ini gamit ing mepiling Vircle address</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -736,8 +736,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Vpub Core</source>
-        <translation>Kapilubluban ning Vpub.</translation>
+        <source>Vircle Core</source>
+        <translation>Kapilubluban ning Vircle.</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

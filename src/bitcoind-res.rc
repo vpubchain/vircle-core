@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Vpub"
-            VALUE "FileDescription",    "vpubd (Vpub node with a JSON-RPC server)"
+            VALUE "CompanyName",        "Vircle"
+            VALUE "FileDescription",    "vpubd (Vircle node with a JSON-RPC server)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "vpubd"
             VALUE "LegalCopyright",     COPYRIGHT_STR

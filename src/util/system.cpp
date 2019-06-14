@@ -822,7 +822,7 @@ std::string ArgsManager::GetHelpMessage() const
                 usage += HelpMessageGroup("SMSG Commands:");
                 break;
             case OptionsCategory::PART_WALLET:
-                usage += HelpMessageGroup("Vpub wallet Commands:");
+                usage += HelpMessageGroup("Vircle wallet Commands:");
                 break;
             case OptionsCategory::PART_STAKING:
                 usage += HelpMessageGroup("Staking Commands:");
@@ -900,13 +900,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Vpub
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Vpub
-    // Mac: ~/Library/Application Support/Vpub
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Vircle
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Vircle
+    // Mac: ~/Library/Application Support/Vircle
     // Unix: ~/.vpub
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Vpub";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Vircle";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -916,7 +916,7 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/Vpub";
+    return pathRet / "Library/Application Support/Vircle";
 #else
     // Unix
     return pathRet / ".vpub";

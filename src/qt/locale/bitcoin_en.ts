@@ -85,12 +85,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Vpub addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Vircle addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>These are your Vpub addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Vircle addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -443,8 +443,8 @@
     </message>
     <message>
         <location line="-1088"/>
-        <source>Send coins to a Vpub address</source>
-        <translation>Send coins to a Vpub address</translation>
+        <source>Send coins to a Vircle address</source>
+        <translation>Send coins to a Vircle address</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -473,8 +473,8 @@
     </message>
     <message>
         <location line="+726"/>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <location line="-799"/>
@@ -503,13 +503,13 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your Vpub addresses to prove you own them</source>
-        <translation>Sign messages with your Vpub addresses to prove you own them</translation>
+        <source>Sign messages with your Vircle addresses to prove you own them</source>
+        <translation>Sign messages with your Vircle addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
-        <translation>Verify messages to ensure they were signed with specified Vpub addresses</translation>
+        <source>Verify messages to ensure they were signed with specified Vircle addresses</source>
+        <translation>Verify messages to ensure they were signed with specified Vircle addresses</translation>
     </message>
     <message>
         <location line="+68"/>
@@ -558,10 +558,10 @@
     </message>
     <message numerus="yes">
         <location line="+550"/>
-        <source>%n active connection(s) to Vpub network</source>
+        <source>%n active connection(s) to Vircle network</source>
         <translation>
-            <numerusform>%n active connection to Vpub network</numerusform>
-            <numerusform>%n active connections to Vpub network</numerusform>
+            <numerusform>%n active connection to Vircle network</numerusform>
+            <numerusform>%n active connections to Vircle network</numerusform>
         </translation>
     </message>
     <message>
@@ -629,7 +629,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>Show the %1 help message to get a list with possible Vpub command-line options</source>
+        <source>Show the %1 help message to get a list with possible Vircle command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -760,7 +760,7 @@
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+401"/>
-        <source>A fatal error occurred. Vpub can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. Vircle can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1086,7 +1086,7 @@
     </message>
     <message>
         <location line="+86"/>
-        <source>The entered address &quot;%1&quot; is not a valid Vpub address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Vircle address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1211,8 +1211,8 @@
     </message>
     <message>
         <location filename="../intro.cpp" line="+22"/>
-        <source>Vpub.</source>
-        <translation type="unfinished">Vpub.</translation>
+        <source>Vircle.</source>
+        <translation type="unfinished">Vircle.</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -1226,7 +1226,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>%1 will download and store a copy of the Vpub block chain.</source>
+        <source>%1 will download and store a copy of the Vircle block chain.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1706,8 +1706,8 @@
     </message>
     <message>
         <location line="+30"/>
-        <source>Automatically open the Vpub client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Vpub client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the Vircle client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the Vircle client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1726,7 +1726,7 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Vpub network through a SOCKS5 proxy.</source>
+        <source>Connect to the Vircle network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1774,7 +1774,7 @@
     </message>
     <message>
         <location line="+25"/>
-        <source>Connect to the Vpub network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the Vircle network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1914,8 +1914,8 @@
     <message>
         <location line="+62"/>
         <location line="+539"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vircle network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Vircle network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-249"/>
@@ -2093,7 +2093,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid Vpub address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Vircle address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2225,7 +2225,7 @@
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+111"/>
-        <source>Enter a Vpub address (e.g. %1)</source>
+        <source>Enter a Vircle address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2852,7 +2852,7 @@
     <message>
         <location line="-3"/>
         <location line="+37"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Vpub network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Vircle network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3465,7 +3465,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+107"/>
-        <source>Warning: Invalid Vpub address</source>
+        <source>Warning: Invalid Vircle address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3528,7 +3528,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="-318"/>
-        <source>The Vpub address to send the payment to</source>
+        <source>The Vircle address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3580,7 +3580,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     <message>
         <location line="-74"/>
         <location line="+96"/>
-        <source>A short message sent over the Vpub network, encrypted if sending to a stealth address or in a blind or anon transaction.</source>
+        <source>A short message sent over the Vircle network, encrypted if sending to a stealth address or in a blind or anon transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3605,7 +3605,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+28"/>
-        <source>The Vpub address that will be able to spend the output (must be 256bit)</source>
+        <source>The Vircle address that will be able to spend the output (must be 256bit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3620,7 +3620,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+31"/>
-        <source>The Vpub address that will be able to stake the output</source>
+        <source>The Vircle address that will be able to stake the output</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3640,7 +3640,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+64"/>
-        <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
+        <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vircle network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3702,7 +3702,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+18"/>
-        <source>The Vpub address to sign the message with</source>
+        <source>The Vircle address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3744,8 +3744,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Vpub address</source>
-        <translation>Sign the message to prove you own this Vpub address</translation>
+        <source>Sign the message to prove you own this Vircle address</source>
+        <translation>Sign the message to prove you own this Vircle address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3775,13 +3775,13 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+21"/>
-        <source>The Vpub address the message was signed with</source>
+        <source>The Vircle address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Verify the message to ensure it was signed with the specified Vpub address</source>
-        <translation>Verify the message to ensure it was signed with the specified Vpub address</translation>
+        <source>Verify the message to ensure it was signed with the specified Vircle address</source>
+        <translation>Verify the message to ensure it was signed with the specified Vircle address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4679,8 +4679,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="-262"/>
-        <source>Vpub Core</source>
-        <translation type="unfinished">Vpub Core</translation>
+        <source>Vircle Core</source>
+        <translation type="unfinished">Vircle Core</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5181,7 +5181,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+1"/>
-        <source>Invalid Vpub address.</source>
+        <source>Invalid Vircle address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

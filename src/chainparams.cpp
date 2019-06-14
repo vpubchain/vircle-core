@@ -382,14 +382,14 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("22228654b4a9b6a6249d102bf0b84ee5d05dc3c4") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
-    // Reserved Vpub 
+    // Reserved Vircle 
     // RN4MHCjXfzo7a3c1whZt5mbuLd7Bbh9FY3
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 5000000 * COIN;
     out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("a88d48f5a09cdfb92f0b9a4130d199b91b102133") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
-    // Reserved Vpub for primary round
+    // Reserved Vircle for primary round
     // RVdtjTBEqoFPyxNDqFk72SXkvq19QtKss9
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 5000000 * COIN;

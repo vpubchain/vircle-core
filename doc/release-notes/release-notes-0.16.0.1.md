@@ -1,4 +1,4 @@
-Vpub Core version 0.16.0.1 is now available.
+Vircle Core version 0.16.0.1 is now available.
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
@@ -8,7 +8,7 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over `/Applications/Vpub-Qt` (on Mac)
+installer (on Windows) or just copy over `/Applications/Vircle-Qt` (on Mac)
 or `vpubd`/`vpub-qt` (on Linux).
 
 Downgrading warning
@@ -19,10 +19,10 @@ None
 Compatibility
 ==============
 
-Vpub Core is extensively tested on multiple operating systems using
+Vircle Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later. Windows XP is not supported.
 
-Vpub Core should also work on most other Unix-like systems but is not
+Vircle Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable changes
@@ -33,7 +33,7 @@ Wallet changes
 
 ### Support for Hardware Signing Devices
 
-Vpub Core 0.16 introduces generic support for Hardware Signing Devices to provide key-signing capabilities. 
+Vircle Core 0.16 introduces generic support for Hardware Signing Devices to provide key-signing capabilities. 
 
 - New RPC commands
   * `listdevices`
@@ -54,7 +54,7 @@ Note, this is still considered "expert" mode for those who have a good understan
 
 ### Stealth Address v2
 
-In order to facilitate deterministic generation of stealth addresses between Vpub Core and Signing Devices the method used to generate these addresses has been changed.
+In order to facilitate deterministic generation of stealth addresses between Vircle Core and Signing Devices the method used to generate these addresses has been changed.
 
 - New RPC command `devicegetnewstealthaddress` will generate a v2 Stealth Address from the Hardware Signing Device.
 - Updated RPC command `getnewstealthaddress` now supports a new boolean `makeV2` (default false) which will generate a v2 Stealth Address from the same method used for hardware wallets. This will be updated in a future release to default to true for all new addresses generated.
@@ -71,7 +71,7 @@ use the `replaceable` argument for individual transactions.
 
 ### Wallets directory configuration (`-walletdir`)
 
-Vpub Core now has more flexibility in where the wallets directory can be
+Vircle Core now has more flexibility in where the wallets directory can be
 located. Previously wallet database files were stored at the top level of the
 vpub data directory. The behavior is now:
 
@@ -91,7 +91,7 @@ becomes unavailable during operation, funds may be lost.
 
 Build: Minimum GCC bumped to 4.8.x
 ------------------------------------
-The minimum version of the GCC compiler required to compile Vpub Core is now 4.8. No effort will be
+The minimum version of the GCC compiler required to compile Vircle Core is now 4.8. No effort will be
 made to support older versions of GCC. See discussion in issue #11732 for more information.
 The minimum version for the Clang compiler is still 3.3. Other minimum dependency versions can be found in `doc/dependencies.md` in the repository.
 
@@ -575,4 +575,4 @@ Other changed command-line options
 Credits
 =======
 
-Thanks to Vpub Team and everyone at Bitcoin Core who contributed to these changes.
+Thanks to Vircle Team and everyone at Bitcoin Core who contributed to these changes.

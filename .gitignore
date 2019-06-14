@@ -89,7 +89,7 @@ src/qt/vpub-qt.includes
 *.qm
 Makefile
 vpub-qt
-Vpub-Qt.app
+Vircle-Qt.app
 background.tiff*
 
 # Unit-tests

@@ -83,7 +83,7 @@
       <item>
        <widget class="QValidatedLineEdit" name="payTo">
         <property name="toolTip">
-         <string>The Vpub address to send the payment to</string>
+         <string>The Vircle address to send the payment to</string>
         </property>
        </widget>
       </item>
@@ -202,7 +202,7 @@
     <item row="4" column="1">
      <widget class="QLineEdit" name="edtNarration">
       <property name="toolTip">
-       <string>A short message sent over the Vpub network, encrypted if sending to a stealth address or in a blind or anon transaction.</string>
+       <string>A short message sent over the Vircle network, encrypted if sending to a stealth address or in a blind or anon transaction.</string>
       </property>
       <property name="maxLength">
        <number>24</number>
@@ -222,7 +222,7 @@
     <item row="5" column="1">
      <widget class="QLabel" name="messageTextLabel">
       <property name="toolTip">
-       <string>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</string>
+       <string>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vircle network.</string>
       </property>
       <property name="textFormat">
        <enum>Qt::PlainText</enum>
@@ -298,7 +298,7 @@
     <item row="4" column="1">
      <widget class="QLineEdit" name="edtNarration_cs">
       <property name="toolTip">
-       <string>A short message sent over the Vpub network, encrypted if sending to a stealth address or in a blind or anon transaction.</string>
+       <string>A short message sent over the Vircle network, encrypted if sending to a stealth address or in a blind or anon transaction.</string>
       </property>
       <property name="maxLength">
        <number>24</number>
@@ -313,7 +313,7 @@
       <item>
        <widget class="QValidatedLineEdit" name="spendAddr">
         <property name="toolTip">
-         <string>The Vpub address that will be able to spend the output (must be 256bit)</string>
+         <string>The Vircle address that will be able to spend the output (must be 256bit)</string>
         </property>
        </widget>
       </item>
@@ -419,7 +419,7 @@
       <item>
        <widget class="QValidatedLineEdit" name="stakeAddr">
         <property name="toolTip">
-         <string>The Vpub address that will be able to stake the output</string>
+         <string>The Vircle address that will be able to stake the output</string>
         </property>
        </widget>
       </item>

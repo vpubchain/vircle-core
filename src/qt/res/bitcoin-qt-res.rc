@@ -19,8 +19,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Vpub"
-            VALUE "FileDescription",    PACKAGE_NAME " (GUI node for Vpub)"
+            VALUE "CompanyName",        "Vircle"
+            VALUE "FileDescription",    PACKAGE_NAME " (GUI node for Vircle)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "vpub-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR

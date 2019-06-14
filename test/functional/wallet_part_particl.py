@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (C) 2019 The Vpub Core developers
+# Copyright (C) 2019 The Vircle Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -325,7 +325,7 @@ class WalletVpubTest(VpubTestFramework):
 
         Bitcoin Testnet
         Purpose: 44
-        Coin: 1 (Vpub testnet)
+        Coin: 1 (Vircle testnet)
         Account: 0
         Ext/Internal: 0
 

@@ -66,12 +66,12 @@
         <translation>Vastaanotto-osoitteet</translation>
     </message>
     <message>
-        <source>These are your Vpub addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Nämä ovat Vpub.osoitteesi maksujen lähettämistä varten. Tarkista aina määrä ja vastaanotto-osoite ennen kolikoiden lähettämistä.</translation>
+        <source>These are your Vircle addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Nämä ovat Vircle.osoitteesi maksujen lähettämistä varten. Tarkista aina määrä ja vastaanotto-osoite ennen kolikoiden lähettämistä.</translation>
     </message>
     <message>
-        <source>These are your Vpub addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Tässä ovat Vpub vastaanotto-osoitteesi. On suositeltavaa käyttää uutta vastaanotto-osoitetta jokaista lähetystä varten.</translation>
+        <source>These are your Vircle addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Tässä ovat Vircle vastaanotto-osoitteesi. On suositeltavaa käyttää uutta vastaanotto-osoitetta jokaista lähetystä varten.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -358,8 +358,8 @@
         <translation>Välipalvelin on &lt;b&gt;käytössä&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Vpub address</source>
-        <translation>Lähetä kolikoita Vpub.osoitteeseen</translation>
+        <source>Send coins to a Vircle address</source>
+        <translation>Lähetä kolikoita Vircle.osoitteeseen</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -382,8 +382,8 @@
         <translation>Varmista &amp;viesti...</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -403,19 +403,19 @@
     </message>
     <message>
         <source>Show or hide the main Window</source>
-        <translation>Näytä tai piilota Vpub.ikkuna</translation>
+        <translation>Näytä tai piilota Vircle.ikkuna</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Suojaa yksityiset avaimet, jotka kuuluvat lompakkoosi</translation>
     </message>
     <message>
-        <source>Sign messages with your Vpub addresses to prove you own them</source>
-        <translation>Allekirjoita viestisi omalla Vpub -osoitteellasi todistaaksesi, että omistat ne</translation>
+        <source>Sign messages with your Vircle addresses to prove you own them</source>
+        <translation>Allekirjoita viestisi omalla Vircle -osoitteellasi todistaaksesi, että omistat ne</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
-        <translation>Varmista, että viestisi on allekirjoitettu määritetyllä Vpub -osoitteella</translation>
+        <source>Verify messages to ensure they were signed with specified Vircle addresses</source>
+        <translation>Varmista, että viestisi on allekirjoitettu määritetyllä Vircle -osoitteella</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -454,8 +454,8 @@
         <translation>&amp;Komentorivin valinnat</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Vpub network</source>
-        <translation><numerusform>%n aktiivinen yhteys Vpub.verkkoon</numerusform><numerusform>%n aktiivista yhteyttä Vpub.verkkoon</numerusform></translation>
+        <source>%n active connection(s) to Vircle network</source>
+        <translation><numerusform>%n aktiivinen yhteys Vircle.verkkoon</numerusform><numerusform>%n aktiivista yhteyttä Vircle.verkkoon</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -498,8 +498,8 @@
         <translation>Rahansiirtohistoria on ajan tasalla</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Vpub command-line options</source>
-        <translation>Näytä %1 ohjeet saadaksesi listan mahdollisista Vpub.n komentorivivalinnoista</translation>
+        <source>Show the %1 help message to get a list with possible Vircle command-line options</source>
+        <translation>Näytä %1 ohjeet saadaksesi listan mahdollisista Vircle.n komentorivivalinnoista</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -568,8 +568,8 @@
         <translation>Lompakko on &lt;b&gt;salattu&lt;/b&gt; ja tällä hetkellä &lt;b&gt;lukittuna&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Vpub can no longer continue safely and will quit.</source>
-        <translation>Peruuttamaton virhe on tapahtunut. Vpub ei voi enää jatkaa turvallisesti ja sammutetaan.</translation>
+        <source>A fatal error occurred. Vircle can no longer continue safely and will quit.</source>
+        <translation>Peruuttamaton virhe on tapahtunut. Vircle ei voi enää jatkaa turvallisesti ja sammutetaan.</translation>
     </message>
 </context>
 <context>
@@ -758,8 +758,8 @@
         <translation>Muokkaa lähettävää osoitetta</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Vpub address.</source>
-        <translation>Antamasi osoite "%1" ei ole kelvollinen Vpub.osoite.</translation>
+        <source>The entered address "%1" is not a valid Vircle address.</source>
+        <translation>Antamasi osoite "%1" ei ole kelvollinen Vircle.osoite.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -855,8 +855,8 @@
         <translation>Määritä oma kansio:</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -867,8 +867,8 @@
         <translation>Noin %1 GB tietoa varastoidaan tähän hakemistoon.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Vpub block chain.</source>
-        <translation>%1 lataa ja tallentaa kopion Vpub.n lohkoketjusta.</translation>
+        <source>%1 will download and store a copy of the Vircle block chain.</source>
+        <translation>%1 lataa ja tallentaa kopion Vircle.n lohkoketjusta.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1084,8 +1084,8 @@
         <translation>&amp;Käytä varmistamattomia vaihtorahoja</translation>
     </message>
     <message>
-        <source>Automatically open the Vpub client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Avaa Vpub.asiakasohjelman portti reitittimellä automaattisesti. Tämä toimii vain, jos reitittimesi tukee UPnP:tä ja se on käytössä.</translation>
+        <source>Automatically open the Vircle client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Avaa Vircle.asiakasohjelman portti reitittimellä automaattisesti. Tämä toimii vain, jos reitittimesi tukee UPnP:tä ja se on käytössä.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1100,8 +1100,8 @@
         <translation>Hyväksy sisääntulevia yhteyksiä</translation>
     </message>
     <message>
-        <source>Connect to the Vpub network through a SOCKS5 proxy.</source>
-        <translation>Yhdistä Vpub.verkkoon SOCKS5-välityspalvelimen kautta.</translation>
+        <source>Connect to the Vircle network through a SOCKS5 proxy.</source>
+        <translation>Yhdistä Vircle.verkkoon SOCKS5-välityspalvelimen kautta.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1136,8 +1136,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Vpub network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Yhdistä Vpub.verkkoon erillisen SOCKS5-välityspalvelimen kautta piilotettuja Tor-palveluja varten.</translation>
+        <source>Connect to the Vircle network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Yhdistä Vircle.verkkoon erillisen SOCKS5-välityspalvelimen kautta piilotettuja Tor-palveluja varten.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1243,8 +1243,8 @@
         <translation>Lomake</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vpub network after a connection is established, but this process has not completed yet.</source>
-        <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu Vpub.verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Vircle network after a connection is established, but this process has not completed yet.</source>
+        <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu Vircle.verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1284,7 +1284,7 @@
     </message>
     <message>
         <source>Your current total balance</source>
-        <translation>Tililläsi tällä hetkellä olevien Vpub.en määrä</translation>
+        <translation>Tililläsi tällä hetkellä olevien Vircle.en määrä</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
@@ -1319,7 +1319,7 @@
     </message>
     <message>
         <source>Cannot start vpub: click-to-pay handler</source>
-        <translation>Vpub.a ei voi käynnistää: klikkaa-maksaaksesi -käsittelijän virhe</translation>
+        <translation>Vircle.a ei voi käynnistää: klikkaa-maksaaksesi -käsittelijän virhe</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1338,8 +1338,8 @@
         <translation>Virheellinen maksuosoite %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Vpub address or malformed URI parameters.</source>
-        <translation>URIa ei voitu jäsentää! Tämä voi johtua virheellisestä Vpub.osoitteesta tai väärin muotoilluista URI parametreista.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Vircle address or malformed URI parameters.</source>
+        <translation>URIa ei voitu jäsentää! Tämä voi johtua virheellisestä Vircle.osoitteesta tai väärin muotoilluista URI parametreista.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1440,8 +1440,8 @@
         <translation>Määrä</translation>
     </message>
     <message>
-        <source>Enter a Vpub address (e.g. %1)</source>
-        <translation>Syötä Vpub.osoite (esim. %1)</translation>
+        <source>Enter a Vircle address (e.g. %1)</source>
+        <translation>Syötä Vircle.osoite (esim. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1844,8 +1844,8 @@
         <translation>&amp;Viesti:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Vpub network.</source>
-        <translation>Valinnainen viesti liitetään maksupyyntöön ja näytetään avattaessa. Viestiä ei lähetetä Vpub.verkkoon.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Vircle network.</source>
+        <translation>Valinnainen viesti liitetään maksupyyntöön ja näytetään avattaessa. Viestiä ei lähetetä Vircle.verkkoon.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2253,8 +2253,8 @@
         <translation><numerusform>Vahvistuminen alkaa arviolta %n lohkon sisällä.</numerusform><numerusform>Vahvistuminen alkaa arviolta %n lohkon sisällä.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Vpub address</source>
-        <translation>Varoitus: Virheellinen Vpub.osoite </translation>
+        <source>Warning: Invalid Vircle address</source>
+        <translation>Varoitus: Virheellinen Vircle.osoite </translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2296,8 +2296,8 @@
         <translation>Tämä on normaali maksu.</translation>
     </message>
     <message>
-        <source>The Vpub address to send the payment to</source>
-        <translation>Vpub.osoite johon maksu lähetetään</translation>
+        <source>The Vircle address to send the payment to</source>
+        <translation>Vircle.osoite johon maksu lähetetään</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2344,8 +2344,8 @@
         <translation>Aseta nimi tälle osoitteelle lisätäksesi sen käytettyjen osoitteiden listalle.</translation>
     </message>
     <message>
-        <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vpub network.</source>
-        <translation>Viesti joka liitettiin vpub: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä Vpub.verkkoon.</translation>
+        <source>A message that was attached to the vpub: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vircle network.</source>
+        <translation>Viesti joka liitettiin vpub: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä Vircle.verkkoon.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2393,8 +2393,8 @@
         <translation>Voit allekirjoittaa viestit / sopimukset omalla osoitteellasi todistaaksesi että voit vastaanottaa siihen lähetetyt vpubit. Varo allekirjoittamasta mitään epämääräistä, sillä phishing-hyökkääjät voivat huijata sinua luovuttamaan henkilöllisyytesi allekirjoituksella. Allekirjoita ainoastaan täysin yksityiskohtainen selvitys siitä, mihin olet sitoutumassa.</translation>
     </message>
     <message>
-        <source>The Vpub address to sign the message with</source>
-        <translation>Vpub.osoite jolla viesti allekirjoitetaan</translation>
+        <source>The Vircle address to sign the message with</source>
+        <translation>Vircle.osoite jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2425,8 +2425,8 @@
         <translation>Kopioi tämänhetkinen allekirjoitus leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Vpub address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Vpub.osoitteen</translation>
+        <source>Sign the message to prove you own this Vircle address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Vircle.osoitteen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2449,12 +2449,12 @@
         <translation>Syötä vastaanottajan osoite, viesti ja allekirjoitus (varmista että kopioit rivinvaihdot, välilyönnit, sarkaimet yms. täsmälleen) alle vahvistaaksesi viestin. Varo lukemasta allekirjoitukseen enempää kuin mitä viestissä itsessään on välttääksesi man-in-the-middle -hyökkäyksiltä. Huomaa, että tämä todentaa ainoastaan allekirjoittavan vastaanottajan osoitteen, tämä ei voi todentaa minkään tapahtuman lähettäjää!</translation>
     </message>
     <message>
-        <source>The Vpub address the message was signed with</source>
-        <translation>Vpub.osoite jolla viesti on allekirjoitettu</translation>
+        <source>The Vircle address the message was signed with</source>
+        <translation>Vircle.osoite jolla viesti on allekirjoitettu</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Vpub address</source>
-        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä Vpub.osoitteella</translation>
+        <source>Verify the message to ensure it was signed with the specified Vircle address</source>
+        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä Vircle.osoitteella</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3090,8 +3090,8 @@
         <translation>HTTP-palvelinta ei voitu käynnistää. Katso debug-lokista lisätietoja.</translation>
     </message>
     <message>
-        <source>Vpub Core</source>
-        <translation>Vpub.ydin</translation>
+        <source>Vircle Core</source>
+        <translation>Vircle.ydin</translation>
     </message>
     <message>
         <source>The %s developers</source>

@@ -62,12 +62,12 @@
         <translation>Ontvanger adresse</translation>
     </message>
     <message>
-        <source>These are your Vpub addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Hierdie is die adresse vanwaar u Vpub betalings stuur. U moet altyd die bedrag en die adres van die ontvanger nagaan voordat u enige munte stuur.</translation>
+        <source>These are your Vircle addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Hierdie is die adresse vanwaar u Vircle betalings stuur. U moet altyd die bedrag en die adres van die ontvanger nagaan voordat u enige munte stuur.</translation>
     </message>
     <message>
-        <source>These are your Vpub addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Hierdie is die adresse waar u Vpub sal ontvang. Ons beveel aan dat u 'n nuwe adres kies vir elke transaksie</translation>
+        <source>These are your Vircle addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Hierdie is die adresse waar u Vircle sal ontvang. Ons beveel aan dat u 'n nuwe adres kies vir elke transaksie</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -334,8 +334,8 @@
         <translation>Besig met herindeksering van blokke op hardeskyf...</translation>
     </message>
     <message>
-        <source>Send coins to a Vpub address</source>
-        <translation>Stuur munte na 'n Vpub adres</translation>
+        <source>Send coins to a Vircle address</source>
+        <translation>Stuur munte na 'n Vircle adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -358,8 +358,8 @@
         <translation>&amp;Verifieer boodskap...</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -386,12 +386,12 @@
         <translation>Kodifiseer die private sleutes wat aan jou beursie gekoppel is.</translation>
     </message>
     <message>
-        <source>Sign messages with your Vpub addresses to prove you own them</source>
-        <translation>Onderteken boodskappe met u Vpub adresse om u eienaarskap te bewys</translation>
+        <source>Sign messages with your Vircle addresses to prove you own them</source>
+        <translation>Onderteken boodskappe met u Vircle adresse om u eienaarskap te bewys</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Vpub addresses</source>
-        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Vpub adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Vircle addresses</source>
+        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Vircle adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -516,8 +516,8 @@
         <translation>Inkomende transaksie</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Vpub can no longer continue safely and will quit.</source>
-        <translation>'N fatale fout het voorgekom. Vpub kan nie meer veilig voortgaan nie en sal nou toemaak.</translation>
+        <source>A fatal error occurred. Vircle can no longer continue safely and will quit.</source>
+        <translation>'N fatale fout het voorgekom. Vircle kan nie meer veilig voortgaan nie en sal nou toemaak.</translation>
     </message>
 </context>
 <context>
@@ -706,8 +706,8 @@
         <translation>Wysig stuur adres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Vpub address.</source>
-        <translation>Die ingevoerde adres "%1" is nie 'n geldige Vpub adres nie.</translation>
+        <source>The entered address "%1" is not a valid Vircle address.</source>
+        <translation>Die ingevoerde adres "%1" is nie 'n geldige Vircle adres nie.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -779,8 +779,8 @@
         <translation>Gebruik 'n persoonlike data gids:</translation>
     </message>
     <message>
-        <source>Vpub.</source>
-        <translation>Vpub.</translation>
+        <source>Vircle.</source>
+        <translation>Vircle.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1144,8 +1144,8 @@
         <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a Vpub address (e.g. %1)</source>
-        <translation>Voer in 'n Vpub adres (bv. %1)</translation>
+        <source>Enter a Vircle address (e.g. %1)</source>
+        <translation>Voer in 'n Vircle adres (bv. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1732,7 +1732,7 @@ transaksievertragingsrisiko.</translation>
         <translation>Betaal slegs die verlangde fooi van %1</translation>
     </message>
     <message>
-        <source>Warning: Invalid Vpub address</source>
+        <source>Warning: Invalid Vircle address</source>
         <translation>Waarskuwing: Ongeldige Vpubadres</translation>
     </message>
     <message>
@@ -1765,7 +1765,7 @@ Is u seker?</translation>
         <translation>Hierdie is 'n gewone betaling</translation>
     </message>
     <message>
-        <source>The Vpub address to send the payment to</source>
+        <source>The Vircle address to send the payment to</source>
         <translation>Die Vpubadres waarheen die betaling gestuur word</translation>
     </message>
     <message>
@@ -2070,8 +2070,8 @@ word die fooi eweredig verdeel.</translation>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Vpub Core</source>
-        <translation>Vpub Kern</translation>
+        <source>Vircle Core</source>
+        <translation>Vircle Kern</translation>
     </message>
     <message>
         <source>Error loading %s</source>

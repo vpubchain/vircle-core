@@ -1,4 +1,4 @@
-<!-- This issue tracker is only for technical issues related to Vpub Core.
+<!-- This issue tracker is only for technical issues related to Vircle Core.
 
 General questions and/or support requests are best directed to our [Slack](http://slack.vpub.io/) or RIOT channels.
 
@@ -11,7 +11,7 @@ If the node is "stuck" during sync or giving "block checksum mismatch" errors, p
 
 <!--- How reliably can you reproduce the issue, what are the steps to do so? -->
 
-<!-- What version of Vpub Core are you using, where did you get it (website, self-compiled, etc)? -->
+<!-- What version of Vircle Core are you using, where did you get it (website, self-compiled, etc)? -->
 
 <!-- What type of machine are you observing the error on (OS/CPU and disk type)? -->
 

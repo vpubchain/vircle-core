@@ -1447,7 +1447,7 @@ static void ThreadMapPort()
             }
         }
 
-        std::string strDesc = "Vpub " + FormatFullVersion();
+        std::string strDesc = "Vircle " + FormatFullVersion();
 
         do {
 #ifndef UPNPDISCOVER_SUCCESS
