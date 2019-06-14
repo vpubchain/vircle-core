@@ -5,7 +5,7 @@
 
 from decimal import Decimal
 
-from test_framework.test_vircle import VpubTestFramework
+from test_framework.test_vircle import VircleTestFramework
 from test_framework.util import connect_nodes_bi
 from test_framework.address import keyhash_to_p2pkh, hex_str_to_bytes
 from test_framework.authproxy import JSONRPCException
@@ -15,7 +15,7 @@ def keyhash_to_p2pkh_part(b):
     return keyhash_to_p2pkh(b, False, False)
 
 
-class ColdStakingTest(VpubTestFramework):
+class ColdStakingTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3

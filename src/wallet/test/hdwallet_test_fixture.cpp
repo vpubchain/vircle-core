@@ -12,7 +12,7 @@
 #include <util/system.h>
 
 HDWalletTestingSetup::HDWalletTestingSetup(const std::string &chainName):
-    TestingSetup(chainName, true) // fVpubMode = true
+    TestingSetup(chainName, true) // fVircleMode = true
 {
     bool fFirstRun;
     pwalletMain = std::make_shared<CHDWallet>(*m_chain, WalletLocation(), WalletDatabase::CreateMock());

@@ -4,13 +4,13 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 from test_framework.test_vircle import (
-    VpubTestFramework,
+    VircleTestFramework,
     isclose,
 )
 from test_framework.util import connect_nodes
 
 
-class SmsgPaidFeeExtTest(VpubTestFramework):
+class SmsgPaidFeeExtTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

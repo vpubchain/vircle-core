@@ -177,13 +177,13 @@ static bool SignStep(const SigningProvider& provider, const BaseSignatureCreator
         return ok;
     }
     case TX_WITNESS_V0_KEYHASH:
-        if (creator.IsVpubVersion())
+        if (creator.IsVircleVersion())
             return false;
         ret.push_back(vSolutions[0]);
         return true;
 
     case TX_WITNESS_V0_SCRIPTHASH:
-        if (creator.IsVpubVersion())
+        if (creator.IsVircleVersion())
             return false;
         CRIPEMD160().Write(&vSolutions[0][0], vSolutions[0].size()).Finalize(h160.begin());
         if (GetCScript(provider, sigdata, h160, scriptRet)) {
@@ -225,7 +225,7 @@ bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreato
     CScript subscript;
     sigdata.scriptWitness.stack.clear();
 
-    bool fIsP2SH = creator.IsVpubVersion()
+    bool fIsP2SH = creator.IsVircleVersion()
         ? (whichType == TX_SCRIPTHASH || whichType == TX_SCRIPTHASH256 || whichType == TX_TIMELOCKED_SCRIPTHASH)
         : whichType == TX_SCRIPTHASH;
     if (solved && fIsP2SH)
@@ -242,7 +242,7 @@ bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreato
 
     if (solved && whichType == TX_WITNESS_V0_KEYHASH)
     {
-        if (creator.IsVpubVersion())
+        if (creator.IsVircleVersion())
             return false;
         CScript witnessscript;
         witnessscript << OP_DUP << OP_HASH160 << ToByteVector(result[0]) << OP_EQUALVERIFY << OP_CHECKSIG;
@@ -254,7 +254,7 @@ bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreato
     }
     else if (solved && whichType == TX_WITNESS_V0_SCRIPTHASH)
     {
-        if (creator.IsVpubVersion())
+        if (creator.IsVircleVersion())
             return false;
         CScript witnessscript(result[0].begin(), result[0].end());
         sigdata.witness_script = witnessscript;
@@ -272,7 +272,7 @@ bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreato
         result.push_back(std::vector<unsigned char>(subscript.begin(), subscript.end()));
     }
 
-    if (creator.IsVpubVersion()) {
+    if (creator.IsVircleVersion()) {
         sigdata.scriptWitness.stack = result;
     } else  {
         sigdata.scriptSig = PushAll(result);
@@ -293,7 +293,7 @@ public:
     SignatureExtractorChecker(SignatureData& sigdata, BaseSignatureChecker& checker) : sigdata(sigdata), checker(checker) {}
     bool CheckSig(const std::vector<unsigned char>& scriptSig, const std::vector<unsigned char>& vchPubKey, const CScript& scriptCode, SigVersion sigversion) const override;
     bool is_vircle_tx = false;
-    bool IsVpubVersion() const override { return is_vircle_tx; }
+    bool IsVircleVersion() const override { return is_vircle_tx; }
 };
 
 bool SignatureExtractorChecker::CheckSig(const std::vector<unsigned char>& scriptSig, const std::vector<unsigned char>& vchPubKey, const CScript& scriptCode, SigVersion sigversion) const
@@ -339,7 +339,7 @@ SignatureData DataFromTransaction(const CMutableTransaction& tx, unsigned int nI
     // Get signatures
     MutableTransactionSignatureChecker tx_checker(&tx, nIn, amount);
     SignatureExtractorChecker extractor_checker(data, tx_checker);
-    extractor_checker.is_vircle_tx = tx.IsVpubVersion();
+    extractor_checker.is_vircle_tx = tx.IsVircleVersion();
     if (VerifyScript(data.scriptSig, scriptPubKey, &data.scriptWitness, STANDARD_SCRIPT_VERIFY_FLAGS, extractor_checker)) {
         data.complete = true;
         return data;
@@ -357,7 +357,7 @@ SignatureData DataFromTransaction(const CMutableTransaction& tx, unsigned int nI
     SigVersion sigversion = SigVersion::BASE;
     CScript next_script = scriptPubKey;
 
-    if (tx.IsVpubVersion()) {
+    if (tx.IsVircleVersion()) {
         if (script_type == TX_PUBKEY || script_type == TX_PUBKEYHASH || script_type == TX_PUBKEYHASH256 || script_type == TX_TIMELOCKED_PUBKEYHASH)
             script_type = TX_WITNESS_V0_KEYHASH;
         else
@@ -454,7 +454,7 @@ bool SignSignature(const SigningProvider &provider, const CTransaction& txFrom, 
     assert(nIn < txTo.vin.size());
     CTxIn& txin = txTo.vin[nIn];
 
-    if (txTo.IsVpubVersion()) {
+    if (txTo.IsVircleVersion()) {
         assert(txin.prevout.n < txFrom.vpout.size());
         CScript scriptPubKey;
         std::vector<uint8_t> vamount;
@@ -504,20 +504,20 @@ public:
     }
 };
 
-class DummySignatureCheckerVpub : public DummySignatureChecker
+class DummySignatureCheckerVircle : public DummySignatureChecker
 {
-// IsVpubVersion() must return true to skip stack evaluation
+// IsVircleVersion() must return true to skip stack evaluation
 public:
-    DummySignatureCheckerVpub() : DummySignatureChecker() {}
-    bool IsVpubVersion() const override { return true; }
+    DummySignatureCheckerVircle() : DummySignatureChecker() {}
+    bool IsVircleVersion() const override { return true; }
 };
-const DummySignatureCheckerVpub DUMMY_CHECKER_VIRCLE;
+const DummySignatureCheckerVircle DUMMY_CHECKER_VIRCLE;
 
-class DummySignatureCreatorVpub : public DummySignatureCreator {
+class DummySignatureCreatorVircle : public DummySignatureCreator {
 public:
-    DummySignatureCreatorVpub() : DummySignatureCreator(33, 32) {}
+    DummySignatureCreatorVircle() : DummySignatureCreator(33, 32) {}
     const BaseSignatureChecker& Checker() const override { return DUMMY_CHECKER_VIRCLE; }
-    bool IsVpubVersion() const override { return true; }
+    bool IsVircleVersion() const override { return true; }
 };
 
 template<typename M, typename K, typename V>
@@ -535,7 +535,7 @@ bool LookupHelper(const M& map, const K& key, V& value)
 
 const BaseSignatureCreator& DUMMY_SIGNATURE_CREATOR = DummySignatureCreator(32, 32);
 const BaseSignatureCreator& DUMMY_MAXIMUM_SIGNATURE_CREATOR = DummySignatureCreator(33, 32);
-const BaseSignatureCreator& DUMMY_SIGNATURE_CREATOR_VIRCLE = DummySignatureCreatorVpub();
+const BaseSignatureCreator& DUMMY_SIGNATURE_CREATOR_VIRCLE = DummySignatureCreatorVircle();
 const SigningProvider& DUMMY_SIGNING_PROVIDER = SigningProvider();
 
 bool IsSolvable(const SigningProvider& provider, const CScript& script)

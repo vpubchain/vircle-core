@@ -499,7 +499,7 @@
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Vircle command-line options</source>
-        <translation>Seznam argumentů Vpubu pro příkazovou řádku získáš v nápovědě %1</translation>
+        <translation>Seznam argumentů Vircleu pro příkazovou řádku získáš v nápovědě %1</translation>
     </message>
     <message>
         <source>%1 client</source>

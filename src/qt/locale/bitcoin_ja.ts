@@ -874,7 +874,7 @@
     </message>
     <message>
         <source>%1 will download and store a copy of the Vircle block chain.</source>
-        <translation>%1はVpub.ブロックチェーンの複製をダウンロードし保存します。</translation>
+        <translation>%1はVircle.ブロックチェーンの複製をダウンロードし保存します。</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1111,7 +1111,7 @@
     </message>
     <message>
         <source>Connect to the Vircle network through a SOCKS5 proxy.</source>
-        <translation>SOCKS5 プロキシ経由でVpub.ットワークに接続する</translation>
+        <translation>SOCKS5 プロキシ経由でVircle.ットワークに接続する</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1147,7 +1147,7 @@
     </message>
     <message>
         <source>Connect to the Vircle network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Tor秘匿サービスを利用するため、独立なSOCKS5プロキシ経由でVpub.ットワークに接続する</translation>
+        <translation>Tor秘匿サービスを利用するため、独立なSOCKS5プロキシ経由でVircle.ットワークに接続する</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1899,7 +1899,7 @@
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Vircle network.</source>
-        <translation>支払リクエストが開始された時に表示される、支払リクエストに添える任意のメッセージです。注意：メッセージはVpub.ットワークを通じて、支払と共に送られるわけではありません。</translation>
+        <translation>支払リクエストが開始された時に表示される、支払リクエストに添える任意のメッセージです。注意：メッセージはVircle.ットワークを通じて、支払と共に送られるわけではありません。</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2332,7 +2332,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>Warning: Invalid Vircle address</source>
-        <translation>警告：無効なVpub.ドレスです</translation>
+        <translation>警告：無効なVircle.ドレスです</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2375,7 +2375,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>The Vircle address to send the payment to</source>
-        <translation>支払の送金先Vpub.ドレス</translation>
+        <translation>支払の送金先Vircle.ドレス</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2423,7 +2423,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>A message that was attached to the vircle: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vircle network.</source>
-        <translation>vircle: URIに添付されていたメッセージです。これは参照用としてトランザクションとともに保存されます。注意：このメッセージはVpub.ットワークを通して送信されるわけではありません。</translation>
+        <translation>vircle: URIに添付されていたメッセージです。これは参照用としてトランザクションとともに保存されます。注意：このメッセージはVircle.ットワークを通して送信されるわけではありません。</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2472,7 +2472,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>The Vircle address to sign the message with</source>
-        <translation>メッセージを署名するVpub.ドレス</translation>
+        <translation>メッセージを署名するVircle.ドレス</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2528,7 +2528,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>The Vircle address the message was signed with</source>
-        <translation>メッセージの署名に使われたVpub.ドレス</translation>
+        <translation>メッセージの署名に使われたVircle.ドレス</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Vircle address</source>

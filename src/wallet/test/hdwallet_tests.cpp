@@ -357,7 +357,7 @@ BOOST_AUTO_TEST_CASE(test_TxOutRingCT)
     CMutableTransaction tx;
     tx.vpout.emplace_back(txout);
     tx.nVersion = 2|VIRCLE_TXN_VERSION;
-    BOOST_CHECK_MESSAGE(tx.IsVpubVersion(), "failed IsVpubVersion");
+    BOOST_CHECK_MESSAGE(tx.IsVircleVersion(), "failed IsVircleVersion");
 
     //The peer that sends the block sets the version that the data stream will use!
     CDataStream ss(SER_NETWORK, PROTOCOL_VERSION|SERIALIZE_TRANSACTION_NO_WITNESS);

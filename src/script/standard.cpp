@@ -176,7 +176,7 @@ txnouttype Solver(const CScript& scriptPubKeyIn, std::vector<std::vector<unsigne
         return fIsTimeLocked ? TX_TIMELOCKED_SCRIPTHASH256 : TX_SCRIPTHASH256;
     }
 
-    if (!fVpubMode) {
+    if (!fVircleMode) {
         int witnessversion;
         std::vector<unsigned char> witnessprogram;
         if (scriptPubKey.IsWitnessProgram(witnessversion, witnessprogram)) {

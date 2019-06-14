@@ -85,7 +85,7 @@ WalletTx MakeWalletTx(interfaces::Chain::Lock& locked_chain, CWallet& wallet, co
     for (const auto& txin : wtx.tx->vin) {
         result.txin_is_mine.emplace_back(wallet.IsMine(txin));
     }
-    if (wtx.tx->IsVpubVersion()) {
+    if (wtx.tx->IsVircleVersion()) {
         size_t nv = wtx.tx->GetNumVOuts();
         result.txout_is_mine.reserve(nv);
         result.txout_address.reserve(nv);
@@ -223,8 +223,8 @@ class WalletImpl : public Wallet
 public:
     explicit WalletImpl(const std::shared_ptr<CWallet>& wallet) : m_shared_wallet(wallet), m_wallet(*wallet.get())
     {
-        if (::IsVpubWallet(&m_wallet))
-            m_wallet_part = GetVpubWallet(&m_wallet);
+        if (::IsVircleWallet(&m_wallet))
+            m_wallet_part = GetVircleWallet(&m_wallet);
     }
 
     bool encryptWallet(const SecureString& wallet_passphrase) override
@@ -696,7 +696,7 @@ public:
 
 
 
-    bool IsVpubWallet() override
+    bool IsVircleWallet() override
     {
         return m_wallet_part;
     }
@@ -736,7 +736,7 @@ public:
         return m_wallet_part->GetAvailableBlindBalance(&coin_control);
     }
 
-    CHDWallet *getVpubWallet() override
+    CHDWallet *getVircleWallet() override
     {
         return m_wallet_part;
     }

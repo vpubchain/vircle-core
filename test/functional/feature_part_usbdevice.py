@@ -8,7 +8,7 @@ import json
 import configparser
 
 from test_framework.test_vircle import (
-    VpubTestFramework,
+    VircleTestFramework,
     isclose,
     getIndexAtProperty,
 )
@@ -17,7 +17,7 @@ from test_framework.util import connect_nodes_bi
 from test_framework.authproxy import JSONRPCException
 
 
-class USBDeviceTest(VpubTestFramework):
+class USBDeviceTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3

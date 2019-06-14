@@ -77,8 +77,8 @@ const int64_t nStartupTime = GetTime();
 const char * const BITCOIN_CONF_FILENAME = "vircle.conf";
 const char * const BITCOIN_PID_FILENAME = "vircled.pid";
 
-bool fVpubMode = true;
-bool fVpubWallet = false;
+bool fVircleMode = true;
+bool fVircleWallet = false;
 ArgsManager gArgs;
 
 /** A map that contains all the currently held directory locks. After

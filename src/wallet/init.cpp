@@ -196,7 +196,7 @@ bool LoadWallets(interfaces::Chain& chain, const std::vector<std::string>& walle
         if (!pwallet) {
             return false;
         }
-        if (fVpubMode && !((CHDWallet*)pwallet.get())->Initialise()) {
+        if (fVircleMode && !((CHDWallet*)pwallet.get())->Initialise()) {
             return false;
         }
         AddWallet(pwallet);

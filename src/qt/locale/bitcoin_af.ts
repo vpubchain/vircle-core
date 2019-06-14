@@ -1733,7 +1733,7 @@ transaksievertragingsrisiko.</translation>
     </message>
     <message>
         <source>Warning: Invalid Vircle address</source>
-        <translation>Waarskuwing: Ongeldige Vpubadres</translation>
+        <translation>Waarskuwing: Ongeldige Vircleadres</translation>
     </message>
     <message>
         <source>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</source>
@@ -1766,7 +1766,7 @@ Is u seker?</translation>
     </message>
     <message>
         <source>The Vircle address to send the payment to</source>
-        <translation>Die Vpubadres waarheen die betaling gestuur word</translation>
+        <translation>Die Vircleadres waarheen die betaling gestuur word</translation>
     </message>
     <message>
         <source>Alt+A</source>

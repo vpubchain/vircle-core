@@ -12,7 +12,7 @@ from random import random
 from decimal import Decimal
 
 from test_framework.test_vircle import (
-    VpubTestFramework,
+    VircleTestFramework,
     isclose,
     getIndexAtProperty,
 )
@@ -367,7 +367,7 @@ def getRandomAmount():
     return round(Decimal(random()) * 9 + Decimal(1.2), 8)
 
 
-class AtomicSwapTest(VpubTestFramework):
+class AtomicSwapTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

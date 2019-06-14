@@ -8,7 +8,7 @@ import json
 import binascii
 
 from test_framework.test_vircle import (
-    VpubTestFramework,
+    VircleTestFramework,
     isclose,
     getIndexAtProperty,
 )
@@ -16,7 +16,7 @@ from test_framework.util import connect_nodes
 from test_framework.authproxy import JSONRPCException
 
 
-class SmsgPaidTest(VpubTestFramework):
+class SmsgPaidTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

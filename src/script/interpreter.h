@@ -166,7 +166,7 @@ public:
         return false;
     }
 
-    virtual bool IsVpubVersion() const
+    virtual bool IsVircleVersion() const
     {
         return false;
     }
@@ -198,9 +198,9 @@ public:
         return txTo && txTo->IsCoinStake();
     }
 
-    bool IsVpubVersion() const override
+    bool IsVircleVersion() const override
     {
-        return txTo && txTo->IsVpubVersion();
+        return txTo && txTo->IsVircleVersion();
     }
 };
 

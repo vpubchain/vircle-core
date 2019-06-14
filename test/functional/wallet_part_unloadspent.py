@@ -3,11 +3,11 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_vircle import VpubTestFramework
+from test_framework.test_vircle import VircleTestFramework
 from test_framework.util import connect_nodes_bi
 
 
-class WalletVpubUnloadSpentTest(VpubTestFramework):
+class WalletVircleUnloadSpentTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2
@@ -55,4 +55,4 @@ class WalletVpubUnloadSpentTest(VpubTestFramework):
 
 
 if __name__ == '__main__':
-    WalletVpubUnloadSpentTest().main()
+    WalletVircleUnloadSpentTest().main()

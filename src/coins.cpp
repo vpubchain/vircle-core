@@ -91,7 +91,7 @@ void AddCoins(CCoinsViewCache& cache, const CTransaction &tx, int nHeight, bool 
     bool fCoinbase = tx.IsCoinBase() || tx.IsCoinStake();
     const uint256& txid = tx.GetHash();
 
-    if (tx.IsVpubVersion())
+    if (tx.IsVircleVersion())
     {
         for (size_t i = 0; i < tx.vpout.size(); ++i)
         {
@@ -289,7 +289,7 @@ CAmount CCoinsViewCache::GetPlainValueIn(const CTransaction &tx,
 
 CAmount CCoinsViewCache::GetValueIn(const CTransaction& tx) const
 {
-    assert(!tx.IsVpubVersion());
+    assert(!tx.IsVircleVersion());
     if (tx.IsCoinBase())
         return 0;
 

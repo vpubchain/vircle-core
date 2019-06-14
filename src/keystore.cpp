@@ -9,7 +9,7 @@
 
 void CBasicKeyStore::ImplicitlyLearnRelatedKeyScripts(const CPubKey& pubkey)
 {
-    if (fVpubMode)
+    if (fVircleMode)
         return;
     AssertLockHeld(cs_KeyStore);
     CKeyID key_id = pubkey.GetID();

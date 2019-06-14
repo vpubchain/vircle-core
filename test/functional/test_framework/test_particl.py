@@ -29,7 +29,7 @@ def getIndexAtProperty(arr, name, value):
             continue
     return -1
 
-class VpubTestFramework(BitcoinTestFramework):
+class VircleTestFramework(BitcoinTestFramework):
     def start_node(self, i, *args, **kwargs):
         kwargs['btcmode'] = False
         return super().start_node(i, *args, **kwargs)

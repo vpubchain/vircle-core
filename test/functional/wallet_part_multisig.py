@@ -5,12 +5,12 @@
 
 from decimal import Decimal
 
-from test_framework.test_vircle import VpubTestFramework, isclose
+from test_framework.test_vircle import VircleTestFramework, isclose
 from test_framework.util import connect_nodes_bi, satoshi_round
 from test_framework.authproxy import JSONRPCException
 
 
-class MultiSigTest(VpubTestFramework):
+class MultiSigTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3

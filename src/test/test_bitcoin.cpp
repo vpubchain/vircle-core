@@ -26,7 +26,7 @@ const std::function<std::string(const char*)> G_TRANSLATION_FUN = nullptr;
 
 FastRandomContext g_insecure_rand_ctx;
 
-extern bool fVpubMode;
+extern bool fVircleMode;
 
 std::ostream& operator<<(std::ostream& os, const uint256& num)
 {
@@ -34,10 +34,10 @@ std::ostream& operator<<(std::ostream& os, const uint256& num)
     return os;
 }
 
-BasicTestingSetup::BasicTestingSetup(const std::string& chainName, bool fVpubModeIn)
+BasicTestingSetup::BasicTestingSetup(const std::string& chainName, bool fVircleModeIn)
     : m_path_root(fs::temp_directory_path() / "test_vircle" / strprintf("%lu_%i", (unsigned long)GetTime(), (int)(InsecureRandRange(1 << 30))))
 {
-    fVpubMode = fVpubModeIn;
+    fVircleMode = fVircleModeIn;
 
     SHA256AutoDetect();
     ECC_Start();
@@ -51,7 +51,7 @@ BasicTestingSetup::BasicTestingSetup(const std::string& chainName, bool fVpubMod
     gArgs.ForceSetArg("-vbparams", strprintf("segwit:0:%d", (int64_t)Consensus::BIP9Deployment::NO_TIMEOUT));
     SelectParams(chainName);
 
-    ResetParams(chainName, fVpubMode);
+    ResetParams(chainName, fVircleMode);
 
     noui_connect();
 }
@@ -70,7 +70,7 @@ fs::path BasicTestingSetup::SetDataDir(const std::string& name)
     return ret;
 }
 
-TestingSetup::TestingSetup(const std::string& chainName, bool fVpubModeIn) : BasicTestingSetup(chainName, fVpubModeIn)
+TestingSetup::TestingSetup(const std::string& chainName, bool fVircleModeIn) : BasicTestingSetup(chainName, fVircleModeIn)
 {
     SetDataDir("tempdir");
     const CChainParams& chainparams = Params();

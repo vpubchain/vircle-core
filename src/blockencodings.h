@@ -161,7 +161,7 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action) {
         READWRITE(header);
 
-        if (header.IsVpubVersion())
+        if (header.IsVircleVersion())
             READWRITE(vchBlockSig);
         READWRITE(nonce);
 

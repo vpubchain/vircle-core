@@ -55,7 +55,7 @@ static bool WalletAppInit(int argc, char* argv[])
         return false;
     }
 
-    fVpubMode = !gArgs.GetBoolArg("-btcmode", false); // qa tests
+    fVircleMode = !gArgs.GetBoolArg("-btcmode", false); // qa tests
 
     // check for printtoconsole, allow -debug
     LogInstance().m_print_to_console = gArgs.GetBoolArg("-printtoconsole", gArgs.GetBoolArg("-debug", false));
@@ -66,10 +66,10 @@ static bool WalletAppInit(int argc, char* argv[])
     }
     // Check for -testnet or -regtest parameter (Params() calls are only valid after this clause)
     SelectParams(gArgs.GetChainName());
-    if (!fVpubMode) {
+    if (!fVircleMode) {
         WITNESS_SCALE_FACTOR = WITNESS_SCALE_FACTOR_BTC;
         if (gArgs.GetBoolArg("-regtest", false)) {
-            ResetParams(CBaseChainParams::REGTEST, fVpubMode);
+            ResetParams(CBaseChainParams::REGTEST, fVircleMode);
         }
     }
 

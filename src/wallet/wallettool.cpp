@@ -30,7 +30,7 @@ static std::shared_ptr<CWallet> CreateWallet(const std::string& name, const fs::
     }
     // dummy chain interface
     auto chain = interfaces::MakeChain();
-    std::shared_ptr<CWallet> wallet_instance(fVpubMode
+    std::shared_ptr<CWallet> wallet_instance(fVircleMode
         ? std::shared_ptr<CWallet>(new CHDWallet(*chain, WalletLocation(name), WalletDatabase::Create(path)), WalletToolReleaseWallet)
         : std::shared_ptr<CWallet>(new CWallet(*chain, WalletLocation(name), WalletDatabase::Create(path)), WalletToolReleaseWallet));
     bool first_run = true;
@@ -40,7 +40,7 @@ static std::shared_ptr<CWallet> CreateWallet(const std::string& name, const fs::
         return nullptr;
     }
 
-    if (fVpubMode) {
+    if (fVircleMode) {
         return wallet_instance;
     }
 
@@ -64,7 +64,7 @@ static std::shared_ptr<CWallet> LoadWallet(const std::string& name, const fs::pa
 
     // dummy chain interface
     auto chain = interfaces::MakeChain();
-    std::shared_ptr<CWallet> wallet_instance(fVpubMode
+    std::shared_ptr<CWallet> wallet_instance(fVircleMode
         ? std::shared_ptr<CWallet>(new CHDWallet(*chain, WalletLocation(name), WalletDatabase::Create(path)), WalletToolReleaseWallet)
         : std::shared_ptr<CWallet>(new CWallet(*chain, WalletLocation(name), WalletDatabase::Create(path)), WalletToolReleaseWallet));
     DBErrors load_wallet_ret;

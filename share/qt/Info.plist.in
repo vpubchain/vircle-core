@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.vircle.VpubPayment</string>
+      <string>org.vircle.VirclePayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>vircle</string>

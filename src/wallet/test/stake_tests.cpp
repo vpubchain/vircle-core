@@ -33,7 +33,7 @@ extern UniValue CallRPC(std::string args, std::string wallet="");
 
 struct StakeTestingSetup: public TestingSetup {
     StakeTestingSetup(const std::string& chainName = CBaseChainParams::REGTEST):
-        TestingSetup(chainName, /* fVpubMode */ true)
+        TestingSetup(chainName, /* fVircleMode */ true)
     {
         bool fFirstRun;
         pwalletMain = std::make_shared<CHDWallet>(*m_chain, WalletLocation(), WalletDatabase::CreateMock());

@@ -9,11 +9,11 @@
 
 import time
 
-from test_framework.test_vircle import VpubTestFramework
+from test_framework.test_vircle import VircleTestFramework
 from test_framework.util import connect_nodes, assert_equal
 
 
-class TimestampIndexTest(VpubTestFramework):
+class TimestampIndexTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 4

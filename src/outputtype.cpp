@@ -44,7 +44,7 @@ const std::string& FormatOutputType(OutputType type)
 
 CTxDestination GetDestinationForKey(const CPubKey& key, OutputType type)
 {
-    if (fVpubMode)
+    if (fVircleMode)
         return key.GetID();
 
     switch (type) {
@@ -68,7 +68,7 @@ std::vector<CTxDestination> GetAllDestinationsForKey(const CPubKey& key)
 {
     CKeyID keyid = key.GetID();
     if (key.IsCompressed()) {
-        if (fVpubMode)
+        if (fVircleMode)
             return std::vector<CTxDestination>{std::move(keyid)};
         CTxDestination segwit = WitnessV0KeyHash(keyid);
         CTxDestination p2sh = CScriptID(GetScriptForDestination(segwit));
@@ -82,7 +82,7 @@ CTxDestination AddAndGetDestinationForScript(CKeyStore& keystore, const CScript&
 {
     // Add script to keystore
     keystore.AddCScript(script);
-    if (fVpubMode)
+    if (fVircleMode)
         return CScriptID(script);
     // Note that scripts over 520 bytes are not yet supported.
     switch (type) {

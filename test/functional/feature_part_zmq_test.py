@@ -9,12 +9,12 @@ import struct
 import time
 import base64
 
-from test_framework.test_vircle import VpubTestFramework
+from test_framework.test_vircle import VircleTestFramework
 from test_framework.test_framework import SkipTest
 from test_framework.util import bytes_to_hex_str
 
 
-class ZMQTest(VpubTestFramework):
+class ZMQTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

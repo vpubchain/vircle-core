@@ -8,7 +8,7 @@ import json
 import subprocess
 import textwrap
 
-from test_framework.test_vircle import VpubTestFramework
+from test_framework.test_vircle import VircleTestFramework
 from test_framework.authproxy import JSONRPCException
 from test_framework.util import assert_raises_rpc_error, assert_equal
 
@@ -35,7 +35,7 @@ def read_dump(file_name):
     return sJson, nLines
 
 
-class WalletVpubTest(VpubTestFramework):
+class WalletVircleTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3
@@ -721,5 +721,5 @@ class WalletVpubTest(VpubTestFramework):
 
 
 if __name__ == '__main__':
-    WalletVpubTest().main()
+    WalletVircleTest().main()
 

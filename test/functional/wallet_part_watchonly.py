@@ -3,11 +3,11 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_vircle import VpubTestFramework
+from test_framework.test_vircle import VircleTestFramework
 from test_framework.test_vircle import isclose
 
 
-class WalletVpubWatchOnlyTest(VpubTestFramework):
+class WalletVircleWatchOnlyTest(VircleTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 3
@@ -47,4 +47,4 @@ class WalletVpubWatchOnlyTest(VpubTestFramework):
 
 
 if __name__ == '__main__':
-    WalletVpubWatchOnlyTest().main()
+    WalletVircleWatchOnlyTest().main()

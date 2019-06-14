@@ -42,7 +42,7 @@ public:
         READWRITE(nVersion);
         READWRITE(hashPrevBlock);
         READWRITE(hashMerkleRoot);
-        if (IsVpubVersion()) {
+        if (IsVircleVersion()) {
             READWRITE(hashWitnessMerkleRoot);
         }
         READWRITE(nTime);
@@ -68,7 +68,7 @@ public:
 
     uint256 GetHash() const;
 
-    bool IsVpubVersion() const
+    bool IsVircleVersion() const
     {
         return nVersion == VIRCLE_BLOCK_VERSION;
     }

@@ -279,7 +279,7 @@ static UniValue getrawtransaction(const JSONRPCRequest& request)
     uint256 hash = ParseHashV(request.params[0], "parameter 1");
     CBlockIndex* blockindex = nullptr;
 
-    if (!fVpubMode && hash == Params().GenesisBlock().hashMerkleRoot) {
+    if (!fVircleMode && hash == Params().GenesisBlock().hashMerkleRoot) {
         // Special exception for the genesis block coinbase transaction
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "The genesis block coinbase is not considered an ordinary transaction and cannot be retrieved");
     }
@@ -354,7 +354,7 @@ static UniValue getrawtransaction(const JSONRPCRequest& request)
     if (blockindex) result.pushKV("in_active_chain", in_active_chain);
     result.pushKV("hex", strHex);
 
-    if (fVpubMode) {
+    if (fVircleMode) {
         TxToJSONExpanded(*tx, hash_block, result, nHeight, nConfirmations, nBlockTime);
     } else {
         TxToJSON(*tx, hash_block, result);
@@ -513,7 +513,7 @@ CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniVal
     UniValue outputs = outputs_is_obj ? outputs_in.get_obj() : outputs_in.get_array();
 
     CMutableTransaction rawTx;
-    rawTx.nVersion = fVpubMode ? VIRCLE_TXN_VERSION : BTC_TXN_VERSION;
+    rawTx.nVersion = fVircleMode ? VIRCLE_TXN_VERSION : BTC_TXN_VERSION;
 
 
     if (!locktime.isNull()) {
@@ -591,7 +591,7 @@ CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniVal
             has_data = true;
             std::vector<unsigned char> data = ParseHexV(outputs[name_].getValStr(), "Data");
 
-            if (fVpubMode)
+            if (fVircleMode)
             {
                 OUTPUT_PTR<CTxOutData> out = MAKE_OUTPUT<CTxOutData>();
                 out->vData = data;
@@ -614,7 +614,7 @@ CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniVal
             CScript scriptPubKey = GetScriptForDestination(destination);
             CAmount nAmount = AmountFromValue(outputs[name_]);
 
-            if (fVpubMode)
+            if (fVircleMode)
             {
                 OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
                 out->nValue = nAmount;
@@ -867,7 +867,7 @@ static UniValue decodescript(const JSONRPCRequest& request)
             }
             ScriptPubKeyToUniv(segwitScr, sr, true);
             sr.pushKV("p2sh-segwit", EncodeDestination(CScriptID(segwitScr)));
-            if (!fVpubMode)
+            if (!fVircleMode)
             r.pushKV("segwit", sr);
         }
     }
@@ -1050,7 +1050,7 @@ UniValue SignTransaction(interfaces::Chain& chain, CMutableTransaction& mtx, con
 
             // if redeemScript and private keys were given, add redeemScript to the keystore so it can be signed
             if (is_temp_keystore && (scriptPubKey.IsPayToScriptHashAny(mtx.IsCoinStake())
-                || (!fVpubMode && scriptPubKey.IsPayToWitnessScriptHash()))) {
+                || (!fVircleMode && scriptPubKey.IsPayToWitnessScriptHash()))) {
                 RPCTypeCheckObj(prevOut,
                     {
                         {"redeemScript", UniValueType(UniValue::VSTR)},

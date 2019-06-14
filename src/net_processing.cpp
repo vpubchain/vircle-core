@@ -2323,7 +2323,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         std::shared_ptr<CWallet> wallet = vpwallets.size() > 0 ? vpwallets[0] : nullptr;
         if(wallet)
         {
-            CHDWallet *const pwallet = GetVpubWallet(wallet.get());
+            CHDWallet *const pwallet = GetVircleWallet(wallet.get());
             pwallet->BlockUntilSyncedToCurrentChain();
 
             UniValue obj(UniValue::VOBJ);

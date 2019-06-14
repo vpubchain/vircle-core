@@ -56,7 +56,7 @@ enum DataOutputTypes
 
 bool ExtractCoinStakeInt64(const std::vector<uint8_t> &vData, DataOutputTypes get_type, CAmount &out);
 
-inline bool IsVpubTxVersion(int nVersion)
+inline bool IsVircleTxVersion(int nVersion)
 {
     return (nVersion & 0xFF) >= VIRCLE_TXN_VERSION;
 }
@@ -705,7 +705,7 @@ template<typename Stream, typename TxType>
 inline void SerializeTransaction(const TxType& tx, Stream& s) {
     const bool fAllowWitness = !(s.GetVersion() & SERIALIZE_TRANSACTION_NO_WITNESS);
 
-    if (IsVpubTxVersion(tx.nVersion)) {
+    if (IsVircleTxVersion(tx.nVersion)) {
         uint8_t bv = tx.nVersion & 0xFF;
         s << bv;
 
@@ -815,8 +815,8 @@ public:
         return vin.empty() && vout.empty() && vpout.empty();
     }
 
-    bool IsVpubVersion() const {
-        return IsVpubTxVersion(nVersion);
+    bool IsVircleVersion() const {
+        return IsVircleTxVersion(nVersion);
     }
 
     int GetType() const {
@@ -825,7 +825,7 @@ public:
 
     size_t GetNumVOuts() const
     {
-        return IsVpubTxVersion(nVersion) ? vpout.size() : vout.size();
+        return IsVircleTxVersion(nVersion) ? vpout.size() : vout.size();
     }
 
     const uint256& GetHash() const { return hash; }
@@ -849,7 +849,7 @@ public:
 
     bool IsCoinBase() const
     {
-        if (IsVpubVersion()) {
+        if (IsVircleVersion()) {
             return (GetType() == TXN_COINBASE
                 && vin.size() == 1 && vin[0].prevout.IsNull()); // TODO [rm]?
         }
@@ -961,8 +961,8 @@ struct CMutableTransaction
         nVersion |= (type & 0xFF) << 8;
     }
 
-    bool IsVpubVersion() const {
-        return IsVpubTxVersion(nVersion);
+    bool IsVircleVersion() const {
+        return IsVircleTxVersion(nVersion);
     }
 
     int GetType() const {
@@ -979,7 +979,7 @@ struct CMutableTransaction
 
     size_t GetNumVOuts() const
     {
-        return IsVpubTxVersion(nVersion) ? vpout.size() : vout.size();
+        return IsVircleTxVersion(nVersion) ? vpout.size() : vout.size();
     }
 
     /** Compute the hash of this CMutableTransaction. This is computed on the

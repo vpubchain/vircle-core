@@ -342,7 +342,7 @@ public:
         CreateAndProcessBlock({}, GetScriptForRawPubKey(coinbaseKey.GetPubKey()));
 
         gArgs.ForceSetArg("-btcmode", "1");
-        fVpubWallet = false;
+        fVircleWallet = false;
 
         wallet = MakeUnique<CWallet>(*m_chain, WalletLocation(), WalletDatabase::CreateMock());
         bool firstRun;

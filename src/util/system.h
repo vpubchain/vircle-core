@@ -39,8 +39,8 @@
 // Application startup time (used for uptime calculation)
 int64_t GetStartupTime();
 
-extern bool fVpubMode;
-extern bool fVpubWallet;
+extern bool fVircleMode;
+extern bool fVircleWallet;
 
 extern const char * const BITCOIN_CONF_FILENAME;
 extern const char * const BITCOIN_PID_FILENAME;

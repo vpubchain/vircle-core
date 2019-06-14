@@ -957,7 +957,7 @@ static void ApplyStats(CCoinsStats &stats, CHashWriter& ss, const uint256& hash,
         };
         stats.nBogoSize += 32 /* txid */ + 4 /* vout index */ + 4 /* height + coinbase */ + 8 /* amount */ +
                            2 /* scriptPubKey len */ + output.second.out.scriptPubKey.size() /* scriptPubKey */
-                           + (fVpubMode ? 1 /* nType */ + 33 /* commitment */ : 0);
+                           + (fVircleMode ? 1 /* nType */ + 33 /* commitment */ : 0);
     }
     ss << VARINT(0u);
 }
@@ -1089,7 +1089,7 @@ static UniValue gettxoutsetinfo(const JSONRPCRequest& request)
         ret.pushKV("bestblock", stats.hashBlock.GetHex());
         ret.pushKV("transactions", (int64_t)stats.nTransactions);
         ret.pushKV("txouts", (int64_t)stats.nTransactionOutputs);
-        if (fVpubMode)
+        if (fVircleMode)
             ret.pushKV("txouts_blinded", (int64_t)stats.nBlindedTransactionOutputs);
         ret.pushKV("bogosize", (int64_t)stats.nBogoSize);
         ret.pushKV("hash_serialized_2", stats.hashSerialized.GetHex());
@@ -1350,7 +1350,7 @@ UniValue getblockchaininfo(const JSONRPCRequest& request)
     obj.pushKV("blocks",                (int)chainActive.Height());
     obj.pushKV("headers",               pindexBestHeader ? pindexBestHeader->nHeight : -1);
     obj.pushKV("bestblockhash",         tip->GetBlockHash().GetHex());
-    if (fVpubMode) {
+    if (fVircleMode) {
         obj.pushKV("moneysupply",           ValueFromAmount(tip->nMoneySupply));
         obj.pushKV("blockindexsize",        (int)mapBlockIndex.size());
         obj.pushKV("delayedblocks",         (int)CountDelayedBlocks());
@@ -1379,7 +1379,7 @@ UniValue getblockchaininfo(const JSONRPCRequest& request)
         }
     }
 
-    if (fVpubMode)
+    if (fVircleMode)
         return obj;
     const Consensus::Params& consensusParams = Params().GetConsensus();
     UniValue softforks(UniValue::VARR);
@@ -2003,7 +2003,7 @@ static UniValue getblockstats(const JSONRPCRequest& request)
                     throw JSONRPCError(RPC_INTERNAL_ERROR, std::string("Unexpected internal error (tx index seems corrupt)"));
                 }
 
-                if (tx->IsVpubVersion()) {
+                if (tx->IsVircleVersion()) {
                     const auto& prevoutput = tx_in->vpout[in.prevout.n];
 
                     if (prevoutput->IsStandardOutput()) {
