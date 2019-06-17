@@ -753,6 +753,7 @@ public:
         //vSeeds.emplace_back("testnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-testnet.vircle.io");
         vSeeds.emplace_back("47.104.25.28");
+        vSeeds.emplace_back("52.82.123.93");
 
         //vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rTvv9vsbu269mjYYEecPYinDG8Bt7D86qD", 10, 60)));
         vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rQApnBUWAmJ28PHzaFw9gPeqiDFBxPWK3B", 10, 100)));
