@@ -719,9 +719,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
  	    
-        assert(consensus.hashGenesisBlock == uint256S("0x0000c707156c22cc39e923d763fcab3ae96a9587b74c184759d6e4b198da4e31"));
-        assert(genesis.hashMerkleRoot == uint256S("0xa043431b6e581fea56c2170f69470156823a12bf166e6980eedcef7348e16444"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0xec19be1b45625c1898f4df0b5f551f87c953ef0c013edf770e4dc339e63c0df8"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00005fdab2356d1d92139c00ea5395a1cf84f955988f0ae955fa4b15dc31ac7c"));
+        assert(genesis.hashMerkleRoot == uint256S("0xcd884fa38e430f2dea741a1422668e9660106b2887bdbf17c4fda2b0afc315fd"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0xbda831ecea986211fee6340a976bd6a4132c06f6f2b4c4480fb6472da6dd0026"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
