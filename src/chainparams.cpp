@@ -514,9 +514,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x000018f21bd78dfd8ed7b09aa9ed726681d8d204801ed67b4fa633a86d642fde"));
-        assert(genesis.hashMerkleRoot == uint256S("0x01125f7441b791ede68f059b45966f351083b59b128d6c3c718daa530cd449a3"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x52153a5c4e21ffa74bb43d1ce361be4cfff2966d9c7dad137b1b11852c0c8bb8"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000d49e58d488d8b04e75b40a9f0bf899c38106f07a2c5d073590e46c9c9e53"));
+        assert(genesis.hashMerkleRoot == uint256S("0x405f891a5882beb3058346862eecfab4f02ad2af6607ccb44c211df5f02ac968"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0x6fc45ca0d560c2b9a0dd0bc9a6d32d159d0bf199702f8e28faebb58f97bab4e4"));
 
 	    //assert(consensus.hashGenesisBlock == uint256S("0x0000ee0784c195317ac95623e22fddb8c7b8825dc3998e0bb924d66866eccf4c"));
         //assert(genesis.hashMerkleRoot == uint256S("0xc95fb023cf4bc02ddfed1a59e2b2f53edd1a726683209e2780332edf554f1e3e"));
@@ -668,9 +668,9 @@ public:
         consensus.nMinRCTOutputDepth = 12;
 
         pchMessageStart[0] = 0x0a;
-        pchMessageStart[1] = 0x11;
-        pchMessageStart[2] = 0x05;
-        pchMessageStart[3] = 0x0b;
+        pchMessageStart[1] = 0x1b;
+        pchMessageStart[2] = 0x3c;
+        pchMessageStart[3] = 0x4d;
         nDefaultPort = 57258;
         nBIP44ID = 0x80000001;
 
