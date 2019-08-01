@@ -51,7 +51,7 @@ int64_t CChainParams::GetProofOfStakeReward(const CBlockIndex *pindexPrev, int64
 
 
     //for benyuan
-    int halvings = pindexPrev->nHeight / consensusParams.nSubsidyHalvingInterval;
+    int halvings = pindexPrev->nHeight / consensus.nSubsidyHalvingInterval;
     // Force block reward to zero when right shift is undefined.
     if (halvings >= 64)
         return 0;
