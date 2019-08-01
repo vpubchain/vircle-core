@@ -534,10 +534,8 @@ public:
         vSeeds.emplace_back("52.83.66.3");
 
 
-        vDevFundSettings.emplace_back(0,
-            DevFundSettings("RPLYxZFbBwBYToQpWavLWAtjpoSgLQQmh4", 10, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime,
-            DevFundSettings("RAJ3GeQ2UsCrqpPSS36pcDPnk2X4Ydi9kS", 10, 60));
+        vDevFundSettings.emplace_back(0, DevFundSettings("RPLYxZFbBwBYToQpWavLWAtjpoSgLQQmh4", 10, 60));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("REfD5c3EBhsRiqa1mRV7MgNZXXcizEtpkU", 10, 60));
 
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
