@@ -542,7 +542,7 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x0000a12c00370878bab219b63fc3f21763dc335c96a8feb69eefb87a4b38ce9"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000f758767f225ae01beb765fcaeb035473ece730e4fb47d63f48b993532552"));
         assert(genesis.hashMerkleRoot == uint256S("0x470979befd6ecedd177afbe1f006a1947942ecdd5de391cc6caaaeb37233f9af"));
         assert(genesis.hashWitnessMerkleRoot == uint256S("0xc28e284ca568b6747a33043b2bd089275a71566d964433f356be0520907c39c7"));
 
