@@ -544,9 +544,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x00009b54eba283de4a61da879956520a41bda8041d6b9049edc74820f8c95294"));
-        assert(genesis.hashMerkleRoot == uint256S("0x53eb1f161e6a7a1be25cf57c983ca2a7925c9df9daf6667d9d8e859850e9620b"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0xb966cc0a59e8ba92d64261271b5cb1062456a9831f5957b096cb5d59d69cdffd"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000a12c00370878bab219b63fc3f21763dc335c96a8feb69eefb87a4b38ce9c"));
+        assert(genesis.hashMerkleRoot == uint256S("0x4bec32a417ac1e6f6425e9c238c69763df0ad520c0745dd9b00f069d4563c771"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0x08dceb3b578ba06dd0d438fb03f29f4f8b767db0e41a17f36977cae8839abce6"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
