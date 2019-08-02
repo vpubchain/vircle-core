@@ -411,7 +411,7 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     // RAfggmhaVqFduaWfYkwda1qsKccaHAMuBt
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 108800 * COIN;
-    out->scriptPubKey = CScript() << 1564761600 << OP_CHECKLOCKTIMEVERIFY << OP_DROP << OP_HASH160<< ParseHex("0f392856e13200efef5989d82271d2bc7825d550") << OP_EQUAL; // 2019-08-03
+    out->scriptPubKey = CScript() << 1564720200 << OP_CHECKLOCKTIMEVERIFY << OP_DROP << OP_HASH160<< ParseHex("0f392856e13200efef5989d82271d2bc7825d550") << OP_EQUAL; // 2019-08-03
     txNew.vpout.push_back(out);
 
     CBlock genesis;
@@ -511,7 +511,6 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        //genesis = CreateGenesisBlockMainNet(1500296400, 31429, 0x1f00ffff); // 2017-07-17 13:00:00
         genesis = CreateGenesisBlockMainNet(1564632000, 78472,  0x1f00ffff); // 2019-08-1 12:00:00
         consensus.hashGenesisBlock = genesis.GetHash();
         
