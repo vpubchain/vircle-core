@@ -56,8 +56,8 @@ int64_t CChainParams::GetProofOfStakeReward(const CBlockIndex *pindexPrev, int64
     if (halvings >= 64)
         return 0;
 
-    CAmount nSubsidy = 38 * COIN;
-    // Subsidy is cut in half every 262,800 blocks which will occur approximately every 1 years.
+    CAmount nSubsidy = 76 * COIN;
+    // Subsidy is cut in half every 525,600 blocks which will occur approximately every 1 years.
     nSubsidy >>= halvings;
     return nSubsidy + nFees;
 };
@@ -188,39 +188,69 @@ const size_t nGenesisOutputsRegtest = sizeof(regTestOutputs) / sizeof(regTestOut
 
 const std::pair<const char*, CAmount> genesisOutputs[] = {       
     //wallet-1
-    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",40000    * COIN),
-    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",40000    * COIN),
-    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",40000    * COIN),
-    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",40000    * COIN),
-    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",40000    * COIN),
+    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",20000    * COIN),
+    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",20000    * COIN),
+    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",20000    * COIN),
+    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",20000    * COIN),
+    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",20000    * COIN),
+
+    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",20000    * COIN),
+    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",20000    * COIN),
+    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",20000    * COIN),
+    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",20000    * COIN),
+    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",20000    * COIN),
     
     //wallet-2
-    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",40000    * COIN),
-    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",40000    * COIN),
-    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",40000    * COIN),
-    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",40000    * COIN),
-    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",40000    * COIN),
+    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",20000    * COIN),
+    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",20000    * COIN),
+    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",20000    * COIN),
+    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",20000    * COIN),
+    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",20000    * COIN),
     
+    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",20000    * COIN),
+    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",20000    * COIN),
+    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",20000    * COIN),
+    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",20000    * COIN),
+    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",20000    * COIN),
+
     //wallet-3
-    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",40000    * COIN),
-    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",40000    * COIN),
-    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",40000    * COIN),
-    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",40000    * COIN),
-    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",40000    * COIN),
+    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",20000    * COIN),
+    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",20000    * COIN),
+    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",20000    * COIN),
+    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",20000    * COIN),
+    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",20000    * COIN),
+
+    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",20000    * COIN),
+    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",20000    * COIN),
+    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",20000    * COIN),
+    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",20000    * COIN),
+    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",20000    * COIN),
 
     //wallet-4
-    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",40000    * COIN),
-    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",40000    * COIN),
-    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",40000    * COIN),
-    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",40000    * COIN),
-    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",40000    * COIN),
+    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",20000    * COIN),
+    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",20000    * COIN),
+    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",20000    * COIN),
+    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",20000    * COIN),
+    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",20000    * COIN),
+
+    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",20000    * COIN),
+    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",20000    * COIN),
+    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",20000    * COIN),
+    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",20000    * COIN),
+    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",20000    * COIN),
 
     //wallet-5
-    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",40000    * COIN),
-    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",40000    * COIN),
-    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",40000    * COIN),
-    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",40000    * COIN),
-    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",67200    * COIN),
+    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",20000    * COIN),
+    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",20000    * COIN),
+    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",20000    * COIN),
+    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",20000    * COIN),
+    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",20000    * COIN),
+
+    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",20000    * COIN),
+    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",20000    * COIN),
+    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",20000    * COIN),
+    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",20000    * COIN),
+    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",20000    * COIN),
 };
 const size_t nGenesisOutputs = sizeof(genesisOutputs) / sizeof(genesisOutputs[0]);
 
@@ -293,7 +323,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
         txNew.vpout[k] = out;
     }
 
-    // rANYFdZUwWGgqsGLsuaSZGoeFURctXXGSD
+    // rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 150000 * COIN;
@@ -301,24 +331,24 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
     txNew.vpout.push_back(out);
 
     // Community Initative 2 
-    // rPPwm4YWWxY7PKxpE6EBFCj4piskKQRxZX
+    // rScS9ymKzA4t9Ftg6jyeeoYFz8TyBcTapr
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 200000 * COIN;
     out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("df842dce26c76df7fee7a39f471858779b7ea871") << OP_EQUAL;
     txNew.vpout.push_back(out);
     
     // Reserved vpubchain
-    // rQvHcgyrwFgKMnjnr147Mk72zUL71D8qre
+    // rTbU5TG6zXWWdTe2HQdHwEM7GVFR7xnN6f
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 1000000 * COIN;
     out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("ea4d7e3d7fd2ad3f569a21b62d19dbd4b2bb1c3d") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
     // Reserved vpubchain for primary round
-    // rDDoim2PGunVmhWCuDMytGAp5RtbcyqPGN
+    // rVSjQ6FntNMwidUoBcUsu9dB6QqQoDbmC8
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 1000000 * COIN;
-    out->scriptPubKey = CScript() << 1557986400 << OP_CHECKLOCKTIMEVERIFY << OP_DROP << OP_HASH160<< ParseHex("fe96ca68034a74d44bbc46cde9fa2036eb56d45b") << OP_EQUAL; // 2017-11-30
+    out->scriptPubKey = CScript() << 1564632000 << OP_CHECKLOCKTIMEVERIFY << OP_DROP << OP_HASH160<< ParseHex("fe96ca68034a74d44bbc46cde9fa2036eb56d45b") << OP_EQUAL; // 2017-11-30
     txNew.vpout.push_back(out);
 
 
@@ -356,32 +386,32 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     }
 
     // Community Initative 1
-    // RTHzD2yc9zMepN8Z8EKWUnqjSG15Pr3SPj
+    // RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 0 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("4958b81dd671aefac492f281c0fdff94fcc83ed4") << OP_EQUAL;
+    out->nValue = 3000000 * COIN;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("fe915b900012f13de9a8ec582c3bab87e17142b6") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
     // Community Initative 2 
-    // REaKwXE8UzmPB1UkoisCpdXLy6g1YTMZk5
+    // RGbEf3UhnKFAZn16tbCrDT4eh1GsgPTLqa
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 0 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("6b3a3821a119b31e3409ab625717f76d6fd38c2e") << OP_EQUAL;
+    out->nValue = 3000000 * COIN;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("5032851531c49e3607991b5bf9753ac95254816c") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
     // Reserved Vircle 
-    // RN4MHCjXfzo7a3c1whZt5mbuLd7Bbh9FY3
+    // RELKyrzkyuoMVCU7YCACT7LT7VjDivLAng
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 0 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("97839fefe7c46d9e65985505aa69eb4084497349") << OP_EQUAL;
+    out->nValue = 3108800 * COIN;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("3770793793370cec2a44fa1d2c108b0d1901796c") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
     // Reserved Vircle for primary round
-    // RVdtjTBEqoFPyxNDqFk72SXkvq19QtKss9
+    // RBNytppxP49DX1zvDmUGsZFHitrE7owa59
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 0 * COIN;
-    out->scriptPubKey = CScript() << 1557990000 << OP_CHECKLOCKTIMEVERIFY << OP_DROP << OP_HASH160<< ParseHex("3b029db9b99d115b6a98019241cdd7ef45b03fd7") << OP_EQUAL; // 2017-11-30
+    out->nValue = 5000000 * COIN;
+    out->scriptPubKey = CScript() << 1564632000 << OP_CHECKLOCKTIMEVERIFY << OP_DROP << OP_HASH160<< ParseHex("1708938d91d09eacdc8cf11e9da069f94f7c051f") << OP_EQUAL; // 2017-11-30
     txNew.vpout.push_back(out);
 
 
@@ -409,7 +439,7 @@ public:
         strNetworkID = "main";
 
         // consensus.nSubsidyHalvingInterval = 210000;
-        consensus.nSubsidyHalvingInterval = 262800; //for benyuan blockchain
+        consensus.nSubsidyHalvingInterval = 525600; //for benyuan blockchain
         consensus.BIP34Height = 0;
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
@@ -471,8 +501,8 @@ public:
         nBIP44ID = 0x8000002C;
 
         nModifierInterval = 10 * 60;    // 10 minutes
-        nStakeMinConfirmations = 225;   // 225 * 2 minutes
-        nTargetSpacing = 120;           // 2 minutes
+        nStakeMinConfirmations = 225;   // 225 * 1 minutes
+        nTargetSpacing = 60;           // 1 minutes for benyuan
         nTargetTimespan = 24 * 60;      // 24 mins
 
         AddImportHashesMain(vImportedCoinbaseTxns);
@@ -518,10 +548,6 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x53eb1f161e6a7a1be25cf57c983ca2a7925c9df9daf6667d9d8e859850e9620b"));
         assert(genesis.hashWitnessMerkleRoot == uint256S("0xb966cc0a59e8ba92d64261271b5cb1062456a9831f5957b096cb5d59d69cdffd"));
 
-	    //assert(consensus.hashGenesisBlock == uint256S("0x0000ee0784c195317ac95623e22fddb8c7b8825dc3998e0bb924d66866eccf4c"));
-        //assert(genesis.hashMerkleRoot == uint256S("0xc95fb023cf4bc02ddfed1a59e2b2f53edd1a726683209e2780332edf554f1e3e"));
-        //assert(genesis.hashWitnessMerkleRoot == uint256S("0x619e94a7f9f04c8a1d018eb8bcd9c42d3c23171ebed8f351872256e36959d66c"));
-
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
@@ -534,8 +560,8 @@ public:
         vSeeds.emplace_back("52.83.66.3");
 
 
-        vDevFundSettings.emplace_back(0, DevFundSettings("RPLYxZFbBwBYToQpWavLWAtjpoSgLQQmh4", 10, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("REfD5c3EBhsRiqa1mRV7MgNZXXcizEtpkU", 10, 60));
+        vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 5, 60));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 5, 60));
 
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
@@ -619,7 +645,7 @@ public:
     CTestNetParams() {
         strNetworkID = "test";
         // consensus.nSubsidyHalvingInterval = 210000;
-        consensus.nSubsidyHalvingInterval = 262800; //for benyuan blockchain
+        consensus.nSubsidyHalvingInterval = 525600; //for benyuan blockchain
         consensus.BIP34Height = 0;
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
@@ -673,8 +699,8 @@ public:
         nBIP44ID = 0x80000001;
 
         nModifierInterval = 10 * 60;    // 10 minutes
-        nStakeMinConfirmations = 225;   // 225 * 2 minutes
-        nTargetSpacing = 120;           // 2 minutes
+        nStakeMinConfirmations = 225;   // 225 * 1 minutes
+        nTargetSpacing = 60;           // 1 minutes
         nTargetTimespan = 24 * 60;      // 24 mins
 
 
@@ -729,8 +755,7 @@ public:
         vSeeds.emplace_back("52.82.109.52");
         vSeeds.emplace_back("52.83.66.3");
 
-        //vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rTvv9vsbu269mjYYEecPYinDG8Bt7D86qD", 10, 60)));
-        vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rQApnBUWAmJ28PHzaFw9gPeqiDFBxPWK3B", 10, 100)));
+        vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rVSjQ6FntNMwidUoBcUsu9dB6QqQoDbmC8", 10, 100)));
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x76}; // p
         base58Prefixes[SCRIPT_ADDRESS]     = {0x7a};
