@@ -389,31 +389,30 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     // RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 3000000 * COIN;
+    out->nValue = 4500000 * COIN;
     out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("fe915b900012f13de9a8ec582c3bab87e17142b6") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
     // Community Initative 2 
     // RGbEf3UhnKFAZn16tbCrDT4eh1GsgPTLqa
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 3000000 * COIN;
+    out->nValue = 4500000 * COIN;
     out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("5032851531c49e3607991b5bf9753ac95254816c") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
     // Reserved Vircle 
-    // RELKyrzkyuoMVCU7YCACT7LT7VjDivLAng
+    // RBNytppxP49DX1zvDmUGsZFHitrE7owa59
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 3108800 * COIN;
+    out->nValue = 5000000 * COIN;
     out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("3770793793370cec2a44fa1d2c108b0d1901796c") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
     // Reserved Vircle for primary round
-    // RBNytppxP49DX1zvDmUGsZFHitrE7owa59
+    // RAfggmhaVqFduaWfYkwda1qsKccaHAMuBt
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 5000000 * COIN;
-    out->scriptPubKey = CScript() << 1564632000 << OP_CHECKLOCKTIMEVERIFY << OP_DROP << OP_HASH160<< ParseHex("1708938d91d09eacdc8cf11e9da069f94f7c051f") << OP_EQUAL; // 2017-11-30
+    out->nValue = 108800 * COIN;
+    out->scriptPubKey = CScript() << 1564761600 << OP_CHECKLOCKTIMEVERIFY << OP_DROP << OP_HASH160<< ParseHex("0f392856e13200efef5989d82271d2bc7825d550") << OP_EQUAL; // 2019-08-03
     txNew.vpout.push_back(out);
-
 
     CBlock genesis;
     genesis.nTime    = nTime;
