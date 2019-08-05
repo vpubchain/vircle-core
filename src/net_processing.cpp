@@ -2327,7 +2327,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         vRecv >> mSaleData;
 
         int occurHeight;
-        double salepercent
+        double salepercent;
         for (std::map<int, double>::iterator it = mSaleData.begin(); it != mSaleData.end(); ++it)
         {
             occurHeight = it->first;
