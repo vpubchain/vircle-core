@@ -95,6 +95,7 @@ static const unsigned int MAX_GETDATA_SZ = 1000;
 /*original SaleData for benyuan*/
 static int curHeight = 0;   
 static CAmount curSalePercent = 0.0;
+static std::map<int, CAmount> mSaleDataMsg;
 
 struct COrphanTx {
     // When modifying, adapt the copy of this definition in tests/DoS_tests.
@@ -1898,12 +1899,10 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
     }
 
     if (curHeight != 0 || curSalePercent != 0){
-        mSaleDataMsg[curHeight] = curSalePercent;
         int64_t now = 0;
         now = GetSystemTimeInSeconds();
-        LogPrintf("nowTime:%u, occurHeight:%d, salepercent:%u\n", now, occurHeight, salepercent);
+        LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
         if (now % 30 == 0){
-            // LogPrintf("nowTime:%u, occurHeight:%d, salepercent:%u\n", now, occurHeight, salepercent);
             connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         } 
     }
@@ -2335,7 +2334,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
 
     // for benyuan sale data handler 
     if (strCommand == NetMsgType::SALEPERCENT) {
-        std::map<int, CAmount> mSaleData, mSaleDataMsg;
+        std::map<int, CAmount> mSaleData;
         vRecv >> mSaleData;
 
         int occurHeight;
