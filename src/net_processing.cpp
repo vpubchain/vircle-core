@@ -94,7 +94,7 @@ static const unsigned int MAX_GETDATA_SZ = 1000;
 
 /*original SaleData for benyuan*/
 static int curHeight = 0;   
-static double curSalePercent = 0.0;
+static CAmount curSalePercent = 0.0;
 
 struct COrphanTx {
     // When modifying, adapt the copy of this definition in tests/DoS_tests.
@@ -1883,7 +1883,6 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         return true;
     }
 
-
     if (!(pfrom->GetLocalServices() & NODE_BLOOM) &&
               (strCommand == NetMsgType::FILTERLOAD ||
                strCommand == NetMsgType::FILTERADD))
@@ -1898,6 +1897,17 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         }
     }
 
+    if (curHeight != 0 || curSalePercent != 0){
+        mSaleDataMsg[curHeight] = curSalePercent;
+        int64_t now = 0;
+        now = GetSystemTimeInSeconds();
+        LogPrintf("nowTime:%u, occurHeight:%d, salepercent:%u\n", now, occurHeight, salepercent);
+        if (now % 30 == 0){
+            // LogPrintf("nowTime:%u, occurHeight:%d, salepercent:%u\n", now, occurHeight, salepercent);
+            connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+        } 
+    }
+   
     if (strCommand == NetMsgType::REJECT)
     {
         if (LogAcceptCategory(BCLog::NET)) {
@@ -2336,7 +2346,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             salepercent = it->second;
         }
         // LogPrintf("occurHeight:%d, salepercent:%u\n", occurHeight, salepercent);
-        if (occurHeight != curHeight) {
+        if (occurHeight != curHeight || salepercent != curSalePercent) {
             curHeight = occurHeight;
             curSalePercent = salepercent;
 
@@ -2344,14 +2354,6 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         }
 
-        mSaleDataMsg[curHeight] = curSalePercent;
-        int64_t now = 0;
-        now = GetSystemTimeInSeconds();
-        LogPrintf("nowTime:%u, occurHeight:%d, salepercent:%u\n", now, occurHeight, salepercent);
-        // if (now % 30000 == 0){
-        //     LogPrintf("nowTime:%u, occurHeight:%d, salepercent:%u\n", now, occurHeight, salepercent);
-        //     connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
-        // } 
         return true;
     }
 
