@@ -1902,10 +1902,13 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
     if (curHeight != 0 || curSalePercent != 0){
         int64_t now = 0;
         now = GetSystemTimeInSeconds();
-        if (now % 30 == 0) {
-            LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
-            connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
-        } 
+
+        LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
+        connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+        // if (now % 30 == 0) {
+        //     LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
+        //     connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+        // } 
     }
    
     if (strCommand == NetMsgType::REJECT)
