@@ -100,7 +100,7 @@ extern const char *GETDATA;
  * The salepersent message requests the sales data from special Node.
  * @see https://bitcoin.org/en/developer-reference#getdata
  */
-extern const char *SALEPERSENT;
+extern const char *SALEPERCENT;
 
 /**
  * The merkleblock message is a reply to a getdata message which requested a

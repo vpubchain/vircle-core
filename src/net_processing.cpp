@@ -90,6 +90,9 @@ static_assert(INBOUND_PEER_TX_DELAY >= MAX_GETDATA_RANDOM_DELAY,
 /** Limit to avoid sending big packets. Not used in processing incoming GETDATA for compatibility */
 static const unsigned int MAX_GETDATA_SZ = 1000;
 
+/*original SaleData for benyuan*/
+static int curHeight = 0;   
+static double curSalePercent = 0.0;
 
 struct COrphanTx {
     // When modifying, adapt the copy of this definition in tests/DoS_tests.
@@ -2319,15 +2322,24 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
     }
 
     // for benyuan sale data handler 
-    if (strCommand == NetMsgType::SALEPERSENT) {
-        std::map<double, int> mSaleData;
+    if (strCommand == NetMsgType::SALEPERCENT) {
+        std::map<int, double> mSaleData, mSaleDataMsg;
         vRecv >> mSaleData;
 
-        double salepersent = 
+        for (std::map<int, double>iterator it = mSaleData.begin(); it != mSaleData.end(); ++it)
+        {
+            int occurHeight = it->first;
+            double salepercent = it->secound;
+        }
 
+        if (occurHeight != curHeight) {
+            curHeight = occurHeight;
+            curSalePecsent = salepercent;
+        }
+
+        mSaleDataMsg[curHeight] = curSalePercent;
         
-
-        connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERSENT, mSaleData));
+        connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         return true;
     }
 
