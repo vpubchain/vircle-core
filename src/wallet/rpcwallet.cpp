@@ -483,9 +483,7 @@ static UniValue sendsaledata(const JSONRPCRequest& request)
                 {
                     {"saledata", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "the sale data will update the blockchain network."},
                 },
-                RPCResults{
-                    "\"saledata\"                  (string) The sale data.\n"
-                },
+                RPCResults{},
                 RPCExamples{
                     HelpExampleCli("sendsaledata", "\"0.6\"")
             + HelpExampleRpc("sendsaledata", "\"0.6\"")
