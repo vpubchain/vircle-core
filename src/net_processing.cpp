@@ -2340,8 +2340,12 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         }
 
         mSaleDataMsg[curHeight] = curSalePercent;
-        
-        connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+        int64_t now = 0;
+        now = GetTimeMills();
+        if (now%30 == 0){
+            LogPrintf("nowTime:%u, occurHeight:%d, salepercent:%u\n", now, occurHeight, salepercent);
+            connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+        } 
         return true;
     }
 
