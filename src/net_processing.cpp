@@ -2326,15 +2326,17 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         std::map<int, double> mSaleData, mSaleDataMsg;
         vRecv >> mSaleData;
 
-        for (std::map<int, double>iterator it = mSaleData.begin(); it != mSaleData.end(); ++it)
+        int occurHeight;
+        double salepercent
+        for (std::map<int, double>::iterator it = mSaleData.begin(); it != mSaleData.end(); ++it)
         {
-            int occurHeight = it->first;
-            double salepercent = it->secound;
+            occurHeight = it->first;
+            salepercent = it->secound;
         }
 
         if (occurHeight != curHeight) {
             curHeight = occurHeight;
-            curSalePecsent = salepercent;
+            curSalePercent = salepercent;
         }
 
         mSaleDataMsg[curHeight] = curSalePercent;
