@@ -1897,15 +1897,6 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             return false;
         }
     }
-
-    if (curHeight != 0 || curSalePercent != 0){
-        int64_t now = 0;
-        now = GetSystemTimeInSeconds();
-        LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
-        if (now % 30 == 0){
-            connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
-        } 
-    }
    
     if (strCommand == NetMsgType::REJECT)
     {
@@ -2128,6 +2119,15 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
 
     // At this point, the outgoing message serialization version can't change.
     const CNetMsgMaker msgMaker(pfrom->GetSendVersion());
+
+    if (curHeight != 0 || curSalePercent != 0){
+        int64_t now = 0;
+        now = GetSystemTimeInSeconds();
+        LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
+        if (now % 30 == 0){
+            connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+        } 
+    }
 
     if (strCommand == NetMsgType::VERACK)
     {
