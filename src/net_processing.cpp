@@ -2323,12 +2323,12 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
 
     // for benyuan sale data handler 
     if (strCommand == NetMsgType::SALEPERCENT) {
-        std::map<int, double> mSaleData, mSaleDataMsg;
+        std::map<int, CAmount> mSaleData, mSaleDataMsg;
         vRecv >> mSaleData;
 
         int occurHeight;
         double salepercent;
-        for (std::map<int, double>::iterator it = mSaleData.begin(); it != mSaleData.end(); ++it)
+        for (std::map<int, CAmount>::iterator it = mSaleData.begin(); it != mSaleData.end(); ++it)
         {
             occurHeight = it->first;
             salepercent = it->second;

@@ -292,6 +292,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "createwallet", 2, "blank"},
     { "getnodeaddresses", 0, "count"},
     { "stop", 0, "wait" },
+    {"sendsaledata", 0, "saledata"},    //for benyuan
 };
 // clang-format on
 

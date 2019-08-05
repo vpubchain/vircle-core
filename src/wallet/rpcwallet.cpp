@@ -464,6 +464,52 @@ static CTransactionRef SendMoney(interfaces::Chain::Lock& locked_chain, CWallet 
     return tx;
 }
 
+//for benyuan
+static UniValue sendsaledata(const JSONRPCRequest& request)
+{
+    std::shared_ptr<CWallet> const wallet = GetWalletForJSONRPCRequest(request);
+    CWallet* const pwallet = wallet.get();
+
+    if (!EnsureWalletIsAvailable(pwallet, request.fHelp)) {
+        return NullUniValue;
+    }
+
+    if (request.fHelp || request.params.size() != 1)
+        throw std::runtime_error(
+            RPCHelpMan{"sendsaledata",
+                "\nsend new sale data to the blockchain network\n",
+                {
+                    {"saledata", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "the sale data will update the blockchain network."},
+                },
+                RPCResults{},
+                RPCExamples{
+                    HelpExampleCli("sendsaledata", "\"0.6\"")
+            + HelpExampleRpc("sendsaledata", "\"0.6\"")
+                },
+            }.ToString());
+
+    LOCK(pwallet->cs_wallet);
+
+    CAmount SaleData = AmountFromValue(request.params[0]);
+    if (SaleData <= 0)
+        throw JSONRPCError(RPC_TYPE_ERROR, "Invalid SaleData for send");
+    
+    std::map<int, CAmount> mSaleDataMsg;
+
+    int height = chainActive.Height();
+    mSaleDataMsg[height] = SaleData;
+
+    {
+        LOCK(g_connman->cs_vNodes);
+        for(auto *pnode : g_connman->vNodes) {
+            //g_connman->PushMessage(pnode, CNetMsgMaker(INIT_PROTO_VERSION).Make("smsgPing"));
+            g_connman->PushMessage(pnode, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+        };
+    } // g_connman->cs_vNodes
+
+    return NullUniValue;
+}
+
 extern UniValue sendtypeto(const JSONRPCRequest &request);
 static UniValue sendtoaddress(const JSONRPCRequest& request)
 {
@@ -5106,6 +5152,7 @@ static const CRPCCommand commands[] =
     { "wallet",             "walletpassphrase",                 &walletpassphrase,              {"passphrase","timeout","stakingonly"} },
     { "wallet",             "walletpassphrasechange",           &walletpassphrasechange,        {"oldpassphrase","newpassphrase"} },
     { "wallet",             "walletprocesspsbt",                &walletprocesspsbt,             {"psbt","sign","sighashtype","bip32derivs"} },
+    { "wallet",             "sendsaledata",                &sendsaledata,             {"psbt"} },   //for benyuan
 };
 // clang-format on
 
