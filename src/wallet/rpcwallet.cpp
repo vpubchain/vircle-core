@@ -483,7 +483,9 @@ static UniValue sendsaledata(const JSONRPCRequest& request)
                 {
                     {"saledata", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "the sale data will update the blockchain network."},
                 },
-                RPCResults{},
+                RPCResults{
+                    "\"saledata\"                  (string) The sale data.\n"
+                },
                 RPCExamples{
                     HelpExampleCli("sendsaledata", "\"0.6\"")
             + HelpExampleRpc("sendsaledata", "\"0.6\"")
@@ -491,16 +493,15 @@ static UniValue sendsaledata(const JSONRPCRequest& request)
             }.ToString());
 
     LOCK(pwallet->cs_wallet);
-
+    
+    int height = chainActive.Height();
     CAmount SaleData = AmountFromValue(request.params[0]);
     if (SaleData <= 0)
         throw JSONRPCError(RPC_TYPE_ERROR, "Invalid SaleData for send");
-    
+
     std::map<int, CAmount> mSaleDataMsg;
-
-    int height = chainActive.Height();
     mSaleDataMsg[height] = SaleData;
-
+    
     {
         LOCK(g_connman->cs_vNodes);
         for(auto *pnode : g_connman->vNodes) {
@@ -508,6 +509,8 @@ static UniValue sendsaledata(const JSONRPCRequest& request)
         };
     } // g_connman->cs_vNodes
 
+    LogPrintf("BlockHeight:%d, SaleData:%u\n", height, SaleData);
+    // std::string strSaleData;
     return NullUniValue;
 }
 

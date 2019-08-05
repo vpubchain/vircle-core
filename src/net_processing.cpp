@@ -2333,7 +2333,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             occurHeight = it->first;
             salepercent = it->second;
         }
-
+        LogPrintf("occurHeight:%d, salepercent:%u\n", occurHeight, salepercent);
         if (occurHeight != curHeight) {
             curHeight = occurHeight;
             curSalePercent = salepercent;
