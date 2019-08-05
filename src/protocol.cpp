@@ -43,6 +43,8 @@ const char *GETBLOCKTXN="getblocktxn";
 const char *BLOCKTXN="blocktxn";
 const char *GETCOLDST="getcoldst";
 const char *GETST="getst";
+
+const char *SALEPERSENT="salepersent";  //for benyuan
 } // namespace NetMsgType
 
 /** All known message types. Keep this in the same order as the list of
@@ -77,6 +79,7 @@ const static std::string allNetMessageTypes[] = {
     NetMsgType::BLOCKTXN,
     NetMsgType::GETCOLDST,
     NetMsgType::GETST,
+    NetMsgType::SALEPERSENT,
 };
 const static std::vector<std::string> allNetMessageTypesVec(allNetMessageTypes, allNetMessageTypes+ARRAYLEN(allNetMessageTypes));
 

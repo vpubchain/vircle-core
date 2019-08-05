@@ -2318,6 +2318,19 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         return true;
     }
 
+    // for benyuan sale data handler 
+    if (strCommand == NetMsgType::SALEPERSENT) {
+        std::map<double, int> mSaleData;
+        vRecv >> mSaleData;
+
+        double salepersent = 
+
+        
+
+        connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERSENT, mSaleData));
+        return true;
+    }
+
     if (strCommand == NetMsgType::GETCOLDST) {
         auto vpwallets = GetWallets();
         std::shared_ptr<CWallet> wallet = vpwallets.size() > 0 ? vpwallets[0] : nullptr;

@@ -95,6 +95,13 @@ extern const char *INV;
  * @see https://bitcoin.org/en/developer-reference#getdata
  */
 extern const char *GETDATA;
+
+/**
+ * The salepersent message requests the sales data from special Node.
+ * @see https://bitcoin.org/en/developer-reference#getdata
+ */
+extern const char *SALEPERSENT;
+
 /**
  * The merkleblock message is a reply to a getdata message which requested a
  * block using the inventory type MSG_MERKLEBLOCK.
