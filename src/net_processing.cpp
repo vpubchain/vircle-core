@@ -1902,8 +1902,8 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
     if (curHeight != 0 || curSalePercent != 0){
         int64_t now = 0;
         now = GetSystemTimeInSeconds();
-        LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
-        if (now % 30 == 0){
+        if (now % 30 == 0) {
+            LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
             connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         } 
     }
@@ -2345,7 +2345,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             occurHeight = it->first;
             salepercent = it->second;
         }
-        // LogPrintf("occurHeight:%d, salepercent:%u\n", occurHeight, salepercent);
+        LogPrintf("occurHeight:%d, salepercent:%u\n", occurHeight, salepercent);
         if (occurHeight != curHeight || salepercent != curSalePercent) {
             curHeight = occurHeight;
             curSalePercent = salepercent;
