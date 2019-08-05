@@ -502,8 +502,8 @@ static UniValue sendsaledata(const JSONRPCRequest& request)
     {
         LOCK(g_connman->cs_vNodes);
         for(auto *pnode : g_connman->vNodes) {
-            //g_connman->PushMessage(pnode, CNetMsgMaker(INIT_PROTO_VERSION).Make("smsgPing"));
-            g_connman->PushMessage(pnode, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+            // g_connman->PushMessage(pnode, CNetMsgMaker(INIT_PROTO_VERSION).Make("smsgPing"));
+            g_connman->PushMessage(pnode, CNetMsgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         };
     } // g_connman->cs_vNodes
 
