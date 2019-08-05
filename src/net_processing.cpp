@@ -43,6 +43,8 @@
 
 #include <memory>
 
+#include <util/time.h>  //for benyuan
+
 #if defined(NDEBUG)
 # error "Bitcoin cannot be compiled without assertions."
 #endif
