@@ -2325,7 +2325,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
 
     // for benyuan sale data handler 
     if (strCommand == NetMsgType::SALEPERCENT) {
-        std::map<int, CAmount> mSaleData;
+        std::map<int, CAmount> mSaleData, mSaleDataMsg;
         vRecv >> mSaleData;
 
         int occurHeight;
@@ -2336,16 +2336,15 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             salepercent = it->second;
         }
         
-        if (occurHeight != curHeight || salepercent != curSalePercent) {
+        if (occurHeight >= curHeight ) {
             LogPrintf("occurHeight:%d, salepercent:%u\n", occurHeight, salepercent);
+
             curHeight = occurHeight;
             curSalePercent = salepercent;
-
             mSaleDataMsg[curHeight] = curSalePercent;
             connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         }
 
-        //for benyuan
         if (curHeight != 0 || curSalePercent != 0){
             int64_t now = 0;
             now = GetSystemTimeInSeconds();
