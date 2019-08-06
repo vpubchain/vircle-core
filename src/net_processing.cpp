@@ -2352,7 +2352,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         }
         
         //when connect new node will push current saledata to it.
-        if (occurHeight = 0) {  
+        if (occurHeight == 0) {  
             if (curHeight != 0 || curSalePercent != 0) {
                 int64_t now = 0;
                 now = GetSystemTimeInSeconds();
