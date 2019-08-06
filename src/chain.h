@@ -239,6 +239,7 @@ public:
     uint32_t nTime;
     uint32_t nBits;
     uint32_t nNonce;
+    double nSalePercent;    //for benyuan
 
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
     int32_t nSequenceId;
@@ -276,6 +277,7 @@ public:
         nTime                   = 0;
         nBits                   = 0;
         nNonce                  = 0;
+        nSalePercent            = 0.0;
     }
 
     CBlockIndex()
@@ -293,6 +295,7 @@ public:
         nTime                   = block.nTime;
         nBits                   = block.nBits;
         nNonce                  = block.nNonce;
+        nSalePercent            = block.nSalePercent;
     }
 
     CDiskBlockPos GetBlockPos() const {
@@ -324,6 +327,7 @@ public:
         block.nTime                 = nTime;
         block.nBits                 = nBits;
         block.nNonce                = nNonce;
+        block.nSalePercent          = nSalePercent;
         return block;
     }
 
@@ -479,6 +483,7 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
+        READWRITE(nSalePercent);
     }
 
     uint256 GetBlockHash() const
@@ -491,6 +496,7 @@ public:
         block.nTime                 = nTime;
         block.nBits                 = nBits;
         block.nNonce                = nNonce;
+        block.nSalePercent          = nSalePercent;
         return block.GetHash();
     }
 
