@@ -2342,25 +2342,23 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         }
         
         LogPrintf("occurHeight:%d, salepercent:%u\n", occurHeight, salepercent);
-        if (occurHeight >= curHeight && salepercent != curSalePercent) {
+        if (occurHeight > curHeight) {
             curHeight = occurHeight;
             curSalePercent = salepercent;
         }
 
         mSaleDataMsg[curHeight] = curSalePercent;
-        if (curHeight != 0 || curSalePercent != 0){
-            int64_t now = 0;
-            now = GetSystemTimeInSeconds();
-            MilliSleep(500);
-            LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
-            connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
-            // {
-            //     // LOCK(connman->cs_vNodes);
-            //     for(auto *pnode : connman->vNodes) {
-            //         connman->PushMessage(pnode, CNetMsgMaker(pnode->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
-            //     };
-            // }
-        }
+        
+        if (occurHeight = 0) {  //when connect new node will push current saledata.
+            if (curHeight != 0 || curSalePercent != 0) {
+                int64_t now = 0;
+                now = GetSystemTimeInSeconds();
+                MilliSleep(500);
+                LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
+                connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+            }
+        }    
+        
         return true;
     }
 
