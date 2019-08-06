@@ -2348,7 +2348,13 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             now = GetSystemTimeInSeconds();
             MilliSleep(500);
             LogPrintf("nowTime:%u, curHeight:%d, curSalePercent:%u\n", now, curHeight, curSalePercent);
-            connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+            // connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+            {
+                LOCK(connman->cs_vNodes);
+                for(auto *pnode : connman->vNodes) {
+                    connman->PushMessage(pnode, CNetMsgMaker(pnode->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+                };
+            }
         }
         return true;
     }
