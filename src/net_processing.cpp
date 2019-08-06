@@ -2336,15 +2336,13 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             salepercent = it->second;
         }
         
-        if (occurHeight >= curHeight ) {
-            LogPrintf("occurHeight:%d, salepercent:%u\n", occurHeight, salepercent);
-
+        LogPrintf("occurHeight:%d, salepercent:%u\n", occurHeight, salepercent);
+        if (occurHeight >= curHeight && salepercent != curSalePercent) {
             curHeight = occurHeight;
             curSalePercent = salepercent;
-            mSaleDataMsg[curHeight] = curSalePercent;
-            connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         }
 
+        mSaleDataMsg[curHeight] = curSalePercent;
         if (curHeight != 0 || curSalePercent != 0){
             int64_t now = 0;
             now = GetSystemTimeInSeconds();
