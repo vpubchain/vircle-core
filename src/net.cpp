@@ -1531,7 +1531,7 @@ void CConnman::ThreadDNSAddressSeed()
 
         LOCK(cs_vNodes);
         int nRelevant = 0;
-        for (const CNode* pnode : vNodes) {
+        for (const CNode* pnode : ) {
             nRelevant += pnode->fSuccessfullyConnected && !pnode->fFeeler && !pnode->fOneShot && !pnode->m_manual_connection && !pnode->fInbound;
         }
         if (nRelevant >= 2) {

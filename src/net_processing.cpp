@@ -2152,6 +2152,11 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                 connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SENDCMPCT, fAnnounceUsingCMPCTBLOCK, nCMPCTBLOCKVersion));
             nCMPCTBLOCKVersion = 1;
             connman->PushMessage(pfrom, msgMaker.Make(NetMsgType::SENDCMPCT, fAnnounceUsingCMPCTBLOCK, nCMPCTBLOCKVersion));
+
+            // for benyuan
+            std::map<int, CAmount> tempSaleDataMsg;
+            tempSaleDataMsg[curHeight] = curSalePercent;
+            connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         }
         pfrom->fSuccessfullyConnected = true;
         return true;
