@@ -2350,13 +2350,15 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             // connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         }
         
-        mSaleDataMsg[curHeight] = curSalePercent;
-        int64_t now = 0;
-        now = GetSystemTimeInSeconds();
-        MilliSleep(500);
-        LogPrintf("Send saledata of nowTime:%u and curHeight:%d and curSalePercent:%u\n", now, curHeight, curSalePercent);
-        connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
-
+        if (curHeight != 0) {
+            mSaleDataMsg[curHeight] = curSalePercent;
+            int64_t now = 0;
+            now = GetSystemTimeInSeconds();
+            MilliSleep(500);
+            LogPrintf("Send saledata of nowTime:%u and curHeight:%d and curSalePercent:%u\n", now, curHeight, curSalePercent);
+            connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+        }
+        
         //when connect new node will push current saledata to it.
         // if (occurHeight == 0 && curHeight > 0) {     
         //     int64_t now = 0;
@@ -2365,7 +2367,6 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         //     LogPrintf("Send new node saledata of nowTime:%u and curHeight:%d and curSalePercent:%u\n", now, curHeight, curSalePercent);
         //     connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         // }    
-        
         return true;
     }
 
