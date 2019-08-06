@@ -2341,12 +2341,13 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             salepercent = it->second;
         }
         
+        LogPrintf("Node accept occurHeight:%d and salepercent:%u\n", occurHeight, salepercent);
         //when saledata have changed.
         if (occurHeight > curHeight) {
-            LogPrintf("occurHeight:%d, salepercent:%u\n", occurHeight, salepercent);
             curHeight = occurHeight;
             curSalePercent = salepercent;
 
+            LogPrintf("new sale data create when Height:%d and salepercent:%u\n", occurHeight, salepercent);
             mSaleDataMsg[curHeight] = curSalePercent;
             connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         }
