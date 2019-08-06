@@ -2340,7 +2340,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         }
         
         LogPrintf("Node accept occurHeight:%d and salepercent:%u\n", occurHeight, salepercent);
-        //when saledata have changed.
+        // when saledata have changed.
         if (occurHeight > curHeight) {
             curHeight = occurHeight;
             curSalePercent = salepercent;
@@ -2359,7 +2359,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         }
         
-        //when connect new node will push current saledata to it.
+        // when connect new node will push current saledata to it.
         // if (occurHeight == 0 && curHeight > 0) {     
         //     int64_t now = 0;
         //     now = GetSystemTimeInSeconds();
