@@ -1518,11 +1518,6 @@ void StopMapPort()
 }
 #endif
 
-
-
-
-
-
 void CConnman::ThreadDNSAddressSeed()
 {
     // goal: only query DNS seeds if address need is acute
@@ -2008,11 +2003,6 @@ void CConnman::ThreadMessageHandler()
         fMsgProcWake = false;
     }
 }
-
-
-
-
-
 
 bool CConnman::BindListenPort(const CService &addrBind, std::string& strError, bool fWhitelisted)
 {
