@@ -2708,7 +2708,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                 //for benyuan
                 CAmount nSaleAward = 0;
                 if (pindex->pprev->nSalePercent > 0.6) {
-                    nSaleAward = nReward * 0.2;
+                    nSaleAward = nCalculatedStakeReward * 0.2;
                 }
 
                 CAmount nMaxHolderPart = nCalculatedStakeReward - nMinDevPart - nSaleAward; //for benyuan
