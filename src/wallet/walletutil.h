@@ -15,8 +15,6 @@ fs::path GetWalletDir();
 //! Get wallets in wallet directory.
 std::vector<fs::path> ListWalletDir();
 
-static double g_SalePercent = 0.0;    //for benyuan
-
 //! The WalletLocation class provides wallet information.
 class WalletLocation final
 {
