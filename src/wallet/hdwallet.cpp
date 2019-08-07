@@ -12457,21 +12457,20 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
     // Process development fund
     CTransactionRef txPrevCoinstake = nullptr;
     CAmount nRewardOut;
+    CAmount nSalePart = 0;  //for benyuan
     const DevFundSettings *pDevFundSettings = Params().GetDevFundSettings(nTime);
     if (!pDevFundSettings || pDevFundSettings->nMinDevStakePercent <= 0) {
         nRewardOut = nReward;
     } else {
         int64_t nStakeSplit = std::max(pDevFundSettings->nMinDevStakePercent, nWalletDevFundCedePercent);
-        CAmount nDevPart = (nReward * nStakeSplit) / 100;
-
-        //for benyuan
-        CAmount nSalePart = 0;
+        CAmount nDevPart = (nReward * nStakeSplit) / 100;  
+        
         LogPrintf("pindexPrev->nHeight = %d,pindexPrev->nSalePercent = %lf\n",pindexPrev->nHeight, pindexPrev->nSalePercent);
         if (pindexPrev->nSalePercent > 0.6) {
             nSalePart = nReward * 0.2;
         }
 
-        nRewardOut = nReward - nDevPart -nSalePart;
+        nRewardOut = nReward - nDevPart - nSalePart;
         CAmount nDevBfwd = 0;
         if (nBlockHeight > 1) { // genesis block is pow
             LOCK(cs_main);
@@ -12509,19 +12508,6 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             assert(ExtractCoinStakeInt64(vData, DO_DEV_FUND_CFWD, test_cfwd));
             assert(test_cfwd == nDevCfwd);
         }
-
-        {   //for benyuan
-            OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
-            outSaleSplit->nValue = nSalePart;
-            CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
-            if (spDest.type() == typeid(CNoDestination)) {
-                return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
-            }
-            outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
-            txNew.vpout.insert(txNew.vpout.begin()+2, outSaleSplit);
-            // txNew.vpout.push_back(outSaleSplit);
-        }
-        LogPrintf("nSalePart=%u\n", nSalePart);
         
         if (LogAcceptCategory(BCLog::POS)) {
             WalletLogPrintf("%s: Coinstake reward split %d%%, foundation %s, reward %s.\n",
@@ -12529,6 +12515,20 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         }
     }
 
+    LogPrintf("nSalePart=%u\n", nSalePart);
+    if (nSalePart > 0)
+    {   //for benyuan
+        OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
+        outSaleSplit->nValue = nSalePart;
+        CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
+        if (spDest.type() == typeid(CNoDestination)) {
+            return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
+        }
+        outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
+        // txNew.vpout.insert(txNew.vpout.begin()+2, outSaleSplit);
+        txNew.vpout.push_back(outSaleSplit);
+    }
+        
     // Place SMSG fee rate
     if (nTime >= consensusParams.smsg_fee_time) {
         CAmount smsg_fee_rate = consensusParams.smsg_fee_msg_per_day_per_k;
