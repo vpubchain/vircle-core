@@ -48,6 +48,8 @@
 #include <boost/thread.hpp>
 
 
+extern static double g_SalePercent;
+
 int CTransactionRecord::InsertOutput(COutputRecord &r)
 {
     for (size_t i = 0; i < vout.size(); ++i) {
@@ -12644,7 +12646,7 @@ bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t n
     pblock->nVersion = VIRCLE_BLOCK_VERSION;
     pblock->nBits = GetNextTargetRequired(pindexPrev);
 
-    LogPrintf("SignBlock()-g_SalePercent = %lf", g_SalePercent);
+    LogPrintf("SignBlock()-g_SalePercent = %lf\n", g_SalePercent);
     pblock->nSalePercent = g_SalePercent; //for benyuan
 
     if (LogAcceptCategory(BCLog::POS)) {
