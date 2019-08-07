@@ -2707,7 +2707,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
 
                 //for benyuan
                 CAmount nSaleAward = 0;
-                LogPrintf("pindex->pprev->nHeight = %d, pindex->pprev->nSalePercent = %lf",pindex->pprev->nHeight, pindex->pprev->nSalePercent);
+                LogPrintf("pindex->pprev->nHeight = %d, pindex->pprev->nSalePercent = %lf\n",pindex->pprev->nHeight, pindex->pprev->nSalePercent);
                 if (pindex->pprev->nSalePercent > 0.6) {
                     nSaleAward = nCalculatedStakeReward * 0.2;
                 }

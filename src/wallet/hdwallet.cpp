@@ -12462,27 +12462,27 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         nRewardOut = nReward;
     } else {
         int64_t nStakeSplit = std::max(pDevFundSettings->nMinDevStakePercent, nWalletDevFundCedePercent);
-
         CAmount nDevPart = (nReward * nStakeSplit) / 100;
 
         //for benyuan
-        CAmount nSaleAward = 0;
+        CAmount nSalePart = 0;
         LogPrintf("pindexPrev->nHeight = %d,pindexPrev->nSalePercent = %lf\n",pindexPrev->nHeight, pindexPrev->nSalePercent);
         if (pindexPrev->nSalePercent > 0.6) {
-            nSaleAward = nReward * 0.2;
+            nSalePart = nReward * 0.2;
         }
-        
-        OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
-        outSaleSplit->nValue = nSaleAward;
-        CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
-        if (spDest.type() == typeid(CNoDestination)) {
-            return werror("%s: Failed to get foundation fund destination: %s.", __func__, "pDevFundSettings->sDevFundAddresses");
+        {
+            OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
+            outSaleSplit->nValue = nSalePart;
+            CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
+            if (spDest.type() == typeid(CNoDestination)) {
+                return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
+            }
+            outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
+            txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
         }
-        outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
-        txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
-        
+        LogPrintf("nSalePart=%u\n", nSalePart);
 
-        nRewardOut = nReward - nDevPart -nSaleAward;
+        nRewardOut = nReward - nDevPart -nSalePart;
         CAmount nDevBfwd = 0;
         if (nBlockHeight > 1) { // genesis block is pow
             LOCK(cs_main);
