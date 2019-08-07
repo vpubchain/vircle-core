@@ -48,7 +48,7 @@
 #include <boost/thread.hpp>
 
 
-extern static double g_SalePercent;
+extern static double g_SalePercent; //for benyuan
 
 int CTransactionRecord::InsertOutput(COutputRecord &r)
 {
