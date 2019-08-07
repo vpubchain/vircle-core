@@ -2706,13 +2706,15 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                 CAmount nMinDevPart = (nCalculatedStakeReward * pDevFundSettings->nMinDevStakePercent) / 100;
 
                 //for benyuan
-                CAmount nSaleAward = 0;
-                LogPrintf("pindex->pprev->nHeight = %d, pindex->pprev->nSalePercent = %lf\n",pindex->pprev->nHeight, pindex->pprev->nSalePercent);
-                if (pindex->pprev->nSalePercent > 0.6) {
-                    nSaleAward = nCalculatedStakeReward * 0.2;
+                CAmount nSalePart = 0;
+                LogPrintf("pindex->pprev->pprev->nHeight = %d, pindex->pprev->pprev->nSalePercent = %lf\n", 
+                pindex->pprev->pprev->nHeight, 
+                pindex->pprev->pprev->nSalePercent);
+                if (pindex->pprev->pprev->nSalePercent > 0.6) {
+                    nSalePart = nCalculatedStakeReward * 0.2;
                 }
 
-                CAmount nMaxHolderPart = nCalculatedStakeReward - nMinDevPart - nSaleAward; //for benyuan
+                CAmount nMaxHolderPart = nCalculatedStakeReward - nMinDevPart - nSalePart; //for benyuan
                 if (nMinDevPart < 0 || nMaxHolderPart < 0) {
                     return state.DoS(100, error("%s: Bad coinstake split amount (foundation=%d vs reward=%d)", __func__, nMinDevPart, nMaxHolderPart), REJECT_INVALID, "bad-cs-amount");
                 }
