@@ -2461,6 +2461,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
             if (tx.IsCoinStake())
             {
                 // Stake reward is passed back in txfee (nPlainValueOut - nPlainValueIn)
+                LogPrintf("***txfee=%u***\n", txfee);   //for benyuan debug
                 nStakeReward += txfee;
                 nMoneyCreated += nStakeReward;
             } else
@@ -2655,7 +2656,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
         }
     }
 
-    LogPrintf("****nStakeReward**** = %d\n", nStakeReward);
+    LogPrintf("****nStakeReward**** = %d\n", nStakeReward); //for debug benyuan
 
     int64_t nTime3 = GetTimeMicros(); nTimeConnect += nTime3 - nTime2;
     LogPrint(BCLog::BENCH, "      - Connect %u transactions: %.2fms (%.3fms/tx, %.3fms/txin) [%.2fs (%.2fms/blk)]\n", (unsigned)block.vtx.size(), MILLI * (nTime3 - nTime2), MILLI * (nTime3 - nTime2) / block.vtx.size(), nInputs <= 1 ? 0 : MILLI * (nTime3 - nTime2) / (nInputs-1), nTimeConnect * MICRO, nTimeConnect * MILLI / nBlocksTotal);
