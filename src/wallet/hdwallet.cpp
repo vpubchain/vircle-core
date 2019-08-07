@@ -12631,6 +12631,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
 
 bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t nSearchTime)
 {
+    extern static CAmount curSalePercent;
     if (LogAcceptCategory(BCLog::POS)) {
         WalletLogPrintf("%s, Height %d\n", __func__, nHeight);
     }
@@ -12649,7 +12650,8 @@ bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t n
     pblock->nVersion = VIRCLE_BLOCK_VERSION;
     pblock->nBits = GetNextTargetRequired(pindexPrev);
 
-    // g_SalePercent = (double)curSalePercent / 100000000;
+    LogPrintf("SignBlock()-curSalePercent = %u\n", curSalePercent);
+    g_SalePercent = (double)curSalePercent / 100000000;
     LogPrintf("SignBlock()-g_SalePercent = %lf\n", g_SalePercent);
     pblock->nSalePercent = g_SalePercent; //for benyuan
 
