@@ -12466,21 +12466,20 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
 
         //for benyuan
         CAmount nSaleAward = 0;
+        LogPrintf("pindexPrev->nSalePercent = %lf\n", pindexPrev->nSalePercen);
         if (pindexPrev->nSalePercent > 0.6) {
             nSaleAward = nReward * 0.2;
         }
-        {
-            OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
-            outSaleSplit->nValue = nSaleAward;
-
-            CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
-            if (spDest.type() == typeid(CNoDestination)) {
-                return werror("%s: Failed to get foundation fund destination: %s.", __func__, "pDevFundSettings->sDevFundAddresses");
-            }
-            outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
-
-            txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
+        
+        OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
+        outSaleSplit->nValue = nSaleAward;
+        CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
+        if (spDest.type() == typeid(CNoDestination)) {
+            return werror("%s: Failed to get foundation fund destination: %s.", __func__, "pDevFundSettings->sDevFundAddresses");
         }
+        outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
+        txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
+        
 
         nRewardOut = nReward - nDevPart -nSaleAward;
         CAmount nDevBfwd = 0;
