@@ -12644,6 +12644,7 @@ bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t n
     pblock->nVersion = VIRCLE_BLOCK_VERSION;
     pblock->nBits = GetNextTargetRequired(pindexPrev);
 
+    LogPrintf("SignBlock()-g_SalePercent = %lf", g_SalePercent);
     pblock->nSalePercent = g_SalePercent; //for benyuan
 
     if (LogAcceptCategory(BCLog::POS)) {
