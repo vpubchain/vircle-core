@@ -51,7 +51,7 @@
 /*original SaleData for benyuan*/
 // extern static int curHeight;   
 // extern static CAmount curSalePercent;
-static double g_SalePercent;
+// static double g_SalePercent;
 
 int CTransactionRecord::InsertOutput(COutputRecord &r)
 {
