@@ -51,6 +51,7 @@
 /*original SaleData for benyuan*/
 // extern static int curHeight;   
 // extern static CAmount curSalePercent;
+static double g_SalePercent;
 
 int CTransactionRecord::InsertOutput(COutputRecord &r)
 {
@@ -12648,7 +12649,7 @@ bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t n
     pblock->nVersion = VIRCLE_BLOCK_VERSION;
     pblock->nBits = GetNextTargetRequired(pindexPrev);
 
-    g_SalePercent = (double)curSalePercent / 100000000;
+    // g_SalePercent = (double)curSalePercent / 100000000;
     LogPrintf("SignBlock()-g_SalePercent = %lf\n", g_SalePercent);
     pblock->nSalePercent = g_SalePercent; //for benyuan
 
