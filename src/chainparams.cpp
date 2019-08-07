@@ -203,6 +203,8 @@ static CBlock CreateGenesisBlockRegTest(uint32_t nTime, uint32_t nNonce, uint32_
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
     genesis.hashWitnessMerkleRoot = BlockWitnessMerkleRoot(genesis);
 
+    genesis.nSalePercent    = 0.0;  //for benyuan
+
     return genesis;
 }
 
@@ -265,6 +267,8 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
     genesis.hashWitnessMerkleRoot = BlockWitnessMerkleRoot(genesis);
 
+    genesis.nSalePercent    = 0.0;  //for benyuan
+
     return genesis;
 }
 
@@ -326,6 +330,8 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
     genesis.hashWitnessMerkleRoot = BlockWitnessMerkleRoot(genesis);
+
+    genesis.nSalePercent    = 0.0;  //for benyuan
 
     return genesis;
 }

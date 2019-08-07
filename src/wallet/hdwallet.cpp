@@ -12463,8 +12463,26 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         int64_t nStakeSplit = std::max(pDevFundSettings->nMinDevStakePercent, nWalletDevFundCedePercent);
 
         CAmount nDevPart = (nReward * nStakeSplit) / 100;
-        nRewardOut = nReward - nDevPart;
 
+        //for benyuan
+        CAmount nSaleAward = 0;
+        if (pindexPrev->nSalePercent > 0.6) {
+            nSaleAward = nReward * 0.2;
+        }
+        {
+            OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
+            outSaleSplit->nValue = nSaleAward;
+
+            CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
+            if (spDest.type() == typeid(CNoDestination)) {
+                return werror("%s: Failed to get foundation fund destination: %s.", __func__, "pDevFundSettings->sDevFundAddresses");
+            }
+            outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
+
+            txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
+        }
+
+        nRewardOut = nReward - nDevPart -nSaleAward;
         CAmount nDevBfwd = 0;
         if (nBlockHeight > 1) { // genesis block is pow
             LOCK(cs_main);
@@ -12489,7 +12507,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             }
             outDevSplit->scriptPubKey = GetScriptForDestination(dfDest);
 
-            txNew.vpout.insert(txNew.vpout.begin()+1, outDevSplit);
+            txNew.vpout.insert(txNew.vpout.begin()+2, outDevSplit); //modify +1 to  +2 for benyuan
         } else {
             // Add to carried forward
             std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[0]->GetPData();
@@ -12626,6 +12644,9 @@ bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t n
     CKey key;
     pblock->nVersion = VIRCLE_BLOCK_VERSION;
     pblock->nBits = GetNextTargetRequired(pindexPrev);
+
+    pblock->nSalePercent = g_SalePercent; //for benyuan
+
     if (LogAcceptCategory(BCLog::POS)) {
         WalletLogPrintf("%s, nBits %d\n", __func__, pblock->nBits);
     }

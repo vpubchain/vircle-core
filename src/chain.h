@@ -277,7 +277,7 @@ public:
         nTime                   = 0;
         nBits                   = 0;
         nNonce                  = 0;
-        nSalePercent            = 0.0;
+        nSalePercent            = 0.0;  //for benyuan
     }
 
     CBlockIndex()
@@ -295,7 +295,7 @@ public:
         nTime                   = block.nTime;
         nBits                   = block.nBits;
         nNonce                  = block.nNonce;
-        nSalePercent            = block.nSalePercent;
+        nSalePercent            = block.nSalePercent;   //for benyuan
     }
 
     CDiskBlockPos GetBlockPos() const {
@@ -327,7 +327,7 @@ public:
         block.nTime                 = nTime;
         block.nBits                 = nBits;
         block.nNonce                = nNonce;
-        block.nSalePercent          = nSalePercent;
+        block.nSalePercent          = nSalePercent; //for benyuan
         return block;
     }
 
@@ -496,7 +496,7 @@ public:
         block.nTime                 = nTime;
         block.nBits                 = nBits;
         block.nNonce                = nNonce;
-        block.nSalePercent          = nSalePercent;
+        block.nSalePercent          = nSalePercent; //for benyuan
         return block.GetHash();
     }
 

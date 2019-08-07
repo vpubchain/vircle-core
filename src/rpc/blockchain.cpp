@@ -108,6 +108,8 @@ UniValue blockheaderToJSON(const CBlockIndex* tip, const CBlockIndex* blockindex
     result.pushKV("difficulty", GetDifficulty(blockindex));
     result.pushKV("chainwork", blockindex->nChainWork.GetHex());
     result.pushKV("nTx", (uint64_t)blockindex->nTx);
+    result.pushKV("salepercent", blockindex->nSalePercent);    //for benyuan
+
 
     if (blockindex->pprev)
         result.pushKV("previousblockhash", blockindex->pprev->GetBlockHash().GetHex());
@@ -131,6 +133,8 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* tip, const CBlockIn
     result.pushKV("versionHex", strprintf("%08x", block.nVersion));
     result.pushKV("merkleroot", block.hashMerkleRoot.GetHex());
     result.pushKV("witnessmerkleroot", block.hashWitnessMerkleRoot.GetHex());
+    result.pushKV("salepercent", block.nSalePercent);   //for benyuan
+
     UniValue txs(UniValue::VARR);
     for(const auto& tx : block.vtx)
     {

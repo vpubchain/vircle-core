@@ -619,6 +619,7 @@ static UniValue blockToDeltasJSON(const CBlock& block, const CBlockIndex* blocki
     result.pushKV("version", block.nVersion);
     result.pushKV("merkleroot", block.hashMerkleRoot.GetHex());
     result.pushKV("witnessmerkleroot", block.hashWitnessMerkleRoot.GetHex());
+    result.pushKV("salepercent", block.nSalePercent);   //for benyuan
 
     UniValue deltas(UniValue::VARR);
 
