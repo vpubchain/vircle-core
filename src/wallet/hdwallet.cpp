@@ -12467,7 +12467,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
 
         //for benyuan
         CAmount nSaleAward = 0;
-        LogPrintf("pindexPrev->nSalePercent = %lf\n", pindexPrev->nSalePercent);
+        LogPrintf("pindexPrev->nHeight = %d,pindexPrev->nSalePercent = %lf\n",pindexPrev->nHeight, pindexPrev->nSalePercent);
         if (pindexPrev->nSalePercent > 0.6) {
             nSaleAward = nReward * 0.2;
         }
