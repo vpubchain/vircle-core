@@ -792,6 +792,20 @@ public:
         //genesis = CreateGenesisBlockRegTest(1487714923, 0, 0x207fffff);
         genesis = CreateGenesisBlockRegTest(1555488002, 0, 0x207fffff);
         consensus.hashGenesisBlock = genesis.GetHash();
+
+        for (i = 0; i < 4294967295; i++) {
+            genesis.nNonce=i;
+            hash = genesis.GetHash();
+            //std::cout << "hash:" << hash.GetHex() << std::endl;
+            if (UintToArith256(hash) <= bnTarget){
+                //std::cout << "nonce:" << i << std::endl;
+                break;
+            }
+        }
+        hash = genesis.GetHash();
+        if (UintToArith256(hash) <= bnTarget){
+                std::cout << "nonce1:" << i << std::endl;
+        }
         
         std::cout << "block:" << consensus.hashGenesisBlock.GetHex() << std::endl;
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
