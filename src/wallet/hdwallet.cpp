@@ -12629,7 +12629,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
     return true;
 };
 
-extern static CAmount curSalePercent;
+extern CAmount curSalePercent;
 bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t nSearchTime)
 {
     if (LogAcceptCategory(BCLog::POS)) {
