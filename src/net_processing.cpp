@@ -96,6 +96,8 @@ static const unsigned int MAX_GETDATA_SZ = 1000;
 static int curHeight = 0;   
 static CAmount curSalePercent = 0;
 
+extern static double g_SalePercent;
+
 struct COrphanTx {
     // When modifying, adapt the copy of this definition in tests/DoS_tests.
     CTransactionRef tx;
