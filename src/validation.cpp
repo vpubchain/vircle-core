@@ -2772,7 +2772,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     if (nStakeReward < 0 || nStakeReward > nMaxHolderPart) {
                         return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs maxholderpart=%d)", __func__, nStakeReward, nMaxHolderPart), REJECT_INVALID, "bad-cs-amount");
                     }
-                    CAmount nDevCfwd = nDevBfwd + nCalculatedStakeReward - nStakeReward;
+                    CAmount nDevCfwd = nDevBfwd + nCalculatedStakeReward - nStakeReward - nSalePart/*for benyuan*/;
                     if (!txCoinstake->GetDevFundCfwd(nDevCfwdCheck)
                         || nDevCfwdCheck != nDevCfwd) {
                         return state.DoS(100, error("%s: Coinstake foundation fund carried forward mismatch (actual=%d vs expected=%d)", __func__, nDevCfwdCheck, nDevCfwd), REJECT_INVALID, "bad-cs-cfwd");
