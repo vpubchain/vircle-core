@@ -47,7 +47,7 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/thread.hpp>
 
-static double g_SalePercent = 0.0;    //for benyuan
+double g_SalePercent = 0.0;    //for benyuan
 
 int CTransactionRecord::InsertOutput(COutputRecord &r)
 {
