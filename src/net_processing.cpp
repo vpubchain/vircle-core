@@ -2345,7 +2345,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             curHeight = occurHeight;
             curSalePercent = salepercent;
         }
-        g_SalePercent = (double)(curSalePercent / 100000000);
+        g_SalePercent = (double)curSalePercent / 100000000;
 
         LogPrintf("g_SalePercent = %lf\n", g_SalePercent);
 
