@@ -2353,7 +2353,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             mSaleDataMsg[curHeight] = curSalePercent;
             int64_t now = 0;
             now = GetSystemTimeInSeconds();
-            MilliSleep(50);
+            MilliSleep(200);
             LogPrintf("Send saledata of nowTime:%u and curHeight:%d and curSalePercent:%u\n", now, curHeight, curSalePercent);
             connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         }
