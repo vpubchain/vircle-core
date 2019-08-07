@@ -485,7 +485,7 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, CValidationState& state, c
         // Check for negative or overflow input values
         if (fVircleMode) {
             if (coin.nType == OUTPUT_STANDARD) {
-                LogPrintf("**coin.out.nValue=%u\n", coin.out.nValue);
+                LogPrintf("**coin.out.nValue=%u**\n", coin.out.nValue); //for brnyuan
                 nValueIn += coin.out.nValue;
                 if (!MoneyRange(coin.out.nValue) || !MoneyRange(nValueIn)) {
                     return state.DoS(100, false, REJECT_INVALID, "bad-txns-inputvalues-outofrange");
@@ -513,7 +513,7 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, CValidationState& state, c
     size_t nRingCTInputs = nRingCT;
     // GetPlainValueOut adds to nStandard, nCt, nRingCT
     CAmount nPlainValueOut = tx.GetPlainValueOut(nStandard, nCt, nRingCT);
-    LogPrintf("**nPlainValueOut=%u**\n", nPlainValueOut);
+    LogPrintf("**nPlainValueOut=%u**\n", nPlainValueOut);   //for benyuan
     state.fHasAnonOutput = nRingCT > nRingCTInputs;
 
     nTxFee = 0;

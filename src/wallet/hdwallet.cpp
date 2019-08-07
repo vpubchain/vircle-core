@@ -12470,17 +12470,6 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         if (pindexPrev->nSalePercent > 0.6) {
             nSalePart = nReward * 0.2;
         }
-        {
-            OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
-            outSaleSplit->nValue = nSalePart;
-            CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
-            if (spDest.type() == typeid(CNoDestination)) {
-                return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
-            }
-            outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
-            txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
-        }
-        LogPrintf("nSalePart=%u\n", nSalePart);
 
         nRewardOut = nReward - nDevPart -nSalePart;
         CAmount nDevBfwd = 0;
@@ -12507,7 +12496,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             }
             outDevSplit->scriptPubKey = GetScriptForDestination(dfDest);
 
-            txNew.vpout.insert(txNew.vpout.begin()+2, outDevSplit); //modify +1 to  +2 for benyuan
+            txNew.vpout.insert(txNew.vpout.begin()+1, outDevSplit); 
         } else {
             // Add to carried forward
             std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[0]->GetPData();
@@ -12520,6 +12509,20 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             assert(ExtractCoinStakeInt64(vData, DO_DEV_FUND_CFWD, test_cfwd));
             assert(test_cfwd == nDevCfwd);
         }
+
+        {   //for benyuan
+            OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
+            outSaleSplit->nValue = nSalePart;
+            CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
+            if (spDest.type() == typeid(CNoDestination)) {
+                return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
+            }
+            outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
+            // txNew.vpout.insert(txNew.vpout.begin()+2, outSaleSplit);
+            txNew.vpout.emplace_back(outSaleSplit);
+        }
+
+        LogPrintf("nSalePart=%u\n", nSalePart);
         if (LogAcceptCategory(BCLog::POS)) {
             WalletLogPrintf("%s: Coinstake reward split %d%%, foundation %s, reward %s.\n",
                 __func__, nStakeSplit, FormatMoney(nDevPart), FormatMoney(nRewardOut));
