@@ -2742,7 +2742,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     // Fund output must exist and match cfwd, cfwd data output must be unset
                     // nStakeReward must == nDevBfwd + nCalculatedStakeReward
 
-                    if (nStakeReward != nDevBfwd + nCalculatedStakeReward) {
+                    if (nStakeReward != nDevBfwd + nCalculatedStakeReward - nSalePart) {
                         return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs expected=%d)", __func__, nStakeReward, nDevBfwd + nCalculatedStakeReward- nSalePart/*for benyuan*/), REJECT_INVALID, "bad-cs-amount");
                     }
 
