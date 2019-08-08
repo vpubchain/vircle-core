@@ -12530,6 +12530,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         }
         LogPrintf("After nDevCfwd!\n");
 
+        LogPrintf("Send nSalePart Before!\n");
         {   // for benyuan
             OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
             outSaleSplit->nValue = nSalePart;
@@ -12552,6 +12553,8 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
                 __func__, nStakeSplit, FormatMoney(nDevPart), FormatMoney(nRewardOut));
         }
     }
+
+    LofPrintf("nRewardOut=%u\n", nRewardOut);
  
     // Place SMSG fee rate
     if (nTime >= consensusParams.smsg_fee_time) {
