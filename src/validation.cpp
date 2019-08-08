@@ -2711,11 +2711,11 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                 //for benyuan
                 CAmount nSalePart = 0;
                 if(pindex->pprev->nHeight > 0) {
-                    LogPrintf("pindex->pprev->nHeight = %d, pindex->pprev->nSalePercent = %lf\n", 
-                    pindex->pprev->nHeight, 
-                    pindex->pprev->nSalePercent);
+                    LogPrintf("pindex->pprev->pprev->nHeight = %d, pindex->pprev->pprev->nSalePercent = %lf\n", 
+                    pindex->pprev->pprev->nHeight, 
+                    pindex->pprev->pprev->nSalePercent);
 
-                    if (pindex->pprev->nSalePercent > 0.6) {
+                    if (pindex->pprev->pprev->nSalePercent > 0.6) {
                         nSalePart = nCalculatedStakeReward * 0.2;
                     }
                 }                
@@ -2742,7 +2742,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     // nStakeReward must == nDevBfwd + nCalculatedStakeReward
 
                     if (nStakeReward != nDevBfwd + nCalculatedStakeReward) {
-                        return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs expected=%d)", __func__, nStakeReward, nDevBfwd + nCalculatedStakeReward), REJECT_INVALID, "bad-cs-amount");
+                        return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs expected=%d)", __func__, nStakeReward, nDevBfwd + nCalculatedStakeReward + nSalePart/*for benyuan*/), REJECT_INVALID, "bad-cs-amount");
                     }
 
                     CTxDestination dfDest = CBitcoinAddress(pDevFundSettings->sDevFundAddresses).Get();
@@ -2752,7 +2752,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     CScript devFundScriptPubKey = GetScriptForDestination(dfDest);
 
                     // Output 1 must be to the dev fund
-                    const CTxOutStandard *outputDF = txCoinstake->vpout[1]->GetStandardOutput();
+                    const CTxOutStandard *outputDF = txCoinstake->vpout[2]->GetStandardOutput();    //for benyuan   modify 1 to 2
                     if (!outputDF) {
                         return state.DoS(100, error("%s: Bad foundation fund output.", __func__), REJECT_INVALID, "bad-cs");
                     }

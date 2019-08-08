@@ -891,11 +891,11 @@ public:
 
     bool GetDevFundCfwd(CAmount &nCfwd) const
     {
-        if (vpout.size() < 1 || vpout[1]->nVersion != OUTPUT_DATA) {
+        if (vpout.size() < 1 || vpout[1]->nVersion != OUTPUT_DATA) {    //for benyuan modify 0 to 1
             return false;
         }
 
-        return vpout[1]->GetDevFundCfwd(nCfwd);
+        return vpout[1]->GetDevFundCfwd(nCfwd); //for benyuan modify 0 to 1
     }
 
     bool GetSmsgFeeRate(CAmount &fee_rate) const
