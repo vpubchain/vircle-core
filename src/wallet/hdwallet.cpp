@@ -12466,23 +12466,11 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         CAmount nDevPart = (nReward * nStakeSplit) / 100;  
         
         LogPrintf("pindexPrev->nHeight = %d,pindexPrev->nSalePercent = %lf\n",pindexPrev->nHeight, pindexPrev->nSalePercent);
-        // if (pindexPrev->nSalePercent > 0.6) {
-        //     nSalePart = nReward * 0.2;
-        // }
+        if (pindexPrev->nSalePercent > 0.6) {
+            nSalePart = nReward * 0.2;
+        }
 
         LogPrintf("nSalePart=%u\n", nSalePart);
-        // {   // for benyuan
-        //     OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
-        //     outSaleSplit->nValue = nSalePart;
-        //     CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
-        //     if (spDest.type() == typeid(CNoDestination)) {
-        //         return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
-        //     }
-        //     outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
-        //     txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
-        //     // txNew.vpout.push_back(outSaleSplit);
-        // }
-        // LogPrintf("Send nSalePart After!\n");
 
         nRewardOut = nReward - nDevPart - nSalePart;
         CAmount nDevBfwd = 0;
@@ -12541,6 +12529,23 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             // LogPrintf("debug-3\n");
         }
         LogPrintf("After nDevCfwd!\n");
+
+        {   // for benyuan
+            OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
+            outSaleSplit->nValue = nSalePart;
+            CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
+            if (spDest.type() == typeid(CNoDestination)) {
+                return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
+            }
+            outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
+            unsigned int i = txNew.vpout.size();
+            LogPrintf("txNew.vpout.size()=%d\n", txNew.vpout.size());
+            txNew.vpout.resize(i + 1);
+            txNew.vpout[i] = outSaleSplit;
+            // txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
+            // txNew.vpout.push_back(outSaleSplit);
+        }
+        LogPrintf("Send nSalePart After!\n");
 
         if (LogAcceptCategory(BCLog::POS)) {
             WalletLogPrintf("%s: Coinstake reward split %d%%, foundation %s, reward %s.\n",
