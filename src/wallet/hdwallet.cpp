@@ -12516,7 +12516,6 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
     }
 
     LogPrintf("nSalePart=%u\n", nSalePart);
-    if (nSalePart > 0)
     {   //for benyuan
         OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
         outSaleSplit->nValue = nSalePart;
@@ -12525,8 +12524,8 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
         }
         outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
-        // txNew.vpout.insert(txNew.vpout.begin()+2, outSaleSplit);
-        txNew.vpout.push_back(outSaleSplit);
+        txNew.vpout.insert(txNew.vpout.begin()+2, outSaleSplit);
+        // txNew.vpout.push_back(outSaleSplit);
     }
         
     // Place SMSG fee rate
