@@ -12520,8 +12520,10 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             }
             LogPrintf("debug-2\n");
             vData.insert(vData.end(), vCfwd.begin(), vCfwd.end());
+            LogPrintf("debug-2-1\n");
             CAmount test_cfwd = 0;
             assert(ExtractCoinStakeInt64(vData, DO_DEV_FUND_CFWD, test_cfwd));
+            LogPrintf("debug-2-2\n");
             assert(test_cfwd == nDevCfwd);
             LogPrintf("debug-3\n");
         }
