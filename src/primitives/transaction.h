@@ -891,11 +891,11 @@ public:
 
     bool GetDevFundCfwd(CAmount &nCfwd) const
     {
-        if (vpout.size() < 1 || vpout[0]->nVersion != OUTPUT_DATA) {
+        if (vpout.size() < 1 || vpout[1]->nVersion != OUTPUT_DATA) {
             return false;
         }
 
-        return vpout[0]->GetDevFundCfwd(nCfwd);
+        return vpout[1]->GetDevFundCfwd(nCfwd);
     }
 
     bool GetSmsgFeeRate(CAmount &fee_rate) const

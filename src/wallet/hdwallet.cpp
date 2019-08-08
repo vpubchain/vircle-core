@@ -12470,6 +12470,19 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             nSalePart = nReward * 0.2;
         }
 
+        LogPrintf("nSalePart=%u\n", nSalePart);
+        {   //for benyuan
+            OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
+            outSaleSplit->nValue = nSalePart;
+            CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
+            if (spDest.type() == typeid(CNoDestination)) {
+                return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
+            }
+            outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
+            txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
+            // txNew.vpout.push_back(outSaleSplit);
+        }
+
         nRewardOut = nReward - nDevPart - nSalePart;
         CAmount nDevBfwd = 0;
         if (nBlockHeight > 1) { // genesis block is pow
@@ -12495,11 +12508,11 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             }
             outDevSplit->scriptPubKey = GetScriptForDestination(dfDest);
 
-            txNew.vpout.insert(txNew.vpout.begin()+1, outDevSplit); 
+            txNew.vpout.insert(txNew.vpout.begin()+2, outDevSplit); 
         } else {
             // Add to carried forward
-            std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[0]->GetPData();
-            vCfwd[0] = DO_DEV_FUND_CFWD;
+            std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[1]->GetPData();
+            vCfwd[1] = DO_DEV_FUND_CFWD;
             if (0 != PutVarInt(vCfwd, nDevCfwd)) {
                 return werror("%s: PutVarInt failed: %d.", __func__, nDevCfwd);
             }
@@ -12515,18 +12528,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         }
     }
 
-    LogPrintf("nSalePart=%u\n", nSalePart);
-    {   //for benyuan
-        OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
-        outSaleSplit->nValue = nSalePart;
-        CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
-        if (spDest.type() == typeid(CNoDestination)) {
-            return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
-        }
-        outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
-        txNew.vpout.insert(txNew.vpout.begin()+2, outSaleSplit);
-        // txNew.vpout.push_back(outSaleSplit);
-    }
+    
         
     // Place SMSG fee rate
     if (nTime >= consensusParams.smsg_fee_time) {
