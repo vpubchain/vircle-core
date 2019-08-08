@@ -12466,9 +12466,9 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         CAmount nDevPart = (nReward * nStakeSplit) / 100;  
         
         LogPrintf("pindexPrev->nHeight = %d,pindexPrev->nSalePercent = %lf\n",pindexPrev->nHeight, pindexPrev->nSalePercent);
-        if (pindexPrev->nSalePercent > 0.6) {
-            nSalePart = nReward * 0.2;
-        }
+        // if (pindexPrev->nSalePercent > 0.6) {
+        //     nSalePart = nReward * 0.2;
+        // }
 
         LogPrintf("nSalePart=%u\n", nSalePart);
         // {   //for benyuan
