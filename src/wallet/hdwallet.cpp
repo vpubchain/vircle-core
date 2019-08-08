@@ -12554,7 +12554,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         }
     }
 
-    LofPrintf("nRewardOut=%u\n", nRewardOut);
+    LogPrintf("nRewardOut=%u\n", nRewardOut);
  
     // Place SMSG fee rate
     if (nTime >= consensusParams.smsg_fee_time) {
