@@ -12471,18 +12471,18 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         }
 
         LogPrintf("nSalePart=%u\n", nSalePart);
-        {   //for benyuan
-            OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
-            outSaleSplit->nValue = nSalePart;
-            CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
-            if (spDest.type() == typeid(CNoDestination)) {
-                return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
-            }
-            outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
-            txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
-            // txNew.vpout.push_back(outSaleSplit);
-        }
-        LogPrintf("Send nSalePart After!\n");
+        // {   //for benyuan
+        //     OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
+        //     outSaleSplit->nValue = nSalePart;
+        //     CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
+        //     if (spDest.type() == typeid(CNoDestination)) {
+        //         return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
+        //     }
+        //     outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
+        //     txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
+        //     // txNew.vpout.push_back(outSaleSplit);
+        // }
+        // LogPrintf("Send nSalePart After!\n");
 
         nRewardOut = nReward - nDevPart - nSalePart;
         CAmount nDevBfwd = 0;
@@ -12509,37 +12509,36 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             }
             outDevSplit->scriptPubKey = GetScriptForDestination(dfDest);
 
-            txNew.vpout.insert(txNew.vpout.begin()+2, outDevSplit); 
+            txNew.vpout.insert(txNew.vpout.begin()+1, outDevSplit); //for benyuan
         } else {
             // Add to carried forward
-            LogPrintf("debug-1\n");
+            // LogPrintf("debug-1\n");
+            // std::vector<uint8_t>  &vData1 = *txNew.vpout[0]->GetPData();
+            // std::vector<uint8_t>  &vData2 = *txNew.vpout[1]->GetPData();
+            // int i = 0, j = 0;
+            // for (std::vector<uint8_t>::iterator it1 = vData1.begin(); it1 != vData1.end(); ++it1){
+            //     LogPrintf("Data1[%d]=%c\n", i, *it1);
+            //     i++;
+            // }
+            // LogPrintf("Data1 over!\n");
+            // for (std::vector<uint8_t>::iterator it2 = vData2.begin(); it2 != vData2.end(); ++it2){
+            //     LogPrintf("Data2[%d]=%c\n", j, *it2);
+            //     j++;
+            // }
 
-            std::vector<uint8_t>  &vData1 = *txNew.vpout[0]->GetPData();
-            std::vector<uint8_t>  &vData2 = *txNew.vpout[1]->GetPData();
-            int i = 0, j = 0;
-            for (std::vector<uint8_t>::iterator it1 = vData1.begin(); it1 != vData1.end(); ++it1){
-                LogPrintf("Data1[%d]=%c\n", i, *it1);
-                i++;
-            }
-            LogPrintf("Data1 over!\n");
-            for (std::vector<uint8_t>::iterator it2 = vData2.begin(); it2 != vData2.end(); ++it2){
-                LogPrintf("Data2[%d]=%c\n", j, *it2);
-                j++;
-            }
-
-            std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[1]->GetPData();    //for benyuan modify 'vpout[0]' to 'vpout[1]'
+            std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[0]->GetPData();    //for benyuan modify 'vpout[0]' to 'vpout[1]'
             vCfwd[0] = DO_DEV_FUND_CFWD;
             if (0 != PutVarInt(vCfwd, nDevCfwd)) {
                 return werror("%s: PutVarInt failed: %d.", __func__, nDevCfwd);
             }
-            LogPrintf("debug-2\n");
+            //LogPrintf("debug-2\n");
             vData.insert(vData.end(), vCfwd.begin(), vCfwd.end());
-            LogPrintf("debug-2-1\n");
+            // LogPrintf("debug-2-1\n");
             CAmount test_cfwd = 0;
             assert(ExtractCoinStakeInt64(vData, DO_DEV_FUND_CFWD, test_cfwd));
-            LogPrintf("debug-2-2\n");
+            // LogPrintf("debug-2-2\n");
             assert(test_cfwd == nDevCfwd);
-            LogPrintf("debug-3\n");
+            // LogPrintf("debug-3\n");
         }
         LogPrintf("After nDevCfwd!\n");
 

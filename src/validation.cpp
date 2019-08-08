@@ -2752,7 +2752,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     CScript devFundScriptPubKey = GetScriptForDestination(dfDest);
 
                     // Output 1 must be to the dev fund
-                    const CTxOutStandard *outputDF = txCoinstake->vpout[2]->GetStandardOutput();    //for benyuan   modify 1 to 2
+                    const CTxOutStandard *outputDF = txCoinstake->vpout[1]->GetStandardOutput();    //mabey if for benyuan modify 1 to 2
                     if (!outputDF) {
                         return state.DoS(100, error("%s: Bad foundation fund output.", __func__), REJECT_INVALID, "bad-cs");
                     }
