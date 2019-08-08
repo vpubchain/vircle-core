@@ -12514,8 +12514,8 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             // Add to carried forward
             LogPrintf("debug-1\n");
 
-            std::vector<uint8_t> vCfwd(1), &vData1 = *txNew.vpout[0]->GetPData();
-            std::vector<uint8_t> vCfwd(1), &vData2 = *txNew.vpout[1]->GetPData();
+            std::vector<uint8_t>  &vData1 = *txNew.vpout[0]->GetPData();
+            std::vector<uint8_t>  &vData2 = *txNew.vpout[1]->GetPData();
             int i = 0, j = 0;
             for (std::vector<uint8_t> iterator it1 = vData1.begin(); it1 != vData1.end(); ++it1){
                 LogPrintf("Data1[%d]=%d\n", i, it1);
