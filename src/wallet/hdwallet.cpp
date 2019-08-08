@@ -12513,7 +12513,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         } else {
             // Add to carried forward
             std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[1]->GetPData();
-            vCfwd[1] = DO_DEV_FUND_CFWD;
+            vCfwd[0] = DO_DEV_FUND_CFWD;
             if (0 != PutVarInt(vCfwd, nDevCfwd)) {
                 return werror("%s: PutVarInt failed: %d.", __func__, nDevCfwd);
             }
