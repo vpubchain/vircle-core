@@ -2743,7 +2743,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     // nStakeReward must == nDevBfwd + nCalculatedStakeReward
 
                     if (nStakeReward != nDevBfwd + nCalculatedStakeReward) {
-                        return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs expected=%d)", __func__, nStakeReward, nDevBfwd + nCalculatedStakeReward + nSalePart/*for benyuan*/), REJECT_INVALID, "bad-cs-amount");
+                        return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs expected=%d)", __func__, nStakeReward, nDevBfwd + nCalculatedStakeReward- nSalePart/*for benyuan*/), REJECT_INVALID, "bad-cs-amount");
                     }
 
                     CTxDestination dfDest = CBitcoinAddress(pDevFundSettings->sDevFundAddresses).Get();
