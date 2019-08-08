@@ -12496,7 +12496,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
                 nDevBfwd = 0;
             }
         }
-
+        LogPrintf("Before nDevCfwd!\n");
         CAmount nDevCfwd = nDevBfwd + nDevPart;
         if (nBlockHeight % pDevFundSettings->nDevOutputPeriod == 0) {
             // Place dev fund output
@@ -12522,15 +12522,14 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             assert(ExtractCoinStakeInt64(vData, DO_DEV_FUND_CFWD, test_cfwd));
             assert(test_cfwd == nDevCfwd);
         }
-        
+        LogPrintf("After nDevCfwd!\n");
+
         if (LogAcceptCategory(BCLog::POS)) {
             WalletLogPrintf("%s: Coinstake reward split %d%%, foundation %s, reward %s.\n",
                 __func__, nStakeSplit, FormatMoney(nDevPart), FormatMoney(nRewardOut));
         }
     }
-
-    
-        
+ 
     // Place SMSG fee rate
     if (nTime >= consensusParams.smsg_fee_time) {
         CAmount smsg_fee_rate = consensusParams.smsg_fee_msg_per_day_per_k;
