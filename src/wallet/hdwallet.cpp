@@ -12517,12 +12517,12 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             std::vector<uint8_t> vCfwd(1), &vData1 = *txNew.vpout[0]->GetPData();
             std::vector<uint8_t> vCfwd(1), &vData2 = *txNew.vpout[1]->GetPData();
             int i = 0, j = 0;
-            for (std::vector<uint8_t> iterator it = vData1.begin(); it != vData1.end(); ++it){
-                LogPrintf("Data1[%d]=%d\n", i, it;);
+            for (std::vector<uint8_t> iterator it1 = vData1.begin(); it1 != vData1.end(); ++it1){
+                LogPrintf("Data1[%d]=%d\n", i, it1);
                 i++;
             }
-            for (std::vector<uint8_t> iterator it = vData2.begin(); it != vData2.end(); ++it){
-                LogPrintf("Data2[%d]=%d\n", j, it;);
+            for (std::vector<uint8_t> iterator it2 = vData2.begin(); it2 != vData2.end(); ++it2){
+                LogPrintf("Data2[%d]=%d\n", j, it2);
                 j++;
             }
 
