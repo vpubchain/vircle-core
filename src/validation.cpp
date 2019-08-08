@@ -2718,6 +2718,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     if (pindex->pprev->pprev->nSalePercent > 0.6) {
                         nSalePart = nCalculatedStakeReward * 0.2;
                     }
+                    nStakeReward -= nSalePart;  //temp add for benyaun
                 }                
 
                 CAmount nMaxHolderPart = nCalculatedStakeReward - nMinDevPart - nSalePart; //for benyuan
