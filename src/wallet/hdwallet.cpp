@@ -12513,8 +12513,19 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         } else {
             // Add to carried forward
             LogPrintf("debug-1\n");
-            std::cout<<"txNew.vpout[0]->GetPData()"<<txNew.vpout[0]->GetPData()<<std::endl;
-            std::cout<<"txNew.vpout[1]->GetPData()"<<txNew.vpout[1]->GetPData()<<std::endl;
+
+            std::vector<uint8_t> vCfwd(1), &vData1 = *txNew.vpout[0]->GetPData();
+            std::vector<uint8_t> vCfwd(1), &vData2 = *txNew.vpout[1]->GetPData();
+            int i = 0, j = 0;
+            for (std::vector<uint8_t> iterator it = vData1.begin(); it != vData1.end(); ++it){
+                LogPrintf("Data1[%d]=%d\n", i, it;);
+                i++;
+            }
+            for (std::vector<uint8_t> iterator it = vData2.begin(); it != vData2.end(); ++it){
+                LogPrintf("Data1[%d]=%d\n", j, it;);
+                j++;
+            }
+
             std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[1]->GetPData();    //for benyuan modify 'vpout[0]' to 'vpout[1]'
             vCfwd[0] = DO_DEV_FUND_CFWD;
             if (0 != PutVarInt(vCfwd, nDevCfwd)) {
