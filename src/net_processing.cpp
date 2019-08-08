@@ -2133,7 +2133,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                       pfrom->nVersion.load(), pfrom->nStartingHeight, pfrom->GetId(),
                       (fLogIPs ? strprintf(", peeraddr=%s", pfrom->addr.ToString()) : ""));
             
-            // for benyuan
+            // for benyuan when connect node will push saledata
             std::map<int, CAmount> tempSaleDataMsg;
             tempSaleDataMsg[curHeight] = curSalePercent;
             connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, tempSaleDataMsg));
@@ -2348,7 +2348,6 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             curSalePercent = salepercent;
         }
         g_SalePercent = (double)curSalePercent / 100000000;
-
         LogPrintf("g_SalePercent = %lf\n", g_SalePercent);
 
         if (curHeight != 0) {
@@ -2359,6 +2358,26 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             LogPrintf("Send saledata of nowTime:%u and curHeight:%d and curSalePercent:%u\n", now, curHeight, curSalePercent);
             connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         }
+
+        /*
+        if (occurHeight > curHeight) {
+            curHeight = occurHeight;
+            curSalePercent = salepercent;
+            mSaleDataMsg[curHeight] = curSalePercent;
+            LOCK(connman->cs_vNodes);
+            for(auto *pnode : connman->vNodes) {
+                connman->PushMessage(pnode, CNetMsgMaker(pnode->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+            };
+        } 
+
+        g_SalePercent = (double)curSalePercent / 100000000;
+        LogPrintf("g_SalePercent = %lf\n", g_SalePercent);
+
+        if (occurHeight == 0) {
+            mSaleDataMsg[curHeight] = curSalePercent;
+            connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+        }
+        */
         
         return true;
     }

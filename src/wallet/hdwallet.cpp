@@ -12482,6 +12482,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             txNew.vpout.insert(txNew.vpout.begin()+1, outSaleSplit);
             // txNew.vpout.push_back(outSaleSplit);
         }
+        LogPrintf("Send nSalePart After!\n");
 
         nRewardOut = nReward - nDevPart - nSalePart;
         CAmount nDevBfwd = 0;
