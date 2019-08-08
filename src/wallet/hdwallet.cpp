@@ -12515,7 +12515,6 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             LogPrintf("debug-1\n");
             std::cout<<"txNew.vpout[0]->GetPData()"<<txNew.vpout[0]->GetPData()<<std::endl;
             std::cout<<"txNew.vpout[1]->GetPData()"<<txNew.vpout[1]->GetPData()<<std::endl;
-            LogPrintf();
             std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[1]->GetPData();    //for benyuan modify 'vpout[0]' to 'vpout[1]'
             vCfwd[0] = DO_DEV_FUND_CFWD;
             if (0 != PutVarInt(vCfwd, nDevCfwd)) {
