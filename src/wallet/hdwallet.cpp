@@ -12471,7 +12471,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         // }
 
         LogPrintf("nSalePart=%u\n", nSalePart);
-        // {   //for benyuan
+        // {   // for benyuan
         //     OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
         //     outSaleSplit->nValue = nSalePart;
         //     CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
