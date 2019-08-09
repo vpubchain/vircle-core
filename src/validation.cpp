@@ -2715,7 +2715,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     pindex->pprev->pprev->nHeight, 
                     pindex->pprev->pprev->nSalePercent);
 
-                    if (pindex->pprev->pprev->nSalePercent > 0.6) {
+                    if (pindex->pprev->pprev->nSalePercent < 0.6) {
                         nSalePart = nCalculatedStakeReward * 0.2;
                     }
                     nStakeReward -= nSalePart;  //temp add for benyaun
@@ -2742,7 +2742,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     // Fund output must exist and match cfwd, cfwd data output must be unset
                     // nStakeReward must == nDevBfwd + nCalculatedStakeReward
 
-                    if (nStakeReward != nDevBfwd + nCalculatedStakeReward - nSalePart) {
+                    if (nStakeReward != nDevBfwd + nCalculatedStakeReward - nSalePart/*for benyuan*/) {
                         return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs expected=%d)", __func__, nStakeReward, nDevBfwd + nCalculatedStakeReward- nSalePart/*for benyuan*/), REJECT_INVALID, "bad-cs-amount");
                     }
 

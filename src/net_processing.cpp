@@ -2362,7 +2362,6 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         //     connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         // }
 
-
         LogPrintf("Node accept occurHeight:%d and salepercent:%u\n", occurHeight, salepercent);
         if (occurHeight > curHeight) {
             curHeight = occurHeight;

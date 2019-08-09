@@ -346,7 +346,7 @@ public:
         strNetworkID = "main";
 
         // consensus.nSubsidyHalvingInterval = 210000;
-        consensus.nSubsidyHalvingInterval = 525600; //for benyuan blockchain
+        consensus.nSubsidyHalvingInterval = 20/*525600*/; //for benyuan blockchain
         consensus.BIP34Height = 0;
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;

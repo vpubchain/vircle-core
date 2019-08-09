@@ -12470,10 +12470,9 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         CAmount nDevPart = (nReward * nStakeSplit) / 100;  
         
         LogPrintf("pindexPrev->nHeight = %d,pindexPrev->nSalePercent = %lf\n",pindexPrev->nHeight, pindexPrev->nSalePercent);
-        if (pindexPrev->nSalePercent > 0.6) {
+        if (pindexPrev->nSalePercent < 0.6) {
             nSalePart = nReward * 0.2;
         }
-
         LogPrintf("nSalePart=%u\n", nSalePart);
 
         nRewardOut = nReward - nDevPart - nSalePart;
@@ -12677,9 +12676,8 @@ bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t n
     if (!isSaleData) {  //if have not receive prev saledata return false for benyuan
         return false;
     }
-
     LogPrintf("SignBlock()-g_SalePercent = %lf, g_Height = %d\n", g_SalePercent, g_Height);
-    if (g_Height <= pindexPrev->nHeight + 1 ) {
+    if (g_Height <= pindexPrev->nHeight ) {
         tSalePersent = g_SalePercent;
     } else {
         tSalePersent = pindexPrev->nSalePercent;
