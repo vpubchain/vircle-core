@@ -476,7 +476,7 @@ static UniValue sendsaledata(const JSONRPCRequest& request)
         return NullUniValue;
     }
 
-    if (request.fHelp || request.params.size() != 1)
+    if (request.fHelp || request.params.size() != 2)
         throw std::runtime_error(
             RPCHelpMan{"sendsaledata",
                 "\nsend new sale data to the blockchain network\n",
@@ -498,7 +498,7 @@ static UniValue sendsaledata(const JSONRPCRequest& request)
     if (SaleData <= 0)
         throw JSONRPCError(RPC_TYPE_ERROR, "Invalid SaleData for send");
     
-    int nHeight = request.params[0].get_int();
+    int nHeight = request.params[1].get_int();
     if (nHeight < 0 || nHeight < chainActive.Height())
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Block height out of range");
 
