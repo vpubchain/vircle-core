@@ -12677,7 +12677,7 @@ bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t n
         return false;
     }
     LogPrintf("SignBlock()-g_SalePercent = %lf, g_Height = %d\n", g_SalePercent, g_Height);
-    if (g_Height <= pindexPrev->nHeight ) {
+    if (g_Height <= pindexPrev->nHeight + 2) {
         tSalePersent = g_SalePercent;
     } else {
         tSalePersent = pindexPrev->nSalePercent;
