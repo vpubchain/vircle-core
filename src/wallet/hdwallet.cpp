@@ -12519,14 +12519,10 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             if (0 != PutVarInt(vCfwd, nDevCfwd)) {
                 return werror("%s: PutVarInt failed: %d.", __func__, nDevCfwd);
             }
-            //LogPrintf("debug-2\n");
             vData.insert(vData.end(), vCfwd.begin(), vCfwd.end());
-            // LogPrintf("debug-2-1\n");
             CAmount test_cfwd = 0;
             assert(ExtractCoinStakeInt64(vData, DO_DEV_FUND_CFWD, test_cfwd));
-            // LogPrintf("debug-2-2\n");
             assert(test_cfwd == nDevCfwd);
-            // LogPrintf("debug-3\n");
         }
         LogPrintf("After nDevCfwd!\n");
 
@@ -12537,7 +12533,6 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
     }
 
     LogPrintf("nRewardOut=%u\n", nRewardOut);
- 
     // Place SMSG fee rate
     if (nTime >= consensusParams.smsg_fee_time) {
         CAmount smsg_fee_rate = consensusParams.smsg_fee_msg_per_day_per_k;
@@ -12624,7 +12619,6 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         // txNew.vpout.push_back(outSaleSplit);
     }
     LogPrintf("Send nSalePart After!\n");
-
 
     // Sign
     int nIn = 0;
