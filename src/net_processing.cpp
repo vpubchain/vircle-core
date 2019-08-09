@@ -96,7 +96,9 @@ static const unsigned int MAX_GETDATA_SZ = 1000;
 static int curHeight = 0;   
 static CAmount curSalePercent = 0;
 double g_SalePercent = -1;
+int g_Height = 0;
 bool isSaleData = false;
+
 
 
 struct COrphanTx {

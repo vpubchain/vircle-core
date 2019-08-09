@@ -49,8 +49,9 @@
 
 extern double g_SalePercent;    //for benyuan
 extern bool isSaleData;
+extern int g_Height;
 double tSalePersent = 0;
-int g_Height = 0;
+
 
 int CTransactionRecord::InsertOutput(COutputRecord &r)
 {
