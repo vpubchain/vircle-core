@@ -486,8 +486,8 @@ static UniValue sendsaledata(const JSONRPCRequest& request)
                 },
                 RPCResults{},
                 RPCExamples{
-                    HelpExampleCli("sendsaledata", "\"0.6\"", "1000")
-            + HelpExampleRpc("sendsaledata", "\"0.6\"", "1000")
+                    HelpExampleCli("sendsaledata", "\"0.6\" 1000")
+            + HelpExampleRpc("sendsaledata", "\"0.6\" 1000")
                 },
             }.ToString());
 
