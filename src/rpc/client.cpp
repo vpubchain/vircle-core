@@ -293,6 +293,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "getnodeaddresses", 0, "count"},
     { "stop", 0, "wait" },
     {"sendsaledata", 0, "saledata"},    //for benyuan
+    {"sendsaledata", 1, "height"},    //for benyuan
 };
 // clang-format on
 

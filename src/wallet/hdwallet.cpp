@@ -47,7 +47,10 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/thread.hpp>
 
-double g_SalePercent = 0.0;    //for benyuan
+extern double g_SalePercent;    //for benyuan
+extern bool isSaleData;
+double tSalePersent = 0;
+int g_Height = 0;
 
 int CTransactionRecord::InsertOutput(COutputRecord &r)
 {
@@ -12669,8 +12672,19 @@ bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t n
     pblock->nVersion = VIRCLE_BLOCK_VERSION;
     pblock->nBits = GetNextTargetRequired(pindexPrev);
 
-    LogPrintf("SignBlock()-g_SalePercent = %lf\n", g_SalePercent);
-    pblock->nSalePercent = g_SalePercent; //for benyuan
+    //for benyuan
+    if (!isSaleData) {  //if have not receive prev saledata return false for benyuan
+        return false;
+    }
+
+    LogPrintf("SignBlock()-g_SalePercent = %lf, g_Height = %d\n", g_SalePercent, g_Height);
+    if (g_Height <= pindexPrev.nHeight + 1 ) {
+        tSalePersent = g_SalePercent;
+    } else {
+        tSalePersent = pindexPrev.nSalePercent;
+    }
+    pblock->nSalePercent = tSalePersent; 
+    LogPrintf("Final pblock->nSalePercent = %lf\n", pblock->nSalePercent);
 
     if (LogAcceptCategory(BCLog::POS)) {
         WalletLogPrintf("%s, nBits %d\n", __func__, pblock->nBits);
@@ -12704,7 +12718,6 @@ bool CHDWallet::SignBlock(CBlockTemplate *pblocktemplate, int nHeight, int64_t n
     }
 
     nLastCoinStakeSearchTime = nSearchTime;
-
     return false;
 };
 

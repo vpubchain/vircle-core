@@ -95,8 +95,9 @@ static const unsigned int MAX_GETDATA_SZ = 1000;
 /*original SaleData for benyuan*/
 static int curHeight = 0;   
 static CAmount curSalePercent = 0;
+double g_SalePercent = -1;
+bool isSaleData = false;
 
-extern double g_SalePercent;
 
 struct COrphanTx {
     // When modifying, adapt the copy of this definition in tests/DoS_tests.
@@ -2334,32 +2335,31 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         std::map<int, CAmount> mSaleData, mSaleDataMsg;
         vRecv >> mSaleData;
 
-        int occurHeight;
-        CAmount salepercent;
+        int occurHeight = -1;
+        CAmount salepercent = 0;
         for (std::map<int, CAmount>::iterator it = mSaleData.begin(); it != mSaleData.end(); ++it) {
             occurHeight = it->first;
             salepercent = it->second;
         }
         
-        LogPrintf("Node accept occurHeight:%d and salepercent:%u\n", occurHeight, salepercent);
-        // when saledata have changed.
-        if (occurHeight > curHeight) {
-            curHeight = occurHeight;
-            curSalePercent = salepercent;
-        }
-        g_SalePercent = (double)curSalePercent / 100000000;
-        LogPrintf("g_SalePercent = %lf\n", g_SalePercent);
+        // LogPrintf("Node accept occurHeight:%d and salepercent:%u\n", occurHeight, salepercent);
+        // // when saledata have changed.
+        // if (occurHeight > curHeight) {
+        //     curHeight = occurHeight;
+        //     curSalePercent = salepercent;
+        // }
+        // g_SalePercent = (double)curSalePercent / 100000000;
+        // LogPrintf("g_SalePercent = %lf\n", g_SalePercent);
 
-        if (curHeight != 0) {
-            mSaleDataMsg[curHeight] = curSalePercent;
-            int64_t now = 0;
-            now = GetSystemTimeInSeconds();
-            MilliSleep(500);
-            LogPrintf("Send saledata of nowTime:%u and curHeight:%d and curSalePercent:%u\n", now, curHeight, curSalePercent);
-            connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
-        }
+        // if (curHeight != 0) {
+        //     mSaleDataMsg[curHeight] = curSalePercent;
+        //     int64_t now = 0;
+        //     now = GetSystemTimeInSeconds();
+        //     MilliSleep(500);
+        //     LogPrintf("Send saledata of nowTime:%u and curHeight:%d and curSalePercent:%u\n", now, curHeight, curSalePercent);
+        //     connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
+        // }
 
-        /*
         if (occurHeight > curHeight) {
             curHeight = occurHeight;
             curSalePercent = salepercent;
@@ -2371,14 +2371,16 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         } 
 
         g_SalePercent = (double)curSalePercent / 100000000;
-        LogPrintf("g_SalePercent = %lf\n", g_SalePercent);
+        g_Height = occurHeight;
+        LogPrintf("g_SalePercent = %lf, g_Height = %d\n", g_SalePercent, g_Height);
 
         if (occurHeight == 0) {
             mSaleDataMsg[curHeight] = curSalePercent;
             connman->PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::SALEPERCENT, mSaleDataMsg));
         }
-        */
-        
+
+        isSaleData = true;
+           
         return true;
     }
 
