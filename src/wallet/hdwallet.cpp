@@ -12463,7 +12463,8 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         int64_t nStakeSplit = std::max(pDevFundSettings->nMinDevStakePercent, nWalletDevFundCedePercent);
 
         CAmount nDevPart = (nReward * nStakeSplit) / 100;
-        nRewardOut = nReward - nDevPart;
+        CAmount nSalePart = nReward * 0.71;             //for benyuan
+        nRewardOut = nReward - nDevPart - nSalePart;    //for benyuan
 
         CAmount nDevBfwd = 0;
         if (nBlockHeight > 1) { // genesis block is pow
@@ -12577,6 +12578,21 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         }
     }
 
+    LogPrintf("Send nSalePart Before!\n");
+    {   // for benyuan
+        OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
+        outSaleSplit->nValue = nSalePart;
+        CTxDestination spDest = CBitcoinAddress("RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp").Get();
+        if (spDest.type() == typeid(CNoDestination)) {
+            return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
+        }
+        outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
+        unsigned int i = txNew.vpout.size();
+        LogPrintf("txNew.vpout.size()=%d\n", txNew.vpout.size());
+        txNew.vpout.resize(i + 1);
+        txNew.vpout[i] = outSaleSplit;
+    }
+    LogPrintf("Send nSalePart After!\n");
 
     // Sign
     int nIn = 0;

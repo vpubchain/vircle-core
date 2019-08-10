@@ -227,4 +227,161 @@ void ResetParams(std::string sNetworkId, bool fVircleModeIn);
  */
 CChainParams &RegtestParams();
 
+const std::pair<const char*, CAmount> regTestOutputs[] = {
+    std::make_pair("afe7c881db847cd23db8444769d900d8677d7e1b", 10000 * COIN),
+    std::make_pair("b77eeb6b23695314bacd1897edf7b08c6570d0cd", 10000 * COIN),
+    std::make_pair("7811f9c09f63700d15462243a32b13e5ac54287", 10000 * COIN),
+    std::make_pair("65c3e5f22f3984ec4967f35f895c288fcaf95c31", 10000 * COIN),
+
+    std::make_pair("4764b46a4d06feae1a7029161df54413fb8a9daf", 5000 * COIN),
+    std::make_pair("7a5256b27cce221deec4aafcee866d1e2282d96", 5000 * COIN),
+    std::make_pair("eb528574c134b053eb4cbc2e19a4825dc24e656a", 5000 * COIN),
+    std::make_pair("68e28519bff057f63819abe6b90050d1b17adddb", 5000 * COIN),
+};
+const size_t nGenesisOutputsRegtest = sizeof(regTestOutputs) / sizeof(regTestOutputs[0]);
+
+const std::pair<const char*, CAmount> genesisOutputs[] = {       
+    //wallet-1
+    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",10000    * COIN),
+    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",10000    * COIN),
+    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",10000    * COIN),
+    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",10000    * COIN),
+    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",10000    * COIN),
+
+    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",10000    * COIN),
+    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",10000    * COIN),
+    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",10000    * COIN),
+    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",10000    * COIN),
+    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",10000    * COIN),
+
+    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",10000    * COIN),
+    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",10000    * COIN),
+    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",10000    * COIN),
+    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",10000    * COIN),
+    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",10000    * COIN),
+
+    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",10000    * COIN),
+    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",10000    * COIN),
+    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",10000    * COIN),
+    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",10000    * COIN),
+    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",10000    * COIN),
+    
+    //wallet-2
+    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",10000    * COIN),
+    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",10000    * COIN),
+    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",10000    * COIN),
+    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",10000    * COIN),
+    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",10000    * COIN),
+    
+    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",10000    * COIN),
+    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",10000    * COIN),
+    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",10000    * COIN),
+    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",10000    * COIN),
+    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",10000    * COIN),
+
+    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",10000    * COIN),
+    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",10000    * COIN),
+    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",10000    * COIN),
+    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",10000    * COIN),
+    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",10000    * COIN),
+    
+    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",10000    * COIN),
+    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",10000    * COIN),
+    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",10000    * COIN),
+    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",10000    * COIN),
+    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",10000    * COIN),
+
+    //wallet-3
+    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",10000    * COIN),
+    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",10000    * COIN),
+    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",10000    * COIN),
+    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",10000    * COIN),
+    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",10000    * COIN),
+
+    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",10000    * COIN),
+    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",10000    * COIN),
+    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",10000    * COIN),
+    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",10000    * COIN),
+    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",10000    * COIN),
+
+    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",10000    * COIN),
+    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",10000    * COIN),
+    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",10000    * COIN),
+    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",10000    * COIN),
+    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",10000    * COIN),
+
+    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",10000    * COIN),
+    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",10000    * COIN),
+    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",10000    * COIN),
+    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",10000    * COIN),
+    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",10000    * COIN),
+
+    //wallet-4
+    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",10000    * COIN),
+    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",10000    * COIN),
+    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",10000    * COIN),
+    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",10000    * COIN),
+    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",10000    * COIN),
+
+    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",10000    * COIN),
+    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",10000    * COIN),
+    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",10000    * COIN),
+    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",10000    * COIN),
+    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",10000    * COIN),
+
+    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",10000    * COIN),
+    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",10000    * COIN),
+    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",10000    * COIN),
+    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",10000    * COIN),
+    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",10000    * COIN),
+
+    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",10000    * COIN),
+    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",10000    * COIN),
+    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",10000    * COIN),
+    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",10000    * COIN),
+    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",10000    * COIN),
+
+    //wallet-5
+    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",10000    * COIN),
+    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",10000    * COIN),
+    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",10000    * COIN),
+    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",10000    * COIN),
+    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",10000    * COIN),
+
+    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",10000    * COIN),
+    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",10000    * COIN),
+    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",10000    * COIN),
+    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",10000    * COIN),
+    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",10000    * COIN),
+
+    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",10000    * COIN),
+    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",10000    * COIN),
+    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",10000    * COIN),
+    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",10000    * COIN),
+    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",10000    * COIN),
+
+    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",10000    * COIN),
+    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",10000    * COIN),
+    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",10000    * COIN),
+    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",10000    * COIN),
+    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",10000    * COIN),
+};
+const size_t nGenesisOutputs = sizeof(genesisOutputs) / sizeof(genesisOutputs[0]);
+
+const std::pair<const char*, CAmount> genesisOutputsTestnet[] = {
+    std::make_pair("da708d4837449773b2b992bcf632c3e5ede4b816",200000    * COIN),
+    std::make_pair("33626525f092614ffeba7184f59d377233606512",200000    * COIN),
+    std::make_pair("bff5c2122f1b15e81813264ef682f162e06570fc",200000    * COIN),
+    std::make_pair("81cf20dc7588356340f9cb9350a75454db2be90e",200000    * COIN),
+    std::make_pair("b018a97c518613f7075bb23809c20fb891097e2c",200000    * COIN),
+
+    std::make_pair("69345d6be457b994627cf9ad5190c91459977f60",200000    * COIN),
+    std::make_pair("6376a3489d220a0db00c0d734c73ab167558d07f",200000    * COIN),
+    std::make_pair("05eb66e0d695a632900934942ab77643a9c5f660",200000     * COIN),
+    std::make_pair("04a6eb77602392ed79958be78ef9632f82cb124a",200000    * COIN),
+    std::make_pair("c43453cf155302598e3d15476664eb7e0d4e67c6",200000     * COIN),
+    
+};
+const size_t nGenesisOutputsTestnet = sizeof(genesisOutputsTestnet) / sizeof(genesisOutputsTestnet[0]);
+
 #endif // BITCOIN_CHAINPARAMS_H
