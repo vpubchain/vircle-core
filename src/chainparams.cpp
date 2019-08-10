@@ -638,9 +638,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
  	    
-        assert(consensus.hashGenesisBlock == uint256S("0x0000c707156c22cc39e923d763fcab3ae96a9587b74c184759d6e4b198da4e31"));
-        assert(genesis.hashMerkleRoot == uint256S("0xa043431b6e581fea56c2170f69470156823a12bf166e6980eedcef7348e16444"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0xec19be1b45625c1898f4df0b5f551f87c953ef0c013edf770e4dc339e63c0df8"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00005fdab2356d1d92139c00ea5395a1cf84f955988f0ae955fa4b15dc31ac7c"));
+        assert(genesis.hashMerkleRoot == uint256S("0xcd884fa38e430f2dea741a1422668e9660106b2887bdbf17c4fda2b0afc315fd"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0xbda831ecea986211fee6340a976bd6a4132c06f6f2b4c4480fb6472da6dd0026"));
 
         //assert(consensus.hashGenesisBlock == uint256S("0x0000594ada5310b367443ee0afd4fa3d0bbd5850ea4e33cdc7d6a904a7ec7c90"));
         //assert(genesis.hashMerkleRoot == uint256S("0x2c7f4d88345994e3849502061f6303d9666172e4dff3641d3472a72908eec002"));
@@ -654,7 +654,7 @@ public:
         vSeeds.emplace_back("52.82.109.52");
         vSeeds.emplace_back("52.83.66.3");
 
-        vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rVSjQ6FntNMwidUoBcUsu9dB6QqQoDbmC8", 10, 100)));
+        vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ", 10, 100)));
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x76}; // p
         base58Prefixes[SCRIPT_ADDRESS]     = {0x7a};
@@ -691,14 +691,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x0000c707156c22cc39e923d763fcab3ae96a9587b74c184759d6e4b198da4e31")},
-                {15000, uint256S("0x4d170758b0e382df416a2ccf7cb3be70b01ccda56c75e4d3408759693bb8b349")},
-                {30000, uint256S("0x8cfc31c0a75d55040eaba60a4069aa2515d22d0ab518bfe4a77c3f9550fa9827")},
-                /*{127620, uint256S("0xe5ab909fc029b253bad300ccf859eb509e03897e7853e8bfdde2710dbf248dd1")},
-                {210920, uint256S("0x5534f546c3b5a264ca034703b9694fabf36d749d66e0659eef5f0734479b9802")},
-                {259290, uint256S("0x58267bdf935a2e0716cb910d055b8cdaa019089a5f71c3db90765dc7101dc5dc")},
-                {312860, uint256S("0xaba2e3b2dcf1970b53b67c869325c5eefd3a107e62518fa4640ddcfadf88760d")},
-                {331600, uint256S("0xeecbeafc4b338901e3dfb6eeaefc128ef477dfe1e6f0f96bd63da27caf113ddc")},*/
+                {0, uint256S("0x00005fdab2356d1d92139c00ea5395a1cf84f955988f0ae955fa4b15dc31ac7c")},
             }
         };
 
