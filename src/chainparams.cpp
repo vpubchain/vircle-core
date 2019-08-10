@@ -44,7 +44,7 @@ int64_t CChainParams::GetProofOfStakeReward(const CBlockIndex *pindexPrev, int64
     if (halvings >= 64)
         return 0;
 
-    CAmount nSubsidy = (45000000 / consensus.nSubsidyHalvingInterval) * COIN;
+    CAmount nSubsidy = 100/*(45000000 / consensus.nSubsidyHalvingInterval) * COIN*/;
     // Subsidy is cut in half every 525,600 blocks which will occur approximately every 1 years.
     nSubsidy >>= halvings;
     return nSubsidy + nFees;
