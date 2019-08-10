@@ -48,6 +48,8 @@ int64_t CChainParams::GetProofOfStakeReward(const CBlockIndex *pindexPrev, int64
     // Subsidy is cut in half every 525,600 blocks which will occur approximately every 1 years.
     nSubsidy >>= halvings;
     return nSubsidy + nFees;
+};
+
 
 int64_t CChainParams::GetMaxSmsgFeeRateDelta(int64_t smsg_fee_prev) const
 {
