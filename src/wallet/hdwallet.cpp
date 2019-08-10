@@ -12456,6 +12456,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
     // Process development fund
     CTransactionRef txPrevCoinstake = nullptr;
     CAmount nRewardOut;
+    CAmount nSalePart;
     const DevFundSettings *pDevFundSettings = Params().GetDevFundSettings(nTime);
     if (!pDevFundSettings || pDevFundSettings->nMinDevStakePercent <= 0) {
         nRewardOut = nReward;
@@ -12463,7 +12464,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         int64_t nStakeSplit = std::max(pDevFundSettings->nMinDevStakePercent, nWalletDevFundCedePercent);
 
         CAmount nDevPart = (nReward * nStakeSplit) / 100;
-        CAmount nSalePart = nReward * 0.71;             //for benyuan
+        nSalePart = nReward * 0.71;             //for benyuan
         nRewardOut = nReward - nDevPart - nSalePart;    //for benyuan
 
         CAmount nDevBfwd = 0;
