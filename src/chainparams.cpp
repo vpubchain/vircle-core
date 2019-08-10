@@ -434,9 +434,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x000018f21bd78dfd8ed7b09aa9ed726681d8d204801ed67b4fa633a86d642fde"));
-        assert(genesis.hashMerkleRoot == uint256S("0x01125f7441b791ede68f059b45966f351083b59b128d6c3c718daa530cd449a3"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x52153a5c4e21ffa74bb43d1ce361be4cfff2966d9c7dad137b1b11852c0c8bb8"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00001e10d258839bedce7acd9ee4cd8ce8c9d6174c1413a682df104c25ff2ec8"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2ca87c06eb9a00f62d8b53171d507efcfdf501f6ec590d4f9692b97b08e03281"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0x773078285e7798b5262fddbdce0cfd238f26dd977e944fb2f5f44912091127868"));
 
 	    //assert(consensus.hashGenesisBlock == uint256S("0x0000ee0784c195317ac95623e22fddb8c7b8825dc3998e0bb924d66866eccf4c"));
         //assert(genesis.hashMerkleRoot == uint256S("0xc95fb023cf4bc02ddfed1a59e2b2f53edd1a726683209e2780332edf554f1e3e"));
@@ -494,10 +494,10 @@ public:
 
         checkpointData = {
             {
-                { 0,       uint256S("0x000018f21bd78dfd8ed7b09aa9ed726681d8d204801ed67b4fa633a86d642fde")},
-                { 5000,    uint256S("0x48236bab754d77f1651fd94f8a75a66c3f4e994eed8774e7fa2c16ad4604c247")},
-                { 15000,   uint256S("0x81346b95c7b958c5e290c6f90f6ff901da2ebb501b615a80fb9efb6d439a7497")},
-                { 30000,   uint256S("0x9f3e8ab012e03da1cac2ed5d1672d7ad6c00db168aab34af6aab8e4279c01cb0")},
+                { 0,       uint256S("0x00001e10d258839bedce7acd9ee4cd8ce8c9d6174c1413a682df104c25ff2ec8")},
+                // { 5000,    uint256S("0x48236bab754d77f1651fd94f8a75a66c3f4e994eed8774e7fa2c16ad4604c247")},
+                // { 15000,   uint256S("0x81346b95c7b958c5e290c6f90f6ff901da2ebb501b615a80fb9efb6d439a7497")},
+                // { 30000,   uint256S("0x9f3e8ab012e03da1cac2ed5d1672d7ad6c00db168aab34af6aab8e4279c01cb0")},
             }
         };
 
