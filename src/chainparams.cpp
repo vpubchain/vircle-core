@@ -409,7 +409,7 @@ public:
 
         nModifierInterval = 10 * 60;    // 10 minutes
         nStakeMinConfirmations = 225;   // 225 * 1 minutes
-        nTargetSpacing = 60;           // 1 minutes for benyuan
+        nTargetSpacing = 60;            // 1 minutes for benyuan
         nTargetTimespan = 24 * 60;      // 24 mins
 
         AddImportHashesMain(vImportedCoinbaseTxns);
