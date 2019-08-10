@@ -436,7 +436,7 @@ public:
 	
         assert(consensus.hashGenesisBlock == uint256S("0x00001e10d258839bedce7acd9ee4cd8ce8c9d6174c1413a682df104c25ff2ec8"));
         assert(genesis.hashMerkleRoot == uint256S("0x2ca87c06eb9a00f62d8b53171d507efcfdf501f6ec590d4f9692b97b08e03281"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x773078285e7798b5262fddbdce0cfd238f26dd977e944fb2f5f44912091127868"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0x773078285e7798b5262fddbdce0cfd238f26dd977e944fb2f5f4491209112786"));
 
 	    //assert(consensus.hashGenesisBlock == uint256S("0x0000ee0784c195317ac95623e22fddb8c7b8825dc3998e0bb924d66866eccf4c"));
         //assert(genesis.hashMerkleRoot == uint256S("0xc95fb023cf4bc02ddfed1a59e2b2f53edd1a726683209e2780332edf554f1e3e"));
