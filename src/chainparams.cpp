@@ -434,13 +434,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x00001e10d258839bedce7acd9ee4cd8ce8c9d6174c1413a682df104c25ff2ec8"));
-        assert(genesis.hashMerkleRoot == uint256S("0x2ca87c06eb9a00f62d8b53171d507efcfdf501f6ec590d4f9692b97b08e03281"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x773078285e7798b5262fddbdce0cfd238f26dd977e944fb2f5f4491209112786"));
-
-	    //assert(consensus.hashGenesisBlock == uint256S("0x0000ee0784c195317ac95623e22fddb8c7b8825dc3998e0bb924d66866eccf4c"));
-        //assert(genesis.hashMerkleRoot == uint256S("0xc95fb023cf4bc02ddfed1a59e2b2f53edd1a726683209e2780332edf554f1e3e"));
-        //assert(genesis.hashWitnessMerkleRoot == uint256S("0x619e94a7f9f04c8a1d018eb8bcd9c42d3c23171ebed8f351872256e36959d66c"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000b1cd6362dcc48cd7e931fd60d0233bd8ecdca44a46cd54854c379cbb2760"));
+        assert(genesis.hashMerkleRoot == uint256S("0x06a04add2eff92ff4a0327861a74e3e9efabf10777d081d504ab6284fc6cd3e6"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0x20d88148eb38153059ea158acf35b3222bf79a1e86ea0d4e7d583c13ab290056"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -494,7 +490,7 @@ public:
 
         checkpointData = {
             {
-                { 0,       uint256S("0x00001e10d258839bedce7acd9ee4cd8ce8c9d6174c1413a682df104c25ff2ec8")},
+                { 0,       uint256S("0x0000b1cd6362dcc48cd7e931fd60d0233bd8ecdca44a46cd54854c379cbb2760")},
                 // { 5000,    uint256S("0x48236bab754d77f1651fd94f8a75a66c3f4e994eed8774e7fa2c16ad4604c247")},
                 // { 15000,   uint256S("0x81346b95c7b958c5e290c6f90f6ff901da2ebb501b615a80fb9efb6d439a7497")},
                 // { 30000,   uint256S("0x9f3e8ab012e03da1cac2ed5d1672d7ad6c00db168aab34af6aab8e4279c01cb0")},
