@@ -2754,7 +2754,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     // Ensure cfwd data output is correct and nStakeReward is <= nHolderPart
                     // cfwd must == nDevBfwd + (nCalculatedStakeReward - nStakeReward) // Allowing users to set a higher split
 
-                    if (nStakeReward < 0 || nStakeReward > nMaxHolderPart + nSalePart) {
+                    if (nStakeReward < 0 || nStakeReward > nMaxHolderPart + nSalePart/*for benyuan*/) {
                         return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs maxholderpart=%d)", __func__, nStakeReward, nMaxHolderPart + nSalePart), REJECT_INVALID, "bad-cs-amount");
                     }
                     CAmount nDevCfwd = nDevBfwd + nCalculatedStakeReward - nStakeReward;
