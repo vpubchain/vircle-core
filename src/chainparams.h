@@ -242,129 +242,65 @@ const size_t nGenesisOutputsRegtest = sizeof(regTestOutputs) / sizeof(regTestOut
 
 const std::pair<const char*, CAmount> genesisOutputs[] = {       
     //wallet-1
-    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",  16480 * COIN),
-    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",  16480 * COIN),
-    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",  16480 * COIN),
-    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",  16480 * COIN),
-    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",  16480 * COIN),
-
-    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",  16480 * COIN),
-    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",  16480 * COIN),
-    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",  16480 * COIN),
-    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",  16480 * COIN),
-    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",  16480 * COIN),
-
-    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",  16480 * COIN),
-    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",  16480 * COIN),
-    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",  16480 * COIN),
-    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",  16480 * COIN),
-    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",  16480 * COIN),
-
-    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",  16480 * COIN),
-    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",  16480 * COIN),
-    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",  16480 * COIN),
-    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",  16480 * COIN),
-    std::make_pair("6fb2706da4e84cf3ab81f39647a4389be29dee42",  16480 * COIN),
+    std::make_pair("1311a4687a8e46a45442e39168cd8c4e76d32344",  250 * COIN),
+    std::make_pair("fb1eccc4e5846dfae0beaca5649b41111fd13e1a",  250 * COIN),
+    std::make_pair("37e93da980a2aa31b41a01d5bd03654ee74e6b0a",  250 * COIN),
+    std::make_pair("71e4d1c24b92724d53eaf9315cf2b345db7703f9",  250 * COIN),
     
     //wallet-2
-    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",  16480 * COIN),
-    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",  16480 * COIN),
-    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",  16480 * COIN),
-    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",  16480 * COIN),
-    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",  16480 * COIN),
+    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",  250 * COIN),
+    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",  250 * COIN),
+    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",  250 * COIN),
+    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",  250 * COIN),
     
-    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",  16480 * COIN),
-    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",  16480 * COIN),
-    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",  16480 * COIN),
-    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",  16480 * COIN),
-    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",  16480 * COIN),
-
-    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",  16480 * COIN),
-    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",  16480 * COIN),
-    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",  16480 * COIN),
-    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",  16480 * COIN),
-    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",  16480 * COIN),
-    
-    std::make_pair("ffaff1eca6c46b4c761b88aed615a52d8073237e",  16480 * COIN),
-    std::make_pair("83da04c2a89be2d26a990509c61f5cb3295c30b3",  16480 * COIN),
-    std::make_pair("5f01966b5b5c4e7db612cadfed6a8ce511853e7a",  16480 * COIN),
-    std::make_pair("f7ff020e2cbfc646e35ee3c347dd167724a99e9c",  16480 * COIN),
-    std::make_pair("b0f935e4dba5f2c58b1c27bb7be60bfe1de2de24",  16480 * COIN),
-
     //wallet-3
-    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",  16480 * COIN),
-    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",  16480 * COIN),
-    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",  16480 * COIN),
-    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",  16480 * COIN),
-    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",  16480 * COIN),
-
-    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",  16480 * COIN),
-    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",  16480 * COIN),
-    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",  16480 * COIN),
-    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",  16480 * COIN),
-    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",  16480 * COIN),
-
-    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",  16480 * COIN),
-    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",  16480 * COIN),
-    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",  16480 * COIN),
-    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",  16480 * COIN),
-    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",  16480 * COIN),
-
-    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",  16480 * COIN),
-    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",  16480 * COIN),
-    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",  16480 * COIN),
-    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",  16480 * COIN),
-    std::make_pair("d0b3536a296c7ffb83c62fe7b86e931c69e5fd4e",  16480 * COIN),
+    std::make_pair("c57120065da7145d8d3fe37d5d3a9cbb248534e0",  250 * COIN),
+    std::make_pair("055d4fe7b4660b2b0e452122897766f7b6192c19",  250 * COIN),
+    std::make_pair("613d91ed9890cd37997f351aabb4a76748874a64",  250 * COIN),
+    std::make_pair("385a6e6d96717f541b091f5761a69d900a9e20f1",  250 * COIN),
 
     //wallet-4
-    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",  16480 * COIN),
-    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",  16480 * COIN),
-    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",  16480 * COIN),
-    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",  16480 * COIN),
-    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",  16480 * COIN),
-
-    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",  16480 * COIN),
-    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",  16480 * COIN),
-    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",  16480 * COIN),
-    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",  16480 * COIN),
-    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",  16480 * COIN),
-
-    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",  16480 * COIN),
-    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",  16480 * COIN),
-    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",  16480 * COIN),
-    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",  16480 * COIN),
-    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",  16480 * COIN),
-
-    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",  16480 * COIN),
-    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",  16480 * COIN),
-    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",  16480 * COIN),
-    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",  16480 * COIN),
-    std::make_pair("c8ab8421d67135723a5276557c2003ce8fbcf1d8",  16480 * COIN),
+    std::make_pair("4d8fc62a72571d6976451df25a62a0375b911d7d",  250 * COIN),
+    std::make_pair("4bae3b2e4bab9afc9b4eb54219543bfd8657f8cc",  250 * COIN),
+    std::make_pair("3a61cd55da65b620cdaf9e630e91ba7f2a840001",  250 * COIN),
+    std::make_pair("612b9cacc36a6404d24dee7ec2c5ac0942a3cfd4",  250 * COIN),
 
     //wallet-5
-    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",  16480 * COIN),
-    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",  16480 * COIN),
-    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",  16480 * COIN),
-    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",  16480 * COIN),
-    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",  16480 * COIN),
+    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",  250 * COIN),
+    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",  250 * COIN),
+    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",  250 * COIN),
+    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",  250 * COIN),
 
-    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",  16480 * COIN),
-    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",  16480 * COIN),
-    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",  16480 * COIN),
-    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",  16480 * COIN),
-    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",  16480 * COIN),
+    //wallet-6
+    std::make_pair("4a4d3e9c519a636b55074c802d67c616f2060a73",  250 * COIN),
+    std::make_pair("3eb0465c5296225e99aa9e7d370a521d67569738",  250 * COIN),
+    std::make_pair("5febd672a16b0814c2676dbea96a18c523fc7e9d",  250 * COIN),
+    std::make_pair("6c5e1d66e416cf857790dbe3ecd13fa4d74d5fe7",  250 * COIN),
 
-    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",  16480 * COIN),
-    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",  16480 * COIN),
-    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",  16480 * COIN),
-    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",  16480 * COIN),
-    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",  16480 * COIN),
+    //wallet-7
+    std::make_pair("0e60bc4e2a845347cd6e2043097d36fd68838ff9",  250 * COIN),
+    std::make_pair("7c4ad5ca66c800e479d39b814286d462e153aa51",  250 * COIN),
+    std::make_pair("9a563d611d61bfbad451ce3b8bda308e7bafa0c1",  250 * COIN),
+    std::make_pair("f0a66f4f44d0be7c38e909fd25d84cdf9f551e09",  250 * COIN),
 
-    std::make_pair("01388011fa9385f24975aaae1bc91fd1c3a13455",  16480 * COIN),
-    std::make_pair("b71000435c6ee122b6cb7806d9d257adf0d38079",  16480 * COIN),
-    std::make_pair("01532a1d7f3c9b96c2a3827a33a6cc33e406983c",  16480 * COIN),
-    std::make_pair("4aabd40f77ed426eb9418ea7d86de78c3094edb2",  16480 * COIN),
-    std::make_pair("16d286a0b0a5a7a14a282487f3ef07fbaab063cb",  16480 * COIN),
+    //wallet-8
+    std::make_pair("338adf2c410e20cb9ff7d181878d214f2eeb92a0",  250 * COIN),
+    std::make_pair("042dbf19c3d8c29d42c337d21be4576d5a2d8454",  250 * COIN),
+    std::make_pair("9c9e1c67d88890d5b9e81459da03529d24e2352c",  250 * COIN),
+    std::make_pair("cfe70ed7a27e24e49798c033fc51e2bc9700c653",  250 * COIN),
+
+    //wallet-9
+    std::make_pair("9e19c49700a3d25c86bdea5eefdd46fe29b16614",  250 * COIN),
+    std::make_pair("70f450902c6664f88c609ba430d1ef62ff34cbdf",  250 * COIN),
+    std::make_pair("f69edb89d8690b0bb9d2b1fa8fea3cb2b245b57b",  250 * COIN),
+    std::make_pair("826c8371e9052571e60405723dd3002c558a2501",  250 * COIN),
+
+    //wallet-10
+    std::make_pair("38323271008af2e27987af604171eaac8da189f3",  250 * COIN),
+    std::make_pair("f8423c86ad3991e1827f61e6da155b836058747d",  250 * COIN),
+    std::make_pair("e4011d5363bd38c3c96c5a0bc2667ff41338ea00",  250 * COIN),
+    std::make_pair("c6b1e373b34c7fab5e3d0771d687b0fd8f2dd616",  250 * COIN),
+
 };
 const size_t nGenesisOutputs = sizeof(genesisOutputs) / sizeof(genesisOutputs[0]);
 

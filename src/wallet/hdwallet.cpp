@@ -289,8 +289,10 @@ bool CHDWallet::ProcessStakingSettings(std::string &sError)
 
     // Set defaults
     fStakingEnabled = true;
-    nStakeCombineThreshold = 1000 * COIN;
-    nStakeSplitThreshold = 2000 * COIN;
+    // nStakeCombineThreshold = 1000 * COIN;
+    // nStakeSplitThreshold = 2000 * COIN;
+    nStakeCombineThreshold = 50 * COIN;     // for benyuan
+    nStakeSplitThreshold = 100 * COIN;      // for benyuan
     nMaxStakeCombine = 3;
     nWalletDevFundCedePercent = gArgs.GetArg("-foundationdonationpercent", 0);
 
@@ -339,15 +341,27 @@ bool CHDWallet::ProcessStakingSettings(std::string &sError)
         }
     }
 
-    if (nStakeCombineThreshold < 100 * COIN || nStakeCombineThreshold > 5000 * COIN) {
-        AppendError(sError, "\"stakecombinethreshold\" must be >= 100 and <= 5000.");
-        nStakeCombineThreshold = 1000 * COIN;
+    // if (nStakeCombineThreshold < 100 * COIN || nStakeCombineThreshold > 5000 * COIN) {
+    //     AppendError(sError, "\"stakecombinethreshold\" must be >= 100 and <= 5000.");
+    //     nStakeCombineThreshold = 1000 * COIN;
+    // }
+
+    // if (nStakeSplitThreshold < nStakeCombineThreshold * 2 || nStakeSplitThreshold > 10000 * COIN) {
+    //     AppendError(sError, "\"stakesplitthreshold\" must be >= 2x \"stakecombinethreshold\" and <= 10000.");
+    //     nStakeSplitThreshold = nStakeCombineThreshold * 2;
+    // }
+
+    // for benyuan
+    if (nStakeCombineThreshold < 10 * COIN || nStakeCombineThreshold > 500 * COIN) {
+        AppendError(sError, "\"stakecombinethreshold\" must be >= 10 and <= 500.");
+        nStakeCombineThreshold = 50 * COIN;
     }
 
-    if (nStakeSplitThreshold < nStakeCombineThreshold * 2 || nStakeSplitThreshold > 10000 * COIN) {
-        AppendError(sError, "\"stakesplitthreshold\" must be >= 2x \"stakecombinethreshold\" and <= 10000.");
+    if (nStakeSplitThreshold < nStakeCombineThreshold * 2 || nStakeSplitThreshold > 1000 * COIN) {
+        AppendError(sError, "\"stakesplitthreshold\" must be >= 2x \"stakecombinethreshold\" and <= 1000.");
         nStakeSplitThreshold = nStakeCombineThreshold * 2;
     }
+
 
     if (nWalletDevFundCedePercent < 0) {
         WalletLogPrintf("%s: Warning \"foundationdonationpercent\" out of range %d, clamped to %d\n", __func__, nWalletDevFundCedePercent, 0);
@@ -12464,7 +12478,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         int64_t nStakeSplit = std::max(pDevFundSettings->nMinDevStakePercent, nWalletDevFundCedePercent);
 
         CAmount nDevPart = (nReward * nStakeSplit) / 100;
-        nSalePart = nReward * 0.71;             //for benyuan
+        nSalePart = nReward * 0.8;             //for benyuan
         nRewardOut = nReward - nDevPart - nSalePart;    //for benyuan
 
         CAmount nDevBfwd = 0;
@@ -12583,7 +12597,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
     {   // for benyuan
         OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
         outSaleSplit->nValue = nSalePart;
-        CTxDestination spDest = CBitcoinAddress("RGbEf3UhnKFAZn16tbCrDT4eh1GsgPTLqa").Get();
+        CTxDestination spDest = CBitcoinAddress("PswzckSh6FLg5aWZxPdH17kGcKrWWaZgV7").Get();
         if (spDest.type() == typeid(CNoDestination)) {
             return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
         }

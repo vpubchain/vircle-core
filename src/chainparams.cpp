@@ -44,7 +44,7 @@ int64_t CChainParams::GetProofOfStakeReward(const CBlockIndex *pindexPrev, int64
     if (halvings >= 64)
         return 0;
 
-    CAmount nSubsidy = (45000000 / consensus.nSubsidyHalvingInterval) * COIN;
+    CAmount nSubsidy = (40000000 * COIN) / (consensus.nSubsidyHalvingInterval * COIN);
     // Subsidy is cut in half every 525,600 blocks which will occur approximately every 1 years.
     nSubsidy >>= halvings;
     return nSubsidy + nFees;
@@ -276,20 +276,20 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
         txNew.vpout[k] = out;
     }
 
-    // Community Initative 1
-    // RYVDqsLVzwrP4aC3dFAfEXAip2BDWznzDp
+    // Technology fund
+    // RPoPAUf7wgEBSXaBex1D3gJhXgJ5akyphq
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 9000000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("fe915b900012f13de9a8ec582c3bab87e17142b6") << OP_EQUAL;
+    out->nValue = 10000000 * COIN;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("9f477e5ad3dc0c1f90349f3d5c726f8c29324b5a") << OP_EQUAL;                                                           
     txNew.vpout.push_back(out);
 
-    // Community Initative 2 
-    // REaKwXE8UzmPB1UkoisCpdXLy6g1YTMZk5
-    // out = MAKE_OUTPUT<CTxOutStandard>();
-    // out->nValue = 5000000 * COIN;
-    // out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("22228654b4a9b6a6249d102bf0b84ee5d05dc3c4") << OP_EQUAL;
-    // txNew.vpout.push_back(out);
+    // Community Initative 
+    // RUew9wyHqKkyzBBRdMRucVmyXzi4z89KZm
+    out = MAKE_OUTPUT<CTxOutStandard>();
+    out->nValue = 9990000 * COIN;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("d487155eb3003c6510561afa11207439b8660d3") << OP_EQUAL;
+    txNew.vpout.push_back(out);
 
     // Reserved Vircle 
     // RN4MHCjXfzo7a3c1whZt5mbuLd7Bbh9FY3
@@ -330,7 +330,7 @@ public:
         strNetworkID = "main";
 
         // consensus.nSubsidyHalvingInterval = 210000;
-        consensus.nSubsidyHalvingInterval = 525600; //for benyuan blockchain
+        consensus.nSubsidyHalvingInterval = 262800; //for benyuan blockchain
         consensus.BIP34Height = 0;
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
@@ -392,8 +392,8 @@ public:
         nBIP44ID = 0x8000002C;
 
         nModifierInterval = 10 * 60;    // 10 minutes
-        nStakeMinConfirmations = 225;   // 225 * 1 minutes
-        nTargetSpacing = 60;            // 1 minutes for benyuan
+        nStakeMinConfirmations = 225;   // 225 * 2 minutes
+        nTargetSpacing = 120;           // 2 minutes for benyuan
         nTargetTimespan = 24 * 60;      // 24 mins
 
         AddImportHashesMain(vImportedCoinbaseTxns);
@@ -446,12 +446,12 @@ public:
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
         //vSeeds.emplace_back("mainnet.vircle.io");
-        vSeeds.emplace_back("52.82.109.52");
-        vSeeds.emplace_back("52.83.66.3");
+        // vSeeds.emplace_back("52.82.109.52");
+        // vSeeds.emplace_back("52.83.66.3");
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RPoPAUf7wgEBSXaBex1D3gJhXgJ5akyphq", 0, 60));
 
 
 
@@ -491,9 +491,9 @@ public:
         checkpointData = {
             {
                 { 0,       uint256S("0x0000b1cd6362dcc48cd7e931fd60d0233bd8ecdca44a46cd54854c379cbb2760")},
-                { 5000,    uint256S("0xebfd13a8143bf9b543474e87d38190036312d7e7ef05e28d6b0aa836b04c6b74")},
-                { 10000,    uint256S("0x50bd73fc4fdfdfcad973053d9811e136abfe0adb1e201e4a87474d7ccc184871")},
-                { 15000,    uint256S("0x34c882a588c22f771d311fb34eb12377f840dd72ac28fd3a4ce90e5cf1025023")},
+                // { 5000,    uint256S("0xebfd13a8143bf9b543474e87d38190036312d7e7ef05e28d6b0aa836b04c6b74")},
+                // { 10000,    uint256S("0x50bd73fc4fdfdfcad973053d9811e136abfe0adb1e201e4a87474d7ccc184871")},
+                // { 15000,    uint256S("0x34c882a588c22f771d311fb34eb12377f840dd72ac28fd3a4ce90e5cf1025023")},
             }
         };
 
@@ -536,7 +536,7 @@ public:
     CTestNetParams() {
         strNetworkID = "test";
         // consensus.nSubsidyHalvingInterval = 210000;
-        consensus.nSubsidyHalvingInterval = 525600; //for benyuan blockchain
+        consensus.nSubsidyHalvingInterval = 262800; //for benyuan blockchain
         consensus.BIP34Height = 0;
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
@@ -590,8 +590,8 @@ public:
         nBIP44ID = 0x80000001;
 
         nModifierInterval = 10 * 60;    // 10 minutes
-        nStakeMinConfirmations = 225;   // 225 * 1 minutes
-        nTargetSpacing = 60;           // 1 minutes
+        nStakeMinConfirmations = 225;   // 225 * 2 minutes
+        nTargetSpacing = 120;           // 1 minutes
         nTargetTimespan = 24 * 60;      // 24 mins
 
 
