@@ -2698,7 +2698,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
             if (!pDevFundSettings || pDevFundSettings->nMinDevStakePercent <= 0) {
                 CAmount nSalePart = nCalculatedStakeReward * 0.8;   //for benyuan
                 if (nStakeReward < 0 || nStakeReward > nCalculatedStakeReward + nSalePart/*for benyuan*/) {
-                    return state.DoS(100, error("%s: Coinstake pays too much(actual=%d vs calculated=%d)", __func__, nStakeReward, nCalculatedStakeReward), REJECT_INVALID, "bad-cs-amount");
+                    return state.DoS(100, error("%s: Coinstake pays too much(actual=%d vs calculated=%d)", __func__, nStakeReward, nCalculatedStakeReward  + nSalePart/*for benyuan*/), REJECT_INVALID, "bad-cs-amount");
                 }
             } else {
                 assert(pDevFundSettings->nMinDevStakePercent <= 100);
