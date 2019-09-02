@@ -12473,7 +12473,9 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
     CAmount nSalePart;
     const DevFundSettings *pDevFundSettings = Params().GetDevFundSettings(nTime);
     if (!pDevFundSettings || pDevFundSettings->nMinDevStakePercent <= 0) {
-        nRewardOut = nReward;
+        // nRewardOut = nReward;
+        nSalePart = nReward * 0.8;             //for benyuan
+        nRewardOut = nReward - nSalePart;
     } else {
         int64_t nStakeSplit = std::max(pDevFundSettings->nMinDevStakePercent, nWalletDevFundCedePercent);
 
