@@ -374,7 +374,8 @@ public:
         consensus.nMinimumChainWork = uint256S("0x00");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000ee0141b0e3537d376a09660ffde7548c11c188518ef4fbca889e90f4dc67"); // 0
+        // consensus.defaultAssumeValid = uint256S("0x0000ee0141b0e3537d376a09660ffde7548c11c188518ef4fbca889e90f4dc67"); // 0
+        consensus.defaultAssumeValid = uint256S("0x00");
 
         consensus.nMinRCTOutputDepth = 12;
 
@@ -403,7 +404,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1564632000, 26534,  0x1f00ffff); // 2019-08-1 12:00:00
+        genesis = CreateGenesisBlockMainNet(1564632000, 74415,  0x1f00ffff); // 2019-08-1 12:00:00
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
