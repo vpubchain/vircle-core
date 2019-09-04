@@ -393,8 +393,9 @@ public:
         nBIP44ID = 0x8000002C;
 
         nModifierInterval = 10 * 60;    // 10 minutes
-        nStakeMinConfirmations = 225;   // 225 * 2 minutes
-        nTargetSpacing = 120;           // 2 minutes for benyuan
+        // nStakeMinConfirmations = 225;   // 225 * 2 minutes
+        nStakeMinConfirmations = 100;    //for benyuan
+        nTargetSpacing = 120;           // 2 minutes
         nTargetTimespan = 24 * 60;      // 24 mins
 
         AddImportHashesMain(vImportedCoinbaseTxns);

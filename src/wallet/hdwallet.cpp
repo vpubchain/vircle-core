@@ -291,8 +291,8 @@ bool CHDWallet::ProcessStakingSettings(std::string &sError)
     fStakingEnabled = true;
     // nStakeCombineThreshold = 1000 * COIN;
     // nStakeSplitThreshold = 2000 * COIN;
-    nStakeCombineThreshold = 50 * COIN;     // for benyuan
-    nStakeSplitThreshold = 100 * COIN;      // for benyuan
+    nStakeCombineThreshold = 25 * COIN;     // for benyuan
+    nStakeSplitThreshold = 50 * COIN;      // for benyuan
     nMaxStakeCombine = 3;
     nWalletDevFundCedePercent = gArgs.GetArg("-foundationdonationpercent", 0);
 
@@ -352,13 +352,13 @@ bool CHDWallet::ProcessStakingSettings(std::string &sError)
     // }
 
     // for benyuan
-    if (nStakeCombineThreshold < 10 * COIN || nStakeCombineThreshold > 500 * COIN) {
-        AppendError(sError, "\"stakecombinethreshold\" must be >= 10 and <= 500.");
-        nStakeCombineThreshold = 50 * COIN;
+    if (nStakeCombineThreshold < 10 * COIN || nStakeCombineThreshold > 100 * COIN) {
+        AppendError(sError, "\"stakecombinethreshold\" must be >= 10 and <= 100.");
+        nStakeCombineThreshold = 25 * COIN;
     }
 
-    if (nStakeSplitThreshold < nStakeCombineThreshold * 2 || nStakeSplitThreshold > 1000 * COIN) {
-        AppendError(sError, "\"stakesplitthreshold\" must be >= 2x \"stakecombinethreshold\" and <= 1000.");
+    if (nStakeSplitThreshold < nStakeCombineThreshold * 2 || nStakeSplitThreshold > 500 * COIN) {
+        AppendError(sError, "\"stakesplitthreshold\" must be >= 2x \"stakecombinethreshold\" and <= 500.");
         nStakeSplitThreshold = nStakeCombineThreshold * 2;
     }
 
@@ -12075,7 +12075,7 @@ void CHDWallet::AvailableCoinsForStaking(std::vector<COutput> &vCoins, int64_t n
             }
 
             if (pcoin->IsCoinStake() && min_stake_confirmations < COINBASE_MATURITY) {
-                // min_stake_confirmations is only less than COINBASE_MATURITY in regtest mode
+                // min_stake_confirmations is only less than  in regtest mode
                 if (nDepth < std::min(COINBASE_MATURITY, (int)(nHeight / 2))) {
                     continue;
                 }
