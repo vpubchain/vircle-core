@@ -291,8 +291,8 @@ bool CHDWallet::ProcessStakingSettings(std::string &sError)
     fStakingEnabled = true;
     // nStakeCombineThreshold = 1000 * COIN;
     // nStakeSplitThreshold = 2000 * COIN;
-    nStakeCombineThreshold = 25 * COIN;     // for benyuan
-    nStakeSplitThreshold = 50 * COIN;      // for benyuan
+    nStakeCombineThreshold = 100 * COIN;     // for benyuan
+    nStakeSplitThreshold = 200 * COIN;      // for benyuan
     nMaxStakeCombine = 3;
     nWalletDevFundCedePercent = gArgs.GetArg("-foundationdonationpercent", 0);
 
@@ -352,13 +352,13 @@ bool CHDWallet::ProcessStakingSettings(std::string &sError)
     // }
 
     // for benyuan
-    if (nStakeCombineThreshold < 10 * COIN || nStakeCombineThreshold > 100 * COIN) {
-        AppendError(sError, "\"stakecombinethreshold\" must be >= 10 and <= 100.");
-        nStakeCombineThreshold = 25 * COIN;
+    if (nStakeCombineThreshold < 10 * COIN || nStakeCombineThreshold > 500 * COIN) {
+        AppendError(sError, "\"stakecombinethreshold\" must be >= 10 and <= 500.");
+        nStakeCombineThreshold = 100 * COIN;
     }
 
-    if (nStakeSplitThreshold < nStakeCombineThreshold * 2 || nStakeSplitThreshold > 500 * COIN) {
-        AppendError(sError, "\"stakesplitthreshold\" must be >= 2x \"stakecombinethreshold\" and <= 500.");
+    if (nStakeSplitThreshold < nStakeCombineThreshold * 2 || nStakeSplitThreshold > 1000 * COIN) {
+        AppendError(sError, "\"stakesplitthreshold\" must be >= 2x \"stakecombinethreshold\" and <= 1000.");
         nStakeSplitThreshold = nStakeCombineThreshold * 2;
     }
 
