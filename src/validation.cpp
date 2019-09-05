@@ -4230,7 +4230,7 @@ unsigned int GetNextTargetRequired(const CBlockIndex *pindexLast)
     // };
     
     //normal operation : lkz
-    if (nHeight == 0){
+    if (nHeight == 0) {
         return arith_uint256("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").GetCompact();
     } else {
         bnProofOfWorkLimit = UintToArith256(consensus.powLimit);
