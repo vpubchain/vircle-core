@@ -635,21 +635,17 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
  	    
-        assert(consensus.hashGenesisBlock == uint256S("0x00005fdab2356d1d92139c00ea5395a1cf84f955988f0ae955fa4b15dc31ac7c"));
-        assert(genesis.hashMerkleRoot == uint256S("0xcd884fa38e430f2dea741a1422668e9660106b2887bdbf17c4fda2b0afc315fd"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0xbda831ecea986211fee6340a976bd6a4132c06f6f2b4c4480fb6472da6dd0026"));
-
-        //assert(consensus.hashGenesisBlock == uint256S("0x0000594ada5310b367443ee0afd4fa3d0bbd5850ea4e33cdc7d6a904a7ec7c90"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x2c7f4d88345994e3849502061f6303d9666172e4dff3641d3472a72908eec002"));
-        //assert(genesis.hashWitnessMerkleRoot == uint256S("0xf9e2235c9531d5a19263ece36e82c4d5b71910d73cd0b677b81c5e50d17b6cda"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000083096c443d0f811293a3e8a7b9021e8dfe5683221b07b398ac213bc0412d"));
+        assert(genesis.hashMerkleRoot == uint256S("0x0d3057db1edee8c325c588b1087b76b6825535db48bf19637bb4bfbc00d90212"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0xde955dfd3e9007c0da4fc779267aaa7789401f62965ca7a3f26cdb30e984c7f2"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
         //vSeeds.emplace_back("testnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-testnet.vircle.io");
-        vSeeds.emplace_back("52.82.109.52");
-        vSeeds.emplace_back("52.83.66.3");
+        // vSeeds.emplace_back("52.82.109.52");
+        // vSeeds.emplace_back("52.83.66.3");
 
         vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ", 10, 100)));
 
@@ -688,7 +684,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x00005fdab2356d1d92139c00ea5395a1cf84f955988f0ae955fa4b15dc31ac7c")},
+                {0, uint256S("0x000083096c443d0f811293a3e8a7b9021e8dfe5683221b07b398ac213bc0412d")},
             }
         };
 
