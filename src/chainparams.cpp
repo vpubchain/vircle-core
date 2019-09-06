@@ -164,7 +164,7 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 
 static CBlock CreateGenesisBlockRegTest(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "The Times 16:00:02 17/04/2019 created by jiuling vpubchain";
+    const char *pszTimestamp = "Jiuling Blockchain was officially launched on September 7, 2019";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -197,7 +197,7 @@ static CBlock CreateGenesisBlockRegTest(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "More pragmatism and rationality needed for China-U.S. trade talk";
+    const char *pszTimestamp = "Jiuling Blockchain was officially launched on September 7, 2019";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -259,7 +259,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "Chinese economy dismays naysayers amid trade consultation with US";
+    const char *pszTimestamp = "Jiuling Blockchain was officially launched on September 7, 2019";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -389,8 +389,8 @@ public:
         pchMessageStart[1] = 0xb2;
         pchMessageStart[2] = 0xc0;
         pchMessageStart[3] = 0xd6;
-        // nDefaultPort = 51758;
-        nDefaultPort = 56258;   //for benyuan
+
+        nDefaultPort = 9999;   //for benyuan
         nBIP44ID = 0x8000002C;
 
         nModifierInterval = 10 * 60;    // 10 minutes
@@ -588,7 +588,7 @@ public:
         pchMessageStart[1] = 0x1b;
         pchMessageStart[2] = 0x3c;
         pchMessageStart[3] = 0x4d;
-        nDefaultPort = 57258;
+        nDefaultPort = 19999;
         nBIP44ID = 0x80000001;
 
         nModifierInterval = 10 * 60;    // 10 minutes
@@ -760,7 +760,7 @@ public:
         pchMessageStart[1] = 0x12;
         pchMessageStart[2] = 0x06;
         pchMessageStart[3] = 0x0c;
-        nDefaultPort = 11958;
+        nDefaultPort = 29999;
         nBIP44ID = 0x80000001;
 
 
