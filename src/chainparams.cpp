@@ -634,7 +634,7 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
  	    
-        assert(consensus.hashGenesisBlock == uint256S("0x000083096c443d0f811293a3e8a7b9021e8dfe5683221b07b398ac213bc0412d"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00001a2deb69f0c44df165a1d72fb1591f0f4c18db70cf6809f96654b94dc641"));
         assert(genesis.hashMerkleRoot == uint256S("0x0d3057db1edee8c325c588b1087b76b6825535db48bf19637bb4bfbc00d90212"));
         assert(genesis.hashWitnessMerkleRoot == uint256S("0xde955dfd3e9007c0da4fc779267aaa7789401f62965ca7a3f26cdb30e984c7f2"));
 
@@ -683,13 +683,13 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x000083096c443d0f811293a3e8a7b9021e8dfe5683221b07b398ac213bc0412d")},
+                {0, uint256S("0x00001a2deb69f0c44df165a1d72fb1591f0f4c18db70cf6809f96654b94dc641")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 4096 eecbeafc4b338901e3dfb6eeaefc128ef477dfe1e6f0f96bd63da27caf113ddc
-            /* nTime    */ 1564632000,
+            /* nTime    */ 1567699200,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
