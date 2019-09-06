@@ -277,18 +277,18 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     }
 
     // Technology fund
-    // RHrUmJwhfap3DZMw5TWpHyfNJ4zdfUaGqB
+    // RMrwYTDzScdC16js4NQiVcdunrnTxNHxui
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 10000000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("5e0ca97039cdecb9e97e2554f4df54abd73e8071") << OP_EQUAL;                                                           
-    txNew.vpout.push_back(out);                              
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("8a0384b7595f9194267e47356560ff9c9b014273") << OP_EQUAL;                                                           
+    txNew.vpout.push_back(out);        
 
     // Community Initative 
-    // RJcXVKVCgQbyjyGsR46vRqX19eLCQ8fXF9
+    // RVam43V9nzh8QMn8pUnY4bzmCWpse4xkVH
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 9990000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("66613d0268a134c65527b911762242be72df6e87") << OP_EQUAL;
+    out->nValue = 9999000 * COIN;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("deb51ce39220d7f53ce093a90064d75bf9a7aef7") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
     // Reserved Vircle 
@@ -304,7 +304,6 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     // out->nValue = 5000000 * COIN;
     // out->scriptPubKey = CScript() << 1557990000 << OP_CHECKLOCKTIMEVERIFY << OP_DROP << OP_HASH160<< ParseHex("92dad3ff9b5938bb7178681ef4492e957baf7585") << OP_EQUAL; // 2017-11-30
     // txNew.vpout.push_back(out);
-
 
     CBlock genesis;
     genesis.nTime    = nTime;
@@ -405,7 +404,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1564632000, 49265,  0x1f00ffff); // 2019-08-1 12:00:00
+        genesis = CreateGenesisBlockMainNet(1567699200, 49265,  0x1f00ffff); // 2019-09-07 00:00:00      1567785600
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -448,12 +447,12 @@ public:
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
         vSeeds.emplace_back("52.82.7.73");
-        vSeeds.emplace_back("52.82.109.52");
-        vSeeds.emplace_back("52.83.66.3");
+        // vSeeds.emplace_back("52.82.109.52");
+        // vSeeds.emplace_back("52.83.66.3");
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RHrUmJwhfap3DZMw5TWpHyfNJ4zdfUaGqB", 0, 60));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RMrwYTDzScdC16js4NQiVcdunrnTxNHxui", 0, 60));
 
 
 
