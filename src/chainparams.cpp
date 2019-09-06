@@ -404,7 +404,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1567699200, 49265,  0x1f00ffff); // 2019-09-07 00:00:00      1567785600
+        genesis = CreateGenesisBlockMainNet(1567699200, 17824,  0x1f00ffff); // 2019-09-07 00:00:00      1567785600
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -500,7 +500,7 @@ public:
 
         chainTxData = ChainTxData {
             // Data from rpc: getchaintxstats 4096 ff704cb42547da4efb2b32054c72c7682b7634ac34fda4ec88fe7badc666338c
-            /* nTime    */ 1564632000,
+            /* nTime    */ 1567699200,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
@@ -592,7 +592,7 @@ public:
 
         nModifierInterval = 10 * 60;    // 10 minutes
         nStakeMinConfirmations = 225;   // 225 * 2 minutes
-        nTargetSpacing = 120;           // 1 minutes
+        nTargetSpacing = 120;           // 2 minutes
         nTargetTimespan = 24 * 60;      // 24 mins
 
 
@@ -603,7 +603,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockTestNet(1564632000, 36250, 0x1f00ffff); //2019-05-14
+        genesis = CreateGenesisBlockTestNet(1567699200, 36250, 0x1f00ffff); //2019-09-06 00:00
         consensus.hashGenesisBlock = genesis.GetHash();
 	
         bool fNegative;
