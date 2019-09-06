@@ -12599,7 +12599,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
     {   // for benyuan
         OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
         outSaleSplit->nValue = nSalePart;
-        CTxDestination spDest = CBitcoinAddress("PswzckSh6FLg5aWZxPdH17kGcKrWWaZgV7").Get();
+        CTxDestination spDest = CBitcoinAddress("PdSVhBjpsZg3VSB6qXB4wWTjvzDsxjqEzm").Get();
         if (spDest.type() == typeid(CNoDestination)) {
             return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
         }

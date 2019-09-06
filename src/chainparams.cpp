@@ -277,18 +277,18 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     }
 
     // Technology fund
-    // RPoPAUf7wgEBSXaBex1D3gJhXgJ5akyphq
+    // RHrUmJwhfap3DZMw5TWpHyfNJ4zdfUaGqB
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 10000000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("9f477e5ad3dc0c1f90349f3d5c726f8c29324b5a") << OP_EQUAL;                                                           
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("5e0ca97039cdecb9e97e2554f4df54abd73e8071") << OP_EQUAL;                                                           
     txNew.vpout.push_back(out);                              
 
     // Community Initative 
-    // RUew9wyHqKkyzBBRdMRucVmyXzi4z89KZm
+    // RJcXVKVCgQbyjyGsR46vRqX19eLCQ8fXF9
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 9990000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("d487155eb3003c6510561afa11207439b8660d3b") << OP_EQUAL;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("66613d0268a134c65527b911762242be72df6e87") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
     // Reserved Vircle 
@@ -453,7 +453,7 @@ public:
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RPoPAUf7wgEBSXaBex1D3gJhXgJ5akyphq", 0, 60));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RHrUmJwhfap3DZMw5TWpHyfNJ4zdfUaGqB", 0, 60));
 
 
 
