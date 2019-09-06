@@ -435,7 +435,7 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x000085b674bd63fb2222ba183f764a857fe079de1b979c320e57090768293a72"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000065b88091be7da60ee36290bd2a00fd78a239f2110523cbba923aedd6045d"));
         assert(genesis.hashMerkleRoot == uint256S("0xaa89253eb9adeedbc62b860456da0fc7dfe2398c2d8c41e01d87ee40405ccb61"));
         assert(genesis.hashWitnessMerkleRoot == uint256S("0xabe35f00bf794fe53bf96ba035c5d6406051dcdf385029968caa563aa0c54301"));
 
@@ -453,8 +453,6 @@ public:
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
         vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RMrwYTDzScdC16js4NQiVcdunrnTxNHxui", 0, 60));
-
-
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
         base58Prefixes[SCRIPT_ADDRESS]     = {0x3c};
@@ -491,7 +489,7 @@ public:
 
         checkpointData = {
             {
-                { 0,       uint256S("0x000085b674bd63fb2222ba183f764a857fe079de1b979c320e57090768293a72")},
+                { 0,       uint256S("0x000065b88091be7da60ee36290bd2a00fd78a239f2110523cbba923aedd6045d")},
                 // { 5000,    uint256S("0xebfd13a8143bf9b543474e87d38190036312d7e7ef05e28d6b0aa836b04c6b74")},
                 // { 10000,    uint256S("0x50bd73fc4fdfdfcad973053d9811e136abfe0adb1e201e4a87474d7ccc184871")},
                 // { 15000,    uint256S("0x34c882a588c22f771d311fb34eb12377f840dd72ac28fd3a4ce90e5cf1025023")},
@@ -554,7 +552,8 @@ public:
         consensus.smsg_fee_msg_per_day_per_k = 50000;
         consensus.smsg_fee_max_delta_percent = 43;
 
-        consensus.powLimit = uint256S("000000000005ffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        // consensus.powLimit = uint256S("000000000005ffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
