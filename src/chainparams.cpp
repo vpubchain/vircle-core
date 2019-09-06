@@ -404,7 +404,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1567699200, 17824,  0x1f00ffff); // 2019-09-07 00:00:00      1567785600
+        genesis = CreateGenesisBlockMainNet(1567785600, 17824,  0x1f00ffff); // 2019-09-07 00:00:00      1567785600
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -446,7 +446,7 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
-        vSeeds.emplace_back("52.82.7.73");
+        // vSeeds.emplace_back("52.82.7.73");
         // vSeeds.emplace_back("52.82.109.52");
         // vSeeds.emplace_back("52.83.66.3");
 
