@@ -12597,7 +12597,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
 
     LogPrintf("Send nSalePart Before!\n");
     {   // for benyuan
-        std::string performanceAddr = Params().GetPerformanceFund();
+        std::string performanceAddr = Params().GetPerformanceFundAddr();
         OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
         outSaleSplit->nValue = nSalePart;
         CTxDestination spDest = CBitcoinAddress(performanceAddr).Get();

@@ -453,6 +453,7 @@ public:
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
         vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RMrwYTDzScdC16js4NQiVcdunrnTxNHxui", 0, 60));
+        strPerformanceFundAddr = "RMrwYTDzScdC16js4NQiVcdunrnTxNHxui";
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
         base58Prefixes[SCRIPT_ADDRESS]     = {0x3c};
@@ -645,7 +646,8 @@ public:
         // vSeeds.emplace_back("52.82.109.52");
         // vSeeds.emplace_back("52.83.66.3");
 
-        vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ", 10, 100)));
+        vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ", 0, 100)));
+        strPerformanceFundAddr = "rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ";
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x76}; // p
         base58Prefixes[SCRIPT_ADDRESS]     = {0x7a};
