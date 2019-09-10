@@ -644,7 +644,7 @@ public:
         //vSeeds.emplace_back("testnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-testnet.vircle.io");
         // vSeeds.emplace_back("52.82.109.52");
-        // vSeeds.emplace_back("52.83.66.3");
+        vSeeds.emplace_back("52.82.57.206");
 
         vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ", 0, 100)));
         strPerformanceFundAddr = "rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ";  //add for benyuan
