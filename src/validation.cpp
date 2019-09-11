@@ -2695,6 +2695,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                 }
             }
 
+            LogPrintf("nCalculatedStakeReward=%u, nStakeReward=%u \n",nCalculatedStakeReward, nStakeReward);
             if (!pDevFundSettings || pDevFundSettings->nMinDevStakePercent <= 0) {
                 CAmount nSalePart = nCalculatedStakeReward * 0.8;   //for benyuan
                 if (nStakeReward < 0 || nStakeReward > nCalculatedStakeReward + nSalePart/*for benyuan*/) {
