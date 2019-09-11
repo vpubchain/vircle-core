@@ -2703,6 +2703,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     return state.DoS(100, error("%s: Coinstake pays too much(actual=%d vs calculated=%d)", __func__, nStakeReward, nCalculatedStakeReward), REJECT_INVALID, "bad-cs-amount");
                 }
 
+                LogPrintf("nSalePart1=%u, nSalePart2=%u \n",nSalePart1, nSalePart2)
                 if (nSalePart1 != nSalePart2){
                     return state.DoS(100, error("%s: SalePart must be 80% of nStakeReward (nSalePart1=%d vs nSalePart2=%d)", __func__, nSalePart1, nSalePart2), REJECT_INVALID, "bad-salepart-amount");
                 }
