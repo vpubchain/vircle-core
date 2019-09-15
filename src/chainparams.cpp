@@ -452,7 +452,7 @@ public:
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RVmyCVVEjhErHtf76WYWAZxmxcJWYyugQZ", 80, 10));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RVmyCVVEjhErHtf76WYWAZxmxcJWYyugQZ", 80, 1));
         // strPerformanceFundAddr = "RE2FkyLcfjsYAPBE1zNWePn3ydXFzjVBa1";  //add for benyuan
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
