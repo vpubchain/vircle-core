@@ -2697,12 +2697,12 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
 
             LogPrintf("nCalculatedStakeReward=%u, nStakeReward=%u \n",nCalculatedStakeReward, nStakeReward);
             if (!pDevFundSettings || pDevFundSettings->nMinDevStakePercent <= 0) {
-                // CAmount nSalePart1 = nStakeReward * 0.8;   //for benyuan
-                // CAmount nSalePart2 = nCalculatedStakeReward * 0.8;   //for benyuan
                 if (nStakeReward < 0 || nStakeReward > nCalculatedStakeReward) {
                     return state.DoS(100, error("%s: Coinstake pays too much(actual=%d vs calculated=%d)", __func__, nStakeReward, nCalculatedStakeReward), REJECT_INVALID, "bad-cs-amount");
                 }
 
+                // CAmount nSalePart1 = nStakeReward * 0.8;   //for benyuan
+                // CAmount nSalePart2 = nCalculatedStakeReward * 0.8;   //for benyuan
                 // LogPrintf("nSalePart1=%u, nSalePart2=%u \n",nSalePart1, nSalePart2);
                 // if (nSalePart1 != nSalePart2){
                 //     return state.DoS(100, error("%s: SalePart must be 80% of nStakeReward (nSalePart1=%d vs nSalePart2=%d)", __func__, nSalePart1, nSalePart2), REJECT_INVALID, "bad-salepart-amount");

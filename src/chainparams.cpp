@@ -259,7 +259,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "Jiuling Blockchain was officially launched on September 7, 2019";
+    const char *pszTimestamp = "Jiuling Blockchain was officially launched on September 16, 2019";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -404,7 +404,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1567785600, 110266,  0x1f00ffff); // 2019-09-07 00:00:00      1567785600
+        genesis = CreateGenesisBlockMainNet(1568563200, 110266,  0x1f00ffff); // 2019-09-07 00:00:00      1567785600
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -499,7 +499,7 @@ public:
 
         chainTxData = ChainTxData {
             // Data from rpc: getchaintxstats 4096 ff704cb42547da4efb2b32054c72c7682b7634ac34fda4ec88fe7badc666338c
-            /* nTime    */ 1567785600,
+            /* nTime    */ 1568563200,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
