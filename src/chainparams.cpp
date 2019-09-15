@@ -435,9 +435,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x000053482f0296438882147859b2f257d890e7ef2ed501ab469f183b8499e8cd"));
-        assert(genesis.hashMerkleRoot == uint256S("0xc23dfcfa84e053fb333223b4be54a10edac724af79ce2b6b2bea6efc69902da0"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x3352e85a6d014e4f16a93b8760900db003984a3459d2c2d5d1effbf45ef09967"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00001cf5eb2ad4da33c4ef4fec9ec51b51a5148e64a5972dcbd2ad280d5b2732"));
+        assert(genesis.hashMerkleRoot == uint256S("0x0065ca84945fd1a9d755899ee3a0d7b167ec36e07e22caa00ea8d20c4b2fc547"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0xaf965f24b940189113729931e1e3ee2fecd7fb4df1d1c1c93687bd97179b0b65"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -446,9 +446,9 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
-        // vSeeds.emplace_back("52.82.7.73");
-        // vSeeds.emplace_back("52.82.109.52");
-        // vSeeds.emplace_back("52.83.66.3");
+        vSeeds.emplace_back("52.82.7.73");
+        vSeeds.emplace_back("52.82.109.52");
+        vSeeds.emplace_back("52.83.66.3");
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
