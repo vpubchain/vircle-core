@@ -12473,15 +12473,15 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
     CAmount nSalePart;
     const DevFundSettings *pDevFundSettings = Params().GetDevFundSettings(nTime);
     if (!pDevFundSettings || pDevFundSettings->nMinDevStakePercent <= 0) {
-        // nRewardOut = nReward;
-        nSalePart = nReward * 0.8;             //for benyuan
-        nRewardOut = nReward - nSalePart;
+        nRewardOut = nReward;
+        // nSalePart = nReward * 0.8;             //for benyuan
+        // nRewardOut = nReward - nSalePart;
     } else {
         int64_t nStakeSplit = std::max(pDevFundSettings->nMinDevStakePercent, nWalletDevFundCedePercent);
 
         CAmount nDevPart = (nReward * nStakeSplit) / 100;
-        nSalePart = nReward * 0.8;                      //for benyuan
-        nRewardOut = nReward - nDevPart - nSalePart;    //for benyuan
+        // nSalePart = nReward * 0.8;                      //for benyuan
+        nRewardOut = nReward - nDevPart /*- nSalePart*/;    //for benyuan
 
         CAmount nDevBfwd = 0;
         if (nBlockHeight > 1) { // genesis block is pow
@@ -12595,22 +12595,22 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         }
     }
 
-    LogPrintf("Send nSalePart Before!\n");
-    {   // for benyuan
-        std::string performanceAddr = Params().GetPerformanceFundAddr();
-        OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
-        outSaleSplit->nValue = nSalePart;
-        CTxDestination spDest = CBitcoinAddress(performanceAddr).Get();
-        if (spDest.type() == typeid(CNoDestination)) {
-            return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
-        }
-        outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
-        unsigned int i = txNew.vpout.size();
-        LogPrintf("txNew.vpout.size()=%d\n", txNew.vpout.size());
-        txNew.vpout.resize(i + 1);
-        txNew.vpout[i] = outSaleSplit;
-    }
-    LogPrintf("Send nSalePart After!\n");
+    // LogPrintf("Send nSalePart Before!\n");
+    // {   // for benyuan
+    //     std::string performanceAddr = Params().GetPerformanceFundAddr();
+    //     OUTPUT_PTR<CTxOutStandard> outSaleSplit = MAKE_OUTPUT<CTxOutStandard>();
+    //     outSaleSplit->nValue = nSalePart;
+    //     CTxDestination spDest = CBitcoinAddress(performanceAddr).Get();
+    //     if (spDest.type() == typeid(CNoDestination)) {
+    //         return werror("%s: Failed to get foundation fund destination: %s.", __func__, "SaleReward Address.");
+    //     }
+    //     outSaleSplit->scriptPubKey = GetScriptForDestination(spDest);
+    //     unsigned int i = txNew.vpout.size();
+    //     LogPrintf("txNew.vpout.size()=%d\n", txNew.vpout.size());
+    //     txNew.vpout.resize(i + 1);
+    //     txNew.vpout[i] = outSaleSplit;
+    // }
+    // LogPrintf("Send nSalePart After!\n");
 
     // Sign
     int nIn = 0;

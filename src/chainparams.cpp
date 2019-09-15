@@ -277,18 +277,18 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     }
 
     // Technology fund
-    // RMrwYTDzScdC16js4NQiVcdunrnTxNHxui
+    // RKJLvbat916RSJVHPMfyHxsJnm6S6WqqJe
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 10000000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("8a0384b7595f9194267e47356560ff9c9b014273") << OP_EQUAL;                                                           
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("6de90ee9debd346f035993eded6dc5fe5720dbd5") << OP_EQUAL;                                                                              
     txNew.vpout.push_back(out);        
 
     // Community Initative 
-    // RVam43V9nzh8QMn8pUnY4bzmCWpse4xkVH
+    // REs1Q2mKzDFxuT45Kc6BJxS9NrBNE4GXsf
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 9999000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("deb51ce39220d7f53ce093a90064d75bf9a7aef7") << OP_EQUAL;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("3d3ddb130e4def0fab3330ba1dc79a4f72c77a84") << OP_EQUAL;
     txNew.vpout.push_back(out);
 
     // Reserved Vircle 
@@ -446,14 +446,14 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
-        vSeeds.emplace_back("52.82.7.73");
-        vSeeds.emplace_back("52.82.109.52");
-        vSeeds.emplace_back("52.83.66.3");
+        // vSeeds.emplace_back("52.82.7.73");
+        // vSeeds.emplace_back("52.82.109.52");
+        // vSeeds.emplace_back("52.83.66.3");
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RMrwYTDzScdC16js4NQiVcdunrnTxNHxui", 0, 60));
-        strPerformanceFundAddr = "RE2FkyLcfjsYAPBE1zNWePn3ydXFzjVBa1";  //add for benyuan
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RVmyCVVEjhErHtf76WYWAZxmxcJWYyugQZ", 80, 10));
+        // strPerformanceFundAddr = "RE2FkyLcfjsYAPBE1zNWePn3ydXFzjVBa1";  //add for benyuan
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
         base58Prefixes[SCRIPT_ADDRESS]     = {0x3c};
@@ -491,7 +491,7 @@ public:
         checkpointData = {
             {
                 { 0,       uint256S("0x000065b88091be7da60ee36290bd2a00fd78a239f2110523cbba923aedd6045d")},
-                { 1000,    uint256S("0x77172cbea9bcac56537821b0671ae315e39b2cfb49789c54f6a6930118c2dcec")},
+                // { 1000,    uint256S("0x77172cbea9bcac56537821b0671ae315e39b2cfb49789c54f6a6930118c2dcec")},
                 // { 10000,    uint256S("0x50bd73fc4fdfdfcad973053d9811e136abfe0adb1e201e4a87474d7ccc184871")},
                 // { 15000,    uint256S("0x34c882a588c22f771d311fb34eb12377f840dd72ac28fd3a4ce90e5cf1025023")},
             }
@@ -646,8 +646,8 @@ public:
         // vSeeds.emplace_back("52.82.109.52");
         vSeeds.emplace_back("52.82.57.206");
 
-        vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ", 0, 100)));
-        strPerformanceFundAddr = "rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ";  //add for benyuan
+        vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ", 10, 100)));
+        // strPerformanceFundAddr = "rNMepWLgH59GEdx5yZfArjkTwYLrNqnXhJ";  //add for benyuan
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x76}; // p
         base58Prefixes[SCRIPT_ADDRESS]     = {0x7a};

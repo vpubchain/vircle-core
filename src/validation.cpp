@@ -2697,24 +2697,24 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
 
             LogPrintf("nCalculatedStakeReward=%u, nStakeReward=%u \n",nCalculatedStakeReward, nStakeReward);
             if (!pDevFundSettings || pDevFundSettings->nMinDevStakePercent <= 0) {
-                CAmount nSalePart1 = nStakeReward * 0.8;   //for benyuan
-                CAmount nSalePart2 = nCalculatedStakeReward * 0.8;   //for benyuan
+                // CAmount nSalePart1 = nStakeReward * 0.8;   //for benyuan
+                // CAmount nSalePart2 = nCalculatedStakeReward * 0.8;   //for benyuan
                 if (nStakeReward < 0 || nStakeReward > nCalculatedStakeReward) {
                     return state.DoS(100, error("%s: Coinstake pays too much(actual=%d vs calculated=%d)", __func__, nStakeReward, nCalculatedStakeReward), REJECT_INVALID, "bad-cs-amount");
                 }
 
-                LogPrintf("nSalePart1=%u, nSalePart2=%u \n",nSalePart1, nSalePart2);
-                if (nSalePart1 != nSalePart2){
-                    return state.DoS(100, error("%s: SalePart must be 80% of nStakeReward (nSalePart1=%d vs nSalePart2=%d)", __func__, nSalePart1, nSalePart2), REJECT_INVALID, "bad-salepart-amount");
-                }
+                // LogPrintf("nSalePart1=%u, nSalePart2=%u \n",nSalePart1, nSalePart2);
+                // if (nSalePart1 != nSalePart2){
+                //     return state.DoS(100, error("%s: SalePart must be 80% of nStakeReward (nSalePart1=%d vs nSalePart2=%d)", __func__, nSalePart1, nSalePart2), REJECT_INVALID, "bad-salepart-amount");
+                // }
 
             } else {
                 assert(pDevFundSettings->nMinDevStakePercent <= 100);
 
                 CAmount nDevBfwd = 0, nDevCfwdCheck = 0;
                 CAmount nMinDevPart = (nCalculatedStakeReward * pDevFundSettings->nMinDevStakePercent) / 100;
-                CAmount nSalePart = nCalculatedStakeReward * 0.8;
-                CAmount nMaxHolderPart = nCalculatedStakeReward - nMinDevPart - nSalePart;
+                // CAmount nSalePart = nCalculatedStakeReward * 0.8;
+                CAmount nMaxHolderPart = nCalculatedStakeReward - nMinDevPart /*- nSalePart*/;
                 if (nMinDevPart < 0 || nMaxHolderPart < 0) {
                     return state.DoS(100, error("%s: Bad coinstake split amount (foundation=%d vs reward=%d)", __func__, nMinDevPart, nMaxHolderPart), REJECT_INVALID, "bad-cs-amount");
                 }
@@ -2763,8 +2763,8 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                     // Ensure cfwd data output is correct and nStakeReward is <= nHolderPart
                     // cfwd must == nDevBfwd + (nCalculatedStakeReward - nStakeReward) // Allowing users to set a higher split
 
-                    if (nStakeReward < 0 || nStakeReward > nMaxHolderPart + nSalePart/*for benyuan*/) {
-                        return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs maxholderpart=%d)", __func__, nStakeReward, nMaxHolderPart + nSalePart), REJECT_INVALID, "bad-cs-amount");
+                    if (nStakeReward < 0 || nStakeReward > nMaxHolderPart /*+ nSalePart*/ /*for benyuan*/) {
+                        return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs maxholderpart=%d)", __func__, nStakeReward, nMaxHolderPart /*+ nSalePart*/), REJECT_INVALID, "bad-cs-amount");
                     }
                     CAmount nDevCfwd = nDevBfwd + nCalculatedStakeReward - nStakeReward;
                     if (!txCoinstake->GetDevFundCfwd(nDevCfwdCheck)
