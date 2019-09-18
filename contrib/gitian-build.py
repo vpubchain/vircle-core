@@ -24,8 +24,8 @@ def setup():
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/gitian.sigs.git'])
-    if not os.path.isdir('viecle-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/viecle-detached-sigs.git'])
+    if not os.path.isdir('vircle-detached-sigs'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/vircle-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
     if not os.path.isdir('vircle-core'):
