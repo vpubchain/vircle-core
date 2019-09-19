@@ -95,18 +95,19 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
 {
     arith_uint256 bnProofOfWorkLimit;
     // cancel 1-68 block special operation : lkz 2019-5-14
-    if (nBlockHeight < nLastImportHeight)
-    {
-        arith_uint256 nMinProofOfWorkLimit = arith_uint256("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        arith_uint256 nMaxProofOfWorkLimit = UintToArith256(params.powLimit);
-        arith_uint256 nStep = ((nMaxProofOfWorkLimit - nMinProofOfWorkLimit) / nLastImportHeight);
-        bnProofOfWorkLimit = nMinProofOfWorkLimit + nStep * nBlockHeight;
-    } else
-    {
-        bnProofOfWorkLimit = UintToArith256(params.powLimit);
-    };
+    // if (nBlockHeight < nLastImportHeight)
+    // {
+    //     arith_uint256 nMinProofOfWorkLimit = arith_uint256("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+    //     arith_uint256 nMaxProofOfWorkLimit = UintToArith256(params.powLimit);
+    //     arith_uint256 nStep = ((nMaxProofOfWorkLimit - nMinProofOfWorkLimit) / nLastImportHeight);
+    //     bnProofOfWorkLimit = nMinProofOfWorkLimit + nStep * nBlockHeight;
+    // } else
+    // {
+    //     bnProofOfWorkLimit = UintToArith256(params.powLimit);
+    // };
+    
     //normal operation : lkz
-    // bnProofOfWorkLimit = UintToArith256(params.powLimit);
+    bnProofOfWorkLimit = UintToArith256(params.powLimit);
     
     bool fNegative;
     bool fOverflow;

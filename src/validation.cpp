@@ -4209,27 +4209,32 @@ unsigned int GetNextTargetRequired(const CBlockIndex *pindexLast)
     int nHeight = pindexLast ? pindexLast->nHeight+1 : 0;
 
     // cancel 1-68 block special operation : lkz 2019-5-14
-    if (nHeight < (int)Params().GetLastImportHeight())
-    {
-        if (nHeight == 0)
-            return arith_uint256("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").GetCompact();
-        int nLastImportHeight = (int) Params().GetLastImportHeight();
-        arith_uint256 nMaxProofOfWorkLimit = arith_uint256("000000000008ffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        arith_uint256 nMinProofOfWorkLimit = UintToArith256(consensus.powLimit);
-        arith_uint256 nStep = (nMaxProofOfWorkLimit - nMinProofOfWorkLimit) / nLastImportHeight;
+    // if (nHeight < (int)Params().GetLastImportHeight())
+    // {
+    //     if (nHeight == 0)
+    //         return arith_uint256("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").GetCompact();
+    //     int nLastImportHeight = (int) Params().GetLastImportHeight();
+    //     arith_uint256 nMaxProofOfWorkLimit = arith_uint256("000000000008ffffffffffffffffffffffffffffffffffffffffffffffffffff");
+    //     arith_uint256 nMinProofOfWorkLimit = UintToArith256(consensus.powLimit);
+    //     arith_uint256 nStep = (nMaxProofOfWorkLimit - nMinProofOfWorkLimit) / nLastImportHeight;
 
 
-        bnProofOfWorkLimit = nMaxProofOfWorkLimit - (nStep * nHeight);
-        nProofOfWorkLimit = bnProofOfWorkLimit.GetCompact();
-    } else
+    //     bnProofOfWorkLimit = nMaxProofOfWorkLimit - (nStep * nHeight);
+    //     nProofOfWorkLimit = bnProofOfWorkLimit.GetCompact();
+    // } else
+    // {
+    //     bnProofOfWorkLimit = UintToArith256(consensus.powLimit);
+    //     nProofOfWorkLimit = bnProofOfWorkLimit.GetCompact();
+    // };
+    
+    //normal operation : lkz
+    if (nHeight == 0){
+        return arith_uint256("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").GetCompact();
+    }else
     {
         bnProofOfWorkLimit = UintToArith256(consensus.powLimit);
         nProofOfWorkLimit = bnProofOfWorkLimit.GetCompact();
-    };
-    
-    //normal operation : lkz
-    // bnProofOfWorkLimit = UintToArith256(consensus.powLimit);
-    // nProofOfWorkLimit = bnProofOfWorkLimit.GetCompact();
+    }    
 
     if (pindexLast == nullptr)
         return nProofOfWorkLimit; // Genesis block
