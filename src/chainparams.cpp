@@ -482,7 +482,7 @@ public:
 
         nModifierInterval = 10 * 60;    // 10 minutes
         nStakeMinConfirmations = 225;   // 225 * 2 minutes
-        nTargetSpacing = 120;            // 2 minutes
+        nTargetSpacing = 60;            // 1 minutes
         nTargetTimespan = 24 * 60;      // 24 mins
 
         AddImportHashesMain(vImportedCoinbaseTxns);
@@ -540,8 +540,8 @@ public:
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
         //vSeeds.emplace_back("mainnet.vircle.io");
-        vSeeds.emplace_back("47.105.68.82");
-        vSeeds.emplace_back("47.105.157.227");
+        vSeeds.emplace_back("161.189.9.248");
+        vSeeds.emplace_back("52.83.108.4");
 
 
         vDevFundSettings.emplace_back(0,
@@ -699,7 +699,7 @@ public:
 
         nModifierInterval = 10 * 60;    // 10 minutes
         nStakeMinConfirmations = 225;   // 225 * 2 minutes
-        nTargetSpacing = 120;           // 2 minutes
+        nTargetSpacing = 60;           // 1 minutes
         nTargetTimespan = 24 * 60;      // 24 mins
 
 
