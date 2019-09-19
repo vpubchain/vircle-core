@@ -482,7 +482,7 @@ public:
 
         nModifierInterval = 10 * 60;    // 10 minutes
         nStakeMinConfirmations = 225;   // 225 * 2 minutes
-        nTargetSpacing = 60;            // 1 minutes
+        nTargetSpacing = 120;            // 2 minutes
         nTargetTimespan = 24 * 60;      // 24 mins
 
         AddImportHashesMain(vImportedCoinbaseTxns);
@@ -545,9 +545,9 @@ public:
 
 
         vDevFundSettings.emplace_back(0,
-            DevFundSettings("RPLYxZFbBwBYToQpWavLWAtjpoSgLQQmh4", 10, 60));
+            DevFundSettings("RYaH5sZV6z37WTc9QRk2vrFtVTkpwZwNNN", 10, 60));
         vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime,
-            DevFundSettings("RAJ3GeQ2UsCrqpPSS36pcDPnk2X4Ydi9kS", 10, 60));
+            DevFundSettings("RYaH5sZV6z37WTc9QRk2vrFtVTkpwZwNNN", 10, 60));
 
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
@@ -699,7 +699,7 @@ public:
 
         nModifierInterval = 10 * 60;    // 10 minutes
         nStakeMinConfirmations = 225;   // 225 * 2 minutes
-        nTargetSpacing = 60;            // 1 minutes
+        nTargetSpacing = 120;           // 2 minutes
         nTargetTimespan = 24 * 60;      // 24 mins
 
 
@@ -746,10 +746,6 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xa043431b6e581fea56c2170f69470156823a12bf166e6980eedcef7348e16444"));
         assert(genesis.hashWitnessMerkleRoot == uint256S("0xec19be1b45625c1898f4df0b5f551f87c953ef0c013edf770e4dc339e63c0df8"));
 
-        //assert(consensus.hashGenesisBlock == uint256S("0x0000594ada5310b367443ee0afd4fa3d0bbd5850ea4e33cdc7d6a904a7ec7c90"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x2c7f4d88345994e3849502061f6303d9666172e4dff3641d3472a72908eec002"));
-        //assert(genesis.hashWitnessMerkleRoot == uint256S("0xf9e2235c9531d5a19263ece36e82c4d5b71910d73cd0b677b81c5e50d17b6cda"));
-
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
@@ -759,7 +755,7 @@ public:
         vSeeds.emplace_back("52.82.123.93");
 
         //vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rTvv9vsbu269mjYYEecPYinDG8Bt7D86qD", 10, 60)));
-        vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rQApnBUWAmJ28PHzaFw9gPeqiDFBxPWK3B", 10, 100)));
+        vDevFundSettings.push_back(std::make_pair(0, DevFundSettings("rTbU5TG6zXWWdTe2HQdHwEM7GVFR7xnN6f", 10, 100)));
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x76}; // p
         base58Prefixes[SCRIPT_ADDRESS]     = {0x7a};
