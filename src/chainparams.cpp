@@ -482,7 +482,7 @@ public:
 
         nModifierInterval = 10 * 60;    // 10 minutes
         nStakeMinConfirmations = 225;   // 225 * 2 minutes
-        nTargetSpacing = 60;            // 2 minutes
+        nTargetSpacing = 60;            // 1 minutes
         nTargetTimespan = 24 * 60;      // 24 mins
 
         AddImportHashesMain(vImportedCoinbaseTxns);
@@ -699,7 +699,7 @@ public:
 
         nModifierInterval = 10 * 60;    // 10 minutes
         nStakeMinConfirmations = 225;   // 225 * 2 minutes
-        nTargetSpacing = 60;            // 2 minutes
+        nTargetSpacing = 60;            // 1 minutes
         nTargetTimespan = 24 * 60;      // 24 mins
 
 
