@@ -478,7 +478,8 @@ public:
         pchMessageStart[1] = 0xf2;
         pchMessageStart[2] = 0xef;
         pchMessageStart[3] = 0xb4;
-        nDefaultPort = 51758;
+        // nDefaultPort = 51758;
+        nDefaultPort = 9090;
         nBIP44ID = 0x8000002C;
 
         nModifierInterval = 10 * 60;    // 10 minutes
@@ -587,9 +588,9 @@ public:
         checkpointData = {
             {
                 { 0,       uint256S("0x000018f21bd78dfd8ed7b09aa9ed726681d8d204801ed67b4fa633a86d642fde")},
-                { 5000,    uint256S("0x48236bab754d77f1651fd94f8a75a66c3f4e994eed8774e7fa2c16ad4604c247")},
-                { 15000,   uint256S("0x81346b95c7b958c5e290c6f90f6ff901da2ebb501b615a80fb9efb6d439a7497")},
-                { 30000,   uint256S("0x9f3e8ab012e03da1cac2ed5d1672d7ad6c00db168aab34af6aab8e4279c01cb0")},
+                // { 5000,    uint256S("0x48236bab754d77f1651fd94f8a75a66c3f4e994eed8774e7fa2c16ad4604c247")},
+                // { 15000,   uint256S("0x81346b95c7b958c5e290c6f90f6ff901da2ebb501b615a80fb9efb6d439a7497")},
+                // { 30000,   uint256S("0x9f3e8ab012e03da1cac2ed5d1672d7ad6c00db168aab34af6aab8e4279c01cb0")},
                 /*{ 5000,     uint256S("0xe786020ab94bc5461a07d744f3631a811b4ebf424fceda12274f2321883713f4")},
                 { 15000,    uint256S("0xafc73ac299f2e6dd309077d230fccef547b9fc24379c1bf324dd3683b13c61c3")},
                 { 30000,    uint256S("0x35d95c12799323d7b418fd64df9d88ef67ef27f057d54033b5b2f38a5ecaacbf")},
@@ -696,7 +697,8 @@ public:
         pchMessageStart[1] = 0x11;
         pchMessageStart[2] = 0x05;
         pchMessageStart[3] = 0x0b;
-        nDefaultPort = 51958;
+        // nDefaultPort = 51958;
+        nDefaultPort = 19090;
         nBIP44ID = 0x80000001;
 
         nModifierInterval = 10 * 60;    // 10 minutes
