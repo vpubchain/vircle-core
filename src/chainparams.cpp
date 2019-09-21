@@ -449,6 +449,9 @@ public:
         vSeeds.emplace_back("52.82.110.66");
         vSeeds.emplace_back("52.82.109.52");
         vSeeds.emplace_back("52.83.66.3");
+        vSeeds.emplace_back("120.79.93.237");
+        vSeeds.emplace_back("39.108.64.143");
+        vSeeds.emplace_back("39.108.156.249");
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
