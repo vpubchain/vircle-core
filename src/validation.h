@@ -143,7 +143,7 @@ static const bool DEFAULT_PEERBLOOMFILTERS = true;
 
 static const size_t MAX_STAKE_SEEN_SIZE = 1000;
 
-inline int64_t FutureDrift(int64_t nTime) { return nTime + 15; } // FutureDriftV2
+inline int64_t FutureDrift(int64_t nTime) { return nTime + 30; } // FutureDriftV2   //modify from '15' to '30' by lkz 2019-10-18
 
 /** Default for -stopatheight */
 static const int DEFAULT_STOPATHEIGHT = 0;
