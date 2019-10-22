@@ -31,7 +31,7 @@ def setup():
     if not os.path.isdir('vircle-core'):
         subprocess.check_call(['git', 'clone', 'https://github.com/vpubchain/vircle-core.git'])
     os.chdir('gitian-builder')
-    make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64', '--disksize', '204800']
+    make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64', '--disksize', '20480']
     if args.docker:
         make_image_prog += ['--docker']
     elif not args.kvm:
