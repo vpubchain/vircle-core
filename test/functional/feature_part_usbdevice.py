@@ -37,7 +37,7 @@ class USBDeviceTest(VircleTestFramework):
 
     def run_test(self):
 
-        # Check that .viecle has been built with USB device enabled
+        # Check that .vircle has been built with USB device enabled
         config = configparser.ConfigParser()
         if not self.options.configfile:
             self.options.configfile = os.path.dirname(__file__) + "/../config.ini"
