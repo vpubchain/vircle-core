@@ -428,7 +428,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         assert_equal(decrawtx['version'], -0x80000000)
 
         """
-        # Collides with .viecle version
+        # Collides with .vircle version
         # Test the maximum transaction version number that fits in a signed 32-bit integer.
         tx = CTransaction()
         tx.nVersion = 0x7fffffff

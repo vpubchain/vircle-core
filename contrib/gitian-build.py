@@ -46,7 +46,7 @@ def setup():
 def build():
     global args, workdir
 
-    os.makedirs('.viecle-binaries/' + args.version, exist_ok=True)
+    os.makedirs('.vircle-binaries/' + args.version, exist_ok=True)
     print('\nBuilding Dependencies\n')
     os.chdir('gitian-builder')
     os.makedirs('inputs', exist_ok=True)
@@ -61,21 +61,21 @@ def build():
         print('\nCompiling ' + args.version + ' Linux')
         subprocess.check_call(['bin/gbuild', '--allow-sudo', '-j', args.jobs, '-m', args.memory, '--commit', 'vircle-core='+args.commit, '--url', 'vircle-core='+args.url, '../vircle-core/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../vircle-core/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call('mv build/out/.viecle-*.tar.gz build/out/src/.viecle-*.tar.gz ../.viecle-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/.vircle-*.tar.gz build/out/src/.vircle-*.tar.gz ../.vircle-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'vircle-core='+args.commit, '--url', 'vircle-core='+args.url, '../vircle-core/contrib/gitian-descriptors/gitian-win.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../vircle-core/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call('mv build/out/.viecle-*-win-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/.viecle-*.zip build/out/.viecle-*.exe ../.viecle-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/.vircle-*-win-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/.vircle-*.zip build/out/.vircle-*.exe ../.vircle-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'vircle-core='+args.commit, '--url', 'vircle-core='+args.url, '../vircle-core/contrib/gitian-descriptors/gitian-osx.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../vircle-core/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call('mv build/out/.viecle-*-osx-unsigned.tar.gz inputs/', shell=True)
-        subprocess.check_call('mv build/out/.viecle-*.tar.gz build/out/.viecle-*.dmg ../.viecle-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/.vircle-*-osx-unsigned.tar.gz inputs/', shell=True)
+        subprocess.check_call('mv build/out/.vircle-*.tar.gz build/out/.vircle-*.dmg ../.vircle-binaries/'+args.version, shell=True)
 
     os.chdir(workdir)
 
@@ -94,18 +94,18 @@ def sign():
 
     if args.windows:
         print('\nSigning ' + args.version + ' Windows')
-        subprocess.check_call('cp inputs/.viecle-' + args.version + '-win-unsigned.tar.gz inputs/.viecle-win-unsigned.tar.gz', shell=True)
+        subprocess.check_call('cp inputs/.vircle-' + args.version + '-win-unsigned.tar.gz inputs/.vircle-win-unsigned.tar.gz', shell=True)
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../vircle-core/contrib/gitian-descriptors/gitian-win-signer.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../vircle-core/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call('mv build/out/.viecle-*win64-setup.exe ../.viecle-binaries/'+args.version, shell=True)
-        subprocess.check_call('mv build/out/.viecle-*win32-setup.exe ../.viecle-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/.vircle-*win64-setup.exe ../.vircle-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/.vircle-*win32-setup.exe ../.vircle-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nSigning ' + args.version + ' MacOS')
-        subprocess.check_call('cp inputs/.viecle-' + args.version + '-osx-unsigned.tar.gz inputs/.viecle-osx-unsigned.tar.gz', shell=True)
+        subprocess.check_call('cp inputs/.vircle-' + args.version + '-osx-unsigned.tar.gz inputs/.vircle-osx-unsigned.tar.gz', shell=True)
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../vircle-core/contrib/gitian-descriptors/gitian-osx-signer.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../vircle-core/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call('mv build/out/.viecle-osx-signed.dmg ../.viecle-binaries/'+args.version+'/.viecle-'+args.version+'-osx.dmg', shell=True)
+        subprocess.check_call('mv build/out/.vircle-osx-signed.dmg ../.vircle-binaries/'+args.version+'/.vircle-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 
