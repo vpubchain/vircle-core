@@ -29,7 +29,7 @@ class ZMQTest(VircleTestFramework):
         except ImportError:
             raise SkipTest("python3-zmq module not available.")
 
-        # Check that .vircle has been built with ZMQ enabled
+        # Check that vircle has been built with ZMQ enabled
         config = configparser.ConfigParser()
         if not self.options.configfile:
             self.options.configfile = os.path.dirname(__file__) + "/../config.ini"
