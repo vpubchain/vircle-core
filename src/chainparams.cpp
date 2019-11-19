@@ -44,8 +44,8 @@ int64_t CChainParams::GetProofOfStakeReward(const CBlockIndex *pindexPrev, int64
     if (halvings >= 64)
         return 0;
 
-    CAmount nSubsidy = ((40000000*COIN)/(consensus.nSubsidyHalvingInterval*COIN))*COIN;
-    // Subsidy is cut in half every 525,600 blocks which will occur approximately every 1 years.
+    CAmount nSubsidy = ((35000000*COIN)/(consensus.nSubsidyHalvingInterval*COIN))*COIN;
+    // Subsidy is cut in half every 262,800 blocks which will occur approximately every 1 years.
     nSubsidy >>= halvings;
     return nSubsidy + nFees;
 };
@@ -164,7 +164,7 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 
 static CBlock CreateGenesisBlockRegTest(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "Jiuling Blockchain was officially launched on September 7, 2019";
+    const char *pszTimestamp = "WenBanTong RegTest BlockChain start testing on November 13, 2019";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -197,7 +197,7 @@ static CBlock CreateGenesisBlockRegTest(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "Jiuling Blockchain was officially launched on September 7, 2019";
+    const char *pszTimestamp = "WenBanTong TestNet BlockChain start testing on November 13, 2019";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -259,7 +259,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "Jiuling Blockchain was officially launched on September 16, 2019";
+    const char *pszTimestamp = "WenBanTong MainNet BlockChain start testing on November 13, 2019";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -277,18 +277,18 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     }
 
     // Technology fund
-    // RKJLvbat916RSJVHPMfyHxsJnm6S6WqqJe
+    // RRcsa456pNPtHTdaicnPHwX48PVeLkuazU
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 10000000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("6de90ee9debd346f035993eded6dc5fe5720dbd5") << OP_EQUAL;                                                                              
+    out->nValue = 5999000 * COIN;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("b33ae1d1533da3b18bdd17b5e9d3717f6084b957") << OP_EQUAL;                                                                              
     txNew.vpout.push_back(out);        
 
     // Community Initative 
-    // REs1Q2mKzDFxuT45Kc6BJxS9NrBNE4GXsf
+    // RLQtFd9BPwUuWWCT87tzUL7GSDMF6NgzTo
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 9999000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("3d3ddb130e4def0fab3330ba1dc79a4f72c77a84") << OP_EQUAL;
+    out->nValue = 24000000 * COIN;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("7a1dd4c62d0aac23b0c91e2fcae1a5e353597d04") << OP_EQUAL;                                                         
     txNew.vpout.push_back(out);
 
     // Reserved Vircle 
@@ -384,12 +384,12 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xa5;
-        pchMessageStart[1] = 0xb2;
-        pchMessageStart[2] = 0xc0;
-        pchMessageStart[3] = 0xd6;
+        pchMessageStart[0] = 0xac;
+        pchMessageStart[1] = 0xbd;
+        pchMessageStart[2] = 0xce;
+        pchMessageStart[3] = 0xdf;
 
-        nDefaultPort = 9999;   //for benyuan
+        nDefaultPort = 10100;   //for benyuan
         nBIP44ID = 0x8000002C;
 
         nModifierInterval = 10 * 60;    // 10 minutes
@@ -404,7 +404,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1568563200, 124962,  0x1f00ffff); // 2019-09-07 00:00:00      1567785600
+        genesis = CreateGenesisBlockMainNet(1573628400, 1065,  0x1f00ffff); // 2019-09-07 00:00:00      1567785600
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -416,7 +416,6 @@ public:
 
         bnTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow);
                 std::cout << "target:" << bnTarget.GetHex() << std::endl;
-
                 for (i = 0; i < 4294967295; i++) {
                 genesis.nNonce=i;
                 hash = genesis.GetHash();
@@ -435,9 +434,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x00001cf5eb2ad4da33c4ef4fec9ec51b51a5148e64a5972dcbd2ad280d5b2732"));
-        assert(genesis.hashMerkleRoot == uint256S("0x0065ca84945fd1a9d755899ee3a0d7b167ec36e07e22caa00ea8d20c4b2fc547"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0xaf965f24b940189113729931e1e3ee2fecd7fb4df1d1c1c93687bd97179b0b65"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00002245d0e7ab5deb3e3233be4a5387be02d9df202165cb7fce50d282913067"));
+        assert(genesis.hashMerkleRoot == uint256S("0x8c9a19cb7954d09b67201771bc083555da449102f3f4f7cf24fc53288a8aac33"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0xc718b3ab5b25c1bee4e56c0ad9e2c834216a960fb95dc6e21d094956f6a25f2a"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -446,16 +445,13 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
-        vSeeds.emplace_back("52.82.110.66");
-        vSeeds.emplace_back("52.82.109.52");
-        vSeeds.emplace_back("52.83.66.3");
-        vSeeds.emplace_back("120.79.93.237");
-        vSeeds.emplace_back("39.108.64.143");
-        vSeeds.emplace_back("39.108.156.249");
+        // vSeeds.emplace_back("52.82.110.66");
+        // vSeeds.emplace_back("52.82.109.52");
+        // vSeeds.emplace_back("52.83.66.3");
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RVmyCVVEjhErHtf76WYWAZxmxcJWYyugQZ", 80, 1));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RGZcrfTX1Uy5aX7Ea9Enp8WZfMw8fNqSAi", 80, 1));
         // strPerformanceFundAddr = "RE2FkyLcfjsYAPBE1zNWePn3ydXFzjVBa1";  //add for benyuan
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
@@ -493,7 +489,7 @@ public:
 
         checkpointData = {
             {
-                { 0,       uint256S("0x00001cf5eb2ad4da33c4ef4fec9ec51b51a5148e64a5972dcbd2ad280d5b2732")},
+                { 0,       uint256S("0x00002245d0e7ab5deb3e3233be4a5387be02d9df202165cb7fce50d282913067")},
                 // { 1000,    uint256S("0x77172cbea9bcac56537821b0671ae315e39b2cfb49789c54f6a6930118c2dcec")},
                 // { 10000,    uint256S("0x50bd73fc4fdfdfcad973053d9811e136abfe0adb1e201e4a87474d7ccc184871")},
                 // { 15000,    uint256S("0x34c882a588c22f771d311fb34eb12377f840dd72ac28fd3a4ce90e5cf1025023")},
@@ -502,7 +498,7 @@ public:
 
         chainTxData = ChainTxData {
             // Data from rpc: getchaintxstats 4096 ff704cb42547da4efb2b32054c72c7682b7634ac34fda4ec88fe7badc666338c
-            /* nTime    */ 1568563200,
+            /* nTime    */ 1573628400,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
@@ -590,7 +586,7 @@ public:
         pchMessageStart[1] = 0x1b;
         pchMessageStart[2] = 0x3c;
         pchMessageStart[3] = 0x4d;
-        nDefaultPort = 19999;
+        nDefaultPort = 20200;
         nBIP44ID = 0x80000001;
 
         nModifierInterval = 10 * 60;    // 10 minutes
@@ -606,7 +602,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockTestNet(1567699200, 113080, 0x1f00ffff); //2019-09-06 00:00
+        genesis = CreateGenesisBlockTestNet(1573628400, 84302, 0x1f00ffff); //2019-11-13 15:00
         consensus.hashGenesisBlock = genesis.GetHash();
 	
         bool fNegative;
@@ -637,9 +633,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
  	    
-        assert(consensus.hashGenesisBlock == uint256S("0x00001a2deb69f0c44df165a1d72fb1591f0f4c18db70cf6809f96654b94dc641"));
-        assert(genesis.hashMerkleRoot == uint256S("0x0d3057db1edee8c325c588b1087b76b6825535db48bf19637bb4bfbc00d90212"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0xde955dfd3e9007c0da4fc779267aaa7789401f62965ca7a3f26cdb30e984c7f2"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00008f0061ae57b7a6c3107f61d82695995fda80ab3eaf898775c11b51e57f4d"));
+        assert(genesis.hashMerkleRoot == uint256S("0x5999ff1634f5de875af0bfc287d9a61a84d41f99167c78bcce4ba442ff8a8d78"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0xd9297aeb8dde938a071d8235e2c28e67c0fe6b8c161e05425463fef1070640ae"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -687,13 +683,13 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x00001a2deb69f0c44df165a1d72fb1591f0f4c18db70cf6809f96654b94dc641")},
+                {0, uint256S("0x00008f0061ae57b7a6c3107f61d82695995fda80ab3eaf898775c11b51e57f4d")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 4096 eecbeafc4b338901e3dfb6eeaefc128ef477dfe1e6f0f96bd63da27caf113ddc
-            /* nTime    */ 1567699200,
+            /* nTime    */ 1573628400,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
@@ -758,7 +754,7 @@ public:
         pchMessageStart[1] = 0x12;
         pchMessageStart[2] = 0x06;
         pchMessageStart[3] = 0x0c;
-        nDefaultPort = 29999;
+        nDefaultPort = 30300;
         nBIP44ID = 0x80000001;
 
 
@@ -777,16 +773,16 @@ public:
         UpdateVersionBitsParametersFromArgs(args);
 
         //genesis = CreateGenesisBlockRegTest(1487714923, 0, 0x207fffff);
-        genesis = CreateGenesisBlockRegTest(1555488002, 0, 0x207fffff);
+        genesis = CreateGenesisBlockRegTest(1573628400, 0, 0x207fffff);
         consensus.hashGenesisBlock = genesis.GetHash();
         
         std::cout << "block:" << consensus.hashGenesisBlock.GetHex() << std::endl;
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
         
-        assert(consensus.hashGenesisBlock == uint256S("0xb58d24d41797f19f185afbf2734a24e858dbc4122190d6f997ccd3f38876c869"));
-        assert(genesis.hashMerkleRoot == uint256S("0x974ca848a336804eb06776d67b243f9a1d02c3d9989f7bc5ef1e4fd90948775d"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x1719927bc9ed04f6d01afba0cf9d862a696d9e8afbe52b7d8bb3c61dc00adf86"));
+        assert(consensus.hashGenesisBlock == uint256S("0x535a8202bba37fa2ee97e09dc17c6ab09dfdb18176f9b679f4e2b21b673de5bf"));
+        assert(genesis.hashMerkleRoot == uint256S("0xda59ea8f75fda3a677d307804b714a889d897b25ce9a180aeff06fb6989b4d8f"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0x31c69e9db3f1cde606cd79915716cd701bacd5185c6503d1f50360653b6a2384"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -829,7 +825,7 @@ public:
         bech32_hrp = "bcrt";
 
         chainTxData = ChainTxData{
-            0,
+            1573628400,
             0,
             0
         };

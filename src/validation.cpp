@@ -2695,7 +2695,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                 }
             }
 
-            LogPrintf("nCalculatedStakeReward=%u, nStakeReward=%u \n",nCalculatedStakeReward, nStakeReward);
+            // LogPrintf("nCalculatedStakeReward=%u, nStakeReward=%u \n",nCalculatedStakeReward, nStakeReward);
             if (!pDevFundSettings || pDevFundSettings->nMinDevStakePercent <= 0) {
                 if (nStakeReward < 0 || nStakeReward > nCalculatedStakeReward) {
                     return state.DoS(100, error("%s: Coinstake pays too much(actual=%d vs calculated=%d)", __func__, nStakeReward, nCalculatedStakeReward), REJECT_INVALID, "bad-cs-amount");
