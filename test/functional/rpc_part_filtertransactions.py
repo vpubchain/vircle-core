@@ -45,12 +45,12 @@ class FilterTransactionsTest(VircleTestFramework):
         #targetExternal = nodes[1].getnewextaddress('target external')
         stakingAddress = nodes[2].getnewaddress('staking')
 
-        # simple VCL transaction
+        # simple WBT transaction
         nodes[0].sendtoaddress(targetAddress, 10)
         self.stakeBlocks(1)
         nodes[1].sendtoaddress(selfAddress, 8)
 
-        # VCL to BLIND
+        # WBT to BLIND
         nodes[0].sendparttoblind(
             selfStealth,          # address
             20,                   # amount
@@ -60,7 +60,7 @@ class FilterTransactionsTest(VircleTestFramework):
             'node0 -> node0 p->b' # narrative
         )
 
-        # VCL to ANON
+        # WBT to ANON
         nodes[0].sendparttoanon(
             targetStealth,        # address
             20,                   # amount
