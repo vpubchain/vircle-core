@@ -51,7 +51,7 @@ private:
 };
 
 /** Model for list of recently generated payment requests / bitcoin: URIs.
- * Vcl of wallet model.
+ * Wbt of wallet model.
  */
 class RecentRequestsTableModel: public QAbstractTableModel
 {
