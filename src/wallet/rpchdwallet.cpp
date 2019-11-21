@@ -4870,7 +4870,7 @@ static const char *TypeToWord(OutputTypes type)
     switch (type)
     {
         case OUTPUT_STANDARD:
-            return "wbt";
+            return "wcl";
         case OUTPUT_CT:
             return "blind";
         case OUTPUT_RINGCT:
@@ -4883,7 +4883,7 @@ static const char *TypeToWord(OutputTypes type)
 
 static OutputTypes WordToType(std::string &s)
 {
-    if (s == "wbt")
+    if (s == "wcl")
         return OUTPUT_STANDARD;
     if (s == "blind")
         return OUTPUT_CT;
@@ -4905,8 +4905,8 @@ static std::string SendHelp(CHDWallet *pwallet, OutputTypes typeIn, OutputTypes 
 
     rv += "\nSend an amount of ";
     rv += typeIn == OUTPUT_RINGCT ? "anon" : typeIn == OUTPUT_CT ? "blinded" : "";
-    rv += std::string(" wbt in a") + (typeOut == OUTPUT_RINGCT || typeOut == OUTPUT_CT ? " blinded" : "") + " payment to a given address"
-        + (typeOut == OUTPUT_CT ? " in anon wbt": "") + ".\n";
+    rv += std::string(" wcl in a") + (typeOut == OUTPUT_RINGCT || typeOut == OUTPUT_CT ? " blinded" : "") + " payment to a given address"
+        + (typeOut == OUTPUT_CT ? " in anon wcl": "") + ".\n";
 
     rv += HelpRequiringPassphrase(pwallet);
 
@@ -4914,9 +4914,9 @@ static std::string SendHelp(CHDWallet *pwallet, OutputTypes typeIn, OutputTypes 
             "1. \"address\"     (string, required) The vircle address to send to.\n"
             "2. \"amount\"      (numeric or string, required) The amount in " + CURRENCY_UNIT + " to send. eg 0.1\n"
             "3. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
-            "                            This is not wbt of the transaction, just kept in your wallet.\n"
+            "                            This is not wcl of the transaction, just kept in your wallet.\n"
             "4. \"comment_to\"  (string, optional) A comment to store the name of the person or organization \n"
-            "                            to which you're sending the transaction. This is not wbt of the \n"
+            "                            to which you're sending the transaction. This is not wcl of the \n"
             "                            transaction, just kept in your wallet.\n"
             "5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.\n"
             "                            The recipient will receive less " + CURRENCY_UNIT + " than you enter in the amount field.\n"
@@ -5044,11 +5044,11 @@ UniValue sendtypeto(const JSONRPCRequest &request)
     if (request.fHelp || request.params.size() < 3 || request.params.size() > 9)
         throw std::runtime_error(
             RPCHelpMan{"sendtypeto",
-                "\nSend wbt to multiple outputs." +
+                "\nSend wcl to multiple outputs." +
                 HelpRequiringPassphrase(pwallet) + "\n",
                 {
-                    {"typein", RPCArg::Type::STR, RPCArg::Optional::NO, "wbt/blind/anon"},
-                    {"typeout", RPCArg::Type::STR, RPCArg::Optional::NO, "wbt/blind/anon"},
+                    {"typein", RPCArg::Type::STR, RPCArg::Optional::NO, "wcl/blind/anon"},
+                    {"typeout", RPCArg::Type::STR, RPCArg::Optional::NO, "wcl/blind/anon"},
                     {"outputs", RPCArg::Type::ARR, RPCArg::Optional::NO, "A json array of json objects",
                         {
                             {"", RPCArg::Type::OBJ, RPCArg::Optional::NO, "",
@@ -5099,7 +5099,7 @@ UniValue sendtypeto(const JSONRPCRequest &request)
             "\"txid\"              (string) The transaction id.\n"
                 },
                 RPCExamples{
-            HelpExampleCli("sendtypeto", "anon wbt \"[{\\\"address\\\":\\\"PbpVcjgYatnkKgveaeqhkeQBFwjqR7jKBR\\\",\\\"amount\\\":0.1}]\"")
+            HelpExampleCli("sendtypeto", "anon wcl \"[{\\\"address\\\":\\\"PbpVcjgYatnkKgveaeqhkeQBFwjqR7jKBR\\\",\\\"amount\\\":0.1}]\"")
                 },
             }.ToString());
 

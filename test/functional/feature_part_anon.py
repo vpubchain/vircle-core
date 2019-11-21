@@ -114,10 +114,10 @@ class AnonTest(VircleTestFramework):
         assert(ro['anon_balance'] > 10)
 
         outputs = [{'address':sxAddrTo0_1, 'amount':10, 'subfee':True},]
-        ro = nodes[1].sendtypeto('anon', 'wbt', outputs, 'comment_to', 'comment_from', 4, 32, True)
+        ro = nodes[1].sendtypeto('anon', 'wcl', outputs, 'comment_to', 'comment_from', 4, 32, True)
         assert(ro['bytes'] > 0)
 
-        txnHash = nodes[1].sendtypeto('anon', 'wbt', outputs)
+        txnHash = nodes[1].sendtypeto('anon', 'wcl', outputs)
         txnHashes = [txnHash,]
 
 
