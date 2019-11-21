@@ -43,8 +43,8 @@ QString BitcoinUnits::longName(int unit)
     switch(unit)
     {
     case BTC: return QString("WCL");
-    case mBTC: return QString("mWBT");
-    case uBTC: return QString::fromUtf8("μWBT (wbts)");
+    case mBTC: return QString("mWCL");
+    case uBTC: return QString::fromUtf8("μWCL (wcls)");
     case SAT: return QString("Satoshi (sat)");
     default: return QString("???");
     }
@@ -54,7 +54,7 @@ QString BitcoinUnits::shortName(int unit)
 {
     switch(unit)
     {
-    case uBTC: return QString::fromUtf8("wbts");
+    case uBTC: return QString::fromUtf8("wcls");
     case SAT: return QString("sat");
     default:   return longName(unit);
     }
@@ -66,7 +66,7 @@ QString BitcoinUnits::description(int unit)
     {
     case BTC: return QString("Vircles");
     case mBTC: return QString("Milli-Vircles (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Micro-Vircles (wbts) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case uBTC: return QString("Micro-Vircles (wcls) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     case SAT: return QString("Satoshi (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
