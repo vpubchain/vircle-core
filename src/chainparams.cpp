@@ -259,7 +259,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "WenBanTong MainNet BlockChain start testing on November 13, 2019";
+    const char *pszTimestamp = "Wenchuanglian MainNet BlockChain start publish on November 28, 2019";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -281,14 +281,14 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 5999000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("b33ae1d1533da3b18bdd17b5e9d3717f6084b957") << OP_EQUAL;                                                                              
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("c01f2be9c1639a5e3a98bde3a68c3bafb8f5f0ee") << OP_EQUAL;                                                                              
     txNew.vpout.push_back(out);        
 
     // Community Initative 
     // RLQtFd9BPwUuWWCT87tzUL7GSDMF6NgzTo
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 24000000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("7a1dd4c62d0aac23b0c91e2fcae1a5e353597d04") << OP_EQUAL;                                                         
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("a1b61244a8cfa48af4055904193c610ba50650d5") << OP_EQUAL;                                                         
     txNew.vpout.push_back(out);
 
     // Reserved Vircle 
@@ -404,7 +404,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1573628400, 1065,  0x1f00ffff); // 2019-09-07 00:00:00      1567785600
+        genesis = CreateGenesisBlockMainNet(1574931600, 1065,  0x1f00ffff); // 2019-11-28 17:00:00      
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -415,15 +415,15 @@ public:
         uint256 hash;
 
         bnTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow);
-                std::cout << "target:" << bnTarget.GetHex() << std::endl;
-                for (i = 0; i < 4294967295; i++) {
-                genesis.nNonce=i;
-                hash = genesis.GetHash();
-                //std::cout << "hash:" << hash.GetHex() << std::endl;
-                if (UintToArith256(hash) <= bnTarget){
-                        //std::cout << "nonce:" << i << std::endl;
-                        break;
-                }
+        std::cout << "target:" << bnTarget.GetHex() << std::endl;
+        for (i = 0; i < 4294967295; i++) {
+            genesis.nNonce=i;
+            hash = genesis.GetHash();
+            //std::cout << "hash:" << hash.GetHex() << std::endl;
+            if (UintToArith256(hash) <= bnTarget){
+                    //std::cout << "nonce:" << i << std::endl;
+                    break;
+            }
         }
         hash = genesis.GetHash();
         if (UintToArith256(hash) <= bnTarget){
@@ -445,13 +445,13 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
-        // vSeeds.emplace_back("52.82.110.66");
-        // vSeeds.emplace_back("52.82.109.52");
-        // vSeeds.emplace_back("52.83.66.3");
+        vSeeds.emplace_back("120.24.254.187");
+        vSeeds.emplace_back("120.78.70.185");
+        vSeeds.emplace_back("120.79.244.28");
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RGZcrfTX1Uy5aX7Ea9Enp8WZfMw8fNqSAi", 80, 1));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RX3xAAcQx6qt333iVNixvM15EFnivA83Xa", 80, 1));
         // strPerformanceFundAddr = "RE2FkyLcfjsYAPBE1zNWePn3ydXFzjVBa1";  //add for benyuan
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
@@ -498,7 +498,7 @@ public:
 
         chainTxData = ChainTxData {
             // Data from rpc: getchaintxstats 4096 ff704cb42547da4efb2b32054c72c7682b7634ac34fda4ec88fe7badc666338c
-            /* nTime    */ 1573628400,
+            /* nTime    */ 1574931600,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
