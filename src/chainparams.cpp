@@ -404,7 +404,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1574931600, 54524,  0x1f00ffff); // 2019-11-28 17:00:00      
+        genesis = CreateGenesisBlockMainNet(1574931600, 60842,  0x1f00ffff); // 2019-11-28 17:00:00      
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -451,7 +451,7 @@ public:
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RX3xAAcQx6qt333iVNixvM15EFnivA83Xa", 80, 1));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RWZSREk6xNdFyXSqLbDexWrvh8WTBddvGq", 80, 1));
         // strPerformanceFundAddr = "RE2FkyLcfjsYAPBE1zNWePn3ydXFzjVBa1";  //add for benyuan
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
