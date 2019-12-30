@@ -434,9 +434,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x0000dd860a7811f8d9d315b0c47aa2da05927cfe15853c5aec8b56435279a134"));
-        assert(genesis.hashMerkleRoot == uint256S("0x6384ab0400c2a8a17449f477b0e2979c00afac95732e87bb608eda93588df9f3"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x795c452f34caaf3d6d69f14138b862004db55f7160febcd1728e270f6609e609"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000047899e328fa9bbb7751194fbb8a8cf56fbb882505b75b36e868948de3a96"));
+        assert(genesis.hashMerkleRoot == uint256S("0x5e7ab0c99591634b45d3a178567c14ebd3ad744f9cd2054ea76a2af261ba2ef4"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0xed060c49fe0fdce927b2f8dbff7f57727944cf326675768a6852a072ec027ed7"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -489,8 +489,8 @@ public:
 
         checkpointData = {
             {
-                { 0,       uint256S("0x0000dd860a7811f8d9d315b0c47aa2da05927cfe15853c5aec8b56435279a134")},
-                { 5000,    uint256S("0x70eac0d7f3c5df18580aaaa647c9243a0ef41db39de5beae3f1892a356c8ddae")},
+                { 0,       uint256S("0x000047899e328fa9bbb7751194fbb8a8cf56fbb882505b75b36e868948de3a96")},
+                // { 5000,    uint256S("0x70eac0d7f3c5df18580aaaa647c9243a0ef41db39de5beae3f1892a356c8ddae")},
                 // { 10000,    uint256S("0x50bd73fc4fdfdfcad973053d9811e136abfe0adb1e201e4a87474d7ccc184871")},
                 // { 15000,    uint256S("0x34c882a588c22f771d311fb34eb12377f840dd72ac28fd3a4ce90e5cf1025023")},
             }
@@ -498,7 +498,7 @@ public:
 
         chainTxData = ChainTxData {
             // Data from rpc: getchaintxstats 4096 ff704cb42547da4efb2b32054c72c7682b7634ac34fda4ec88fe7badc666338c
-            /* nTime    */ 1574931600,
+            /* nTime    */ 1577808000,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
