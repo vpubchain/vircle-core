@@ -259,7 +259,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "Wenchuanglian MainNet BlockChain start publish on November 28, 2019";
+    const char *pszTimestamp = "Wenchuanglian MainNet BlockChain start publish on January 01, 2020";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -404,7 +404,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1574931600, 60842,  0x1f00ffff); // 2019-11-28 17:00:00      
+        genesis = CreateGenesisBlockMainNet(1577808000, 60842,  0x1f00ffff); // 2020-01-01 00:00:00      
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
