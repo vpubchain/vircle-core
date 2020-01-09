@@ -42,7 +42,7 @@ QString BitcoinUnits::longName(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("WCL");
+    case BTC: return QString("TBC");
     case mBTC: return QString("mWCL");
     case uBTC: return QString::fromUtf8("μWCL (wcls)");
     case SAT: return QString("Satoshi (sat)");
