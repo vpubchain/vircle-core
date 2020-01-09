@@ -259,7 +259,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "Wenchuanglian MainNet BlockChain start publish on January 01, 2020";
+    const char *pszTimestamp = "Zero blockchain for test function";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -277,18 +277,18 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     }
 
     // Technology fund
-    // RRcsa456pNPtHTdaicnPHwX48PVeLkuazU
+    // RFP6MuSP96rWVoGSFmRVfrSYx68RPYWtbN
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 5999000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("897e30481d975283445d215ae8ba754a7557bb1a") << OP_EQUAL;                                                                              
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("42ee7a511cddc18138efa4b8921ddf415c87edd7") << OP_EQUAL;                                                                              
     txNew.vpout.push_back(out);        
 
     // Community Initative 
-    // RLQtFd9BPwUuWWCT87tzUL7GSDMF6NgzTo
+    // RQuAvQ8UaCu8Nq5mdzEBW9PPw4W15Akdqp
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 24000000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("ace2435d5cb10cb6ecb45cdda0f37b9299e3cfec") << OP_EQUAL;                                                         
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("ab57e539f1a17799c8652d41b3b3786ca64f4002") << OP_EQUAL;                                                         
     txNew.vpout.push_back(out);
 
     // Reserved Vircle 
@@ -384,12 +384,12 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xac;
-        pchMessageStart[1] = 0xbd;
-        pchMessageStart[2] = 0xce;
-        pchMessageStart[3] = 0xdf;
+        pchMessageStart[0] = 0x12;
+        pchMessageStart[1] = 0x34;
+        pchMessageStart[2] = 0x56;
+        pchMessageStart[3] = 0x78;
 
-        nDefaultPort = 10100;   //for benyuan
+        nDefaultPort = 9060;   //for benyuan
         nBIP44ID = 0x8000002C;
 
         nModifierInterval = 10 * 60;    // 10 minutes
@@ -404,7 +404,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1577808000, 93395,  0x1f00ffff); // 2020-01-01 00:00:00      
+        genesis = CreateGenesisBlockMainNet(1578542400, 93395,  0x1f00ffff); // 2020-01-09 00:12:00      
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -451,7 +451,7 @@ public:
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RWZSREk6xNdFyXSqLbDexWrvh8WTBddvGq", 80, 1));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("REYEqUmLT366Wcxg5tAXA2wino9fZn6qqE", 80, 1));
         // strPerformanceFundAddr = "RE2FkyLcfjsYAPBE1zNWePn3ydXFzjVBa1";  //add for benyuan
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
