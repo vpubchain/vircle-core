@@ -445,10 +445,9 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
-        vSeeds.emplace_back("120.24.254.187");
-        vSeeds.emplace_back("120.78.70.185");
-        vSeeds.emplace_back("120.79.244.28");
-
+        vSeeds.emplace_back("47.105.68.82");
+        vSeeds.emplace_back("47.105.157.227");
+        
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
         vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("REYEqUmLT366Wcxg5tAXA2wino9fZn6qqE", 80, 1));
