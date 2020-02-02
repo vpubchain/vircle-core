@@ -434,9 +434,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x000047899e328fa9bbb7751194fbb8a8cf56fbb882505b75b36e868948de3a96"));
-        assert(genesis.hashMerkleRoot == uint256S("0x5e7ab0c99591634b45d3a178567c14ebd3ad744f9cd2054ea76a2af261ba2ef4"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0xed060c49fe0fdce927b2f8dbff7f57727944cf326675768a6852a072ec027ed7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00002fd667a889a1557c511ec8058eb3c75341c553a1c8ef45dff6ec3768f8aa"));
+        assert(genesis.hashMerkleRoot == uint256S("0x42e4cff605d2bb7ad11548e7b31a42b9be48a8a8cf327e03d2a3915a29c64a22"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0x24979367810a5365019f32e661531c032ec3b126630708f4054c8785330e8ca8"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -489,7 +489,7 @@ public:
 
         checkpointData = {
             {
-                { 0,       uint256S("0x000047899e328fa9bbb7751194fbb8a8cf56fbb882505b75b36e868948de3a96")},
+                { 0,       uint256S("0x00002fd667a889a1557c511ec8058eb3c75341c553a1c8ef45dff6ec3768f8aa")},
                 // { 3000,    uint256S("0x76e7cfb3e4247075147c2514a20978d76f8ce321d5ddb0a74840d3899db163f6")},
                 // { 10000,    uint256S("0x50bd73fc4fdfdfcad973053d9811e136abfe0adb1e201e4a87474d7ccc184871")},
                 // { 15000,    uint256S("0x34c882a588c22f771d311fb34eb12377f840dd72ac28fd3a4ce90e5cf1025023")},
