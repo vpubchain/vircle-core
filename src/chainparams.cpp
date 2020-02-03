@@ -259,7 +259,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "WenChuangLian MainNet BlockChain start publish on January 01, 2020";
+    const char *pszTimestamp = "WenChuangLian MainNet BlockChain start publish in 2020";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
