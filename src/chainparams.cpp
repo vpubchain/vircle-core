@@ -434,9 +434,9 @@ public:
         std::cout << "merkle:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         std::cout << "witness:" << genesis.hashWitnessMerkleRoot.GetHex() << std::endl;
 	
-        assert(consensus.hashGenesisBlock == uint256S("0x00002fd667a889a1557c511ec8058eb3c75341c553a1c8ef45dff6ec3768f8aa"));
-        assert(genesis.hashMerkleRoot == uint256S("0x42e4cff605d2bb7ad11548e7b31a42b9be48a8a8cf327e03d2a3915a29c64a22"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x24979367810a5365019f32e661531c032ec3b126630708f4054c8785330e8ca8"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000259185be5c81ccddaf264e0b6eaa30ab9502a3b431abacda1f085e7b8c1"));
+        assert(genesis.hashMerkleRoot == uint256S("0xa51ecbd11ac9c7f5da1ef9c66d0cb15d307b5cd04a153b764efe04d9c6a63bc5"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0x30d5874578942607ab276f20957f8850a3e849321e77f31f4b305b03a9687df1"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -489,7 +489,7 @@ public:
 
         checkpointData = {
             {
-                { 0,       uint256S("0x00002fd667a889a1557c511ec8058eb3c75341c553a1c8ef45dff6ec3768f8aa")},
+                { 0,       uint256S("0x00000259185be5c81ccddaf264e0b6eaa30ab9502a3b431abacda1f085e7b8c1")},
                 // { 3000,    uint256S("0x76e7cfb3e4247075147c2514a20978d76f8ce321d5ddb0a74840d3899db163f6")},
                 // { 10000,    uint256S("0x50bd73fc4fdfdfcad973053d9811e136abfe0adb1e201e4a87474d7ccc184871")},
                 // { 15000,    uint256S("0x34c882a588c22f771d311fb34eb12377f840dd72ac28fd3a4ce90e5cf1025023")},
@@ -498,7 +498,7 @@ public:
 
         chainTxData = ChainTxData {
             // Data from rpc: getchaintxstats 4096 ff704cb42547da4efb2b32054c72c7682b7634ac34fda4ec88fe7badc666338c
-            /* nTime    */ 1577808000,
+            /* nTime    */ 1580736600,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
