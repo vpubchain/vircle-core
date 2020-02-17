@@ -259,7 +259,7 @@ static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_
 
 static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
-    const char *pszTimestamp = "WenChuangLian MainNet BlockChain start publish in 2020";
+    const char *pszTimestamp = "VeryGood MainNet BlockChain start publish in February, 2020";
 
     CMutableTransaction txNew;
     txNew.nVersion = VIRCLE_TXN_VERSION;
@@ -277,18 +277,20 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
     }
 
     // Technology fund
-    // RRcsa456pNPtHTdaicnPHwX48PVeLkuazU
+    // RMLKr3uSPzu9Xrt9rCZZTLxgZaWB3qsauC
+    // "scriptPubKey": "a91484393dd6c71b91e88d8d86d97bfdab32e6e33dba87",
     OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 5999000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("897e30481d975283445d215ae8ba754a7557bb1a") << OP_EQUAL;                                                                              
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("84393dd6c71b91e88d8d86d97bfdab32e6e33dba") << OP_EQUAL;                                                                              
     txNew.vpout.push_back(out);        
 
     // Community Initative 
-    // RLQtFd9BPwUuWWCT87tzUL7GSDMF6NgzTo
+    //RQ8TgVmTsb5vE5hSY8ZKgGSF8SyeVfi5FG
+    //"scriptPubKey": "a914a2e32afd3135a138bda19cc17e86bc65bfff817187",
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 24000000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("ace2435d5cb10cb6ecb45cdda0f37b9299e3cfec") << OP_EQUAL;                                                         
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("a2e32afd3135a138bda19cc17e86bc65bfff8171") << OP_EQUAL;                                                         
     txNew.vpout.push_back(out);
 
     // Reserved Vircle 
@@ -384,12 +386,12 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xac;
-        pchMessageStart[1] = 0xbd;
-        pchMessageStart[2] = 0xce;
-        pchMessageStart[3] = 0xdf;
+        pchMessageStart[0] = 0x6a;
+        pchMessageStart[1] = 0x6b;
+        pchMessageStart[2] = 0x6c;
+        pchMessageStart[3] = 0x6d;
 
-        nDefaultPort = 10100;   //for benyuan
+        nDefaultPort = 6060;   //for benyuan
         nBIP44ID = 0x8000002C;
 
         nModifierInterval = 10 * 60;    // 10 minutes
@@ -404,7 +406,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1580736600, 1015,  0x1f00ffff); // 2020-02-03 21:30:00      
+        genesis = CreateGenesisBlockMainNet(1581930000, 1015,  0x1f00ffff); // 2020-02-17 17:00:00      
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -445,13 +447,13 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
-        vSeeds.emplace_back("120.24.254.187");
-        vSeeds.emplace_back("120.78.70.185");
-        vSeeds.emplace_back("120.79.244.28");
+        vSeeds.emplace_back("47.92.237.87");
+        vSeeds.emplace_back("39.98.46.235");
+        vSeeds.emplace_back("47.92.55.96");
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RWZSREk6xNdFyXSqLbDexWrvh8WTBddvGq", 80, 1));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RMJBj17xjPQwSfL2ZCSBszKgwXdypZcupE", 80, 1));
         // strPerformanceFundAddr = "RE2FkyLcfjsYAPBE1zNWePn3ydXFzjVBa1";  //add for benyuan
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
@@ -498,7 +500,7 @@ public:
 
         chainTxData = ChainTxData {
             // Data from rpc: getchaintxstats 4096 ff704cb42547da4efb2b32054c72c7682b7634ac34fda4ec88fe7badc666338c
-            /* nTime    */ 1580736600,
+            /* nTime    */ 1581930000,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
@@ -586,7 +588,7 @@ public:
         pchMessageStart[1] = 0x1b;
         pchMessageStart[2] = 0x3c;
         pchMessageStart[3] = 0x4d;
-        nDefaultPort = 20200;
+        nDefaultPort = 16060;
         nBIP44ID = 0x80000001;
 
         nModifierInterval = 10 * 60;    // 10 minutes
@@ -754,7 +756,7 @@ public:
         pchMessageStart[1] = 0x12;
         pchMessageStart[2] = 0x06;
         pchMessageStart[3] = 0x0c;
-        nDefaultPort = 30300;
+        nDefaultPort = 26060;
         nBIP44ID = 0x80000001;
 
 
