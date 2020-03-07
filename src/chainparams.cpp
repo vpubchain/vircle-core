@@ -44,7 +44,7 @@ int64_t CChainParams::GetProofOfStakeReward(const CBlockIndex *pindexPrev, int64
     if (halvings >= 64)
         return 0;
 
-    CAmount nSubsidy = ((35000000*COIN)/(consensus.nSubsidyHalvingInterval*COIN))*COIN;
+    CAmount nSubsidy = ((99000000*COIN)/(consensus.nSubsidyHalvingInterval*COIN))*COIN;
     // Subsidy is cut in half every 262,800 blocks which will occur approximately every 1 years.
     nSubsidy >>= halvings;
     return nSubsidy + nFees;
@@ -278,17 +278,17 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
 
     // Technology fund
     // RRcsa456pNPtHTdaicnPHwX48PVeLkuazU
-    OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
-    out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 5999000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("897e30481d975283445d215ae8ba754a7557bb1a") << OP_EQUAL;                                                                              
-    txNew.vpout.push_back(out);        
+    // OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
+    // out = MAKE_OUTPUT<CTxOutStandard>();
+    // out->nValue = 5999000 * COIN;
+    // out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("897e30481d975283445d215ae8ba754a7557bb1a") << OP_EQUAL;                                                                              
+    // txNew.vpout.push_back(out);        
 
     // Community Initative 
-    // RLQtFd9BPwUuWWCT87tzUL7GSDMF6NgzTo
+    // RWDY7rTLm9v4X5WtKhJA3Us4Qw6Z9ftAFP
     out = MAKE_OUTPUT<CTxOutStandard>();
-    out->nValue = 24000000 * COIN;
-    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("ace2435d5cb10cb6ecb45cdda0f37b9299e3cfec") << OP_EQUAL;                                                         
+    out->nValue = 1000000 * COIN;
+    out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("e5a9b4d7704503bb31f3445c8c6ef465c946b797") << OP_EQUAL;                 
     txNew.vpout.push_back(out);
 
     // Reserved Vircle 
@@ -445,13 +445,17 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
-        vSeeds.emplace_back("120.24.254.187");
-        vSeeds.emplace_back("120.78.70.185");
-        vSeeds.emplace_back("120.79.244.28");
+        
+        // vSeeds.emplace_back("120.24.254.187");
+        // vSeeds.emplace_back("120.78.70.185");
+        // vSeeds.emplace_back("120.79.244.28");
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RWZSREk6xNdFyXSqLbDexWrvh8WTBddvGq", 80, 1));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RWDY7rTLm9v4X5WtKhJA3Us4Qw6Z9ftAFP", 23, 1));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RN4riFsCmptGFafjP3wW7PSHSg25op71f7", 6, 1));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RJQAubkyAdx5UPxqwyHWEZ4c9YfbVd8e28", 57, 1));
+        
         // strPerformanceFundAddr = "RE2FkyLcfjsYAPBE1zNWePn3ydXFzjVBa1";  //add for benyuan
 
         base58Prefixes[PUBKEY_ADDRESS]     = {0x38}; // P
