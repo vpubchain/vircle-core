@@ -276,28 +276,21 @@ static CBlock CreateGenesisBlockMainNet(uint32_t nTime, uint32_t nNonce, uint32_
         txNew.vpout[k] = out;
     }
 
-    // Technology fund
-    // RRcsa456pNPtHTdaicnPHwX48PVeLkuazU
-    // OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
-    // out = MAKE_OUTPUT<CTxOutStandard>();
-    // out->nValue = 5999000 * COIN;
-    // out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("897e30481d975283445d215ae8ba754a7557bb1a") << OP_EQUAL;                                                                              
-    // txNew.vpout.push_back(out);        
-
     // Community Initative 
     // RWDY7rTLm9v4X5WtKhJA3Us4Qw6Z9ftAFP
+    OUTPUT_PTR<CTxOutStandard> out = MAKE_OUTPUT<CTxOutStandard>();
     out = MAKE_OUTPUT<CTxOutStandard>();
     out->nValue = 1000000 * COIN;
     out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("e5a9b4d7704503bb31f3445c8c6ef465c946b797") << OP_EQUAL;                 
     txNew.vpout.push_back(out);
 
-    // Reserved Vircle 
-    // RN4MHCjXfzo7a3c1whZt5mbuLd7Bbh9FY3
+    // Technology fund
+    // RN4riFsCmptGFafjP3wW7PSHSg25op71f7
     // out = MAKE_OUTPUT<CTxOutStandard>();
-    // out->nValue = 5000000 * COIN;
-    // out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("a88d48f5a09cdfb92f0b9a4130d199b91b102133") << OP_EQUAL;
-    // txNew.vpout.push_back(out);
-
+    // out->nValue = 5999000 * COIN;
+    // out->scriptPubKey = CScript() << OP_HASH160 << ParseHex("897e30481d975283445d215ae8ba754a7557bb1a") << OP_EQUAL;                                                                              
+    // txNew.vpout.push_back(out);        
+    
     // Reserved Vircle for primary round
     // RVdtjTBEqoFPyxNDqFk72SXkvq19QtKss9
     // out = MAKE_OUTPUT<CTxOutStandard>();
@@ -404,7 +397,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1580736600, 1015,  0x1f00ffff); // 2020-02-03 21:30:00      
+        genesis = CreateGenesisBlockMainNet(1583568000, 1015,  0x1f00ffff); // 2020-02-03 21:30:00      
         consensus.hashGenesisBlock = genesis.GetHash();
         
         bool fNegative;
@@ -502,7 +495,7 @@ public:
 
         chainTxData = ChainTxData {
             // Data from rpc: getchaintxstats 4096 ff704cb42547da4efb2b32054c72c7682b7634ac34fda4ec88fe7badc666338c
-            /* nTime    */ 1580736600,
+            /* nTime    */ 1583568000,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
