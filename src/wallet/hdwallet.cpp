@@ -12566,6 +12566,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
 
     // Set output amount, split outputs if > nStakeSplitThreshold
     if (nCredit >= nStakeSplitThreshold) {
+        LogPrintf("---nCredit >= nStakeSplitThreshold---\n");
         OUTPUT_PTR<CTxOutStandard> outSplit = MAKE_OUTPUT<CTxOutStandard>();
         outSplit->nValue = 0;
         outSplit->scriptPubKey = scriptPubKeyKernel;
@@ -12579,6 +12580,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
 
     // Create output for reward
     if (rewardAddress.IsValid()) {
+        LogPrintf("---rewardAddress.IsValid()---\n");
         CScript scriptReward;
         std::vector<uint8_t> vData;
         if (!GetScriptForAddress(scriptReward, rewardAddress, true, &vData)) {
