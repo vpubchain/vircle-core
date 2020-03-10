@@ -12515,10 +12515,10 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
                 return werror("%s: PutVarInt failed: %d.", __func__, nDevCfwd);
             }
             
-            for (auto x: vData) {   std::cout << 'vData-1=' << x; } std::count<< endl;  //2020-3-10
-            for (auto x: vCfwd) {   std::cout << 'vCfwd=' << x; }   std::count<< endl;  //2020-3-10
+            for (auto x: vData) {   std::cout << "vData-1=" << x; } std::count<< "\n";  //2020-3-10
+            for (auto x: vCfwd) {   std::cout << "vCfwd=" << x; }   std::count<< "\n";  //2020-3-10
             vData.insert(vData.end(), vCfwd.begin(), vCfwd.end());
-            for (auto x: vData) {   std::cout << 'vData-2=' << x; } std::count<< endl;  //2020-3-10
+            for (auto x: vData) {   std::cout << "vData-2=" << x; } std::count<< "\n";  //2020-3-10
             
             CAmount test_cfwd = 0;
             assert(ExtractCoinStakeInt64(vData, DO_DEV_FUND_CFWD, test_cfwd));
