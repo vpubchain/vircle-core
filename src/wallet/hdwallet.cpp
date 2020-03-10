@@ -12485,11 +12485,11 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
             if (!coinStakeCache.GetCoinStake(pindexPrev->GetBlockHash(), txPrevCoinstake)) {
                 return werror("%s: Failed to get previous coinstake: %s.", __func__, pindexPrev->GetBlockHash().ToString());
             }
-            LogPrintf("---nDevBfwd-1=%d---\n", nDevBfwd);
+            LogPrintf("---nDevBfwd-1=%d---\n", nDevBfwd);   //2020-3-10
             if (!txPrevCoinstake->GetDevFundCfwd(nDevBfwd)) {
                 nDevBfwd = 0;
             }
-            LogPrintf("---nDevBfwd-2=%d---\n", nDevBfwd);
+            LogPrintf("---nDevBfwd-2=%d---\n", nDevBfwd);   //2020-3-10
         }
 
         CAmount nDevCfwd = nDevBfwd + nDevPart;
@@ -12507,7 +12507,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
 
             txNew.vpout.insert(txNew.vpout.begin()+1, outDevSplit);
         } else {
-            LogPrintf("---nDevCfwd-2=%d---\n", nDevCfwd);
+            LogPrintf("---nDevCfwd-2=%d---\n", nDevCfwd);   //2020-3-10
             // Add to carried forward
             std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[0]->GetPData();
             vCfwd[0] = DO_DEV_FUND_CFWD;
@@ -12527,16 +12527,20 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
 
     // Place SMSG fee rate
     if (nTime >= consensusParams.smsg_fee_time) {
+        LogPrintf("---SMSG-1---\n");   //2020-3-10
         CAmount smsg_fee_rate = consensusParams.smsg_fee_msg_per_day_per_k;
         if (nBlockHeight > 1) { // genesis block is pow
+            LogPrintf("---SMSG-2---\n");   //2020-3-10
             LOCK(cs_main);
             if (!txPrevCoinstake && !coinStakeCache.GetCoinStake(pindexPrev->GetBlockHash(), txPrevCoinstake)) {
+                LogPrintf("---SMSG-3---\n");   //2020-3-10
                 return werror("%s: Failed to get previous coinstake: %s.", __func__, pindexPrev->GetBlockHash().ToString());
             }
             txPrevCoinstake->GetSmsgFeeRate(smsg_fee_rate);
         }
 
         if (m_smsg_fee_rate_target > 0) {
+            LogPrintf("---SMSG-4---\n");   //2020-3-10
             int64_t diff = m_smsg_fee_rate_target - smsg_fee_rate;
             int64_t max_delta = Params().GetMaxSmsgFeeRateDelta(smsg_fee_rate);
             if (diff > max_delta) {
@@ -12549,6 +12553,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         }
         std::vector<uint8_t> vSmsgFeeRate(1), &vData = *txNew.vpout[0]->GetPData();
         vSmsgFeeRate[0] = DO_SMSG_FEE;
+        LogPrintf("---SMSG-5---\n");   //2020-3-10
         if (0 != PutVarInt(vSmsgFeeRate, smsg_fee_rate)) {
             return werror("%s: PutVarInt failed: %d.", __func__, smsg_fee_rate);
         }
@@ -12556,6 +12561,7 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         CAmount test_fee = 0;
         assert(ExtractCoinStakeInt64(vData, DO_SMSG_FEE, test_fee));
         assert(test_fee == smsg_fee_rate);
+        LogPrintf("---SMSG-6---\n");   //2020-3-10
     }
 
 
