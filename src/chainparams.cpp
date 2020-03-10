@@ -445,9 +445,7 @@ public:
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RWDY7rTLm9v4X5WtKhJA3Us4Qw6Z9ftAFP", 23, 1));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RN4riFsCmptGFafjP3wW7PSHSg25op71f7", 6, 1));
-        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RJQAubkyAdx5UPxqwyHWEZ4c9YfbVd8e28", 57, 1));
+        vDevFundSettings.emplace_back(consensus.OpIsCoinstakeTime, DevFundSettings("RJQAubkyAdx5UPxqwyHWEZ4c9YfbVd8e28", 57, 5));
         
         // strPerformanceFundAddr = "RE2FkyLcfjsYAPBE1zNWePn3ydXFzjVBa1";  //add for benyuan
 

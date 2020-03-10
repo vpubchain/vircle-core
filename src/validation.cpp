@@ -2700,21 +2700,11 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                 if (nStakeReward < 0 || nStakeReward > nCalculatedStakeReward) {
                     return state.DoS(100, error("%s: Coinstake pays too much(actual=%d vs calculated=%d)", __func__, nStakeReward, nCalculatedStakeReward), REJECT_INVALID, "bad-cs-amount");
                 }
-
-                // CAmount nSalePart1 = nStakeReward * 0.8;   //for benyuan
-                // CAmount nSalePart2 = nCalculatedStakeReward * 0.8;   //for benyuan
-                // LogPrintf("nSalePart1=%u, nSalePart2=%u \n",nSalePart1, nSalePart2);
-                // if (nSalePart1 != nSalePart2){
-                //     return state.DoS(100, error("%s: SalePart must be 80% of nStakeReward (nSalePart1=%d vs nSalePart2=%d)", __func__, nSalePart1, nSalePart2), REJECT_INVALID, "bad-salepart-amount");
-                // }
-
             } else {
                 assert(pDevFundSettings->nMinDevStakePercent <= 100);
-
                 CAmount nDevBfwd = 0, nDevCfwdCheck = 0;
                 CAmount nMinDevPart = (nCalculatedStakeReward * pDevFundSettings->nMinDevStakePercent) / 100;
-                // CAmount nSalePart = nCalculatedStakeReward * 0.8;
-                CAmount nMaxHolderPart = nCalculatedStakeReward - nMinDevPart /*- nSalePart*/;
+                CAmount nMaxHolderPart = nCalculatedStakeReward - nMinDevPart;
                 if (nMinDevPart < 0 || nMaxHolderPart < 0) {
                     return state.DoS(100, error("%s: Bad coinstake split amount (foundation=%d vs reward=%d)", __func__, nMinDevPart, nMaxHolderPart), REJECT_INVALID, "bad-cs-amount");
                 }
@@ -2734,7 +2724,6 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                 if (pindex->nHeight % pDevFundSettings->nDevOutputPeriod == 0) {
                     // Fund output must exist and match cfwd, cfwd data output must be unset
                     // nStakeReward must == nDevBfwd + nCalculatedStakeReward
-
                     if (nStakeReward != nDevBfwd + nCalculatedStakeReward) {
                         return state.DoS(100, error("%s: Bad stake-reward (actual=%d vs expected=%d)", __func__, nStakeReward, nDevBfwd + nCalculatedStakeReward), REJECT_INVALID, "bad-cs-amount");
                     }
