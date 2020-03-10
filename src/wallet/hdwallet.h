@@ -845,14 +845,5 @@ bool IsVircleWallet(const CKeyStore *win);
 CHDWallet *GetVircleWallet(CKeyStore *win);
 const CHDWallet *GetVircleWallet(const CKeyStore *win);
 
-//add 2020-3-10
-void print_vec(const std::vector<uint8_t>& vec)
-{
-    for (auto x: vec) {
-         std::cout << ' ' << x;
-    }
-    std::cout << '\n';
-}
-
 #endif // VIRCLE_WALLET_HDWALLET_H
 
