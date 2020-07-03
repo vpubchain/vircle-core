@@ -313,7 +313,7 @@ bool CheckDataOutput(CValidationState &state, const CTxOutData *p)
     }
 
     // const size_t MAX_DATA_OUTPUT_SIZE = 34 + 5 + 34; // DO_STEALTH 33, DO_STEALTH_PREFIX 4, DO_NARR_CRYPT (max 32 bytes)
-    const size_t MAX_DATA_OUTPUT_SIZE = 252;
+    const size_t MAX_DATA_OUTPUT_SIZE = 1000;
     if (p->vData.size() > MAX_DATA_OUTPUT_SIZE) {
         return state.DoS(100, false, REJECT_INVALID, "bad-output-data-size");
     }
