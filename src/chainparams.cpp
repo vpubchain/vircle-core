@@ -445,8 +445,8 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("mainnet-seed.vircle.io");
         //vSeeds.emplace_back("dnsseed-mainnet.vircle.io");
-        vSeeds.emplace_back("49.232.34.179");
-        vSeeds.emplace_back("121.42.12.254");
+        vSeeds.emplace_back("68.79.38.117");
+        vSeeds.emplace_back("68.79.34.218");
 
 
         // vDevFundSettings.emplace_back(0, DevFundSettings("RBNytppxP49DX1zvDmUGsZFHitrE7owa59", 11, 60));
