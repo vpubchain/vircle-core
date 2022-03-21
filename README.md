@@ -77,3 +77,6 @@ code. This is especially important for large or high-risk changes. It is useful
 to add a test plan to the pull request description if testing the changes is
 not straightforward.
 
+### Developer Rewards
+Each person involved in the development of The Vircle-Core blockchain ecosystem technology 
+will have the opportunity to share a token award of 6% of the total release proceeds.
